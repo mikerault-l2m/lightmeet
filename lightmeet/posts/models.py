@@ -32,6 +32,3 @@ class BlogPost(models.Model):
     def get_absolute_url(self):
         return reverse("blog-post", kwargs={"slug": self.slug})
 
-    @property
-    def author_or_default(self):
-        return self.author.username if self.author else "L'équipe Lightmeet"

@@ -1,7 +1,7 @@
 import os
 import environ
 from pathlib import Path
-import allauth
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -13,15 +13,13 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env.bool("DEBUG")
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
-
 LOCAL_APPS = [
-    'lightmeet',
     'accounts',
-    'psy',
-    'support',
     'legal',
     'posts',
-    'partner_meet'
+    'support',
+    'psy',
+    'partner_meet',
 ]
 DJANGO_APPS = [
     'django.contrib.admin',
@@ -30,6 +28,7 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # AJOUT POUR PACKAGE ALLAUTH
     'django.contrib.sites',
 ]
 THIRD_PARTY_APPS = [
@@ -52,10 +51,19 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
-    'responsive.middleware.DeviceInfoMiddleware',
 ]
 
+
+MIDDLEWARE_CLASSES = (
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'responsive.middleware.DeviceInfoMiddleware',
+)
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     # Other context processors included here
@@ -70,12 +78,12 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'lightmeet/templates'),
-                    os.path.join(BASE_DIR, 'support/templates'),
-                    os.path.join(BASE_DIR, 'psy/templates'),
-                    os.path.join(BASE_DIR, 'partner_meet/templates'),
-                    os.path.join(BASE_DIR, 'accounts/templates'),
                     os.path.join(BASE_DIR, 'posts/templates'),
-                    os.path.join(BASE_DIR, 'legal/templates')],
+                    os.path.join(BASE_DIR, 'legal/templates'),
+                    os.path.join(BASE_DIR, 'partner_meet/templates'),
+                    os.path.join(BASE_DIR, 'psy/templates'),
+                    os.path.join(BASE_DIR, 'accounts/templates'),
+                    os.path.join(BASE_DIR, 'support/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -178,4 +186,3 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED=True
 
 ACCOUNT_EMAIL_VERIFICATION = "none"
-

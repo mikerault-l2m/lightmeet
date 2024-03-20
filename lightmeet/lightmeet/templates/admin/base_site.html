@@ -1,0 +1,47 @@
+{% extends 'admin/base_site.html' %}
+{% load static %}
+
+{% block branding %}
+    <h1> LIGHTMEET - Éclaire vos rencontres </h1>
+{% endblock %}
+
+
+{% block extrastyle %}
+<style>
+    #header,#content-main {
+background-color: #F1D495;
+padding: 2%;
+color: black;
+font-family: "SF Pro Display", sans-serif;
+}
+
+
+#content-main div{
+    background-color: white;
+    padding: 1%;
+    font-family: "SF Pro Display", sans-serif;
+}
+
+
+#branding h1 {
+    color: black;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+
+
+body {
+    font-family: "SF Pro Display", sans-serif;
+    background-color: #ECD8AE;
+}
+
+
+#content h1 {
+    font-family: "SF Pro Display", sans-serif;
+    color:black;
+}
+
+</style>
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'accounts/css/style_2.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'accounts/css/style_base.css' %}">
+{% endblock %}
+
+{% block section %}
+<section>
+    <div class="logoPosition">
+        <div class="positionLogoListen2meet">
+            <img class="logolisten2meet" src="{% static 'contexte/Logos/logo_listen2meet.png' %}" alt=" Logo Listen 2 meet " />
+        </div>
+        <div class="PosBoutonAndCitation">
+            <p class="Citation"></p>
+            <button class="Listen"> <a class="link" href="{% url 'Home' %}">Comparer</a> </button>
+        </div>
+    </div>
+
+    <div class="Products">
+        <a class="Connexion" href="{% url 'Home' %}">
+            <div class="buttonLinkOtherPage">
+                <img class="meet" src="{% static 'contexte/Logos/rencontre.png' %}" alt=" un site de rencontres où l'on rencontre l'amour par là le biais de la voix " />
+                <div class="black_button">
+                    <h3 class="TitleButton"> Rencontres</h3>
+                    <div class="Description"></div>
+                </div>
+            </div>
+        </a>
+        <a class="Connexion" href="{% url 'Home' %}">
+            <div class="buttonLinkOtherPage">
+                <img class="behavior" src="{% static 'contexte/Logos/la.png' %}">
+                <div class="black_button">
+                    <h3 class="TitleButton"> Thérapeutes</h3>
+                    <P class="Description">Cherchez et trouver </P>
+                </div>
+            </div>
+        </a>
+        <div class="containerSecure">
+            <p class="Secure">
+                La <strong>sécurité</strong> et la confidentialité sont nos priorités. <strong class="wordImportant">Listen2Meet</strong> offre un environnement sûr où vous pouvez vous sentir à l'aise et en <strong>confiance</strong> pour partager votre voix et vos histoires. Notre équipe veille à ce que seuls les profils <strong>authentiques</strong> soient présents sur le site, garantissant ainsi une <strong>expérience</strong> de qualité.
+            </p>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

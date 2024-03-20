@@ -1,0 +1,284 @@
+.containerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background: rgba(134, 0, 232, 0.20);
+    margin: 9em 2em 9em 2em;
+    height: 850px;
+    width: 550px;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+body {
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'sans-serif';
+}
+
+section {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.code-rand {
+    margin: -10% 0% -10% 0%;
+}
+
+.Connect {
+    font-size: 12px;
+}
+
+
+.posInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+}
+
+.form-control11,
+.form-control1,
+.form-control5,
+.form-control4,
+.form-control7,
+.form-control10 {
+    margin: 1em;
+    border-radius: 5px;
+    border-bottom: 0.5px solid #E5E5E5;
+    background: rgba(134, 0, 232, 0.40);
+    color: #E5E5E5;
+    width: 100%;
+    height: 2em;
+    flex-shrink: 0;
+    padding: 0.4em;
+}
+
+.InputConnexion {
+    margin: 1em;
+    border-radius: 5px;
+    border-bottom: 0.5px solid #E5E5E5;
+    background: rgba(134, 0, 232, 0.40);
+    color: #E5E5E5;
+    width: 100%;
+    height: 2em;
+    flex-shrink: 0;
+    padding: 0.4em;
+}
+
+form .Connect {
+    margin: 1.4em 1em 1em 1em;
+    width: 200px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 65.5px;
+    background: linear-gradient(180deg, #121212 0%, #303030 100%);
+    box-shadow: 1.7594091924333496e-15px 28.733333587646484px 57.46666717529297px 0px rgba(7, 7, 7, 0.80), 1.172939461622233e-15px 19.155555725097656px 19.155555725097656px 0px #343434 inset, -1.172939461622233e-15px -19.155555725097656px 19.155555725097656px 0px #0E0E0E inset;
+    border: #0E0E0E;
+    letter-spacing: 4.3px;
+}
+
+.maj {
+    text-transform: uppercase;
+}
+
+.btnConnexion {
+    margin: 0.5em;
+    border-radius: 65px;
+    border: 1px solid #8600E8;
+    background: linear-gradient(180deg, #121212 100%, #303030 0%);
+    color: #E5E5E5;
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 50px;
+    justify-content: flex-start;
+    gap: 15%;
+
+}
+
+.btnConnexion img {
+    margin: 0em 1em 0em 1em;
+}
+
+.imgConnexion {
+    width: 12em;
+    margin: 1em;
+}
+
+.containerConnexion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ou {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 100;
+}
+
+.forget {
+    margin: 0;
+    font-size: 0.8em;
+    text-align: right;
+    color: rgba(229, 229, 229, 0.80);
+    text-decoration-line: underline;
+}
+
+.PosForget {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 1.4em;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+.new_sub {
+    font-weight: 500;
+}
+
+.InscriptionText {
+    margin: 0em 0em 1em 0em;
+    font-size: 1em;
+    font-weight: 100;
+}
+
+
+form {
+    align-items: center;
+}
+
+
+form p {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+.password {
+    width: 60%;
+    align-items:center;
+    text-align: center;
+    font-size: 1em;
+}
+
+.button1 {
+    font-size: 1.2em;
+}
+
+@media (max-width:998px) {
+
+    .containerForm {
+        margin: 3em 2em 9em 2em;
+    }
+
+    .InputConnexion {
+        font-size: 1.2em;
+    }
+
+    .btnConnexion {
+        font-size: 1.2em;
+        gap: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .imgConnexion {
+        width: 7em;
+    }
+
+    .containerForm {
+        padding: 0;
+        margin: 1em 0em 3em 0em;
+        height: 760px;
+        width: 100%;
+        border-radius: 0em;
+        justify-content: space-around;
+    }
+
+    .posInput {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+    }
+
+    .btnConnexion {
+        width: 300px;
+        gap: 5%;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 1.1em;
+    }
+
+    .InscriptionText {
+        margin: 0em 0em 1em 0em;
+        font-size: 0.8em;
+        font-weight: 100;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .InputConnexion {
+        font-size: 1em;
+    }
+
+    .btnConnexion {
+        font-size: 1em;
+        gap: 5%;
+    }
+
+    .password {
+        width: 60%;
+        text-align: center;
+        font-size: 0.8em;
+    }
+
+    .button1 {
+        font-size: 1em;
+    }
+}
+
+.cgu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.cgu p {
+    font-size: 0.8em;
+    text-decoration: underline;
+}
+
+.remerciements{
+    line-height: 1.15;
+    align-items: center;
+    text-align: center ;
+    font-family: SF pro display;
+}
+
+
+/* -------------------------------------- */

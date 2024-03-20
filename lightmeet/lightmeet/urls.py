@@ -9,6 +9,7 @@ from accounts.views import *
 from legal.views import *
 from psy.views import *
 from support.views import *
+from posts.views import *
 
 urlpatterns = [
     # Administrateur :
@@ -44,5 +45,8 @@ urlpatterns = [
 
     # Support :
     path('contact/',SupportModel.as_view(),name="Contact")
+
+    #Blog
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

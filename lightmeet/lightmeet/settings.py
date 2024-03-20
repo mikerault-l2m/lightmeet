@@ -20,7 +20,7 @@ LOCAL_APPS = [
     'psy',
     'support',
     'legal',
-    'blog',
+    'posts',
     'partner_meet'
 ]
 DJANGO_APPS = [
@@ -85,7 +85,7 @@ TEMPLATES = [
                     os.path.join(BASE_DIR, 'psy/templates'),
                     os.path.join(BASE_DIR, 'partner_meet/templates'),
                     os.path.join(BASE_DIR, 'accounts/templates'),
-                    os.path.join(BASE_DIR, 'blog/templates'),
+                    os.path.join(BASE_DIR, 'posts/templates'),
                     os.path.join(BASE_DIR, 'legal/templates')],
         'APP_DIRS': True,
         'OPTIONS': {

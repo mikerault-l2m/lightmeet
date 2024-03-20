@@ -30,7 +30,6 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # AJOUT POUR PACKAGE ALLAUTH
     'django.contrib.sites',
 ]
 THIRD_PARTY_APPS = [

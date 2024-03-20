@@ -44,9 +44,9 @@ urlpatterns = [
     path('psy/',psy_control_2.as_view(),name = "Psychologue"),
 
     # Support :
-    path('contact/',SupportModel.as_view(),name="Contact")
+    path('contact/',SupportModel.as_view(),name="Contact"),
 
     #Blog
-
+    path('blog/',BlogHome.as_view(),name="blog_home"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

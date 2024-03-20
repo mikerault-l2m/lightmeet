@@ -27,7 +27,11 @@ class BlogPost(models.Model):
     def save(self,*args,**kwargs):
         if not self.slug:
             self.slug = slugify(self,title)
-        super.save(*args,**kwargs)
+        super().save(*args,**kwargs)
 
     def get_absolute_url(self):
         return reverse("blog-post", kwargs={"slug": self.slug})
+
+    @property
+    def author_or_default(self):
+        return self.author.username if self.author else "L'équipe Lightmeet"

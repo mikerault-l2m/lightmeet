@@ -1,7 +1,7 @@
 import os
 import environ
 from pathlib import Path
-
+import allauth
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -53,19 +53,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    'responsive.middleware.DeviceInfoMiddleware',
 ]
 
-
-MIDDLEWARE_CLASSES = (
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'responsive.middleware.DeviceInfoMiddleware',
-)
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     # Other context processors included here

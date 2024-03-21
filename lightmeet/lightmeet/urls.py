@@ -48,5 +48,9 @@ urlpatterns = [
 
     #Blog
     path('blog/',BlogHome.as_view(),name="blog_home"),
+    path('blog/create',BlogPostCreate.as_view(),name="blog_create"),
+    path('blog/edit/<str:slug>',BlogPostUpdate.as_view(),name="blog_edit"),
+    path('blog/delete/<str:slug>',BlogPostDelete.as_view(),name="blog_delete"),
+    path('blog/<str:slug>',BlogPostDetail.as_view(),name="blog_detail")
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

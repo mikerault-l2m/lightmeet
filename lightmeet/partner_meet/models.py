@@ -1,4 +1,5 @@
 from django.db import models
+from import_export import resources
 # Insérer les variables décidées sur Miro
 
 class PartnerMeet(models.Model):
@@ -37,3 +38,7 @@ class PartnerMeet(models.Model):
     class Meta:
         verbose_name = "Notre site de rencontre partenaire"
         verbose_name_plural = "Nos sites de rencontres partenaires"
+
+class PartnerMeetResource(resources.ModelResource):
+    class Meta:
+        model = PartnerMeet

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +10,14 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            position: relative; /* Ajout */
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
-        h1 {
-            color: #333;
-        }
-        h2 {
+        h1, h2 {
             color: #333;
         }
         h5 {
@@ -31,20 +29,39 @@
         article {
             margin-bottom: 30px;
         }
+        .accueil-button {
+            position: absolute; /* Ajout */
+            top: 50px; /* Ajout */
+            left: 50px; /* Ajout */
+            display: block;
+            width: 100px;
+            padding: 10px;
+            text-align: center;
+            background-color: transparent;
+            border: 2px solid black;
+            border-radius: 50px;
+            text-decoration: none;
+            color: black;
+        }
+        .accueil-button:hover {
+            background-color: black;
+            color: white;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Le comparateur de rencontres</h1>
-    {% for post in posts %}
-        <article>
-            <h2>{{ post.title }}</h2>
-            <h5>Publié par <i>L'équipe LightMeet</i> le {{ post.created_on|date:'j F Y' }}</h5>
-            <p>{{ post.content|safe|truncatewords:50}}</p>
-        </article>
-    {% endfor %}
-</div>
+    <div class="container">
+        <h1>Le comparateur de rencontres</h1>
+        {% for post in posts %}
+            <article>
+                <h2>{{ post.title }}</h2>
+                <h5>Publié par <i>L'équipe LightMeet</i> le {{ post.created_on|date:'j F Y' }}</h5>
+                <p>{{ post.content|safe|truncatewords:50 }}</p>
+            </article>
+        {% endfor %}
+    </div>
 
+    <a href="{% url 'blog_home' %}" class="accueil-button">Accueil</a>
 </body>
 </html>

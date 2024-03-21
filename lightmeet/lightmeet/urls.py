@@ -3,7 +3,7 @@ from django.urls import path, include
 
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib.auth.decorators import login_required
 from partner_meet.views import *
 from accounts.views import *
 from legal.views import *
@@ -48,9 +48,9 @@ urlpatterns = [
 
     #Blog
     path('blog/',BlogHome.as_view(),name="blog_home"),
-    path('blog/create',BlogPostCreate.as_view(),name="blog_create"),
-    path('blog/edit/<str:slug>',BlogPostUpdate.as_view(),name="blog_edit"),
-    path('blog/delete/<str:slug>',BlogPostDelete.as_view(),name="blog_delete"),
-    path('blog/<str:slug>',BlogPostDetail.as_view(),name="blog_detail")
+    path('blog/create',login_required(BlogPostCreate.as_view()),name="blog_create"),
+    path('blog/<str:slug>',BlogPostDetail.as_view(),name="blog_detail"),
+    path('blog/edit/<str:slug>',login_required(BlogPostUpdate.as_view()),name="blog_edit"),
+    path('blog/delete/<str:slug>',login_required(BlogPostDelete.as_view()),name="blog_delete")
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

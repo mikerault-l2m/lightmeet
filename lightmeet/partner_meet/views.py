@@ -16,6 +16,11 @@ class rencontrer(TemplateView):
     model = Lightener
     template_name = "partner_meet/Home_Rencontres.html"
 
+@login_required
+class meet_compare(TemplateView):
+    model = Lightener
+    template_name = "partner_meet/meet_comparer.html"
+
 
 @login_required
 

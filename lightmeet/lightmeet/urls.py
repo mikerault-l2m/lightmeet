@@ -61,10 +61,12 @@ urlpatterns = [
             # Partner_meet:
 
         # Outil de recherche de sites de rencontre
-        path('rencontre/',rencontrer.as_view(),name = "Rencontres"),
+        #path('recherche/',rencontrer.as_view(),name = "Rencontres"),
+
+        path('recherche/',partner_meet_formulaire.as_view(),name = "partner_meet_formulaire"),
 
         # Outil de comparaison de marques de rencontre
-        #path('rencontre/comparaison',meet_compare.as_view(),name = "Comparaison Rencontres"),
+        # path('rencontre/comparaison',meet_compare.as_view(),name = "Comparaison Rencontres"),
 
         # Thérapeutes :
 

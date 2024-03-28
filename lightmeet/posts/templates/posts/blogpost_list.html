@@ -3,51 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparateur de rencontres</title>
-    <style>
-        body {
-            background-color: #FBF1D6; /* Fond d'arrière-plan */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            position: relative; /* Ajout */
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        h5 {
-            color: #666;
-        }
-        p {
-            color: #444;
-        }
-        article {
-            margin-bottom: 30px;
-        }
-        .accueil-button {
-            position: absolute; /* Ajout */
-            top: 50px; /* Ajout */
-            left: 50px; /* Ajout */
-            display: block;
-            width: 100px;
-            padding: 10px;
-            text-align: center;
-            background-color: transparent;
-            border: 2px solid black;
-            border-radius: 50px;
-            text-decoration: none;
-            color: black;
-        }
-        .accueil-button:hover {
-            background-color: black;
-            color: white;
-        }
-    </style>
+    <title>L'analyse du comparateur de rencontres</title>
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+{% endblock %}
 </head>
 <body>
 
@@ -62,6 +22,6 @@
         {% endfor %}
     </div>
 
-    <a href="{% url 'blog_home' %}" class="accueil-button">Accueil</a>
+    <a href="{% url 'Home' %}" class="accueil-button">Accueil</a>
 </body>
 </html>

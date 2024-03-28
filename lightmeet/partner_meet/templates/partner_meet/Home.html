@@ -3,66 +3,30 @@
 {% block css %}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
 {{ block.super }}
-<link rel="stylesheet" href="{% static 'accounts/css/style_base.css' %}">
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 <style>
-    header {
-        background-color: transparent; /* Header sans couleur */
+    header{color:black;
+        background-color:transparent;
+        text-decoration:none;
     }
-    .call-to-action-container {
-        background-color: #FBF1D6; /* Couleur du footer */
-        padding: 20px; /* Espacement interne */
-        border-radius: 5px; /* Arrondi des coins */
-        margin-bottom: 20px; /* Marge en bas */
-        width: 100%; /* Largeur à 100% */
-    }
-    .call-to-action {
-        background-color: black; /* Couleur de fond des boutons */
-        border-radius: 40px; /* Arrondi des coins */
-        width: 160px; /* Largeur des boutons */
-        height: 60px; /* Hauteur des boutons */
-        margin-right: 10px; /* Marge à droite des boutons */
-        border: none; /* Supprimer la bordure */
-        cursor: pointer; /* Curseur au survol */
-        color: white; /* Couleur du texte */
-        margin:20px 0px 20px 0px;
-        font-size: 16px; /* Taille du texte */
-    }
-    .call-to-action-site {
-        display: flex; /* Utiliser le modèle de boîte flex */
-        justify-content: center; /* Centrer horizontalement les éléments */
-    }
-    .box {
-        background-color: #FBF1D6; /* Couleur de la box */
-        width: 200px; /* Largeur de la box */
-        height: 150px; /* Hauteur de la box */
-        margin: 10px; /* Marge autour de la box */
-    }
-    .boxes {
-        display: flex; /* Utiliser le modèle de boîte flex */
-        justify-content: space-evenly; /* Espacement égal entre les boxes */
-    }
-    .call-to-action-title {
-        display: flex; /* Utiliser le modèle de boîte flex */
-        justify-content: center; /* Centrer horizontalement */
-        align-items: center; /* Centrer verticalement */
-    }
+
 </style>
 {% endblock %}
 <html>
 <body>
 {% block section %}
-<h1>Éclairez vos rencontres</h1>
-    <h2>Trouver le site de rencontre qui vous correspond</h2>
-    <button class="call-to-action call-to-action-comparer">Comparer</button> <!-- Ajout de la classe call-to-action-comparer -->
+<h1 class="Title">Éclairez vos rencontres</h1>
+    <h2 class="SubTitle">Trouver le site de rencontre qui vous correspond</h2>
+    <button class="call-to-action call-to-action-comparer">Comparer</button>
     <div class="boxes">
         <div class="box">
-            <p>Comparaison rapide et gratuite</p>
+            <p>Comparaison rapide et </br> gratuite</p>
         </div>
         <div class="box">
             <p>Gain de temps précieux</p>
         </div>
         <div class="box">
-            <p>+ 100 sites de rencontres sélectionnés avec soin</p>
+            <p>+ 100 sites de rencontres <p2 class="p2">sélectionnés avec soin</p2></p>
         </div>
     </div>
     <h2>Le comparateur qui répond à vos besoins réels pour trouver l’application qui <strong>VOUS</strong> correspond</h2>
@@ -77,13 +41,28 @@
             <h1>Comparez le meilleur dans le domaine de la rencontre</h1>
         </div>
         <div class="call-to-action-title">
-            <h3>Comparez des centaines de sites de rencontres et thérapeutes de votre région</h3>
+            <h3>Comparez les sites de rencontres et thérapeutes </h3>
         </div>
         <div class="call-to-action-site">
             <button class="call-to-action">Sites de rencontres</button>
             <button class="call-to-action">Thérapeutes</button>
         </div>
     </div>
+    <div class="boxes">
+        <div class="box">
+            <p>{{post.title}}</p>
+            <p2>{{post.description}}</p2>
+        </div>
+        <div class="box">
+            <p>{{post.title}}</p>
+            <p2>{{post.description}}</p2>
+        </div>
+        <div class="box">
+           <p>{{post.title}}</p>
+            <p2>{{post.description}}</p2>
+        </div>
+    </div>
+
 {% endblock %}
 </body>
 </html>

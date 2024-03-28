@@ -16,6 +16,46 @@ class rencontrer(TemplateView):
     model = Lightener
     template_name = "partner_meet/Home_Rencontres.html"
 
+
+class partner_meet_formulaire(TemplateView):
+    model = Lightener
+    template_name = "partner_meet/Partner_Meet_Formulaire.html"
+
+    # def recherche(request):
+    #   """
+    #   Gère la recherche de sites de rencontre.
+    #   """
+    #   genre = request.GET['genre']
+    #   relation = request.GET['relation']
+    #   age = request.GET['age']
+
+    #   # Récupère les sites de rencontre en fonction des critères de recherche
+
+    #   sites = Site.objects.filter(
+    #     genre=genre,
+    #     relation=relation,
+    #     age_min=age_min,
+    #     age_max=age_max,
+    #   )
+
+    #   context = {
+    #     'sites': sites,
+    #   }
+    # return render(request, 'recherche.html', context)
+
+    # def comparaison(request):
+    #   """
+    #   Affiche la page de comparaison de sites de rencontre.
+    #   """
+    #   sites_ids = request.GET.getlist('sites')
+    #   sites = Site.objects.filter(pk__in=sites_ids)
+
+    #   context = {
+    #     'sites': sites,
+    #   }
+    # return render(request, 'comparaison.html', context)
+
+
 @login_required
 class meet_compare(TemplateView):
     model = Lightener

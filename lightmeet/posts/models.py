@@ -6,6 +6,7 @@ from django.urls import reverse
 User = get_user_model()
 
 class BlogPost(models.Model):
+    image = models.FileField(upload_to='images_blog/',default='')
     title = models.CharField(max_length=255,unique=True,verbose_name="Titre")
     slug = models.SlugField(max_length=255,unique=True,blank=True)
     author = models.ForeignKey(User,on_delete=models.SET_NULL,null=True,blank=True)

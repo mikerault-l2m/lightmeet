@@ -8,8 +8,13 @@
     <meta name="description" content="LightMeet, le premier comparateur d'application de rencontres. Être éclairé pour trouver l'amour.  ">
     <title>LightMeet</title>
     {% block css %}
-    <link rel="stylesheet" href="{% static 'accounts/css/style_base.css' %}">
+    <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
     {% endblock %}
+    <style>
+        header{color:#000000;}
+        footer{color:black;}
+
+    </style>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP9DEQYW1Z"></script>
 <script>
@@ -26,6 +31,9 @@
     <a href="{% url 'Home' %}">
         Lightmeet
     </a>
+    <a href="{% url 'blog_home' %}">Blog</a>
+    <a href="{% url 'Connexion' %}">Connexion</a>
+
     <nav class="NavHeader">
         <div class="menuHamburger">
             <div class=" line Line1"></div>
@@ -57,7 +65,7 @@
             <li>Politique de Cookies</li>
         </a>
     </ul>
-    <ul class="Social">
+    <!--<ul class="Social">
         <li>
             <a href="https://www.instagram.com/lightmeet/">
                 <img class="Instagram" src="{% static 'contexte/Logos/Instagram.png' %}">
@@ -73,7 +81,7 @@
                 <img class="Linkedin" src="{% static 'contexte/Logos/LinkedIn.png' %}">
             </a>
         </li>
-    </ul>
+    </ul>-->
 </footer>
 {% endblock %}
 </body>

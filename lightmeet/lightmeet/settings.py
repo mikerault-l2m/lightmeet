@@ -1,3 +1,4 @@
+
 import os
 import environ
 from pathlib import Path
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 
@@ -83,8 +85,7 @@ TEMPLATES = [
                     os.path.join(BASE_DIR, 'partner_meet/templates'),
                     os.path.join(BASE_DIR, 'psy/templates'),
                     os.path.join(BASE_DIR, 'accounts/templates'),
-                    os.path.join(BASE_DIR, 'support/templates'),
-                    os.path.join(BASE_DIR, 'import_export/templates')],
+                    os.path.join(BASE_DIR, 'support/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,7 +116,7 @@ DATABASES = {
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'listen2meet',
+#        'NAME': 'lightmeet',
 #        'USER': 'mike',
 #       'PASSWORD': 'votre_mot_de_passe_postgresql',
 #       'HOST': 'localhost',  # Ou l'adresse IP de votre serveur PostgreSQL

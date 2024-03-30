@@ -1,5 +1,7 @@
 from django.db import models
-from import_export import resources
+# Bug du serveur : il faut d'abord créer l'API avec 'python manage.py startapp import_export'
+#from import_export.models import resources
+
 # Insérer les variables décidées sur Miro
 
 class PartnerMeet(models.Model):
@@ -39,6 +41,6 @@ class PartnerMeet(models.Model):
         verbose_name = "Notre site de rencontre partenaire"
         verbose_name_plural = "Nos sites de rencontres partenaires"
 
-class PartnerMeetResource(resources.ModelResource):
-    class Meta:
-        model = PartnerMeet
+# PartnerMeetResource(resources.ModelResource):
+#    class Meta:
+#        model = PartnerMeet

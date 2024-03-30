@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+    {% endblock %}
+    <head>
+        <meta charset="UTF-8">
+        {% block title %}
+            <title> Blog</title>
+        {% endblock %}
+    </head>
+    <body>
+        <section id="blog">
+            {% block content %}
+            {% endblock %}
+        </section>
+
+    </body>
+</html>

@@ -92,12 +92,6 @@ body {
     font-style: italic;
 }
 
-header, footer {
-    background-color: transparent; /* Fond transparent */
-    color: black; /* Couleur du texte en noir */
-    text-decoration: none; /* Ne pas souligner le texte */
-}
-
 .call-to-action-container {
     background-color: #FBF1D6;
     padding: 20px;

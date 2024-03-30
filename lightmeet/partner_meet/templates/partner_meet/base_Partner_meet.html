@@ -10,24 +10,38 @@
     {% block css %}
     <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
     {% endblock %}
-    <style>
-        header{color:#000000;}
-        footer{color:black;}
-
-    </style>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SP9DEQYW1Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP9DEQYW1Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-SP9DEQYW1Z');
-</script>
+      gtag('config', 'G-SP9DEQYW1Z');
+    </script>
+    <style>
+        header, footer {
+            background-color: transparent; /* Fond transparent */
+            color: black; /* Couleur du texte en noir */
+            text-decoration: none; /* Ne pas souligner le texte */
+        }
+
+        header a {
+            text-decoration: none; /* Ne pas souligner le texte dans les liens du header */
+            color: black; /* Couleur du texte en noir dans les liens du header */
+            cursor: auto; /* Curseur par défaut */
+        }
+
+        footer a {
+            text-decoration: none; /* Ne pas souligner le texte dans les liens du footer */
+            color: black; /* Couleur du texte en noir dans les liens du footer */
+            cursor: auto; /* Curseur par défaut */
+        }
+    </style>
 </head>
 
 <body class="container">
-<header>
+<header> <!-- Ajoutez la classe spécifique à votre header -->
     <a href="{% url 'Home' %}">
         Lightmeet
     </a>
@@ -65,23 +79,6 @@
             <li>Politique de Cookies</li>
         </a>
     </ul>
-    <!--<ul class="Social">
-        <li>
-            <a href="https://www.instagram.com/lightmeet/">
-                <img class="Instagram" src="{% static 'contexte/Logos/Instagram.png' %}">
-            </a>
-        </li>
-        <li>
-            <a href="https://www.facebook.com/mikelightmeet/">
-                <img class="Facebook" src="{% static 'contexte/Logos/Facebook.png' %}">
-            </a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/company/lightmeet-partner/?viewAsMember=true">
-                <img class="Linkedin" src="{% static 'contexte/Logos/LinkedIn.png' %}">
-            </a>
-        </li>
-    </ul>-->
 </footer>
 {% endblock %}
 </body>

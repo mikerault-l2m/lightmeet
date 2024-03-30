@@ -1,3 +1,55 @@
+@font-face {
+    font-family: fahkwang;
+    src: url(../font/fahkwang/Fahkwang-Bold.ttf);
+
+
+}
+
+
+
+/* Messages */
+
+
+.button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px; /* Espacement entre les boutons (1,5 fois plus grand que 10px) */
+    }
+
+    .Title_Message {
+        font-size: 24px; /* Ajuster la taille du titre des messages */
+        margin-bottom: 10px; /* Espacement entre le titre et les boutons */
+    }
+
+    .custom-button {
+        z-index: 200;
+        opacity: 0.5;
+        width: 800px; /* Largeur du bouton */
+        height: 80px;
+        background: rgba(0, 0, 0, 0.3);
+        margin: 15px 10px; /* Marge ajustée pour obtenir 1,5 fois l'espacement */
+        border-radius: 10px;
+        border: 0.1px solid rgba(229, 229, 229, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .custom-button img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 370px;
+        height: 1px;
+        margin: -470px 0 0 0;
+    }
+/* -------------------------------------------------------- */
+/* base_Contexte.html */
+
 .Inscription {
     padding: 15px;
     z-index: 400;
@@ -7,7 +59,7 @@
     text-decoration: none;
 }
 
-.logoL2M {
+.logolightmeet {
     color: #E5E5E5;
     text-decoration: none;
 }
@@ -18,12 +70,6 @@
     color: #E5E5E5;
     text-decoration: none;
 }
-/*
-.Play {
-    color: #E5E5E5;
-    text-decoration: none;
-} */
-
 
 .Player {
     color: #E5E5E5;
@@ -71,21 +117,28 @@
     justify-content: space-around;
 }
 
-/*header {
-    background-color:linear-gradient(45deg, #EDCB70 0%, #FBFBFB 100%);
-    margin: 0.3em;
+header {
+    margin-top: 0.3em;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 85px;
+    background: linear-gradient(45deg, #EDCB70 0%, #FBFBFB 100%);
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    color: black;
+    transition: all 2s ease;
     font-weight: 100;
     width: 100%;
     font-family: '-apple-system', 'BlinkMacSystemFont', 'sans-serif', 'system-ui';
-    font-size: 16px;
+    font-size: 14px;
     height: 85px;
     z-index: 200;
-}*/
+}
 
+.logoListen {
+    margin: 2.3em;
+}
 
 .ListeHeader {
     display: flex;
@@ -97,7 +150,12 @@
 }
 
 body {
-    background-color: linear-gradient(45deg, #EDCB70 0%, #FBFBFB 100%);;
+    background-image: url(../Logos/modern2.png);
+    background: linear-gradient(45deg, #EDCB70 0%, #FBFBFB 100%);
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    color: black;
+    transition: all 2s ease;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -106,18 +164,19 @@ body {
 /* --------------------footer--------------------------------- */
 
 footer {
-    background-color: #FBF1D6;
     display: flex;
     flex-direction: column;
     justify-content:space-evenly;
-    font-family: '-apple-system', 'BlinkMacSystemFont', 'sans-serif', 'system-ui';
-    font-weight: 100;
     width: 100%;
     height: 100%;
     padding: 20px 0px 20px 0px;
     z-index: 999;
-    font-size: 12px;
-    color:#000000;
+    font-size: 14px;
+    background-color: linear-gradient(45deg, #EDCB70 0%, #FBFBFB 100%);
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    color: black;
+    transition: all 2s ease;
 }
 
 .ListFooter {
@@ -129,7 +188,7 @@ footer {
 
 .linkFooter {
     text-decoration: none;
-    color:#000000;
+    color: #E5E5E5;
 }
 
 .Social {
@@ -175,6 +234,11 @@ footer {
 
     footer {
         padding: 0px 0px 0px 0px;
+        background: linear-gradient(45deg, #EDCB70 0%, #FBFBFB 100%);
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    color: black;
+    transition: all 2s ease;
     }
 
     .Contact,
@@ -205,6 +269,11 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        background: linear-gradient(45deg, #EDCB70 0%, #FBFBFB 100%);
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    color: black;
+    transition: all 2s ease;
     }
 
     .Social {

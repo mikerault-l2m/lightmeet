@@ -19,6 +19,7 @@ class BlogPostCreate(CreateView):
     model = BlogPost
     template_name = "posts/blogpost_create.html"
     fields = ['title','content',]
+
 @method_decorator(login_required,"dispatch")
 class BlogPostUpdate(UpdateView):
     model = BlogPost
@@ -27,11 +28,11 @@ class BlogPostUpdate(UpdateView):
 
 class BlogPostDetail(DetailView):
     model = BlogPost
-    context_object_name = "posts"
+    context_object_name = "post"
     template_name = "posts/blogpost_detail.html"
     fields = ['title','content','published',]
 
 @method_decorator(login_required,"dispatch")
 class BlogPostDelete(DeleteView):
     model = BlogPost
-    success_url = reverse_lazy("blog")
+    success_url = reverse_lazy("blog_home")

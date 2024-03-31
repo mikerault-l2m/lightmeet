@@ -27,6 +27,7 @@ DJANGO_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'livereload',
     'django.contrib.staticfiles',
     # AJOUT POUR PACKAGE ALLAUTH
     'django.contrib.sites',
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',  # Déplacer après AuthenticationMiddleware
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'livereload.middleware.LiveReloadScript',
 ]
 
 MIDDLEWARE_CLASSES = [

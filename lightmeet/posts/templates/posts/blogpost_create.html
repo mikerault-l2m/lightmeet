@@ -1,10 +1,13 @@
 {% extends 'posts/base_Posts.html' %}
-
-{% block title %}
-    <title> Ajouter un article </title>
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/style_2.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'posts/css/style_base.css' %}">
 {% endblock %}
 
-{% block content %}
+<html>
+{% block section %}
 
     <h1> Ajouter un article </h1>
 

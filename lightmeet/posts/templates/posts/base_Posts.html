@@ -2,23 +2,56 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    {% block title %}{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UV-Compatible" content="ie=edge">
+    <meta name="description" content="LightMeet, le premier comparateur d'application de rencontres.Être éclairé pour trouver l'amour.  ">
+    <title>LightMeet</title>
     {% block css %}
-    <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+    <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
     {% endblock %}
-</head>
-<body>
-    <nav>
-        <a href="{% url 'blog_home' %}">Accueil</a>
-        {% if request.user.is_authenticated %}
-        <a href="{% url 'blog_create' %}">Ajouter un article</a>
-        {% endif %}
-    </nav>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP9DEQYW1Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    <section id="blog">
-        {% block content %}
-        {% endblock %}
-    </section>
+      gtag('config', 'G-SP9DEQYW1Z');
+    </script>
+</head>
+<body class="container">
+<header>
+    <a href="{% url 'Home' %}">
+        Lightmeet
+    </a>
+    <a href="{% url 'blog_home' %}">Accueil du blog</a>
+    <a href="{% url 'blog_create' %}">Ajouter un article</a>
+</header>
+{% block content %}
+{% endblock %}
+{% block section %}
+{% endblock %}
+{% block footer %}
+<footer>
+    <ul class="ListFooter">
+        <a class="linkFooter" href="{% url 'Home' %}">
+            <li>© 2024 LightMeet</li>
+        </a>
+        <a class="linkFooter" href="{% url 'Home' %}">
+            <li>Mentions légales</li>
+        </a>
+        <a class="linkFooter" href="{% url 'Home' %}">
+            <li>Politique de confidentialité</li>
+        </a>
+        <a class="linkFooter" href="{% url 'Home' %}">
+            <li>Conditions générales d'utilisation</li>
+        </a>
+        <a class="linkFooter" href="{% url 'Home' %}">
+            <li>Politique de Cookies</li>
+        </a>
+    </ul>
+</footer>
+{% endblock %}
 </body>
 </html>

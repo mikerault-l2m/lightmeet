@@ -1,0 +1,30 @@
+{% extends 'support/base_Support.html' %}
+{% load static %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">{% endblock %}
+{% block section %}
+<section>
+    <div class="Title">Contactez-nous par e-mail</div>
+    <div class="Formulaire" style="font-size: 12px;margin:-15px 0px -5px 0px ;">Utilisez le formulaire ci-dessous</div>
+    <form class="form" method="POST" action="{% url 'Subscribe2' %}">
+        {% csrf_token %}
+        <table>
+            <div class="Apellation" >
+                {{ form.email }}
+            </div>
+        </table>
+        <table>
+            <div class="Apellation2">
+                {{ form.sujet }}
+            </div>
+        </table>
+        <table>
+            <div class="Apellation3">
+                {{ form.message }}
+            </div>
+        </table>
+        <img class="line" src="{% static 'support/Logos/Line.png' %}" style="margin:20px 0px 20px 0px;">
+        <a href ="{% url 'Home' %}" style="z-index:100;color:#E5E5E5;text-decoration:none;display:flex;flex-direction:column;justify-content: space-evenly;text-align:center;align-items:center;"><input class="Inscription" type="submit" value="Envoyer"></a>
+    </form>
+</section>
+{% endblock %}

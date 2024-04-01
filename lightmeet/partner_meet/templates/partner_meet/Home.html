@@ -4,58 +4,67 @@
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
-
 {% endblock %}
+
 <html>
 <body>
 {% block section %}
 <h1 class="Title">Éclairez vos rencontres</h1>
-    <h2 class="SubTitle">Trouver le site de rencontre qui vous correspond</h2>
+<h2 class="SubTitle">Trouver le site de rencontre qui vous correspond</h2>
+
+<a href="{% url 'partner_meet_formulaire' %}">
     <button class="call-to-action call-to-action-comparer">Comparer</button>
-    <div class="boxes">
-        <div class="box">
-            <p>Comparaison rapide et </br> gratuite</p>
-        </div>
-        <div class="box">
-            <p>Gain de temps précieux</p>
-        </div>
-        <div class="box">
-            <p>+ 100 sites de rencontres <p2 class="p2">sélectionnés avec soin</p2></p>
-        </div>
+</a>
+<div class="boxes">
+    <div class="box">
+        <p>Comparaison rapide et </br> gratuite</p>
     </div>
-    <h2>Le comparateur qui répond à vos besoins réels pour trouver l’application qui <strong>VOUS</strong> correspond</h2>
-    <ul>
-        <li>Trouvez l'application de rencontres qui correspond à vos besoins réels</li>
-        <li>Gagnez du temps et de l’argent en comparant facilement en 1 clic</li>
-        <li>Découvrez l’ensemble des sites de rencontres du marché</li>
-        <li>Comparez les différents abonnements proposés par les sites de rencontres</li>
-    </ul>
-    <div class="call-to-action-container">
-        <div class="call-to-action-title">
-            <h1>Comparez le meilleur dans le domaine de la rencontre</h1>
-        </div>
-        <div class="call-to-action-title">
-            <h3>Comparez les sites de rencontres et thérapeutes </h3>
-        </div>
-        <div class="call-to-action-site">
-            <button class="call-to-action">Sites de rencontres</button>
-            <button class="call-to-action">Thérapeutes</button>
-        </div>
+    <div class="box">
+        <p>Gain de temps précieux</p>
     </div>
-    <div class="boxes">
-        <div class="box">
-            <p>{{post.title}}</p>
-            <p2>{{post.description}}</p2>
-        </div>
-        <div class="box">
-            <p>{{post.title}}</p>
-            <p2>{{post.description}}</p2>
-        </div>
-        <div class="box">
-           <p>{{post.title}}</p>
-            <p2>{{post.description}}</p2>
-        </div>
+    <div class="box">
+        <p>+ 100 sites de rencontres <p2 class="p2">sélectionnés avec soin</p2></p>
     </div>
+</div>
+<h2>Le comparateur qui répond à vos besoins réels pour trouver l’application qui <strong>VOUS</strong> correspond</h2>
+<ul>
+    <li>Trouvez l'application de rencontres qui correspond à vos besoins réels</li>
+    <li>Gagnez du temps et de l’argent en comparant facilement en 1 clic</li>
+    <li>Découvrez l’ensemble des sites de rencontres du marché</li>
+    <li>Comparez les différents abonnements proposés par les sites de rencontres</li>
+</ul>
+<div class="call-to-action-container">
+    <div class="call-to-action-title">
+        <h1>Comparez le meilleur du domaine de la rencontre</h1>
+    </div>
+    <div class="call-to-action-site">
+        <button class="call-to-action">Sites de rencontres</button>
+        <button class="call-to-action">Thérapeutes</button>
+    </div>
+</div>
+<div class="boxes">
+    <div class="box">
+        <div class="image-container">
+            <img src="{% static 'posts/Logos/Radial.png' %}" alt="Lightmeet Blog" style="width: 200px; height: 150px;">
+        </div>
+        <p>{{post.title}}</p>
+        <p2>{{post.description}}</p2>
+    </div>
+    <div class="box">
+        <div class="image-container">
+            <img src="{% static 'posts/Logos/Radial.png' %}" alt="Lightmeet Blog" style="width: 200px; height: 150px;">
+        </div>
+        <p>{{post.title}}</p>
+        <p2>{{post.description}}</p2>
+    </div>
+    <div class="box">
+        <div class="image-container">
+            <img src="{% static 'posts/Logos/Radial.png' %}" alt="Lightmeet Blog" style="width: 200px; height: 150px;">
+        </div>
+        <p>{{post.title}}</p>
+        <p2>{{post.description}}</p2>
+    </div>
+</div>
 
 {% endblock %}
 </body>

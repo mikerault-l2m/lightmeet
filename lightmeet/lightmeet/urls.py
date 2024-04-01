@@ -17,7 +17,7 @@ urlpatterns = [
     path('', Home.as_view(), name="Home"),
 
     # Accounts
-    path('connexion', inscription, name="Connexion"),
+    #path('connexion', inscription, name="Connexion"),
     #path('connexion/social_network', SocialNetwork, name="Connexion par réseau social"),
     #path('login', login_view, name="login"),
     #path('logout', logout_view, name="logout"),
@@ -32,7 +32,10 @@ urlpatterns = [
     #path('mentions_légales/PC', legal_Control_PC.as_view(), name="PC"),
 
     # Partner_meet
-    #path('recherche/', partner_meet_formulaire.as_view(), name="partner_meet_formulaire"),
+    path('lightmeet/recherche/', partner_meet_formulaire.as_view(), name="partner_meet_formulaire"),
+
+    #Support
+    path('support/', SupportModel.as_view(), name="Contact"),
 
     # Blog
     path('blog/', BlogHome.as_view(), name="blog_home"),

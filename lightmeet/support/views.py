@@ -7,4 +7,4 @@ import time
 
 class SupportModel(TemplateView):
     model = SupportTicket
-    template_name = "support/Contact.html"
+    template_name = "support/Support.html"

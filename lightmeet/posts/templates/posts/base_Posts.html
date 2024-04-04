@@ -19,11 +19,30 @@
 
       gtag('config', 'G-SP9DEQYW1Z');
     </script>
+        <style>
+        header, footer {
+            background-color: transparent; /* Fond transparent */
+            color: black; /* Couleur du texte en noir */
+            text-decoration: none; /* Ne pas souligner le texte */
+        }
+
+        header a {
+            text-decoration: none; /* Ne pas souligner le texte dans les liens du header */
+            color: black; /* Couleur du texte en noir dans les liens du header */
+            cursor: auto; /* Curseur par défaut */
+        }
+
+        footer a {
+            text-decoration: none; /* Ne pas souligner le texte dans les liens du footer */
+            color: black; /* Couleur du texte en noir dans les liens du footer */
+            cursor: auto; /* Curseur par défaut */
+        }
+    </style>
 </head>
 <body class="container">
 <header>
-    <a href="{% url 'Home' %}">
-        Lightmeet
+    <a href="{% url 'Home' %}" style="font-size:30px;">
+        LIGHTMEET
     </a>
     <a href="{% url 'blog_home' %}">Accueil du blog</a>
     <a href="{% url 'blog_create' %}">Ajouter un article</a>

@@ -17,43 +17,80 @@ class rencontrer(TemplateView):
     template_name = "partner_meet/Home_Rencontres.html"
 
 
-class partner_meet_formulaire(TemplateView):
-    model = Lightener
+def trouver_meilleur_site(site_comparateur, sites):
+    meilleur_site = None
+    meilleur_score = -1
+
+    # Parcourez les sites pour trouver le meilleur site
+    for site in sites:
+        if site != site_comparateur:  # Ne pas comparer un site avec lui-même
+            score = calculer_score(site_comparateur, site)
+            if score > meilleur_score:
+                meilleur_site = site
+                meilleur_score = score
+    return meilleur_site
+
+
+def calculer_score(site1, site2):
+    # Poids des différents critères de comparaison
+    poids_popularite = 0.5
+    poids_prix = 0.3
+    poids_fonctionnalites = 0.2
+
+    # Calcul du score en fonction des attributs des sites et de leur importance respective
+    score = 0
+
+    # Comparaison de la popularité
+    score += poids_popularite * abs(site1.popularite - site2.popularite)
+
+    # Comparaison du prix
+    score += poids_prix * abs(site1.prix - site2.prix)
+
+    # Comparaison des fonctionnalités (par exemple, longueur de la liste)
+    score += poids_fonctionnalites * abs(len(site1.fonctionnalites) - len(site2.fonctionnalites))
+
+    return score
+
+
+# Il faut d'abord que la version avec Genre,Relation et Age fonctionne avant d'aller chercher les meilleures sites !
+
+
+start = time.time()
+# Step 3 : Dans cette phase, l'utilisateur souhaite découvrir les sites selon ces critères de recherche :
+class Recherche_Meet(TemplateView):
     template_name = "partner_meet/Partner_Meet_Formulaire.html"
 
-    # def recherche(request):
-    #   """
-    #   Gère la recherche de sites de rencontre.
-    #   """
-    #   genre = request.GET['genre']
-    #   relation = request.GET['relation']
-    #   age = request.GET['age']
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
-    #   # Récupère les sites de rencontre en fonction des critères de recherche
+        meet_sites = Comparateur.objects.all()
 
-    #   sites = Site.objects.filter(
-    #     genre=genre,
-    #     relation=relation,
-    #     age_min=age_min,
-    #     age_max=age_max,
-    #   )
+        meet_sites_data = [{
+            'nom': meet_site.nom,
+            'genre_find': meet_site.genre_find,
+            'logo': meet_site.logo,
+            'url': meet_site.url,
+            'relation': meet_site.relation,
+            'age': meet_site.age,
+            'popularite': meet_site.popularite,
+            'prix': meet_site.prix,
+            'fonctionnalites': meet_site.fonctionnalites,
+        } for meet_site in meet_sites]
 
-    #   context = {
-    #     'sites': sites,
-    #   }
-    # return render(request, 'recherche.html', context)
+        context['meet_sites'] = meet_sites_data
+        return context
 
-    # def comparaison(request):
-    #   """
-    #   Affiche la page de comparaison de sites de rencontre.
-    #   """
-    #   sites_ids = request.GET.getlist('sites')
-    #   sites = Site.objects.filter(pk__in=sites_ids)
+    def post(self, request, *args, **kwargs):
+        meet_sites = Comparateur.objects.all()
+        save_user_data(request.user, meet_sites)
+        return self.render_to_response(self.get_context_data())
 
-    #   context = {
-    #     'sites': sites,
-    #   }
-    # return render(request, 'comparaison.html', context)
+end = time.time()
+elapsed = end - start
+print(f'Temps d\'exécution de la méthode de détermination du genre : {elapsed:.2f} secondes')
+
+
+
 
 
 @login_required

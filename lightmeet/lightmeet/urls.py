@@ -32,7 +32,7 @@ urlpatterns = [
     #path('mentions_légales/PC', legal_Control_PC.as_view(), name="PC"),
 
     # Partner_meet
-    path('lightmeet/recherche/', partner_meet_formulaire.as_view(), name="partner_meet_formulaire"),
+    path('recherche/',Recherche_Meet.as_view(), name="partner_meet_formulaire"),
 
     #Support
     path('support/', SupportModel.as_view(), name="Contact"),

@@ -41,10 +41,10 @@
 </head>
 
 <body class="container">
-<header> <!-- Ajoutez la classe spécifique à votre header -->
+<header>
     <a href="{% url 'Home' %}" style="font-size:30px;font-style:italic;">
-        LIGHTMEET
-    </a>
+        <img src="{% static 'partner_meet/Logos/Lightmeet.png' %}" style="max-width: 200px; height: auto;">
+</a>
     <a href="{% url 'blog_home' %}">Blog</a>
     <a href="{% url 'Contact' %}">Support</a>
 

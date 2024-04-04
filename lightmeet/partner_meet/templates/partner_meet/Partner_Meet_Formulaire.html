@@ -6,41 +6,35 @@
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
 {% block section %}
-<html lang="fr">
-<body>
-    <main>
-    <h1>Comparateur de sites de rencontres</h1>
+<main>
+    <h1 style="text-align:center;align-items:center;">Comparateur de sites de rencontres</h1>
     <p>Vous êtes à la recherche de l'amour mais vous hésitez entre plusieurs plateformes de rencontre en ligne?</p>
     <p>LightMeet vous offre un outil de comparaison de sites de rencontre inégalé, vous permettant de comparer gratuitement jusqu'à 4 plateformes selon différents critères : le genre des utilisateurs, la tranche d'âge ciblée et le type de relation recherché</p>
     <p>Ne perdez plus de temps pour trouver cette personne.</p>
     <p>Avec LightMeet, trouvez la plateforme qui correspond parfaitement à vos attentes et à vos besoins pour une expérience amoureuse enrichissante.</p>
     <section class="recherche">
-      <h2>Recherchez</h2>
-      <form action="#">
-        <label for="genre">Genre</label>
-        <select name="genre" id="genre">
-          <option value="femmes">Femmes</option>
-          <option value="hommes">Hommes</option>
-          <option value="tous">Tous</option>
-        </select>
-        <label for="relation">Relation</label>
-        <select name="relation" id="relation">
-          <option value="serieuses">Sérieuses</option>
-          <option value="amicales">Amicales</option>
-          <option value="tous">Tous</option>
-        </select>
-        <label for="age">Tranche d'âge</label>
-        <select name="age" id="age">
-          <option value="18-25">18-25 ans</option>
-          <option value="25-35">25-35 ans</option>
-          <option value="35-45">35-45 ans</option>
-          <option value="45-55">45-55 ans</option>
-          <option value="plus">Plus de 55 ans</option>
-        </select>
-        <button type="submit">Rechercher</button>
-      </form>
+        <h2>Recherchez</h2>
+        <form action="{% url 'partner_meet_formulaire' %}" method="get">
+            <select name="genre" id="genre">
+                {% for choice in genre_choices %}
+                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+            </select>
+
+            <select name="relation" id="relation">
+                {% for choice in relation_choices %}
+                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+            </select>
+
+            <select name="age" id="age">
+                {% for choice in age_choices %}
+                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">Rechercher</button>
+        </form>
     </section>
-  </main>
+</main>
 {% endblock %}
-</body>
-</html>

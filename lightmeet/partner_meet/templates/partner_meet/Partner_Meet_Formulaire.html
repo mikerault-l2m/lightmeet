@@ -1,40 +1,29 @@
 {% extends 'partner_meet/base_Partner_meet.html' %}
+
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_3.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
-{% block section %}
-<main>
-    <h1 style="text-align:center;align-items:center;">Comparateur de sites de rencontres</h1>
-    <p>Vous êtes à la recherche de l'amour mais vous hésitez entre plusieurs plateformes de rencontre en ligne?</p>
-    <p>LightMeet vous offre un outil de comparaison de sites de rencontre inégalé, vous permettant de comparer gratuitement jusqu'à 4 plateformes selon différents critères : le genre des utilisateurs, la tranche d'âge ciblée et le type de relation recherché</p>
-    <p>Ne perdez plus de temps pour trouver cette personne.</p>
-    <p>Avec LightMeet, trouvez la plateforme qui correspond parfaitement à vos attentes et à vos besoins pour une expérience amoureuse enrichissante.</p>
-    <section class="recherche">
-        <h2>Recherchez</h2>
-        <form action="{% url 'partner_meet_formulaire' %}" method="get">
-            <select name="genre" id="genre">
-                {% for choice in genre_choices %}
-                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                {% endfor %}
-            </select>
-
-            <select name="relation" id="relation">
-                {% for choice in relation_choices %}
-                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                {% endfor %}
-            </select>
-
-            <select name="age" id="age">
-                {% for choice in age_choices %}
-                <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                {% endfor %}
-            </select>
-
-            <button type="submit">Rechercher</button>
-        </form>
-    </section>
-</main>
-{% endblock %}
+<html>
+    <body>
+    {% block section %}
+    <div class="container">
+        <h1>Analyse du comparateur</h1>
+        {% for site in sites %}
+            <article>
+                <h2>{{ site.nom }}</h2>
+                <img src="{{ site.logo.url }}" alt="{{ site.nom }} Logo">
+                <p>Genre recherché : {{ site.genre_find }}</p>
+                <p>Relation : {{ site.relation }}</p>
+                <p>Tranche d'âge : {{ site.age }}</p>
+                <a href="{{ site.url }}">Visiter le site</a>
+            </article>
+        {% empty %}
+            <p>Aucun site de rencontre trouvé pour le moment.</p>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'posts/base_Posts.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+{% block content %}
+<article>
+    <h1>{{ site.nom }}</h1>
+    <img src="{{ site.logo.url }}" alt="{{ site.nom }} Logo">
+    <p>Genre recherché : {{ site.genre_find }}</p>
+    <p>Relation : {{ site.relation }}</p>
+    <p>Tranche d'âge : {{ site.age }}</p>
+    <a href="{{ site.url }}">Visiter le site</a>
+</article>
+{% endblock %}

@@ -54,14 +54,12 @@ class Comparateur(models.Model):
         ("Non déterminé", "Je cherche tout le monde"),
     )
     genre_find = models.CharField(choices=GENRE_FIND_CHOICES, max_length=25, default='Non déterminé')
-
     RELATION_CHOICES = (
         ('durables', 'Durables'),
         ('Relation d\'un soir', 'Relation d\' un soir'),
         ('toutes', 'Toutes')
     )
     relation = models.CharField(max_length=50, choices=RELATION_CHOICES)
-
     AGE_CHOICES = (
         ('18-25', '18-25 ans'),
         ('25-35', '25-35 ans'),
@@ -71,12 +69,13 @@ class Comparateur(models.Model):
     )
     age = models.CharField(max_length=50, choices=AGE_CHOICES)
 
-    popularite = models.PositiveIntegerField(default=0)
-    prix = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    fonctionnalites = models.TextField(default='')
+    #popularite = models.PositiveIntegerField(default=0)
+    #prix = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    #fonctionnalites = models.TextField(default='')
 
     def __str__(self):
         return self.nom
+        return self.url
 
     class Meta:
         verbose_name = "Notre marque de rencontre partenaire"

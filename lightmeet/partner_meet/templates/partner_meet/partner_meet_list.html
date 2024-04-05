@@ -1,0 +1,22 @@
+{% extends 'posts/base_Posts.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>Comparateur de rencontres</h1>
+    {% for site in sites %}
+        <article>
+            <h2>{{ site.nom }}</h2>
+            <img src="{{ site.logo.url }}" alt="{{ site.nom }} Logo">
+            <a href="{{ site.url }}">Visiter le site</a>
+
+        </article>
+    {% empty %}
+        <p>Aucun site de rencontre trouvé pour le moment.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -20,11 +20,6 @@ class rencontrer(TemplateView):
     template_name = "partner_meet/Home_Rencontres.html"
 
 
-
-
-
-# Step 1 : Il faut d'abord que la version avec Genre,Relation et Age fonctionne avant d'aller chercher les meilleures sites !
-
 class Recherche_Meet(TemplateView):
     template_name = "partner_meet/Partner_Meet_Formulaire.html"
 
@@ -70,39 +65,40 @@ class Recherche_Meet(TemplateView):
 
         return context
 
+
+# Step 1 : Il faut d'abord que la version avec Genre,Relation et Age fonctionne avant d'aller chercher les meilleures sites !
+
 #Step 2 : On utilise List Detail Create Update et Delete pour faire apparaitre nos marques
 
-class PartnerMeetList(ListView):
-    model = Comparateur
-    context_object_name = "sites"
-    template_name = "partner_meet/partner_meet_list.html"
+#class PartnerMeetHome(ListView):
+#    model = Comparateur
+#    context_object_name = "posts"
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset
+#    def get_queryset(self):
+#        queryset = super().get_queryset()
 
-class PartnerMeetDetail(DetailView):
-    model = Comparateur
-    context_object_name = "site"
-    template_name = "partner_meet/partner_meet_detail.html"
+#class PartnerMeetDetail(DetailView):
+#    model = Comparateur
+#    context_object_name = "site"
+#    template_name = "partner_meet/partner_meet_detail.html"
 
 
-@method_decorator(login_required, name='dispatch')
-class PartnerMeetCreate(CreateView):
-    model = Comparateur
-    template_name = "partner_meet/partner_meet_create.html"
-    fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
+#@method_decorator(login_required, name='dispatch')
+#class PartnerMeetCreate(CreateView):
+#    model = Comparateur
+#    template_name = "partner_meet/partner_meet_create.html"
+#    fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
 
-@method_decorator(login_required, name='dispatch')
-class PartnerMeetUpdate(UpdateView):
-    model = Comparateur
-    template_name = "partner_meet/partner_meet_edit.html"
-    fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
+#@method_decorator(login_required, name='dispatch')
+#class PartnerMeetUpdate(UpdateView):
+#    model = Comparateur
+#    template_name = "partner_meet/partner_meet_edit.html"
+#    fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
 
-@method_decorator(login_required, name='dispatch')
-class PartnerMeetDelete(DeleteView):
-    model = Comparateur
-    success_url = reverse_lazy("partner_meet_list")
+#@method_decorator(login_required, name='dispatch')
+#class PartnerMeetDelete(DeleteView):
+#    model = Comparateur
+#    success_url = reverse_lazy("partner_meet_list")
 
 
 

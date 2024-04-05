@@ -70,35 +70,35 @@ class Recherche_Meet(TemplateView):
 
 #Step 2 : On utilise List Detail Create Update et Delete pour faire apparaitre nos marques
 
-#class PartnerMeetHome(ListView):
-#    model = Comparateur
-#    context_object_name = "posts"
+class PartnerMeetHome(ListView):
+    model = Comparateur
+    context_object_name = "sites"
 
-#    def get_queryset(self):
-#        queryset = super().get_queryset()
+    def get_queryset(self):
+        queryset = super().get_queryset()
 
-#class PartnerMeetDetail(DetailView):
-#    model = Comparateur
-#    context_object_name = "site"
-#    template_name = "partner_meet/partner_meet_detail.html"
+class PartnerMeetDetail(DetailView):
+    model = Comparateur
+    context_object_name = "site"
+    template_name = "partner_meet/partner_meet_detail.html"
 
 
-#@method_decorator(login_required, name='dispatch')
-#class PartnerMeetCreate(CreateView):
-#    model = Comparateur
-#    template_name = "partner_meet/partner_meet_create.html"
-#    fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
+@method_decorator(login_required, name='dispatch')
+class PartnerMeetCreate(CreateView):
+    model = Comparateur
+    template_name = "partner_meet/partner_meet_create.html"
+    fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
 
-#@method_decorator(login_required, name='dispatch')
-#class PartnerMeetUpdate(UpdateView):
-#    model = Comparateur
-#    template_name = "partner_meet/partner_meet_edit.html"
-#    fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
+@method_decorator(login_required, name='dispatch')
+class PartnerMeetUpdate(UpdateView):
+    model = Comparateur
+    template_name = "partner_meet/partner_meet_edit.html"
+    fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
 
-#@method_decorator(login_required, name='dispatch')
-#class PartnerMeetDelete(DeleteView):
-#    model = Comparateur
-#    success_url = reverse_lazy("partner_meet_list")
+@method_decorator(login_required, name='dispatch')
+class PartnerMeetDelete(DeleteView):
+    model = Comparateur
+    success_url = reverse_lazy("partner_meet_list")
 
 
 

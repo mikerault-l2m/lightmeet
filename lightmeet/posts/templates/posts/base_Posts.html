@@ -41,9 +41,9 @@
 </head>
 <body class="container">
 <header>
-    <a href="{% url 'Home' %}" style="font-size:30px;">
-        LIGHTMEET
-    </a>
+    <a href="{% url 'Home' %}" style="font-size:30px;font-style:italic;">
+        <img src="{% static 'partner_meet/Logos/Lightmeet.png' %}" style="max-width: 200px; height: auto;">
+</a>
     <a href="{% url 'blog_home' %}">Accueil du blog</a>
     <a href="{% url 'blog_create' %}">Ajouter un article</a>
 </header>

@@ -6,24 +6,22 @@
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
 
-<html>
-<body>
 {% block section %}
 <h1 class="Title">Éclairez vos rencontres</h1>
 <h2 class="SubTitle">Trouvez le site de rencontre qui vous correspond</h2>
 
-<a href="{% url 'partner_meet_formulaire' %}">
-    <button class="call-to-action call-to-action-comparer">Comparer</button>
+<a href="{% url 'recherche_home' %}">
+    <button class="call-to-action call-to-action-comparer">Rechercher</button>
 </a>
 <div class="boxes">
     <div class="box">
-        <p>Comparaison rapide et </br> gratuite</p>
+        <p>Comparaison rapide et gratuite</p>
     </div>
     <div class="box">
         <p>Gain de temps précieux</p>
     </div>
     <div class="box">
-        <p>+ 100 sites de rencontres <p2 class="p2">sélectionnés avec soin</p2></p>
+        <p>+ 100 sites de rencontres sélectionnés avec soin</p>
     </div>
 </div>
 <h2>Le comparateur qui répond à vos besoins réels pour trouver l’application qui <strong>VOUS</strong> correspond</h2>
@@ -47,22 +45,22 @@
         <div class="image-container">
             <img src="{% static 'posts/Logos/1.png' %}" alt="Lightmeet Blog" style="width: 200px; height: 150px;">
         </div>
-        <p>{{post.title}}</p>
-        <p2>{{post.description}}</p2>
+        <p>{{ post.title }}</p>
+        <p>{{ post.description }}</p>
     </div>
     <div class="box">
         <div class="image-container">
             <img src="{% static 'posts/Logos/2.png' %}" alt="Lightmeet Blog" style="width: 200px; height: 150px;">
         </div>
-        <p>{{post.title}}</p>
-        <p2>{{post.description}}</p2>
+        <p>{{ post.title }}</p>
+        <p>{{ post.description }}</p>
     </div>
     <div class="box">
         <div class="image-container">
             <img src="{% static 'posts/Logos/3.png' %}" alt="Lightmeet Blog" style="width: 200px; height: 150px;">
         </div>
-        <p>{{post.title}}</p>
-        <p2>{{post.description}}</p2>
+        <p>{{ post.title }}</p>
+        <p>{{ post.description }}</p>
     </div>
 </div>
 

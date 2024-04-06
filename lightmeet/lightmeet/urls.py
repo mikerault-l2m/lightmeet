@@ -32,14 +32,11 @@ urlpatterns = [
     #path('mentions_légales/PC', legal_Control_PC.as_view(), name="PC"),
 
     # Partner_meet
-    path('recherche/user',Recherche_Meet.as_view(), name="partner_meet_formulaire"),
-    path('recherche/sites-de-rencontres',Recherche_Meet.as_view(),name="sites de rencontres"),
-
-    #path('recherche/', PartnerMeetHome.as_view(), name="recherche_home"),
-    #path('recherche/create/', PartnerMeetCreate.as_view(), name="recherche_create"),
-    #path('recherche/<int:pk>/', PartnerMeetDetail.as_view(), name="recherche_detail"),
-    #path('recherche/edit/<int:pk>/', PartnerMeetUpdate.as_view(), name="recherche_edit"),
-    #path('recherche/delete/<int:pk>/', PartnerMeetDelete.as_view(), name="recherche_delete"),
+    path('recherche/', PartnerMeetHome.as_view(), name="recherche_home"),
+    path('recherche/create/', PartnerMeetCreate.as_view(), name="recherche_create"),
+    path('recherche/<int:pk>/', PartnerMeetDetail.as_view(), name="recherche_detail"),
+    path('recherche/edit/<int:pk>/', PartnerMeetUpdate.as_view(), name="recherche_edit"),
+    path('recherche/delete/<int:pk>/', PartnerMeetDelete.as_view(), name="recherche_delete"),
 
     #Support
     path('support/', SupportModel.as_view(), name="Contact"),

@@ -1,0 +1,56 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+<style>
+    .logo-button {
+        display: flex;
+        align-items: center; /* Aligner les éléments verticalement */
+    }
+
+    .logo-button img {
+        margin-right: 10px; /* Ajouter un espace entre le logo et le texte */
+    }
+
+    .logo-link {
+        margin-bottom: 20px; /* Ajouter un espacement entre les boutons */
+    }
+
+    /* Déplacer l'URL à 300px à partir du bord gauche */
+    .logo-link {
+        position: relative;
+    }
+
+    .logo-link p {
+        position: absolute;
+        left: 300px;
+    }
+</style>
+{% endblock %}
+
+{% block section %}
+<div class="container">
+    <h1>Découvrez les sites de rencontres</h1>
+    <div class="button-container" style="
+        display:flex;
+        flex-direction:column;
+        justify-content:center;">
+        {% for partner in partner_meet %}
+            <a href="{{ partner.url }}" class="logo-link">
+                <button class="logo-button">
+                    <img src="{{ partner.logo.url }}" alt="{{ partner.nom }} Logo">
+                    <span>{{ partner.description }}</span>
+                </button>
+                <p>{{ partner.url }}</p> <!-- Déplacer l'URL à 300px -->
+            </a>
+        {% empty %}
+            <br><p>Les sites de rencontres sont en train d'être sélectionnés par l'équipe de <i>Lightmeet</i></p>
+            <p style="text-align:center;"><strong style="font-size:25px;">BIENTÔT disponible</strong></p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

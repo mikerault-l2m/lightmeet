@@ -9,25 +9,47 @@ from partner_meet.models import *
 from partner_meet.forms import *
 from django.conf import settings
 import time
+from django.db.models import Q
 
+# Affichage de la page principale :
 
 class Home(TemplateView):
     model = Lightener
     template_name = "partner_meet/Home.html"
 
-class rencontrer(TemplateView):
-    model = Lightener
-    template_name = "partner_meet/Home_Rencontres.html"
+start = time.time()
+class PartnerMeetHome(ListView):
+    model = Comparateur
+    context_object_name = "partner_meet"
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
 
-class Recherche_Meet(TemplateView):
-    template_name = "partner_meet/Partner_Meet_Formulaire.html"
+        # Filtrer en fonction des choix de l'utilisateur
+        gender = self.request.GET.get('gender')
+        relationship = self.request.GET.get('relationship')
+        age_range = self.request.GET.get('age_range')
+
+        if gender:
+            queryset = queryset.filter(genre=gender)
+        if relationship:
+            queryset = queryset.filter(relation=relationship)
+        if age_range:
+            if age_range == 'plus':
+                queryset = queryset.filter(age__gte=55)
+            else:
+                lower_age, upper_age = age_range.split('-')
+                queryset = queryset.filter(age__gte=lower_age, age__lte=upper_age)
+
+        if not self.request.user.is_authenticated:
+            queryset = queryset.filter(published=True)
+
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        meet_sites = Comparateur.objects.all()
-
+        # Choix pour l'utilisateur : genre, type de relation et tranche d'âge
         genre_choices = (
             ("Homme", "Je cherche un homme"),
             ("Femme", "Je cherche une femme"),
@@ -46,19 +68,6 @@ class Recherche_Meet(TemplateView):
             ('plus', 'Plus de 55 ans')
         )
 
-        meet_sites_data = []
-        for meet_site in meet_sites:
-            meet_site_data = {
-                'nom': meet_site.nom,
-                'genre_find': meet_site.genre_find,
-                'logo': meet_site.logo,
-                'url': meet_site.url,
-                'relation': meet_site.relation,
-                'age': meet_site.age,
-            }
-            meet_sites_data.append(meet_site_data)
-
-        context['meet_sites'] = meet_sites_data
         context['genre_choices'] = genre_choices
         context['relation_choices'] = relation_choices
         context['age_choices'] = age_choices
@@ -66,35 +75,33 @@ class Recherche_Meet(TemplateView):
         return context
 
 
-# Step 1 : Il faut d'abord que la version avec Genre,Relation et Age fonctionne avant d'aller chercher les meilleures sites !
 
-#Step 2 : On utilise List Detail Create Update et Delete pour faire apparaitre nos marques
+end = time.time()
+elapsed = end - start
+print(f'Temps d\'exécution de la recherche de sites de rencontres : {elapsed:.2f} secondes')
 
-class PartnerMeetHome(ListView):
-    model = Comparateur
-    context_object_name = "sites"
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-
+# Réalise cette étape d'optimisation lors du clic sur recherche par l'utilisateur
 class PartnerMeetDetail(DetailView):
     model = Comparateur
     context_object_name = "site"
     template_name = "partner_meet/partner_meet_detail.html"
 
-
+# Step create site de rencontres :
 @method_decorator(login_required, name='dispatch')
 class PartnerMeetCreate(CreateView):
     model = Comparateur
     template_name = "partner_meet/partner_meet_create.html"
     fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
 
+#Step edit site de rencontres:
 @method_decorator(login_required, name='dispatch')
 class PartnerMeetUpdate(UpdateView):
     model = Comparateur
     template_name = "partner_meet/partner_meet_edit.html"
     fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
 
+#Step delete site de rencontres :
 @method_decorator(login_required, name='dispatch')
 class PartnerMeetDelete(DeleteView):
     model = Comparateur

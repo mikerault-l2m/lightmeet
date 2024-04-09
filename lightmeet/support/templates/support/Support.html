@@ -1,4 +1,4 @@
-{% extends 'support/base_Support.html' %}
+{% extends 'posts/base_Posts.html' %}
 {% load static %}
 
 {% block css %} <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">{% endblock %}
@@ -6,7 +6,7 @@
 <section>
     <div class="Title">Contactez-nous par e-mail</div>
     <div class="Formulaire" style="font-size: 12px;margin:-15px 0px -5px 0px ;">Utilisez le formulaire ci-dessous</div>
-    <form class="form" method="POST" action="{% url 'Subscribe2' %}">
+    <form class="form" method="POST">
         {% csrf_token %}
         <table>
             <div class="Apellation" >

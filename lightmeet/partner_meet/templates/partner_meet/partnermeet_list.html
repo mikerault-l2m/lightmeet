@@ -1,0 +1,30 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+
+{% block section %}
+<div class="container">
+    <h1>Découvrez les sites de rencontres</h1>
+    <div>
+        {% for partner in partnermeet %}
+            <a href="{{ partner.url }}" class="logo-link">
+                <button class="logo-button">
+                    <img src="{{ partner.logo.url }}" alt="{{ partner.nom }} Logo" style="width: 200px; height: 180px;border-radius:30px;">
+                    <span>{{ partner.description }}
+                <p>{{ partner.url }}</p></span>
+                </button>
+
+            </a>
+        {% empty %}
+            <br><p>Les sites de rencontres sont en train d'être sélectionnés par l'équipe de <i>Lightmeet</i></p>
+            <p style="text-align:center;"><strong style="font-size:25px;">BIENTÔT disponible</strong></p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

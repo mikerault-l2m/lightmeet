@@ -19,34 +19,15 @@
 
       gtag('config', 'G-SP9DEQYW1Z');
     </script>
-    <style>
-        header, footer {
-            background-color: transparent; /* Fond transparent */
-            color: black; /* Couleur du texte en noir */
-            text-decoration: none; /* Ne pas souligner le texte */
-        }
-
-        header a {
-            text-decoration: none; /* Ne pas souligner le texte dans les liens du header */
-            color: black; /* Couleur du texte en noir dans les liens du header */
-            cursor: auto; /* Curseur par défaut */
-        }
-
-        footer a {
-            text-decoration: none; /* Ne pas souligner le texte dans les liens du footer */
-            color: black; /* Couleur du texte en noir dans les liens du footer */
-            cursor: auto; /* Curseur par défaut */
-        }
-    </style>
 </head>
 
 <body class="container">
-<header> <!-- Ajoutez la classe spécifique à votre header -->
-    <a href="{% url 'Home' %}">
-        Lightmeet
-    </a>
-    <a href="{% url 'blog_home' %}">Blog</a>
-    <a href="{% url 'Contact' %}">Support</a>
+<header>
+    <a href="{% url 'Home' %}" class="ListeHeader">
+        <img src="{% static 'partner_meet/Logos/Lightmeet.png' %}" style="max-width: 200px; height: auto;">
+</a>
+    <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
+    <a href="{% url 'Contact' %}" class="ListeHeader">Support</a>
 
     <nav class="NavHeader">
         <div class="menuHamburger">
@@ -77,6 +58,9 @@
         </a>
         <a class="linkFooter" href="{% url 'Home' %}">
             <li>Politique de Cookies</li>
+        </a>
+        <a class="linkFooter" href="{% url 'Home' %}">
+            <li>Presse</li>
         </a>
     </ul>
 </footer>

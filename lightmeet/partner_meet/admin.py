@@ -7,23 +7,10 @@ from partner_meet.models import *
 # Version corrigée
 class PartnerMeetAdmin(admin.ModelAdmin):
     model = PartnerMeet
-    list_display = ['numero', 'logo', 'url', 'non_affilie', 'categorie', 'nombre_visiteurs_par_mois', 'pourcentage_femmes', 'tranche_age', 'durabilite', 'qualite_du_site']
+    list_display = ['nom', 'logo', 'genre_find', 'relation', 'age', 'prix_avg', 'ranking', 'url', 'affiliation', 'categorie', 'nombre_visiteurs_par_mois', 'pourcentage_femmes', 'tranche_age', 'google_trustpilot_avg', 'description', 'min_price', 'storytelling_comment', 'date_creation']
 
 admin.site.register(PartnerMeet)
 
-# class ComparateurSiteRencontreAdmin(admin.ModelAdmin):
-#     model = ComparateurSiteRencontre
-#     search_fields = ['nom']
-#     list_display = ['nom','genre','logo','url','relation','age','popularite','prix','fonctionnalites']
-
-# admin.site.register(ComparateurSiteRencontre)
-
-class ComparateurAdmin(admin.ModelAdmin):
-    model = Comparateur
-    search_fields = ['nom']
-    list_display = ['nom','genre_find','logo','url','relation','age','popularite','prix','fonctionnalites']
-
-admin.site.register(Comparateur)
 
 # from django.contrib import admin
 # from import_export.admin import ImportExportModelAdmin

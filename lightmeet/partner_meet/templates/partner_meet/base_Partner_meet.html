@@ -23,11 +23,11 @@
 
 <body class="container">
 <header>
-    <a href="{% url 'Home' %}" style="font-size:30px;font-style:italic;">
+    <a href="{% url 'Home' %}" class="ListeHeader">
         <img src="{% static 'partner_meet/Logos/Lightmeet.png' %}" style="max-width: 200px; height: auto;">
 </a>
-    <a href="{% url 'blog_home' %}">Blog</a>
-    <a href="{% url 'Contact' %}">Support</a>
+    <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
+    <a href="{% url 'Contact' %}" class="ListeHeader">Support</a>
 
     <nav class="NavHeader">
         <div class="menuHamburger">
@@ -58,6 +58,9 @@
         </a>
         <a class="linkFooter" href="{% url 'Home' %}">
             <li>Politique de Cookies</li>
+        </a>
+        <a class="linkFooter" href="{% url 'Home' %}">
+            <li>Presse</li>
         </a>
     </ul>
 </footer>

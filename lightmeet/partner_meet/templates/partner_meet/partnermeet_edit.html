@@ -5,11 +5,12 @@
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
-{% block content %}
-<h1>Ajouter un site de rencontre</h1>
+{% block section %}
+<h1>Éditer un site de rencontre</h1>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Créer</button>
+    <button type="submit">Éditer</button>
 </form>
 {% endblock %}
+

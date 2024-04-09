@@ -26,10 +26,11 @@ urlpatterns = [
     #path('connexion/delete_account', delete_account, name="Delete Account"),
 
     # Legal
-    #path('mentions_légales', legal_Control_2.as_view(), name="Mentions légales"),
-    #path('mentions_légales/CGU', legal_Control_CGU.as_view(), name="CGU"),
-    #path('mentions_légales/PDC', legal_Control_PDC.as_view(), name="PDC"),
-    #path('mentions_légales/PC', legal_Control_PC.as_view(), name="PC"),
+    path('mentions_légales/', LegalHome.as_view(), name="legal_home"),
+    path('mentions_légales/create/', LegalCreate.as_view(), name="legal_create"),
+    path('mentions_légales/<str:slug>/', LegalDetail.as_view(), name="legal_detail"),
+    path('mentions_légales/edit/<str:slug>/', LegalUpdate.as_view(), name="legal_edit"),
+    path('mentions_légales/delete/<str:slug>/', LegalDelete.as_view(), name="legal_delete"),
 
     # Partner_meet
     path('recherche/', PartnerMeetHome.as_view(), name="recherche_home"),

@@ -1,0 +1,19 @@
+{% extends 'legal/base_Legal.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+
+<html>
+{% block section %}
+
+    <h1> Ajouter un article juridique</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Créer l'article">
+    </form>
+{% endblock %}

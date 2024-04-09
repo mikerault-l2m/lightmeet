@@ -18,6 +18,7 @@ LOCAL_APPS = [
     'legal',
     'posts',
     'support',
+    'presse',
     'psy',
     'partner_meet',
 ]
@@ -83,6 +84,7 @@ TEMPLATES = [
                     os.path.join(BASE_DIR, 'legal/templates'),
                     os.path.join(BASE_DIR, 'partner_meet/templates'),
                     os.path.join(BASE_DIR, 'psy/templates'),
+                    os.path.join(BASE_DIR, 'presse/templates'),
                     os.path.join(BASE_DIR, 'accounts/templates'),
                     os.path.join(BASE_DIR, 'support/templates')],
         'APP_DIRS': True,

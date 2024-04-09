@@ -9,9 +9,8 @@ from partner_meet.models import *
 from partner_meet.forms import *
 from django.conf import settings
 import time
-from django.db.models import Q
-
-# Affichage de la page principale :
+from django.db.models import F, ExpressionWrapper, DecimalField
+from decimal import Decimal
 
 class Home(TemplateView):
     model = Lightener
@@ -19,13 +18,14 @@ class Home(TemplateView):
 
 start = time.time()
 class PartnerMeetHome(ListView):
-    model = Comparateur
-    context_object_name = "partner_meet"
+    model = PartnerMeet
+    context_object_name = "partnermeet"
+    template_name = "partner_meet/partner_meet_home.html"
 
     def get_queryset(self):
         queryset = super().get_queryset()
 
-        # Filtrer en fonction des choix de l'utilisateur
+        # Filter based on user preferences if needed
         gender = self.request.GET.get('gender')
         relationship = self.request.GET.get('relationship')
         age_range = self.request.GET.get('age_range')
@@ -41,40 +41,71 @@ class PartnerMeetHome(ListView):
                 lower_age, upper_age = age_range.split('-')
                 queryset = queryset.filter(age__gte=lower_age, age__lte=upper_age)
 
-        if not self.request.user.is_authenticated:
-            queryset = queryset.filter(published=True)
+        # Calculate scores for each PartnerMeet object
+        for partner in queryset:
+            partner.score = self.calculer_score(partner)
 
         return queryset
 
+    def calculer_score(self, partner):
+        poids_prix = Decimal('0.3')  # Poids pour le prix
+        poids_visiteurs = Decimal('0.2')  # Poids pour le nombre de visiteurs par mois
+
+        # Calcul du score pour le partenaire en fonction de ses attributs
+        score = Decimal('0')
+
+        # Calcul de la différence de prix entre le partenaire et les autres partenaires
+        difference_prix = F('prix_avg') - partner.prix_avg
+
+        # Calcul de la différence du nombre de visiteurs par mois entre le partenaire et les autres partenaires
+        difference_visiteurs = F('nombre_visiteurs_par_mois') - partner.nombre_visiteurs_par_mois
+
+        # Calcul du score en fonction des différences de prix et de visiteurs par mois
+        score += poids_prix * difference_prix
+        score += poids_visiteurs * difference_visiteurs
+
+        return score
+
+
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        # Choix pour l'utilisateur : genre, type de relation et tranche d'âge
-        genre_choices = (
-            ("Homme", "Je cherche un homme"),
-            ("Femme", "Je cherche une femme"),
-            ("Non déterminé", "Je cherche tout le monde"),
-        )
-        relation_choices = (
-            ('durables', 'Durables'),
-            ('Relation d\'un soir', 'Relation d\' un soir'),
-            ('toutes', 'Toutes')
-        )
-        age_choices = (
-            ('18-25', '18-25 ans'),
-            ('25-35', '25-35 ans'),
-            ('35-45', '35-45 ans'),
-            ('45-55', '45-55 ans'),
-            ('plus', 'Plus de 55 ans')
-        )
-
-        context['genre_choices'] = genre_choices
-        context['relation_choices'] = relation_choices
-        context['age_choices'] = age_choices
-
+        # Pass the calculated scores to the template context
+        context['partner_scores'] = {partner.pk: partner.score for partner in context['partnermeet']}
         return context
 
 
+# class PartnerMeetHome(ListView):
+#     model = PartnerMeet
+#     context_object_name = "partner_meet"
+
+#     def get_queryset(self):
+#         queryset = super().get_queryset()
+
+#         # Filtrer en fonction des choix de l'utilisateur
+#         gender = self.request.GET.get('gender')
+#         relationship = self.request.GET.get('relationship')
+#         age_range = self.request.GET.get('age_range')
+
+#         if gender:
+#             queryset = queryset.filter(genre=gender)
+#         if relationship:
+#             queryset = queryset.filter(relation=relationship)
+#         if age_range:
+#             if age_range == 'plus':
+#                 queryset = queryset.filter(age__gte=55)
+#             else:
+#                 lower_age, upper_age = age_range.split('-')
+#                 queryset = queryset.filter(age__gte=lower_age, age__lte=upper_age)
+
+#         if not self.request.user.is_authenticated:
+#             queryset = queryset.filter(published=True)
+
+#         return queryset
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         return context
 
 end = time.time()
 elapsed = end - start
@@ -83,33 +114,33 @@ print(f'Temps d\'exécution de la recherche de sites de rencontres : {elapsed:.2
 
 # Réalise cette étape d'optimisation lors du clic sur recherche par l'utilisateur
 class PartnerMeetDetail(DetailView):
-    model = Comparateur
+    model = PartnerMeet
     context_object_name = "site"
     template_name = "partner_meet/partner_meet_detail.html"
 
 # Step create site de rencontres :
 @method_decorator(login_required, name='dispatch')
 class PartnerMeetCreate(CreateView):
-    model = Comparateur
+    model = PartnerMeet
     template_name = "partner_meet/partner_meet_create.html"
     fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
 
 #Step edit site de rencontres:
 @method_decorator(login_required, name='dispatch')
 class PartnerMeetUpdate(UpdateView):
-    model = Comparateur
+    model = PartnerMeet
     template_name = "partner_meet/partner_meet_edit.html"
     fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
 
 #Step delete site de rencontres :
 @method_decorator(login_required, name='dispatch')
 class PartnerMeetDelete(DeleteView):
-    model = Comparateur
+    model = PartnerMeet
     success_url = reverse_lazy("partner_meet_list")
 
 
 
-
+#Ici peut-être faut il changer certaines variables pour adapter au models PartnerMeetHome
 
 def trouver_meilleur_site(site_comparateur, sites):
     meilleur_site = None
@@ -151,21 +182,6 @@ class meet_compare(TemplateView):
     model = Lightener
     template_name = "partner_meet/meet_comparer.html"
 
-
-@login_required
-
-# Optimiser la class play_partner_meet, l'algorithme de recommandation de Lightmeet pour les sites de rencontre :
-
-def play_partner_meet(request):
-    if request.method == 'POST':
-        form = PartnerMeetForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return render(request,'partner_meet/Partner_Meet_Thanks_You.html')
-    else:
-        form = PartnerMeetForm()
-    return render(request, 'partner_meet/Partner_Meet_Formulaire.html', {'form': form})
-
 #
 
 # from django.shortcuts import render
@@ -192,7 +208,3 @@ def play_partner_meet(request):
 #             messages.error(request, 'Une erreur s\'est produite lors de l\'importation des données')
 
 #     return render(request, 'import_data.html')
-
-
-
-

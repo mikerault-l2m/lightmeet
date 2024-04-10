@@ -1,0 +1,182 @@
+body {
+    background: #FBFBFB;
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    color: black;
+    transition: all 2s ease;
+}
+.Title,
+.SubTitle {
+    transition: all 1s ease;
+}
+.Title {
+    font-size: 60px;
+    font-style:thin;
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.SubTitle {
+    padding: -20px 0px 0px 0px;
+    font-size: 16px;
+    font-style: italic;
+}
+.call-to-action-container {
+    background-color: #F0E4AF;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.call-to-action {
+    background-color: black;
+    border-radius: 40px;
+    width: 160px;
+    height: 60px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+.call-to-action-site {
+    display: flex;
+    justify-content: center;
+}
+.boxes {
+    display: flex;
+    justify-content: space-evenly;
+}
+.TitleButton {
+    font-size: 2em;
+    margin: 0.5em 0;
+}
+.Description {
+    font-weight: 100;
+    font-size: 18px;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    line-height: 30px;
+}
+.box {
+    background-color: #FBF1D6;
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    border-radius:30px;
+    display:flex;
+    text-align:center;
+    align-items:center;
+}
+.call-to-action-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width: 992px) {
+    .buttonLinkOtherPage {
+        width: 100%;
+        height: 200px;
+        padding: 0;
+    }
+    .Description {
+        font-size: 1.5em;
+        width: 90%;
+    }
+    .containerSecure {
+        width: 90%;
+        margin: 3em 0 6em 0;
+    }
+    .Discover {
+        margin: 4em 2em;
+        font-size: 2.4em;
+    }
+    .positionLogoListen2meet {
+        margin-top: 2em;
+        margin-left: 1em;
+    }
+}
+@media(max-width: 768px) {
+    .buttonLinkOtherPage {
+        width: 90%;
+        height: 180px;
+        padding: 0;
+        border-radius: 0.7em;
+    }
+    .Description {
+        font-size: 1.1em;
+        padding: 0.4rem;
+        text-align: center;
+        line-height: 20px;
+    }
+    .TitleButton {
+        text-align: center;
+        margin: 0;
+        padding: 0.3em 0;
+        font-size: 1.55em;
+    }
+    .Products {
+        width: 100%;
+        gap: 0.5em;
+        margin-top: 2em;
+        align-items: center;
+        justify-content: center;
+    }
+    .PosBoutonAndCitation {
+        margin: 1em 0 2em 0;
+    }
+}
+@media(max-width:992px) {
+    .Social {
+        margin: 0em 0em 0em -5%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+    }
+    .Facebook,
+    .Instagram,
+    .Linkedin {
+        padding: 0.5em;
+        z-index: 100;
+        width: 2em;
+        height: auto;
+    }
+    .Contact,
+    .Connect,
+    .Prenom {
+        font-size: 1.2em;
+    }
+}
+@media(max-width:768px) {
+    .ListFooter {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: normal;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .ListFooter li {
+        text-align: left;
+        padding: 0.5em 1em 0.5em 1em;
+    }
+    .Contact,
+    .Connect,
+    .Prenom {
+        font-size: 1em;
+    }
+    .logoListen {
+        margin: 1em;
+    }
+    .NavHeader {
+        margin-right: 1em;
+    }
+    .ListeHeader {
+        gap: 1.3em;
+    }
+}

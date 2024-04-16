@@ -39,6 +39,13 @@ urlpatterns = [
     path('recherche/edit/<int:pk>/', PartnerMeetUpdate.as_view(), name="recherche_edit"),
     path('recherche/delete/<int:pk>/', PartnerMeetDelete.as_view(), name="recherche_delete"),
 
+    #Psy
+    path('psy/', PsyHome.as_view(), name="psy_home"),
+    path('psy/create', PsyCreate.as_view(), name="psy_create"),
+    path('psy/<str:slug>', PsyDetail.as_view(), name="psy_detail"),
+    path('psy/edit/<str:slug>', PsyUpdate.as_view(), name="psy_edit"),
+    path('psy/delete/<str:slug>', PsyDelete.as_view(), name="psy_delete"),
+
     #Support
     path('support/', SupportModel.as_view(), name="Contact"),
 

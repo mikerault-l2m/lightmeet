@@ -11,21 +11,25 @@ from django.conf import settings
 import time
 from django.db.models import F, ExpressionWrapper, DecimalField
 from decimal import Decimal
+from django.views.decorators.csrf import csrf_protect
 
 class Home(TemplateView):
     model = Lightener
     template_name = "partner_meet/Home.html"
 
+
 start = time.time()
+@method_decorator(csrf_protect, name='dispatch')
 class PartnerMeetHome(ListView):
     model = PartnerMeet
     context_object_name = "partnermeet"
-    template_name = "partner_meet/partner_meet_home.html"
+    template_name = "partner_meet/partnermeet_list.html"
+
 
     def get_queryset(self):
         queryset = super().get_queryset()
 
-        # Filter based on user preferences if needed
+        # Filtrer en fonction des préférences de l'utilisateur si nécessaire
         gender = self.request.GET.get('gender')
         relationship = self.request.GET.get('relationship')
         age_range = self.request.GET.get('age_range')
@@ -41,18 +45,17 @@ class PartnerMeetHome(ListView):
                 lower_age, upper_age = age_range.split('-')
                 queryset = queryset.filter(age__gte=lower_age, age__lte=upper_age)
 
-        # Calculate scores for each PartnerMeet object
+        # Calculer les scores pour chaque objet PartnerMeet
         for partner in queryset:
             partner.score = self.calculer_score(partner)
 
         return queryset
 
     def calculer_score(self, partner):
-        poids_prix = Decimal('0.3')  # Poids pour le prix
-        poids_visiteurs = Decimal('0.2')  # Poids pour le nombre de visiteurs par mois
-
         # Calcul du score pour le partenaire en fonction de ses attributs
         score = Decimal('0')
+        POIDS_PRIX = Decimal('0.5')
+        POIDS_VISITEURS = Decimal('0.5')
 
         # Calcul de la différence de prix entre le partenaire et les autres partenaires
         difference_prix = F('prix_avg') - partner.prix_avg
@@ -61,20 +64,47 @@ class PartnerMeetHome(ListView):
         difference_visiteurs = F('nombre_visiteurs_par_mois') - partner.nombre_visiteurs_par_mois
 
         # Calcul du score en fonction des différences de prix et de visiteurs par mois
-        score += poids_prix * difference_prix
-        score += poids_visiteurs * difference_visiteurs
+        score += POIDS_PRIX * difference_prix
+        score += POIDS_VISITEURS * difference_visiteurs
 
         return score
 
-
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Pass the calculated scores to the template context
         context['partner_scores'] = {partner.pk: partner.score for partner in context['partnermeet']}
+        context['CATEGORIE_CHOICES'] = (
+            ("Généraliste", "Je cherche un site généraliste"),
+            ("Libertin", "Je cherche un site libertin"),
+            ("Non déterminé", "Je cherche tout le monde"),
+            ("Senior","Je cherche un site pour senior"),
+            ("Extra-conjugales","Je cherche un site extra-conjugal"),
+            ("Tchat","Je cherche un tchat instantané"),
+            ("Haut-de-gamme","Je cherche un site haut-de-gamme"),
+            ("Religion","Je cherche un site soutenant une religion"),
+            ("Handicap","Je cherche un site à destination du handicap"),
+            ("Locale","Je cherche un site locale"),
+            ("Insolite","Je cherche un site insolite"),
+            ("Géolocalisation","Je cherche un site axé sur la géolocalisation"),
+        )
+        context['pourcent_femmes_choices'] = (
+            ("absence de femmes","Absence de femmes"),
+            ("bas","Bas"),
+            ('moyen', 'Moyen'),
+            ('élevé', 'Élevé'),
+            ('intégral', 'Intégral'),
+        )
+        context['AGE_CHOICES'] = (
+            ('18-25', '18-25 ans'),
+            ('25-35', '25-35 ans'),
+            ('35-45', '35-45 ans'),
+            ('45-55', '45-55 ans'),
+            ('plus', 'Plus de 55 ans')
+        )
         return context
 
-
+end = time.time()
+elapsed = end - start
+print(f'Temps d\'exécution d\'affichage des sites de rencontre : {elapsed:.2}ms')
 
 # Réalise cette étape d'optimisation lors du clic sur recherche par l'utilisateur
 class PartnerMeetDetail(DetailView):

@@ -142,23 +142,21 @@
 <section class="sites-de-rencontres">
     <div class="container">
         <h1>Découvrez les sites de rencontres</h1>
-        {% csrf_token %}
         <form method="post" action="{% url 'recherche_home' %}">
+            {% csrf_token %}
             <section>
-                <h2>Genre</h2>
+                <h2>Catégorie du site</h2>
                 <select name="genre">
-                    <option value="">Genre</option>
-                    {% for genre_key, genre_label in GENRE_FIND_CHOICES %}
+                    {% for genre_key, genre_label in CATEGORIE_CHOICES %}
                         <option value="{{ genre_key }}">{{ genre_label }}</option>
                     {% endfor %}
                 </select>
             </section>
 
             <section>
-                <h2>Relation</h2>
+                <h2>% de femmes</h2>
                 <select name="relation">
-                    <option value="">Relation</option>
-                    {% for relation_key, relation_label in RELATION_CHOICES %}
+                    {% for relation_key, relation_label in pourcent_femmes_choices %}
                         <option value="{{ relation_key }}">{{ relation_label }}</option>
                     {% endfor %}
                 </select>
@@ -167,7 +165,6 @@
             <section>
                 <h2>Tranche d'âge</h2>
                 <select name="tranche_age">
-                    <option value="">Tranche d'âge</option>
                     {% for age_key, age_label in AGE_CHOICES %}
                         <option value="{{ age_key }}">{{ age_label }}</option>
                     {% endfor %}

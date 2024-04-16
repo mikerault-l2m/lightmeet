@@ -28,7 +28,6 @@ def SocialNetwork(request):
     return render(request, "accounts/ConnexionFacebook.html")
 
 ########### Connexion
-start = time.time()
 def login_view(request):
     # If the user submitted the login form
     if request.method == 'POST':
@@ -41,23 +40,14 @@ def login_view(request):
     else:
         form = CustomAuthenticationForm()
     return render(request, 'accounts/signup.html', {'form':form})
-end = time.time()
-elapsed = end - start
-print(f'Temps d\'exécution de la méthode de connexion : {elapsed:.2}ms')
 
 
 #### Déconnexion
-start = time.time()
 def logout_view(request):
     logout(request)
     return redirect('page_accueil')
-end = time.time()
-elapsed = end - start
-print(f'Temps d\'exécution de la méthode de connexion : {elapsed:.2}ms')
-
 
 ######## Création de compte
-start = time.time()
 def nouvel_utilisateur(request):
     if request.method == "POST":
         form = CustomListenerForm(request.POST)
@@ -78,12 +68,8 @@ def nouvel_utilisateur(request):
         context = {"form": form, "error_messages": form.errors}
     return render(request, "accounts/New_User.html", context={"form": form})
 
-end = time.time()
-elapsed = end - start
-print(f'Temps d\'exécution de la méthode d\'inscription : {elapsed:.2}ms')
-
 ######## Mot de passe oublié
-start = time.time()
+
 def forget_password(request):
     if request.method == "POST":
         form = ForgetForm(request.POST)
@@ -93,6 +79,3 @@ def forget_password(request):
     else:
         form = ForgetForm()
     return render(request, "accounts/Forget_Password.html", context={"form": form})
-end = time.time()
-elapsed = end - start
-print(f'Temps d\'exécution de la méthode mot de passe oublié : {elapsed:.2}ms')

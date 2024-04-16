@@ -1,0 +1,225 @@
+{% extends 'psy/base_Psy.html' %}
+{% load static %}
+
+{% block css %}
+<style>
+    /* Je rejoute dans le css quand tout est parfait */
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+        background-color: #007bff;
+        color: #fff;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        text-align: center;
+    }
+
+    .hero-content {
+        position: relative;
+    }
+
+    .hero-title {
+        font-size: 48px;
+        font-weight: bold;
+    }
+
+    .hero-subtitle {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .search-bar {
+        margin-top: 40px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 500px;
+        height: 40px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .search-bar button {
+        background-color: #fff;
+        color: #007bff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Benefits Section */
+    .benefits {
+        padding-top: 50px;
+    }
+
+    .benefits-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .benefit {
+        text-align: center;
+        margin-bottom: 30px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .benefit i {
+        font-size: 48px;
+        color: #007bff;
+        margin-bottom: 15px;
+    }
+
+    .benefit h3 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* Call to Action Section */
+    .call-to-action {
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    .call-to-action h1 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+
+    .call-to-action button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px;
+    }
+
+    /* Logos Section */
+    .logos {
+        padding-top: 50px;
+        background-color: #f5f5f5; /* Light gray background for logos section */
+    }
+
+    .logos-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .logo img {
+        width: 200px;
+        height: auto;
+    }
+</style>
+
+</style>
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+
+{% block section %}
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">LightMeet</h1>
+            <h2 class="hero-subtitle">Comparateur de thérapeutes</h2>
+
+            <div class="search-bar">
+                <form action="{% url 'recherche_therapeute' %}" method="post">
+                    <input type="text" name="recherche" placeholder="Genre, tranche d'âge, etc.">
+                    <button type="submit">Rechercher</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="benefits">
+    <div class="container">
+        <div class="benefits-grid">
+            <div class="benefit">
+                <i class="fa fa-venus-mars"></i>
+                <h3>Genre</h3>
+            </div>
+            <div class="benefit">
+                <i class="fa fa-user-circle"></i>
+                <h3>Tranche d'âge ciblée</h3>
+            </div>
+            <div class="benefit">
+                <i class="fa fa-handshake"></i>
+                <h3>Type de relation recherchée</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="comparenoterapeute">
+    <div class="container">
+        <h2>OU</h2>
+        <p>Choisissez vos thérapeutes à comparer</p>
+
+        <div class="compare-therapeute-grid">
+            <div class="compare-therapeute">
+                <input type="checkbox" id="therapeute1" name="therapeute[]" value="therapeute1">
+                <label for="therapeute1">Marque 1</label>
+            </div>
+            <div class="compare-therapeute">
+                <input type="checkbox" id="therapeute2" name="therapeute[]" value="therapeute2">
+                <label for="therapeute2">Marque 2</label>
+            </div>
+            <div class="compare-therapeute">
+                <input type="checkbox" id="therapeute3" name="therapeute[]" value="therapeute3">
+                <label for="therapeute3">Marque 3</label>
+            </div>
+            <div class="compare-therapeute">
+                <input type="checkbox" id="therapeute4" name="therapeute[]" value="therapeute4">
+                <label for="therapeute4">Marque 4</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Comparer</button>
+    </div>
+</section>
+
+<section class="logos">
+    <div class="container">
+        <div class="logos-grid">
+            <div class="logo">
+                <img src="{% static 'posts/Logos/istockphoto.jpg' %}" alt="Lightmeet Blog">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+</body>
+</html>

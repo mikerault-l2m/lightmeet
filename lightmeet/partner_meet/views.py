@@ -75,42 +75,6 @@ class PartnerMeetHome(ListView):
         return context
 
 
-# class PartnerMeetHome(ListView):
-#     model = PartnerMeet
-#     context_object_name = "partner_meet"
-
-#     def get_queryset(self):
-#         queryset = super().get_queryset()
-
-#         # Filtrer en fonction des choix de l'utilisateur
-#         gender = self.request.GET.get('gender')
-#         relationship = self.request.GET.get('relationship')
-#         age_range = self.request.GET.get('age_range')
-
-#         if gender:
-#             queryset = queryset.filter(genre=gender)
-#         if relationship:
-#             queryset = queryset.filter(relation=relationship)
-#         if age_range:
-#             if age_range == 'plus':
-#                 queryset = queryset.filter(age__gte=55)
-#             else:
-#                 lower_age, upper_age = age_range.split('-')
-#                 queryset = queryset.filter(age__gte=lower_age, age__lte=upper_age)
-
-#         if not self.request.user.is_authenticated:
-#             queryset = queryset.filter(published=True)
-
-#         return queryset
-
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         return context
-
-end = time.time()
-elapsed = end - start
-print(f'Temps d\'exécution de la recherche de sites de rencontres : {elapsed:.2f} secondes')
-
 
 # Réalise cette étape d'optimisation lors du clic sur recherche par l'utilisateur
 class PartnerMeetDetail(DetailView):

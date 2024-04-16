@@ -3,36 +3,220 @@
 {% load static %}
 
 {% block css %}
+<style>
+    /* General Styles */
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Sites de Rencontres Section */
+    .sites-de-rencontres {
+        padding-top: 50px;
+    }
+
+    .sites-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .site {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .logo-link {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    .logo-image {
+        width: 100px;
+        height: auto;
+        margin-right: 20px;
+    }
+
+    .logo-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    .site-details {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .site-info {
+        list-style: none;
+        padding: 0;
+    }
+
+    .site-info li {
+        margin-bottom: 10px;
+    }
+
+    .empty-message {
+        text-align: center;
+    }
+
+    /* Style the form container */
+    .search-form {
+      display: flex; /* Arrange elements horizontally */
+      flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+      width: fit-content; /* Adjust width as needed */
+      margin: 0 auto; /* Center the form horizontally */
+      background-color: #f2f2f2; /* Light gray background */
+      border-radius: 5px; /* Rounded corners */
+      padding: 20px; /* Inner padding */
+    }
+
+    /* Style the search sections */
+    .search-section {
+      margin-right: 15px; /* Spacing between sections */
+      text-align: center; /* Center content within sections */
+    }
+
+    /* Style the section headings (h2) */
+    .search-section h2 {
+      margin-bottom: 5px; /* Space below heading */
+      font-size: 18px; /* Adjust font size as needed */
+      font-weight: bold; /* Bold text */
+      color: #333; /* Dark gray text */
+    }
+
+    /* Style the dropdown menus (select) */
+    .search-section select {
+      width: 100%; /* Full width within sections */
+      padding: 10px;
+      border: 1px solid #ccc; /* Gray border */
+      border-radius: 3px; /* Rounded corners */
+      font-size: 16px; /* Adjust font size as needed */
+    }
+
+    /* Style the submit button */
+    .search-button {
+      background-color: #4CAF50; /* Green background */
+      color: white; /* White text */
+      padding: 10px 20px;
+      border: none; /* Remove default button border */
+      border-radius: 3px; /* Rounded corners */
+      cursor: pointer; /* Indicate clickable button */
+      font-size: 16px; /* Adjust font size as needed */
+      margin-top: 10px; /* Space above button */
+    }
+
+    /* Optional: style the button on hover */
+    .search-button:hover {
+      background-color: #3e8e41; /* Darker green on hover */
+    }
+</style>
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
+{% load static %}
+
 
 {% block section %}
-<div class="container">
-    <h1>Découvrez les sites de rencontres</h1>
-    <div>
-        {% for partner in partnermeet %}
-            <a href="{{ partner.url }}" class="logo-link">
-                <button class="logo-button">
-                    <img src="{{ partner.logo.url }}" alt="{{ partner.nom }} Logo" style="width: 200px; height: 180px; border-radius: 30px;">
-                    <span>{{ partner.description }}</span> <!-- Affichage de la description du partenaire -->
-                    <p>{{ partner.url }}</p> <!-- Affichage de l'URL du partenaire -->
-                    <p>Prix moyen : {{ partner.prix_avg }}</p> <!-- Affichage du prix moyen -->
-                    <p>Tranche d'âge majoritaire : {{ partner.tranche_age }}</p> <!-- Affichage de la tranche d'âge majoritaire -->
-                    <p>Nombre de visiteurs par mois : {{ partner.nombre_visiteurs_par_mois }}</p> <!-- Affichage du nombre de visiteurs par mois -->
-                    {% if partner.google_trustpilot_avg %}
-                        <p>Note moyenne : {{ partner.google_trustpilot_avg }}/5</p> <!-- Affichage de la note moyenne si disponible -->
-                    {% endif %}
-                    {% if partner.affiliation %}
-                        <p>Partenaire affilié à Listen2Meet</p> <!-- Affichage de la mention si le partenaire est affilié -->
-                    {% endif %}
-                </button>
-            </a>
-        {% empty %}
-            <br><p>Les sites de rencontres sont en train d'être sélectionnés par l'équipe de <i>Lightmeet</i></p>
-            <p style="text-align:center;"><strong style="font-size:25px;">BIENTÔT disponible</strong></p>
-        {% endfor %}
+<section class="sites-de-rencontres">
+    <div class="container">
+        <h1>Découvrez les sites de rencontres</h1>
+        {% csrf_token %}
+        <form method="post" action="{% url 'recherche_home' %}">
+            <section>
+                <h2>Genre</h2>
+                <select name="genre">
+                    <option value="">Genre</option>
+                    {% for genre_key, genre_label in GENRE_FIND_CHOICES %}
+                        <option value="{{ genre_key }}">{{ genre_label }}</option>
+                    {% endfor %}
+                </select>
+            </section>
+
+            <section>
+                <h2>Relation</h2>
+                <select name="relation">
+                    <option value="">Relation</option>
+                    {% for relation_key, relation_label in RELATION_CHOICES %}
+                        <option value="{{ relation_key }}">{{ relation_label }}</option>
+                    {% endfor %}
+                </select>
+            </section>
+
+            <section>
+                <h2>Tranche d'âge</h2>
+                <select name="tranche_age">
+                    <option value="">Tranche d'âge</option>
+                    {% for age_key, age_label in AGE_CHOICES %}
+                        <option value="{{ age_key }}">{{ age_label }}</option>
+                    {% endfor %}
+                </select>
+            </section>
+
+            <button type="submit">Rechercher</button>
+        </form>
+
+
+
+
+
+
+        <div class="sites-grid">
+            {% for partner in partnermeet %}
+                <div class="site">
+                    <a href="{{ partner.url }}" class="logo-link">
+                        <div class="logo-image">
+                            <img src="{{ partner.logo.url }}" alt="{{ partner.nom }} Logo">
+                        </div>
+                        <div class="site-details">
+                            <h3>{{ partner.nom }}</h3>
+                            <p>{{ partner.description }}</p>
+                        </div>
+                    </a>
+
+                    <div class="site-info">
+                        <ul>
+                            <li>URL: <a href="{{ partner.url }}">{{ partner.url }}</a></li>
+                            <li>Prix moyen: {{ partner.prix_avg }}</li>
+                            <li>Tranche d'âge: {{ partner.tranche_age }}</li>
+                            <li>Visiteurs par mois: {{ partner.nombre_visiteurs_par_mois }}</li>
+                            {% if partner.google_trustpilot_avg %}
+                                <li>Note Trustpilot: {{ partner.google_trustpilot_avg }}/5</li>
+                            {% endif %}
+                            {% if partner.affiliation %}
+                                <li>Partenaire affilié à Listen2Meet</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="empty-message">
+                    <p>Les sites de rencontres sont en train d'être sélectionnés par l'équipe de <i>Lightmeet</i></p>
+                    <p style="text-align:center;"><strong style="font-size:25px;">BIENTÔT disponible</strong></p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-</div>
+</section>
 {% endblock %}

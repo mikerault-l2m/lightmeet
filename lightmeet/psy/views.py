@@ -4,6 +4,10 @@ from django.conf import settings
 import time
 from psy.models import *
 
-class psy_control_2(TemplateView):
+class psy_Home(TemplateView):
+    model = PsyMeet
+    template_name = "psy/Home_Psy.html"
+
+class psy_recherche(TemplateView):
     model = PsyMeet
     template_name = "psy/Home_Psy.html"

@@ -12,10 +12,10 @@ class PartnerMeet(models.Model):
         ("Non déterminé", "Je cherche tout le monde"),
     )
     genre_find = models.CharField(choices=GENRE_FIND_CHOICES, max_length=25, default='Non déterminé')
-
+    categorie = models.CharField(max_length=100, null=True, blank=True)
     RELATION_CHOICES = (
         ('durables', 'Durables'),
-        ('Relation d\'un soir', 'Relation d\' un soir'),
+        ('Relation d\'un sois', 'Relation d\' un sois'),
         ('gays','Gays'),
         ('lesbiennes','Lesbiennes'),
         ('toutes', 'Toutes')

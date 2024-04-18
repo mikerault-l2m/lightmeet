@@ -142,37 +142,41 @@
 <section class="sites-de-rencontres">
     <div class="container">
         <h1>Découvrez les sites de rencontres</h1>
-        <form method="get" action="{% url 'recherche_meilleur_site' %}">
-            {% csrf_token %}
-            <section>
-                <h2>Catégorie du site</h2>
-                <select name="genre">
-                    {% for genre_key, genre_label in CATEGORIE_CHOICES %}
-                        <option value="{{ genre_key }}">{{ genre_label }}</option>
-                    {% endfor %}
-                </select>
-            </section>
+        <div class="sites-grid">
+            {% for partner in partnermeet %}
+                <div class="site">
+                    <a href="{{ partner.url }}" class="logo-link">
+                        <div class="logo-image">
+                            <img src="{{ partner.logo.url }}" alt="{{ partner.nom }} Logo">
+                        </div>
+                        <div class="site-details">
+                            <h3>{{ partner.nom }}</h3>
+                            <p>{{ partner.description }}</p>
+                        </div>
+                    </a>
 
-            <section>
-                <h2>% de femmes</h2>
-                <select name="relation">
-                    {% for relation_key, relation_label in pourcent_femmes_choices %}
-                        <option value="{{ relation_key }}">{{ relation_label }}</option>
-                    {% endfor %}
-                </select>
-            </section>
-
-            <section>
-                <h2>Tranche d'âge</h2>
-                <select name="tranche_age">
-                    {% for age_key, age_label in AGE_CHOICES %}
-                        <option value="{{ age_key }}">{{ age_label }}</option>
-                    {% endfor %}
-                </select>
-            </section>
-
-            <button type="submit">Rechercher</button>
-        </form>
+                    <div class="site-info">
+                        <ul>
+                            <li>URL: <a href="{{ partner.url }}">{{ partner.url }}</a></li>
+                            <li>Prix moyen: {{ partner.prix_avg }}</li>
+                            <li>Tranche d'âge: {{ partner.tranche_age }}</li>
+                            <li>Visiteurs par mois: {{ partner.nombre_visiteurs_par_mois }}</li>
+                            {% if partner.google_trustpilot_avg %}
+                                <li>Note Trustpilot: {{ partner.google_trustpilot_avg }}/5</li>
+                            {% endif %}
+                            {% if partner.affiliation %}
+                                <li>Partenaire affilié à Listen2Meet</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="empty-message">
+                    <p>Les sites de rencontres sont en train d'être sélectionnés par l'équipe de <i>Lightmeet</i></p>
+                    <p style="text-align:center;"><strong style="font-size:25px;">BIENTÔT disponible</strong></p>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
 {% endblock %}

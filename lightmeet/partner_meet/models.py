@@ -44,8 +44,6 @@ class PartnerMeet(models.Model):
     )
     age = models.CharField(max_length=50, choices=AGE_CHOICES)
 
-
-
     prix_avg = models.DecimalField(max_digits=10, decimal_places=2, default=0) # 2 Points forts : Prix
 
     google_trustpilot_avg = models.FloatField(null=True, blank=True) # 4 - Note Utilisateur

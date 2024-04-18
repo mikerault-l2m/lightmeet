@@ -36,8 +36,13 @@
         <h1>Comparez le meilleur du domaine de la rencontre</h1>
     </div>
     <div class="call-to-action-site">
-        <button class="call-to-action">Sites de rencontres</button>
-        <button class="call-to-action">Thérapeutes</button>
+
+        <a href="{% url 'recherche_home' %}">
+            <button class="call-to-action call-to-action-comparer">Sites de rencontres</button>
+        </a>
+        <a href="{% url 'Home' %}">
+            <button class="call-to-action call-to-action-comparer">Thérapeutes</button>
+        </a>
     </div>
 </div>
 <div class="boxes">

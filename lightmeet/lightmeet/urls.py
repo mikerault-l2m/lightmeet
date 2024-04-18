@@ -38,6 +38,7 @@ urlpatterns = [
     path('recherche/<int:pk>/', PartnerMeetDetail.as_view(), name="recherche_detail"),
     path('recherche/edit/<int:pk>/', PartnerMeetUpdate.as_view(), name="recherche_edit"),
     path('recherche/delete/<int:pk>/', PartnerMeetDelete.as_view(), name="recherche_delete"),
+    path('recherche/Sites/', PartnerMeetBestSite.as_view(), name="recherche_meilleur_site"), # nouveau
 
     #Psy
     path('psy/', PsyHome.as_view(), name="psy_home"),

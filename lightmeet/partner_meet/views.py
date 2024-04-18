@@ -17,7 +17,6 @@ class Home(TemplateView):
     model = Lightener
     template_name = "partner_meet/Home.html"
 
-
 start = time.time()
 @method_decorator(csrf_protect, name='dispatch')
 class PartnerMeetHome(ListView):
@@ -25,6 +24,47 @@ class PartnerMeetHome(ListView):
     context_object_name = "partnermeet"
     template_name = "partner_meet/partnermeet_list.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['CATEGORIE_CHOICES'] = (
+            ("Généraliste", "Je cherche un site généraliste"),
+            ("Libertin", "Je cherche un site libertin"),
+            ("Non déterminé", "Je cherche tout le monde"),
+            ("Senior","Je cherche un site pour senior"),
+            ("Extra-conjugales","Je cherche un site extra-conjugal"),
+            ("Tchat","Je cherche un tchat instantané"),
+            ("Haut-de-gamme","Je cherche un site haut-de-gamme"),
+            ("Religion","Je cherche un site soutenant une religion"),
+            ("Handicap","Je cherche un site à destination du handicap"),
+            ("Locale","Je cherche un site locale"),
+            ("Insolite","Je cherche un site insolite"),
+            ("Géolocalisation","Je cherche un site axé sur la géolocalisation"),
+        )
+        context['pourcent_femmes_choices'] = (
+            ("absence de femmes","Absence de femmes"),
+            ("bas","Bas"),
+            ('moyen', 'Moyen'),
+            ('élevé', 'Élevé'),
+            ('intégral', 'Intégral'),
+        )
+        context['AGE_CHOICES'] = (
+            ('18-25', '18-25 ans'),
+            ('25-35', '25-35 ans'),
+            ('35-45', '35-45 ans'),
+            ('45-55', '45-55 ans'),
+            ('plus', 'Plus de 55 ans')
+        )
+        return context
+
+end = time.time()
+elapsed = end - start
+print(f'Temps d\'exécution d\'affichage des sites de rencontre : {elapsed:.2}ms')
+
+@method_decorator(csrf_protect, name='dispatch')
+class PartnerMeetBestSite(ListView):
+    model = PartnerMeet
+    context_object_name = "partnermeet"
+    template_name = "partner_meet/recherche_rencontre.html"
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -69,42 +109,6 @@ class PartnerMeetHome(ListView):
 
         return score
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['partner_scores'] = {partner.pk: partner.score for partner in context['partnermeet']}
-        context['CATEGORIE_CHOICES'] = (
-            ("Généraliste", "Je cherche un site généraliste"),
-            ("Libertin", "Je cherche un site libertin"),
-            ("Non déterminé", "Je cherche tout le monde"),
-            ("Senior","Je cherche un site pour senior"),
-            ("Extra-conjugales","Je cherche un site extra-conjugal"),
-            ("Tchat","Je cherche un tchat instantané"),
-            ("Haut-de-gamme","Je cherche un site haut-de-gamme"),
-            ("Religion","Je cherche un site soutenant une religion"),
-            ("Handicap","Je cherche un site à destination du handicap"),
-            ("Locale","Je cherche un site locale"),
-            ("Insolite","Je cherche un site insolite"),
-            ("Géolocalisation","Je cherche un site axé sur la géolocalisation"),
-        )
-        context['pourcent_femmes_choices'] = (
-            ("absence de femmes","Absence de femmes"),
-            ("bas","Bas"),
-            ('moyen', 'Moyen'),
-            ('élevé', 'Élevé'),
-            ('intégral', 'Intégral'),
-        )
-        context['AGE_CHOICES'] = (
-            ('18-25', '18-25 ans'),
-            ('25-35', '25-35 ans'),
-            ('35-45', '35-45 ans'),
-            ('45-55', '45-55 ans'),
-            ('plus', 'Plus de 55 ans')
-        )
-        return context
-
-end = time.time()
-elapsed = end - start
-print(f'Temps d\'exécution d\'affichage des sites de rencontre : {elapsed:.2}ms')
 
 # Réalise cette étape d'optimisation lors du clic sur recherche par l'utilisateur
 class PartnerMeetDetail(DetailView):

@@ -40,13 +40,6 @@ class PartnerMeetHome(ListView):
             ("Insolite","Je cherche un site insolite"),
             ("Géolocalisation","Je cherche un site axé sur la géolocalisation"),
         )
-        context['pourcent_femmes_choices'] = (
-            ("absence de femmes","Absence de femmes"),
-            ("bas","Bas"),
-            ('moyen', 'Moyen'),
-            ('élevé', 'Élevé'),
-            ('intégral', 'Intégral'),
-        )
         context['AGE_CHOICES'] = (
             ('18-25', '18-25 ans'),
             ('25-35', '25-35 ans'),

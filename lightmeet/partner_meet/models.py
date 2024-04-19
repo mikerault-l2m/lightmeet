@@ -25,16 +25,6 @@ class PartnerMeet(models.Model):
 )
     categorie = models.CharField(choices=CATEGORIE_CHOICES, max_length=25, default='Non déterminé')
 
-    pourcent_femmes_choices = (
-    ("absence de femmes", "Absence de femmes"),
-    ("bas", "Bas"),
-    ('moyen', 'Moyen'),
-    ('élevé', 'Élevé'),
-    ('integral', 'Intégral'),
-)
-    pourcent_femmes = models.CharField(max_length=50, choices=pourcent_femmes_choices)
-
-
     AGE_CHOICES = (
         ('18-25', '18-25 ans'),
         ('25-35', '25-35 ans'),

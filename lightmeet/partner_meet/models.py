@@ -5,9 +5,9 @@ from django.db import models
 
 class PartnerMeet(models.Model):
     nom = models.CharField(max_length=100)
-    logo = models.ImageField(upload_to='MeetSites/', null=True, blank=True)
+    LOGO = models.ImageField(upload_to='MeetSites/', null=True, blank=True)
     url = models.URLField(blank=True) # URL de redirection du site web a associé à la variable a 'affiliation' - 1 - Site
-    nombre_visiteurs_par_mois = models.CharField(max_length=100)# - 3 Membres - # Cette variable comptabilise tous les 3 mois le nombre de visiteur du site web.
+    Visites_France = models.CharField(max_length=100)# - 3 Membres - # Cette variable comptabilise tous les 3 mois le nombre de visiteur du site web.
 
     CATEGORIE_CHOICES = (
     ("Généraliste", "Je cherche un site généraliste"),
@@ -46,10 +46,11 @@ class PartnerMeet(models.Model):
 
     prix_avg = models.DecimalField(max_digits=10, decimal_places=2, default=0) # 2 Points forts : Prix
 
-    google_trustpilot_avg = models.FloatField(null=True, blank=True) # 4 - Note Utilisateur
+    trustpilot = models.FloatField(null=True, blank=True) # 4 - Note Utilisateur
     affiliation = models.BooleanField(default=False)# 5 - Sélection cocher # Ce partenaire est affilié à la société Listen2Meet par un contrat d'affiliation.
 
     description = models.TextField(null=True, blank=True) # Courte description du site de rencontres - 2 - Points forts en quelques mots
+
     ranking = models.PositiveIntegerField(null=True, blank=True) # Ce numéro positionne la variable selon l'algo de pertinence.
     date_creation = models.DateTimeField(auto_now_add=True)
 

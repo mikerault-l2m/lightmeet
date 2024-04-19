@@ -154,15 +154,6 @@
             </section>
 
             <section>
-                <h2>% de femmes</h2>
-                <select name="relation">
-                    {% for relation_key, relation_label in pourcent_femmes_choices %}
-                        <option value="{{ relation_key }}">{{ relation_label }}</option>
-                    {% endfor %}
-                </select>
-            </section>
-
-            <section>
                 <h2>Tranche d'âge</h2>
                 <select name="tranche_age">
                     {% for age_key, age_label in AGE_CHOICES %}

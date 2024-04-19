@@ -63,19 +63,16 @@ class PartnerMeetBestSite(ListView):
         queryset = super().get_queryset()
 
         # Filtrer en fonction des préférences de l'utilisateur si nécessaire
-        gender = self.request.GET.get('gender')
-        relationship = self.request.GET.get('relationship')
-        age_range = self.request.GET.get('age_range')
+        categorie = self.request.GET.get('categorie')
+        age = self.request.GET.get('age')
 
-        if gender:
-            queryset = queryset.filter(genre=gender)
-        if relationship:
-            queryset = queryset.filter(relation=relationship)
-        if age_range:
-            if age_range == 'plus':
+        if categorie:
+            queryset = queryset.filter(categorie=categorie)
+        if age:
+            if age == 'plus':
                 queryset = queryset.filter(age__gte=55)
             else:
-                lower_age, upper_age = age_range.split('-')
+                lower_age, upper_age = age.split('-')
                 queryset = queryset.filter(age__gte=lower_age, age__lte=upper_age)
 
         # Calculer les scores pour chaque objet PartnerMeet
@@ -94,7 +91,7 @@ class PartnerMeetBestSite(ListView):
         difference_prix = F('prix_avg') - partner.prix_avg
 
         # Calcul de la différence du nombre de visiteurs par mois entre le partenaire et les autres partenaires
-        difference_visiteurs = F('nombre_visiteurs_par_mois') - partner.nombre_visiteurs_par_mois
+        difference_visiteurs = F('Visites_France') - partner.Visites_France
 
         # Calcul du score en fonction des différences de prix et de visiteurs par mois
         score += POIDS_PRIX * difference_prix
@@ -114,14 +111,14 @@ class PartnerMeetDetail(DetailView):
 class PartnerMeetCreate(CreateView):
     model = PartnerMeet
     template_name = "partner_meet/partner_meet_create.html"
-    fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
+    fields = ['nom', 'url', 'logo', 'genre_find', 'age']
 
 #Step edit site de rencontres:
 @method_decorator(login_required, name='dispatch')
 class PartnerMeetUpdate(UpdateView):
     model = PartnerMeet
     template_name = "partner_meet/partner_meet_edit.html"
-    fields = ['nom', 'url', 'logo', 'genre_find', 'relation', 'age']
+    fields = ['nom', 'url', 'logo', 'genre_find', 'age']
 
 #Step delete site de rencontres :
 @method_decorator(login_required, name='dispatch')

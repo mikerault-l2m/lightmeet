@@ -59,7 +59,7 @@
     .logo-image img {
         width: 100%;
         height: auto;
-        border-radius: 50%;
+        border-radius:5%;
     }
 
     .site-details {
@@ -145,30 +145,17 @@
         <div class="sites-grid">
             {% for partner in partnermeet %}
                 <div class="site">
-                    <a href="{{ partner.url }}" class="logo-link">
-                        <div class="logo-image">
-                            <img src="{{ partner.logo.url }}" alt="{{ partner.nom }} Logo">
-                        </div>
-                        <div class="site-details">
-                            <h3>{{ partner.nom }}</h3>
-                            <p>{{ partner.description }}</p>
-                        </div>
-                    </a>
-
-                    <div class="site-info">
-                        <ul>
-                            <li>URL: <a href="{{ partner.url }}">{{ partner.url }}</a></li>
-                            <li>Prix moyen: {{ partner.prix_avg }}</li>
-                            <li>Tranche d'âge: {{ partner.tranche_age }}</li>
-                            <li>Visiteurs par mois: {{ partner.nombre_visiteurs_par_mois }}</li>
-                            {% if partner.google_trustpilot_avg %}
-                                <li>Note Trustpilot: {{ partner.google_trustpilot_avg }}/5</li>
-                            {% endif %}
-                            {% if partner.affiliation %}
-                                <li>Partenaire affilié à Listen2Meet</li>
-                            {% endif %}
-                        </ul>
-                    </div>
+                    <img src="{{ partner.logo.url }}" alt="{{ partner.nom }} Logo" style="width: 200px; height: 180px; border-radius: 30px;">
+                    <p>{{ partner.description }}</p> <!-- Affichage de la description du partenaire -->
+                    <p>Prix moyen : {{ partner.prix_avg }}</p> <!-- Affichage du prix moyen -->
+                    <p>Tranche d'âge majoritaire : {{ partner.age }}</p> <!-- Affichage de la tranche d'âge majoritaire -->
+                    <p>Nombre de visiteurs par mois en France : {{ partner.Visites_France}}</p> <!-- Affichage du nombre de visiteurs par mois -->
+                    {% if partner.trustpilot %}
+                        <p>Note moyenne : {{ partner.trustpilot }}/5</p> <!-- Affichage de la note moyenne si disponible -->
+                    {% endif %}
+                    {% if partner.affiliation %}
+                        <p>Ce partenaire est affilié à Listen2Meet</p> <!-- Affichage de la mention si le partenaire est affilié -->
+                    {% endif %}
                 </div>
             {% empty %}
                 <div class="empty-message">

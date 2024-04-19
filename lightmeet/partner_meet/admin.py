@@ -7,7 +7,7 @@ from partner_meet.models import *
 # Version corrigée
 class PartnerMeetAdmin(admin.ModelAdmin):
     model = PartnerMeet
-    list_display = ['nom', 'logo', 'genre_find', 'pourcent_femmes', 'age', 'prix_avg','categorie', 'ranking', 'url', 'affiliation', 'nombre_visiteurs_par_mois', 'pourcentage_femmes', 'tranche_age', 'google_trustpilot_avg', 'description', 'storytelling_comment', 'date_creation']
+    list_display = ['nom', 'LOGO', 'age', 'prix_avg', 'categorie', 'ranking', 'url', 'affiliation', 'Visites_France', 'trustpilot', 'description', 'date_creation']
 
 admin.site.register(PartnerMeet)
 

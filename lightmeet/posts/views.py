@@ -4,15 +4,10 @@ from posts.models import *
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
+
 class BlogHome(ListView):
     model = BlogPost
     context_object_name = "posts"
-
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        if self.request.user.is_authenticated:
-            return queryset
-        return queryset.filter(published=True)
 
 @method_decorator(login_required,"dispatch")
 class BlogPostCreate(CreateView):

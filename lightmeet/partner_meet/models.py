@@ -6,24 +6,32 @@ from django.db import models
 class PartnerMeet(models.Model):
     nom = models.CharField(max_length=100)
     LOGO = models.ImageField(upload_to='MeetSites/', null=True, blank=True)
-    url = models.URLField(blank=True) # URL de redirection du site web a associé à la variable a 'affiliation' - 1 - Site
-    Visites_France = models.CharField(max_length=100)# - 3 Membres - # Cette variable comptabilise tous les 3 mois le nombre de visiteur du site web.
+    url = models.URLField(blank=True) # URL de redirection du site web associé à la variable 'affiliation' - 1 - Site
+    Visites_France = models.CharField(max_length=100) # - 3 Membres - # Cette variable comptabilise tous les 3 mois le nombre de visiteurs du site web.
 
     CATEGORIE_CHOICES = (
-    ("Généraliste", "Je cherche un site généraliste"),
-    ("Libertin", "Je cherche un site libertin"),
-    ("Non déterminé", "Je cherche tout le monde"),
-    ("Senior","Je cherche un site pour senior"),
-    ("Extra-conjugales","Je cherche un site extra-conjugal"),
-    ("Tchat","Je cherche un tchat instantané"),
-    ("Haut-de-gamme","Je cherche un site haut-de-gamme"),
-    ("Religion","Je cherche un site soutenant une religion"),
-    ("Handicap","Je cherche un site à destination du handicap"),
-    ("Locale","Je cherche un site locale"),
-    ("Insolite","Je cherche un site insolite"),
-    ("Géolocalisation","Je cherche un site axé sur la géolocalisation")
-)
-    categorie = models.CharField(choices=CATEGORIE_CHOICES, max_length=25, default='Non déterminé')
+        ("Généraliste", "Site généraliste"),
+        ("Libertin", "Site libertin"),
+        ("Senior", "Site pour senior"),
+        ("Extra-conjugales", "Site extra-conjugal"),
+        ("Tchat", "Tchat instantané"),
+        ("Haut-de-gamme", "Site haut-de-gamme"),
+        ("Religion", "Site soutenant une religion"),
+        ("Handicap", "Site à destination du handicap"),
+        ("Locale", "Site local"),
+        ("Insolite", "Site insolite"),
+        ("Géolocalisation", "Site axé sur la géolocalisation")
+    )
+    categorie = models.CharField(choices=CATEGORIE_CHOICES, max_length=25, default='Généraliste')
+
+    RELATION_CHOICES = (
+        ('Relation durables', 'Durables'),
+        ("Relation d'un soir", "Relation d'un soir"),
+        ('Gays', 'Gays'),
+        ('Lesbiennes', 'Lesbiennes'),
+        ('Toutes', 'Toutes')
+    )
+    relation = models.CharField(choices=RELATION_CHOICES, max_length=25, default='Toutes')
 
     AGE_CHOICES = (
         ('18-25', '18-25 ans'),
@@ -37,7 +45,7 @@ class PartnerMeet(models.Model):
     prix_avg = models.DecimalField(max_digits=10, decimal_places=2, default=0) # 2 Points forts : Prix
 
     trustpilot = models.FloatField(null=True, blank=True) # 4 - Note Utilisateur
-    affiliation = models.BooleanField(default=False)# 5 - Sélection cocher # Ce partenaire est affilié à la société Listen2Meet par un contrat d'affiliation.
+    affiliation = models.BooleanField(default=False) # 5 - Sélection cocher # Ce partenaire est affilié à la société Listen2Meet par un contrat d'affiliation.
 
     description = models.TextField(null=True, blank=True) # Courte description du site de rencontres - 2 - Points forts en quelques mots
 

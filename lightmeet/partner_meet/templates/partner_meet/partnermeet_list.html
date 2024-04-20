@@ -146,16 +146,25 @@
             {% csrf_token %}
             <section>
                 <h2>Catégorie du site</h2>
-                <select name="genre">
-                    {% for genre_key, genre_label in CATEGORIE_CHOICES %}
-                        <option value="{{ genre_key }}">{{ genre_label }}</option>
+                <select name="categorie"> <!-- Modifier le nom du champ à "categorie" -->
+                    {% for categorie_key, categorie_label in CATEGORIE_CHOICES %}
+                        <option value="{{ categorie_key }}">{{ categorie_label }}</option>
+                    {% endfor %}
+                </select>
+            </section>
+
+            <section>
+                <h2>Relation recherchée</h2>
+                <select name="relation"> <!-- Garder le nom du champ à "relation" -->
+                    {% for relation_key, relation_label in RELATION_CHOICES %}
+                        <option value="{{ relation_key }}">{{ relation_label }}</option>
                     {% endfor %}
                 </select>
             </section>
 
             <section>
                 <h2>Tranche d'âge</h2>
-                <select name="tranche_age">
+                <select name="age"> <!-- Modifier le nom du champ à "age" -->
                     {% for age_key, age_label in AGE_CHOICES %}
                         <option value="{{ age_key }}">{{ age_label }}</option>
                     {% endfor %}
@@ -163,7 +172,8 @@
             </section>
 
             <button type="submit">Rechercher</button>
-        </form>
+</form>
+
     </div>
 </section>
 {% endblock %}

@@ -1,17 +1,19 @@
 {% extends 'posts/base_Posts.html' %}
 {% load static %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+<link rel="stylesheet" href="{% static 'posts/css/style_2.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
 <html>
-    <body>
+
+<body>
     {% block section %}
     <div class="container">
-        <h1>L'analyse du comparateur de rencontres</h1>
+        <h1 class="Title">L'analyse du comparateur de rencontres</h1>
         {% for post in posts %}
-            <article>
+        <article class="cardBlogPost">
+            <div class="containerInfoBlog">
                 <h2>{{ post.title }}</h2>
                 {% if request.user.is_authenticated %}
                 <div>
@@ -20,15 +22,17 @@
                 </div>
                 {% endif %}
                 <h5>Publié par <i>L'équipe LightMeet</i> le {{ post.created_on|date:'j F Y' }}</h5>
-                <p>{{ post.content|safe|truncatewords:75 }}</p>
-                <form action="{% url  'blog_detail' slug=post.slug %}">
-                    <button> Lire l'article</button>
-                </form>
-            </article>
+                <div class="containerTextButton">
+                    <p>{{ post.content|safe|truncatewords:75 }}</p>
+                    <form action="{% url  'blog_detail' slug=post.slug %}">
+                        <button> Lire l'article</button>
+                    </form>
+                </div>
+            </div>
+        </article>
         {% endfor %}
     </div>
     {% endblock %}
 </body>
+
 </html>
-
-

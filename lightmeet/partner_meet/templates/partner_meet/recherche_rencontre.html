@@ -147,15 +147,13 @@
                 <div class="site">
                     <img src="{{ partner.logo.url }}" alt="{{ partner.nom }} Logo" style="width: 200px; height: 180px; border-radius: 30px;">
                     <p>{{ partner.description }}</p> <!-- Affichage de la description du partenaire -->
-                    <p>Prix moyen : {{ partner.prix_avg }}</p> <!-- Affichage du prix moyen -->
-                    <p>Tranche d'âge majoritaire : {{ partner.age }}</p> <!-- Affichage de la tranche d'âge majoritaire -->
-                    <p>Nombre de visiteurs par mois en France : {{ partner.Visites_France}}</p> <!-- Affichage du nombre de visiteurs par mois -->
+                    <p>{{ partner.prix_avg }} euros / mois</p> <!-- Affichage du prix moyen -->
+                    <p>{{ partner.age }}</p> <!-- Affichage de la tranche d'âge majoritaire -->
+                    <p>+ {{ partner.Visites_France}} Visites</p> <!-- Affichage du nombre de visiteurs par mois -->
                     {% if partner.trustpilot %}
-                        <p>Note moyenne : {{ partner.trustpilot }}/5</p> <!-- Affichage de la note moyenne si disponible -->
+                        <p><i>{{ partner.trustpilot }}/5</i></p> <!-- Affichage de la note moyenne si disponible -->
                     {% endif %}
-                    {% if partner.affiliation %}
-                        <p>Ce partenaire est affilié à Listen2Meet</p> <!-- Affichage de la mention si le partenaire est affilié -->
-                    {% endif %}
+
                 </div>
             {% empty %}
                 <div class="empty-message">

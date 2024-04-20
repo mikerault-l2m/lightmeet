@@ -7,6 +7,8 @@ from accounts.models import *
 from accounts.forms import *
 from partner_meet.models import *
 from partner_meet.forms import *
+from posts.models import *
+from posts.views import *
 from django.conf import settings
 import time
 from django.db.models import F, ExpressionWrapper, DecimalField
@@ -27,18 +29,18 @@ class PartnerMeetHome(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['CATEGORIE_CHOICES'] = (
-            ("Généraliste", "Je cherche un site généraliste"),
-            ("Libertin", "Je cherche un site libertin"),
-            ("Non déterminé", "Je cherche tout le monde"),
-            ("Senior","Je cherche un site pour senior"),
-            ("Extra-conjugales","Je cherche un site extra-conjugal"),
-            ("Tchat","Je cherche un tchat instantané"),
-            ("Haut-de-gamme","Je cherche un site haut-de-gamme"),
-            ("Religion","Je cherche un site soutenant une religion"),
-            ("Handicap","Je cherche un site à destination du handicap"),
-            ("Locale","Je cherche un site locale"),
-            ("Insolite","Je cherche un site insolite"),
-            ("Géolocalisation","Je cherche un site axé sur la géolocalisation"),
+            ("Généraliste", "Site généraliste"),
+            ("Libertin", "Site libertin"),
+            ("Non déterminé", "Tout le monde"),
+            ("Senior", "Site senior"),
+            ("Extra-conjugales", "Site extra-conjugal"),
+            ("Tchat", "Site tchat instantané"),
+            ("Haut-de-gamme", "Site haut-de-gamme"),
+            ("Religion", "Site soutenant une religion"),
+            ("Handicap", "Site pour handicap"),
+            ("Locale", "Site locale"),
+            ("Insolite", "Site insolite"),
+            ("Géolocalisation", "Site axé sur la géolocalisation"),
         )
         context['AGE_CHOICES'] = (
             ('18-25', '18-25 ans'),
@@ -47,7 +49,16 @@ class PartnerMeetHome(ListView):
             ('45-55', '45-55 ans'),
             ('plus', 'Plus de 55 ans')
         )
+        context['RELATION_CHOICES'] = (
+            ('durables', 'Durables'),
+            ("Relation d'un soir", "Relation d'un soir"),
+            ('gays', 'Gays'),
+            ('lesbiennes', 'Lesbiennes'),
+            ('toutes', 'Toutes')
+        )
         return context
+
+
 
 end = time.time()
 elapsed = end - start
@@ -64,10 +75,13 @@ class PartnerMeetBestSite(ListView):
 
         # Filtrer en fonction des préférences de l'utilisateur si nécessaire
         categorie = self.request.GET.get('categorie')
+        relation =  self.request.GET.get('relation')
         age = self.request.GET.get('age')
 
         if categorie:
             queryset = queryset.filter(categorie=categorie)
+        if relation:
+            queryset = queryset.filter(relation=relation)
         if age:
             if age == 'plus':
                 queryset = queryset.filter(age__gte=55)

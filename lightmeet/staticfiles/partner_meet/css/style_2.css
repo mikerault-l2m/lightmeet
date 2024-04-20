@@ -5,51 +5,60 @@ body {
     color: black;
     transition: all 2s ease;
 }
+
 .Title,
 .SubTitle {
     transition: all 1s ease;
+    font-size: 3.5em;
+    font-style: thin;
+    font-weight: 300;
 }
+
 .Title {
-    font-size: 60px;
-    font-style:thin;
+    font-size: 3.5em;
+    font-style: thin;
+    font-weight: 300;
+    margin: 1.5em 0em 0em 0em;
     font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .SubTitle {
     padding: -20px 0px 0px 0px;
-    font-size: 16px;
-    font-style: italic;
+    font-size: 18px;
+    font-style: normal;
 }
+
 .call-to-action-container {
-    background-color: #F0E4AF;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    background-color: #FBF1D6;
+    padding: 0px;
+    margin-bottom: 3em;
+    padding-bottom: 5em;
     width: 100%;
+    margin-top: 2em;
 }
+
 .call-to-action {
-    background-color: black;
+    background-color: #0D0C22;
     border-radius: 40px;
-    width: 160px;
-    height: 60px;
+    padding: 0.7em 1em 0.7em 1em;
     margin: 20px 0;
     border: none;
     cursor: pointer;
     color: white;
     font-size: 16px;
 }
-.call-to-action-site {
-    display: flex;
-    justify-content: center;
-}
+
 .boxes {
     display: flex;
     justify-content: space-evenly;
+    margin-top: 3em;
 }
+
 .TitleButton {
     font-size: 2em;
     margin: 0.5em 0;
 }
+
 .Description {
     font-weight: 100;
     font-size: 18px;
@@ -57,44 +66,266 @@ body {
     margin-bottom: 0;
     line-height: 30px;
 }
+
 .box {
     background-color: #FBF1D6;
-    width: 200px;
-    height: 150px;
-    margin: 10px;
-    border-radius:30px;
-    display:flex;
-    text-align:center;
-    align-items:center;
+    width: 220px;
+    height: 140px;
+    margin: 5px 1.2em 5px 1.2em;
+    gap: 1em;
+    padding: 1.2em;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
 }
-.call-to-action-title {
+
+h3 {
+    margin: 0px;
+    font-size: 1.1em;
+    width: 180px;
+    font-weight: 500;
+}
+
+.titleList {
+    width: 80%;
+    font-size: 1.3em;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.callToActionTitle {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
+
 }
+
+.iconBox {
+    width: 30px;
+    height: 31px;
+}
+
+.InfoBox {
+    font-size: 0.9em;
+    margin: 0em;
+    margin-top: 1em;
+}
+
+.listComparateur {
+    margin-bottom: 2em;
+}
+
+.listComparateur li {
+    font-size: 1.2em;
+    padding: 0.3em;
+}
+
+.containerListing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+    margin-top: 1em;
+}
+
+.buttonInfoComparateur {
+    background-color: #FBFBFB;
+    box-shadow: 0px 2px 1px 0.1px #000000;
+    border: none;
+    border-radius: 1em;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0.5em 1.1em 0.5em 1.1em;
+    margin: 1em;
+}
+
+.V2 {
+    background-color: #FBF1D6;
+}
+
+
+
+.callToActionTitle h1 {
+    max-width: 45%;
+    letter-spacing: 2px;
+    font-size: 3.5em;
+    font-weight: 200;
+    text-align: center;
+}
+
+.callToActionTitle p {
+    width: 35%;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+}
+
+.callToActionSite {
+    display: flex;
+    justify-content: center;
+    gap: 0.6em;
+    margin-top: 2em;
+}
+
+.callToAction {
+    background-color: #0D0C22;
+    border-radius: 40px;
+    width: 200px;
+    padding: 1em 1em 1em 1em;
+    letter-spacing: 1px;
+    box-shadow: 0.5px 2px 4px 0.001px #0000009b;
+    margin: 20px 0;
+    border: none;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+}
+
+.buttonWhite {
+    background-color: #FBFBFB;
+    color: #000000;
+
+}
+
+.boxesContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em;
+    margin-top: 2em;
+    margin-bottom: 10em;
+
+
+    gap: 1em;
+}
+
+.boxSite {
+    padding: 1em;
+    background-color: none;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    text-align: center;
+    justify-content: flex-start;
+    margin: 5px 1em 5px 1em;
+}
+
+
+.image-container {
+    width: 250px;
+}
+
+
+.imageSite {
+    width: 60%;
+    height: auto;
+    border-radius: 30px;
+}
+
+
+.TextImgSitePresentation {
+    text-align: left;
+    font-size: 1.1em;
+    margin: 10px;
+    margin-left: 2px;
+    font-weight: 500;
+}
+
+.TextImgSitePresentationHtag {
+    text-align: left;
+    margin: 2px;
+    font-size: 0.9em;
+    margin-left: 2px;
+}
+
+.TitleImgSite {
+    font-size: 1.6em;
+    font-weight: 400;
+    margin-top: 2em;
+}
+
+.FAQ {
+    font-size: 1.6em;
+    text-align: center;
+    font-family: Roboto;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+
+/* page 2 listing app cree une autre page css par la suite  */
+.containerList {
+    min-height: 100vh;
+}
+
+.containerApp {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardApp {
+    align-items: center;
+    padding: 0.5em;
+    display: flex;
+    width: 900px;
+    flex-direction: row;
+    background: linear-gradient(#FFFFFF, #FBF1D6);
+    border-radius: 1em;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.logo-link {
+    margin: 1em;
+    border-radius: 1em;
+    font-style: none;
+    color: #000000;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.TitleList {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+
+
 @media(max-width: 992px) {
     .buttonLinkOtherPage {
         width: 100%;
         height: 200px;
         padding: 0;
     }
+
     .Description {
         font-size: 1.5em;
         width: 90%;
     }
+
     .containerSecure {
         width: 90%;
         margin: 3em 0 6em 0;
     }
+
     .Discover {
         margin: 4em 2em;
         font-size: 2.4em;
     }
+
     .positionLogoListen2meet {
         margin-top: 2em;
         margin-left: 1em;
     }
 }
+
 @media(max-width: 768px) {
     .buttonLinkOtherPage {
         width: 90%;
@@ -102,18 +333,21 @@ body {
         padding: 0;
         border-radius: 0.7em;
     }
+
     .Description {
         font-size: 1.1em;
         padding: 0.4rem;
         text-align: center;
         line-height: 20px;
     }
+
     .TitleButton {
         text-align: center;
         margin: 0;
         padding: 0.3em 0;
         font-size: 1.55em;
     }
+
     .Products {
         width: 100%;
         gap: 0.5em;
@@ -121,10 +355,12 @@ body {
         align-items: center;
         justify-content: center;
     }
+
     .PosBoutonAndCitation {
         margin: 1em 0 2em 0;
     }
 }
+
 @media(max-width:992px) {
     .Social {
         margin: 0em 0em 0em -5%;
@@ -135,6 +371,7 @@ body {
         justify-content: center;
         list-style: none;
     }
+
     .Facebook,
     .Instagram,
     .Linkedin {
@@ -143,13 +380,16 @@ body {
         width: 2em;
         height: auto;
     }
+
     .Contact,
     .Connect,
     .Prenom {
         font-size: 1.2em;
     }
 }
+
 @media(max-width:768px) {
+
     .ListFooter {
         flex-direction: row;
         flex-wrap: wrap;
@@ -161,22 +401,108 @@ body {
         margin-top: 1em;
         margin-bottom: 1em;
     }
+
     .ListFooter li {
         text-align: left;
         padding: 0.5em 1em 0.5em 1em;
     }
+
     .Contact,
     .Connect,
     .Prenom {
         font-size: 1em;
     }
+
     .logoListen {
         margin: 1em;
     }
+
     .NavHeader {
         margin-right: 1em;
     }
+
     .ListeHeader {
         gap: 1.3em;
     }
+
+    .SubTitle {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .Title {
+        font-size: 2.3em;
+        margin-top: 2.5em;
+        text-align: center;
+    }
+
+    .boxes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box {
+        margin: 1.3em 0px 1.3em 0px;
+        width: 240px;
+    }
+
+    .boxesContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .call-to-action-container {
+        background-color: #FBF1D6;
+        padding: 0px;
+        margin-bottom: 3em;
+        padding-bottom: 3em;
+        width: 100%;
+        margin-top: 2em;
+    }
+
+    .callToActionTitle h1 {
+        font-size: 1.5em;
+        min-width: 80%;
+        margin-top: 2em;
+    }
+
+    .callToActionTitle p {
+        width: 90%;
+        font-size: 1.2em;
+        margin-top: 2em;
+    }
+
+    .callToAction {
+        border-radius: 40px;
+        width: 40%;
+        padding: 0.7em;
+        font-size: 14px;
+
+    }
+
+    .titleList {
+        width: 90%;
+        font-size: 1.2em;
+        text-align: center;
+        margin-top: 2em;
+    }
+
+    .listComparateur li {
+        font-size: 1em;
+        padding: 1em 0em 1em 0em;
+    }
+
+    .TitleImgSite {
+        text-align: center;
+        font-size: 1.4em;
+    }
+
+    .listComparateur {
+        margin: 0.7em;
+    }
+
+    .containerListing {
+        margin-bottom: 3em;
+    }
+
 }

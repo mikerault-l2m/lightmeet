@@ -60,7 +60,7 @@ end = time.time()
 elapsed = end - start
 print(f'Temps d\'affichage des critères des sites de rencontre : {elapsed:.2}ms')
 
-# start = time.time()9
+start = time.time()
 class PartnerMeetBestSite(ListView):
     model = PartnerMeet
     context_object_name = "partnermeet"
@@ -105,6 +105,9 @@ class PartnerMeetBestSite(ListView):
         queryset = queryset.order_by('-ranking')
 
         return queryset
+end = time.time()
+elapsed = end - start
+print(f'Temps de recherche des sites de rencontre : {elapsed:.2}ms')
 
 
 # Cette méthode  correspond aux filtrage selon les demandes des clients.

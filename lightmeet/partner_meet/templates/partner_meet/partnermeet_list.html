@@ -146,7 +146,7 @@
             {% csrf_token %}
             <section>
                 <h2>Catégorie du site</h2>
-                <select name="categorie"> <!-- Modifier le nom du champ à "categorie" -->
+                <select name="categorie">
                     {% for categorie_key, categorie_label in CATEGORIE_CHOICES %}
                         <option value="{{ categorie_key }}">{{ categorie_label }}</option>
                     {% endfor %}
@@ -155,7 +155,7 @@
 
             <section>
                 <h2>Relation recherchée</h2>
-                <select name="relation"> <!-- Garder le nom du champ à "relation" -->
+                <select name="relation">
                     {% for relation_key, relation_label in RELATION_CHOICES %}
                         <option value="{{ relation_key }}">{{ relation_label }}</option>
                     {% endfor %}
@@ -172,8 +172,7 @@
             </section>
 
             <button type="submit">Rechercher</button>
-</form>
-
+        </form>
     </div>
 </section>
 {% endblock %}

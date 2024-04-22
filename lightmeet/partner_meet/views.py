@@ -20,7 +20,6 @@ class Home(TemplateView):
     template_name = "partner_meet/Home.html"
 
 start = time.time()
-@method_decorator(csrf_protect, name='dispatch')
 class PartnerMeetHome(ListView):
     model = PartnerMeet
     context_object_name = "partnermeet"
@@ -53,66 +52,67 @@ class PartnerMeetHome(ListView):
             ('durables', 'Durables'),
             ("Relation d'un soir", "Relation d'un soir"),
             ('gays', 'Gays'),
-            ('lesbiennes', 'Lesbiennes'),
-            ('toutes', 'Toutes')
+            ('lesbiennes', 'Lesbiennes')
         )
         return context
 
-
-
 end = time.time()
 elapsed = end - start
-print(f'Temps d\'exécution d\'affichage des sites de rencontre : {elapsed:.2}ms')
+print(f'Temps d\'affichage des critères des sites de rencontre : {elapsed:.2}ms')
 
-@method_decorator(csrf_protect, name='dispatch')
+
+start = time.time()
 class PartnerMeetBestSite(ListView):
     model = PartnerMeet
     context_object_name = "partnermeet"
     template_name = "partner_meet/recherche_rencontre.html"
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-
-        # Filtrer en fonction des préférences de l'utilisateur si nécessaire
-        categorie = self.request.GET.get('categorie')
-        relation =  self.request.GET.get('relation')
-        age = self.request.GET.get('age')
-
-        if categorie:
-            queryset = queryset.filter(categorie=categorie)
-        if relation:
-            queryset = queryset.filter(relation=relation)
-        if age:
-            if age == 'plus':
-                queryset = queryset.filter(age__gte=55)
-            else:
-                lower_age, upper_age = age.split('-')
-                queryset = queryset.filter(age__gte=lower_age, age__lte=upper_age)
+#Affichage de ces méthodes
+#    def get_queryset(self):
+#        queryset = super().get_queryset()
+#
+#       # Filtrer en fonction des préférences de l'utilisateur si nécessaire
+#        categorie = self.request.GET.get('categorie')
+#        relation =  self.request.GET.get('relation')
+#        age = self.request.GET.get('age')
+#
+#        if categorie:
+#            queryset = queryset.filter(categorie=categorie)
+#        if relation:
+#            queryset = queryset.filter(relation=relation)
+#        if age:
+#            if age == 'plus':
+#                queryset = queryset.filter(age__gte=55)
+#            else:
+#                lower_age, upper_age = age.split('-')
+#                queryset = queryset.filter(age__gte=lower_age, age__lte=upper_age)
 
         # Calculer les scores pour chaque objet PartnerMeet
-        for partner in queryset:
-            partner.score = self.calculer_score(partner)
+#        for partner in queryset:
+#            partner.score = self.calculer_score(partner)
 
-        return queryset
+#        return queryset
 
-    def calculer_score(self, partner):
-        # Calcul du score pour le partenaire en fonction de ses attributs
-        score = Decimal('0')
-        POIDS_PRIX = Decimal('0.5')
-        POIDS_VISITEURS = Decimal('0.5')
+    #def calculer_score(self, partner):
+    #    # Calcul du score pour le partenaire en fonction de ses attributs
+    #    score = Decimal('0')
+    #    POIDS_PRIX = Decimal('0.5')
+    #    POIDS_VISITEURS = Decimal('0.5')
 
-        # Calcul de la différence de prix entre le partenaire et les autres partenaires
-        difference_prix = F('prix_avg') - partner.prix_avg
+    #    # Calcul de la différence de prix entre le partenaire et les autres partenaires
+    #    difference_prix = F('prix_avg') - partner.prix_avg
 
-        # Calcul de la différence du nombre de visiteurs par mois entre le partenaire et les autres partenaires
-        difference_visiteurs = F('Visites_France') - partner.Visites_France
+    #    # Calcul de la différence du nombre de visiteurs par mois entre le partenaire et les autres partenaires
+    #    difference_visiteurs = F('Visites_France') - partner.Visites_France
 
-        # Calcul du score en fonction des différences de prix et de visiteurs par mois
-        score += POIDS_PRIX * difference_prix
-        score += POIDS_VISITEURS * difference_visiteurs
+    #    # Calcul du score en fonction des différences de prix et de visiteurs par mois
+    #    score += POIDS_PRIX * difference_prix
+    #    score += POIDS_VISITEURS * difference_visiteurs
 
-        return score
-
+    #   return score
+end = time.time()
+elapsed = end - start
+print(f'Temps de filtrage des sites de rencontre : {elapsed:.2}ms')
 
 # Réalise cette étape d'optimisation lors du clic sur recherche par l'utilisateur
 class PartnerMeetDetail(DetailView):

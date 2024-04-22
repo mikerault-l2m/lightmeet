@@ -27,5 +27,3 @@ admin.site.register(PartnerMeet)
 #         pass
 
 #     export_as_excel.short_description = "Exporter vers Excel"
-
-

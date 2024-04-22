@@ -145,11 +145,12 @@
         <div class="sites-grid">
             {% for partner in partnermeet %}
                 <div class="site">
-                    <img src="{{ partner.logo.url }}" alt="{{ partner.nom }} Logo" style="width: 200px; height: 180px; border-radius: 30px;">
+                    <img src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo" style="width: 200px; height: 180px; border-radius: 30px;">
                     <p>{{ partner.description }}</p> <!-- Affichage de la description du partenaire -->
                     <p>{{ partner.prix_avg }} euros / mois</p> <!-- Affichage du prix moyen -->
                     <p>{{ partner.age }}</p> <!-- Affichage de la tranche d'âge majoritaire -->
                     <p>+ {{ partner.Visites_France}} Visites</p> <!-- Affichage du nombre de visiteurs par mois -->
+
                     {% if partner.trustpilot %}
                         <p><i>{{ partner.trustpilot }}/5</i></p> <!-- Affichage de la note moyenne si disponible -->
                     {% endif %}
@@ -157,8 +158,8 @@
                 </div>
             {% empty %}
                 <div class="empty-message">
-                    <p>Les sites de rencontres sont en train d'être sélectionnés par l'équipe de <i>Lightmeet</i></p>
-                    <p style="text-align:center;"><strong style="font-size:25px;">BIENTÔT disponible</strong></p>
+                    <p>Ces sites de rencontres sont actuellement étudiés par l'équipe de <i>Lightmeet</i></p>
+                    <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
                 </div>
             {% endfor %}
         </div>

@@ -71,7 +71,7 @@
         <strong>VOUS</strong> correspond
     </h2>
     <ul class="listComparateur">
-        <li>Trouvez l'application de rencontres qui correspond à vos besoins réels.</li>
+        <li >Trouvez l'application de rencontres qui correspond à vos besoins réels.</li>
         <li>Gagnez du temps et de l’argent en comparant facilement en 1 clic.</li>
         <li>Découvrez l’ensemble des sites de rencontres du marché.</li>
         <li>Comparez les différents abonnements proposés par les sites de rencontres.</li>
@@ -83,39 +83,41 @@
         <h1>Comparez le meilleur du domaine de la rencontre</h1>
         <p>Comparez des milliers d’applications de rencontres et de thérapeutes de votre région</p>
     </div>
-    <div class="callToActionSite">
-        <a href="{% url 'recherche_home' %}"><button class="callToAction">Sites de rencontres</button></a>
-        <a href="{% url 'Home' %}"><button class="callToAction buttonWhite">Thérapeutes</button></a>
-    </div>
+        <div class="callToActionSite">
+            <a href="{% url 'recherche_home' %}">
+                <button class="callToAction call-to-action-comparer">Sites de rencontres</button>
+            </a>
+            <a href="{% url 'Home' %}">
+                <button class="callToAction buttonWhite call-to-action-comparer">Thérapeutes</button>
+            </a>
+        </div>
 </div>
-
 <h2 class="TitleImgSite">Derniers articles mis en ligne</h2>
 <div class="boxesContainer">
-    <div>
+    <div class="boxSite">
         <div class="image-container">
             <img src="{% static 'posts/Logos/1.png' %}" class="imageSite" alt="Lightmeet Blog">
         </div>
-        <p class=" TextImgSitePresentation"> {{ post.title }}</p>
-            <p class="TextImgSitePresentationHtag"> <em> #meetic #dating #apps #rencontres </em>{{ post.description }}
-            </p>
+        <p class=" TextImgSitePresentation"> Augmentation des abonnements chez Meetic {{ post.title }}</p>
+            <p class="TextImgSitePresentationHtag"> <em> #meetic #dating #apps #rencontres </em>{{ post.description }} </p>
         </div>
-        <div>
+        <div class="boxSite">
             <div class="image-container">
                 <img src="{% static 'posts/Logos/2.png' %}" class="imageSite" alt="Lightmeet Blog">
             </div>
-            <p class="TextImgSitePresentation"> {{ post.title }}</p>
+            <p class="TextImgSitePresentation"> Augmentation des abonnements chez Meetic{{ post.title }}</p>
             <p class="TextImgSitePresentationHtag"> <em> #meetic #dating #apps #rencontres </em>{{ post.description }}
             </p>
         </div>
-        <div>
+        <div class="boxSite">
             <div class="image-container">
                 <img src="{% static 'posts/Logos/3.png' %}" class="imageSite" alt="Lightmeet Blog">
         </div>
-        <p class=" TextImgSitePresentation"> {{ post.title }}</p>
-                <p class="TextImgSitePresentationHtag"> <em> #meetic #dating #apps #rencontres </em>{{ post.description}}</p>
+        <p class=" TextImgSitePresentation"> Augmentation des abonnements chez Meetic{{ post.title }}</p>
+                <p class="TextImgSitePresentationHtag"> <em> #meetic #dating #apps #rencontres </em>{{ post.description }}</p>
             </div>
         </div>
-        <h2 class="FAQ"> FAQ </h2>
         {% endblock %}
         </body>
+
         </html>

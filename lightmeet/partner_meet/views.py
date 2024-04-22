@@ -60,18 +60,59 @@ end = time.time()
 elapsed = end - start
 print(f'Temps d\'affichage des critères des sites de rencontre : {elapsed:.2}ms')
 
-
-start = time.time()
+# start = time.time()9
 class PartnerMeetBestSite(ListView):
     model = PartnerMeet
     context_object_name = "partnermeet"
     template_name = "partner_meet/recherche_rencontre.html"
 
-#Affichage de ces méthodes
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        # Filtrer par âge
+        age = self.request.GET.get('age')
+        if age:
+            queryset = queryset.filter(age=age)
+
+        # Filtrer par prix moyen
+        prix_avg = self.request.GET.get('prix_avg')
+        if prix_avg:
+            queryset = queryset.filter(prix_avg=prix_avg)
+
+        # Filtrer par note trustpilot
+        trustpilot = self.request.GET.get('trustpilot')
+        if trustpilot:
+            queryset = queryset.filter(trustpilot=trustpilot)
+
+        # Filtrer par affiliation
+        affiliation = self.request.GET.get('affiliation')
+        if affiliation == 'true':
+            queryset = queryset.filter(affiliation=True)
+        elif affiliation == 'false':
+            queryset = queryset.filter(affiliation=False)
+
+        # Filtrer par description (recherche partielle)
+        description = self.request.GET.get('description')
+        if description:
+            queryset = queryset.filter(description__icontains=description)
+
+        # Filtrer par catégorie
+        categorie = self.request.GET.get('categorie')
+        if categorie:
+            queryset = queryset.filter(categorie=categorie)
+
+        # Trier par ranking (si disponible)
+        queryset = queryset.order_by('-ranking')
+
+        return queryset
+
+
+# Cette méthode  correspond aux filtrage selon les demandes des clients.
+#
 #    def get_queryset(self):
 #        queryset = super().get_queryset()
 #
-#       # Filtrer en fonction des préférences de l'utilisateur si nécessaire
+#        # Filtrer en fonction des préférences de l'utilisateur si nécessaire
 #        categorie = self.request.GET.get('categorie')
 #        relation =  self.request.GET.get('relation')
 #        age = self.request.GET.get('age')
@@ -83,36 +124,37 @@ class PartnerMeetBestSite(ListView):
 #        if age:
 #            if age == 'plus':
 #                queryset = queryset.filter(age__gte=55)
-#            else:
+#           else:
 #                lower_age, upper_age = age.split('-')
 #                queryset = queryset.filter(age__gte=lower_age, age__lte=upper_age)
 
-        # Calculer les scores pour chaque objet PartnerMeet
+#        # Calculer les scores pour chaque objet PartnerMeet
 #        for partner in queryset:
 #            partner.score = self.calculer_score(partner)
 
 #        return queryset
 
-    #def calculer_score(self, partner):
-    #    # Calcul du score pour le partenaire en fonction de ses attributs
-    #    score = Decimal('0')
-    #    POIDS_PRIX = Decimal('0.5')
-    #    POIDS_VISITEURS = Decimal('0.5')
+#    def calculer_score(self, partner):
+#        # Calcul du score pour le partenaire en fonction de ses attributs
+#        score = Decimal('0')
+#        POIDS_PRIX = Decimal('0.5')
+#        POIDS_VISITEURS = Decimal('0.5')
+#
+#        # Calcul de la différence de prix entre le partenaire et les autres partenaires
+#        difference_prix = F('prix_avg') - partner.prix_avg
+#
+#        # Calcul de la différence du nombre de visiteurs par mois entre le partenaire et les autres partenaires
+#        difference_visiteurs = F('Visites_France') - partner.Visites_France
+#
+#        # Calcul du score en fonction des différences de prix et de visiteurs par mois
+#        score += POIDS_PRIX * difference_prix
+#       score += POIDS_VISITEURS * difference_visiteurs
+#
+#        return score
 
-    #    # Calcul de la différence de prix entre le partenaire et les autres partenaires
-    #    difference_prix = F('prix_avg') - partner.prix_avg
-
-    #    # Calcul de la différence du nombre de visiteurs par mois entre le partenaire et les autres partenaires
-    #    difference_visiteurs = F('Visites_France') - partner.Visites_France
-
-    #    # Calcul du score en fonction des différences de prix et de visiteurs par mois
-    #    score += POIDS_PRIX * difference_prix
-    #    score += POIDS_VISITEURS * difference_visiteurs
-
-    #   return score
-end = time.time()
-elapsed = end - start
-print(f'Temps de filtrage des sites de rencontre : {elapsed:.2}ms')
+# end = time.time()
+# elapsed = end - start
+# print(f'Temps de filtrage des sites de rencontre : {elapsed:.2}ms')
 
 # Réalise cette étape d'optimisation lors du clic sur recherche par l'utilisateur
 class PartnerMeetDetail(DetailView):
@@ -139,8 +181,6 @@ class PartnerMeetUpdate(UpdateView):
 class PartnerMeetDelete(DeleteView):
     model = PartnerMeet
     success_url = reverse_lazy("partner_meet_list")
-
-
 
 #Ici peut-être faut il changer certaines variables pour adapter au models PartnerMeetHome
 
@@ -178,13 +218,6 @@ def calculer_score(site1, site2):
 
     return score
 
-
-@login_required
-class meet_compare(TemplateView):
-    model = Lightener
-    template_name = "partner_meet/meet_comparer.html"
-
-#
 
 # from django.shortcuts import render
 # from django.contrib import messages

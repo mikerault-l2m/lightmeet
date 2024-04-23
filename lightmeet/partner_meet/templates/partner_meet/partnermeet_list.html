@@ -82,53 +82,78 @@
 
     /* Style the form container */
     .search-form {
-      display: flex; /* Arrange elements horizontally */
-      flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
-      width: fit-content; /* Adjust width as needed */
-      margin: 0 auto; /* Center the form horizontally */
-      background-color: #f2f2f2; /* Light gray background */
-      border-radius: 5px; /* Rounded corners */
-      padding: 20px; /* Inner padding */
+        display: flex;
+        /* Arrange elements horizontally */
+        flex-wrap: wrap;
+        /* Allow elements to wrap on smaller screens */
+        width: fit-content;
+        /* Adjust width as needed */
+        margin: 0 auto;
+        /* Center the form horizontally */
+        background-color: #f2f2f2;
+        /* Light gray background */
+        border-radius: 5px;
+        /* Rounded corners */
+        padding: 20px;
+        /* Inner padding */
     }
 
     /* Style the search sections */
     .search-section {
-      margin-right: 15px; /* Spacing between sections */
-      text-align: center; /* Center content within sections */
+        margin-right: 15px;
+        /* Spacing between sections */
+        text-align: center;
+        /* Center content within sections */
     }
 
     /* Style the section headings (h2) */
     .search-section h2 {
-      margin-bottom: 5px; /* Space below heading */
-      font-size: 18px; /* Adjust font size as needed */
-      font-weight: bold; /* Bold text */
-      color: #333; /* Dark gray text */
+        margin-bottom: 5px;
+        /* Space below heading */
+        font-size: 18px;
+        /* Adjust font size as needed */
+        font-weight: bold;
+        /* Bold text */
+        color: #333;
+        /* Dark gray text */
     }
 
     /* Style the dropdown menus (select) */
     .search-section select {
-      width: 100%; /* Full width within sections */
-      padding: 10px;
-      border: 1px solid #ccc; /* Gray border */
-      border-radius: 3px; /* Rounded corners */
-      font-size: 16px; /* Adjust font size as needed */
+        width: 100%;
+        /* Full width within sections */
+        padding: 10px;
+        border: 1px solid #ccc;
+        /* Gray border */
+        border-radius: 3px;
+        /* Rounded corners */
+        font-size: 16px;
+        /* Adjust font size as needed */
     }
 
     /* Style the submit button */
     .search-button {
-      background-color: #4CAF50; /* Green background */
-      color: white; /* White text */
-      padding: 10px 20px;
-      border: none; /* Remove default button border */
-      border-radius: 3px; /* Rounded corners */
-      cursor: pointer; /* Indicate clickable button */
-      font-size: 16px; /* Adjust font size as needed */
-      margin-top: 10px; /* Space above button */
+        background-color: #4CAF50;
+        /* Green background */
+        color: white;
+        /* White text */
+        padding: 10px 20px;
+        border: none;
+        /* Remove default button border */
+        border-radius: 3px;
+        /* Rounded corners */
+        cursor: pointer;
+        /* Indicate clickable button */
+        font-size: 16px;
+        /* Adjust font size as needed */
+        margin-top: 10px;
+        /* Space above button */
     }
 
     /* Optional: style the button on hover */
     .search-button:hover {
-      background-color: #3e8e41; /* Darker green on hover */
+        background-color: #3e8e41;
+        /* Darker green on hover */
     }
 </style>
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
@@ -148,7 +173,7 @@
                 <h2>Catégorie du site</h2>
                 <select name="categorie">
                     {% for categorie_key, categorie_label in CATEGORIE_CHOICES %}
-                        <option value="{{ categorie_key }}">{{ categorie_label }}</option>
+                    <option value="{{ categorie_key }}">{{ categorie_label }}</option>
                     {% endfor %}
                 </select>
             </section>
@@ -157,7 +182,7 @@
                 <h2>Relation recherchée</h2>
                 <select name="relation">
                     {% for relation_key, relation_label in RELATION_CHOICES %}
-                        <option value="{{ relation_key }}">{{ relation_label }}</option>
+                    <option value="{{ relation_key }}">{{ relation_label }}</option>
                     {% endfor %}
                 </select>
             </section>
@@ -166,7 +191,7 @@
                 <h2>Tranche d'âge</h2>
                 <select name="age"> <!-- Modifier le nom du champ à "age" -->
                     {% for age_key, age_label in AGE_CHOICES %}
-                        <option value="{{ age_key }}">{{ age_label }}</option>
+                    <option value="{{ age_key }}">{{ age_label }}</option>
                     {% endfor %}
                 </select>
             </section>

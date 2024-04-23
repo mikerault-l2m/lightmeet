@@ -59,7 +59,7 @@
     .logo-image img {
         width: 100%;
         height: auto;
-        border-radius:5%;
+        border-radius: 5%;
     }
 
     .site-details {
@@ -82,53 +82,78 @@
 
     /* Style the form container */
     .search-form {
-      display: flex; /* Arrange elements horizontally */
-      flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
-      width: fit-content; /* Adjust width as needed */
-      margin: 0 auto; /* Center the form horizontally */
-      background-color: #f2f2f2; /* Light gray background */
-      border-radius: 5px; /* Rounded corners */
-      padding: 20px; /* Inner padding */
+        display: flex;
+        /* Arrange elements horizontally */
+        flex-wrap: wrap;
+        /* Allow elements to wrap on smaller screens */
+        width: fit-content;
+        /* Adjust width as needed */
+        margin: 0 auto;
+        /* Center the form horizontally */
+        background-color: #f2f2f2;
+        /* Light gray background */
+        border-radius: 5px;
+        /* Rounded corners */
+        padding: 20px;
+        /* Inner padding */
     }
 
     /* Style the search sections */
     .search-section {
-      margin-right: 15px; /* Spacing between sections */
-      text-align: center; /* Center content within sections */
+        margin-right: 15px;
+        /* Spacing between sections */
+        text-align: center;
+        /* Center content within sections */
     }
 
     /* Style the section headings (h2) */
     .search-section h2 {
-      margin-bottom: 5px; /* Space below heading */
-      font-size: 18px; /* Adjust font size as needed */
-      font-weight: bold; /* Bold text */
-      color: #333; /* Dark gray text */
+        margin-bottom: 5px;
+        /* Space below heading */
+        font-size: 18px;
+        /* Adjust font size as needed */
+        font-weight: bold;
+        /* Bold text */
+        color: #333;
+        /* Dark gray text */
     }
 
     /* Style the dropdown menus (select) */
     .search-section select {
-      width: 100%; /* Full width within sections */
-      padding: 10px;
-      border: 1px solid #ccc; /* Gray border */
-      border-radius: 3px; /* Rounded corners */
-      font-size: 16px; /* Adjust font size as needed */
+        width: 100%;
+        /* Full width within sections */
+        padding: 10px;
+        border: 1px solid #ccc;
+        /* Gray border */
+        border-radius: 3px;
+        /* Rounded corners */
+        font-size: 16px;
+        /* Adjust font size as needed */
     }
 
     /* Style the submit button */
     .search-button {
-      background-color: #4CAF50; /* Green background */
-      color: white; /* White text */
-      padding: 10px 20px;
-      border: none; /* Remove default button border */
-      border-radius: 3px; /* Rounded corners */
-      cursor: pointer; /* Indicate clickable button */
-      font-size: 16px; /* Adjust font size as needed */
-      margin-top: 10px; /* Space above button */
+        background-color: #4CAF50;
+        /* Green background */
+        color: white;
+        /* White text */
+        padding: 10px 20px;
+        border: none;
+        /* Remove default button border */
+        border-radius: 3px;
+        /* Rounded corners */
+        cursor: pointer;
+        /* Indicate clickable button */
+        font-size: 16px;
+        /* Adjust font size as needed */
+        margin-top: 10px;
+        /* Space above button */
     }
 
     /* Optional: style the button on hover */
     .search-button:hover {
-      background-color: #3e8e41; /* Darker green on hover */
+        background-color: #3e8e41;
+        /* Darker green on hover */
     }
 </style>
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
@@ -144,23 +169,24 @@
         <h1>Découvrez les sites de rencontres</h1>
         <div class="sites-grid">
             {% for partner in partnermeet %}
-                <div class="site" action="get">
-                    <img src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo" style="width: 200px; height: 180px; border-radius: 30px;">
-                    <p>{{ partner.description }}</p> <!-- Affichage de la description du partenaire -->
-                    <p>{{ partner.prix_avg }} euros / mois</p> <!-- Affichage du prix moyen -->
-                    <p>{{ partner.age }} ans est l'âge idéal</p>
-                    <p>+ {{ partner.Visites_France}} Visites</p>
+            <div class="site" action="get">
+                <img src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo"
+                    style="width: 200px; height: 180px; border-radius: 30px;">
+                <p>{{ partner.description }}</p> <!-- Affichage de la description du partenaire -->
+                <p>{{ partner.prix_avg }} euros / mois</p> <!-- Affichage du prix moyen -->
+                <p>{{ partner.age }} ans est l'âge idéal</p>
+                <p>+ {{ partner.Visites_France}} Visites</p>
 
-                    {% if partner.trustpilot %}
-                        <p><i>{{ partner.trustpilot }}/5</i></p> <!-- Affichage de la note moyenne si disponible -->
-                    {% endif %}
+                {% if partner.trustpilot %}
+                <p><i>{{ partner.trustpilot }}/5</i></p> <!-- Affichage de la note moyenne si disponible -->
+                {% endif %}
 
-                </div>
+            </div>
             {% empty %}
-                <div class="empty-message">
-                    <p>Ces sites de rencontres sont actuellement étudiés par l'équipe de <i>Lightmeet</i></p>
-                    <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
-                </div>
+            <div class="empty-message">
+                <p>Ces sites de rencontres sont actuellement étudiés par l'équipe de <i>Lightmeet</i></p>
+                <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
+            </div>
             {% endfor %}
         </div>
     </div>

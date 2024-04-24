@@ -53,7 +53,7 @@ class PartnerMeet(models.Model):
     date_creation = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.ranking} - {self.nom}"
+        return f"{self.ranking} - {self.nom} - {self.affiliation} "
 
     class Meta:
         verbose_name = "Notre site de rencontre partenaire"

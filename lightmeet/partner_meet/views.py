@@ -30,14 +30,12 @@ class PartnerMeetHome(ListView):
         context['CATEGORIE_CHOICES'] = (
             ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
-            ("Non déterminé", "Tout le monde"),
             ("Senior", "Site senior"),
             ("Extra-conjugales", "Site extra-conjugal"),
             ("Tchat", "Site tchat instantané"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
             ("Religion", "Site soutenant une religion"),
             ("Handicap", "Site pour handicap"),
-            ("Locale", "Site locale"),
             ("Insolite", "Site insolite"),
             ("Géolocalisation", "Site axé sur la géolocalisation"),
         )

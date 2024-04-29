@@ -19,6 +19,17 @@
 
       gtag('config', 'G-SP9DEQYW1Z');
     </script>
+    <!-- Hotjar Tracking Code for Site 4960613 (nom manquant) -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:4960613,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
 </head>
 
 <body class="container">
@@ -65,17 +76,6 @@
     <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
     <a href="{% url 'Contact' %}" class="ListeHeader">Support</a>
 </nav>
-
-
-    <!-- <nav class="NavHeader">
-        <div class="menuHamburger">
-            <div class=" line Line1"> <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
-            <a href="{% url 'Contact' %}" class="ListeHeader">Support</a></div>
-            <div class=" line Line2"> <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
-            <a href="{% url 'Contact' %}" class="ListeHeader">Support</a></div>
-            <div class=" line Line3"></div>
-        </div>
-    </nav> -->
 </header>
 {% block aside %}
 {% endblock %}
@@ -87,7 +87,7 @@
         <a class="linkFooter" href="{% url 'Home' %}">
             <li>© 2024 LightMeet</li>
         </a>
-        <a class="linkFooter" href="{% url 'Home' %}">
+        <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">
             <li>Mentions légales</li>
         </a>
         <a class="linkFooter" href="{% url 'Home' %}">

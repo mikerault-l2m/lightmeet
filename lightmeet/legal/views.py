@@ -5,16 +5,11 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, CreateView, UpdateView, DetailView, DeleteView
 from django.urls import reverse_lazy
+from django.template import loader
+from django.views.generic import TemplateView
+from legal.models import *
 
-class LegalHome(ListView):
-    model = Legal
-    context_object_name = "legals"
-
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        if self.request.user.is_authenticated:
-            return queryset
-        return queryset.filter(published=True)
+# Pages de gestion des documents juridiques
 
 class LegalDetail(DetailView):
     model = Legal
@@ -38,3 +33,26 @@ class LegalUpdate(UpdateView):
 class LegalDelete(DeleteView):
     model = Legal
     success_url = reverse_lazy("legal_home")
+
+
+# Page de consentement, ML, PC et Politiques de Cookies
+
+class legal_Control_ML(TemplateView):
+    model = Legal
+    template_name = "legal/ML.html"
+
+class legal_Control_CGU(TemplateView):
+    model = Legal
+    template_name = "legal/CGU.html"
+
+class legal_Control_PDC(TemplateView):
+    model = Legal
+    template_name = "legal/PDC.html"
+
+class legal_Control_PC(TemplateView):
+    model = Legal
+    template_name = "legal/PC.html"
+
+class legal_Control_Consentement(TemplateView):
+    model = Legal
+    template_name = "legal/Consentement.html"

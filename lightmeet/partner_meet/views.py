@@ -17,7 +17,14 @@ from django.views.decorators.csrf import csrf_protect
 
 class Home(TemplateView):
     model = Lightener
-    template_name = "partner_meet/Home.html"
+    template_name = 'partner_meet/Home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Récupérer tous les objets BlogPost
+        posts = BlogPost.objects.all()
+        context['posts'] = posts  # Ajouter les objets au contexte
+        return context
 
 start = time.time()
 class PartnerMeetHome(ListView):

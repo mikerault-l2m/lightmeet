@@ -80,7 +80,7 @@
 </div>
 <div class="call-to-action-container">
     <div class="callToActionTitle">
-        <h1>Comparez le meilleur du domaine de la rencontre</h1>
+        <h1>Comparez le meilleur dans le </br>domaine de la rencontre</h1>
         <p>Comparez des milliers d’applications de rencontres et de thérapeutes de votre région</p>
     </div>
         <div class="callToActionSite">
@@ -94,29 +94,21 @@
 </div>
 <h2 class="TitleImgSite">Derniers articles mis en ligne</h2>
 <div class="boxesContainer">
-    <div class="boxSite">
-        <div class="image-container">
-            <img src="{% static 'posts/Logos/1.png' %}" class="imageSite" alt="Lightmeet Blog">
-        </div>
-        <p class=" TextImgSitePresentation"> Augmentation des abonnements chez Meetic {{ post.title }}</p>
-            <p class="TextImgSitePresentationHtag"> <em> #meetic #dating #apps #rencontres </em>{{ post.description }} </p>
-        </div>
+    {% for post in posts %}
+
         <div class="boxSite">
             <div class="image-container">
                 <img src="{% static 'posts/Logos/2.png' %}" class="imageSite" alt="Lightmeet Blog">
             </div>
-            <p class="TextImgSitePresentation"> Augmentation des abonnements chez Meetic{{ post.title }}</p>
-            <p class="TextImgSitePresentationHtag"> <em> #meetic #dating #apps #rencontres </em>{{ post.description }}
+            <p class="TextImgSitePresentation"> {{ post.title }}</p>
+            <p class="TextImgSitePresentationHtag"> <em> #DevenirMarqueReconnue #ApprocheInclusive #NormesGenre #StratégieMarque  </em>
             </p>
         </div>
-        <div class="boxSite">
-            <div class="image-container">
-                <img src="{% static 'posts/Logos/3.png' %}" class="imageSite" alt="Lightmeet Blog">
-        </div>
-        <p class=" TextImgSitePresentation"> Augmentation des abonnements chez Meetic{{ post.title }}</p>
-                <p class="TextImgSitePresentationHtag"> <em> #meetic #dating #apps #rencontres </em>{{ post.description }}</p>
-            </div>
-        </div>
+
+    {% endfor %}
+</div>
+
+
         {% endblock %}
         </body>
 

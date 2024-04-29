@@ -40,7 +40,7 @@ body {
 .call-to-action {
     background-color: #0D0C22;
     border-radius: 40px;
-    padding: 0.7em 1em 0.7em 1em;
+    padding: 1em 6em 1em 6em;
     margin: 20px 0;
     border: none;
     cursor: pointer;
@@ -139,8 +139,8 @@ h3 {
     border: none;
     border-radius: 1em;
     font-weight: bold;
-    font-size: 1em;
-    padding: 0.5em 1.1em 0.5em 1.1em;
+    font-size: 16px;
+    padding: 0.7em 3.5em 0.7em 3.5em;
     margin: 1em;
     color: black;
 }

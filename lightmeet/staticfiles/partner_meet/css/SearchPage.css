@@ -1,0 +1,322 @@
+/* partie barre de recherche  */
+
+.logo-link {
+    margin: 1em;
+    border-radius: 1em;
+    font-style: none;
+    color: #000000;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.TitleList {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+/*                             page avec barre de recherche                     */
+.sites-de-rencontres {
+    background: url(../Logos/Background.png);
+    background-size: cover;
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center 50%;
+}
+
+.PosSearch {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerBackground {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerCardSelector {
+    display: flex;
+    width: 100%;
+    gap: 1em;
+    justify-content: space-around;
+}
+
+.PosFilter {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-weight: bold;
+}
+
+form {
+    background-color: #FBF1D6;
+    padding: 2em 2em 2em 2em;
+    border-radius: 1em;
+    width: 75%;
+}
+
+.CardSelector h2 {
+    font-size: 1em;
+    margin-left: 10px;
+}
+
+.CardSelector {
+    width: 100%;
+}
+
+.selector::active {
+    border: none;
+}
+
+.optiontest {
+    border: 1px 1px solid white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.selector {
+    width: 100%;
+    height: 65px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 1em;
+    padding-left: 2em;
+    padding-right: 1em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 8L0.669872 0.5L9.33013 0.5L5 8Z" fill="black" /></svg>');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) center;
+}
+
+.buttonOtherSearh {
+    width: 300px;
+    height: 70px;
+    border-radius: 30px 30px 0px 0px;
+    opacity: 0px;
+    background-color: #FBF1D6;
+    border: none;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.ButtonPos {
+    margin-top: 4em;
+    display: flex;
+    width: 80%;
+    justify-content: flex-start;
+    gap: 1em;
+
+}
+
+.ButtonSearch {
+    background-color: #0D0C22;
+    color: #FBFBFB;
+    border: none;
+    border-radius: 2em;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 1em 2em 1em 2em;
+}
+
+.titleLightMeet {
+    display: none;
+    height: 0px;
+}
+
+
+/* partie Résultats   */
+
+.containerApp {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.cardApp {
+    align-items: center;
+    padding: 0.5em;
+    display: flex;
+    width: 85%;
+    flex-direction: row;
+    background: linear-gradient(#FFFFFF, #FBF1D6);
+    border-radius: 1em;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.PosFitlerResultats {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    width: 70%;
+}
+
+.FitlerResultats {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 1em;
+    align-items: center;
+}
+
+.ButtonFitlerResultats {
+    background-color: #00000000;
+    font-size: 1em;
+    border: none;
+    height: 80%;
+
+}
+
+.Resultats {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin: 0px;
+}
+
+.containerResultats {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+@media(max-width: 1660px) {
+    .sites-de-rencontres {
+        background: url(../Logos/Background.png);
+        background-size: cover;
+        width: 100%;
+        height: 70vh;
+        background-position: center 50%;
+    }
+
+    form {
+        background-color: #FBF1D6;
+        padding: 1em 2em 1em 2em;
+        border-radius: 1em;
+        width: 90%;
+    }
+
+    .selector {
+        height: 45px;
+    }
+
+    .ButtonPos {
+        margin-top: 4em;
+        display: flex;
+        width: 90%;
+        justify-content: flex-start;
+        gap: 1em;
+    }
+
+    .buttonOtherSearh {
+        width: 280px;
+        height: 60px;
+        border-radius: 30px 30px 0px 0px;
+        opacity: 0px;
+        background-color: #FBF1D6;
+        border: none;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+}
+
+@media(max-width: 1030px) {
+    .sites-de-rencontres {
+        background: url(../Logos/Background.png);
+        background-size: cover;
+        width: 100%;
+        height: 80vh;
+        background-position: center 50%;
+    }
+}
+
+.ButtonPos {
+    margin-top: 4em;
+    display: flex;
+    width: 95%;
+    justify-content: flex-start;
+    gap: 1em;
+}
+
+@media(max-width: 768px) {
+    .PosSearch {
+
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .containerCardSelector {
+        flex-direction: column;
+    }
+
+    .PosFilter {
+        flex-direction: column;
+        margin-bottom: 2em;
+        align-items: flex-start;
+    }
+
+    .PosFilter p {
+        margin: 0px;
+    }
+
+    form {
+        background-color: #FBF1D6;
+        padding: 1em 1em 0em 1em;
+        border-radius: 1em;
+        width: 100%;
+    }
+
+    .ButtonSearch {
+        margin-bottom: 1em;
+    }
+
+    .CardSelector h2 {
+        font-size: 1em;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    .buttonOtherSearh {
+        width: 200px;
+        height: 50px;
+        font-size: 1em;
+
+    }
+
+    .ButtonPos {
+        width: 100%;
+        margin-top: 3em;
+    }
+
+    header {
+        height: 0px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: -10em;
+    }
+
+    .titleLightMeet {
+        height: 0px;
+    }
+
+}

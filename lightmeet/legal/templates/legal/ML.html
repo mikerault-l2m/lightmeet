@@ -1,0 +1,37 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+
+{% block section %}
+<section>
+        <div class="Titre" > Mentions légales</div>
+        <div class="Text">
+                Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site LightMeet l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.
+        </div>
+        <div class="Title"> Edition du site </div>
+        <div class="Text">
+        Le présent site, accessible à l’URL : www.lightmeet.fr est édité par :
+        Mickaël Boudengen, résidant 8 Rue de Liège 64000 PAU, de nationalité Française (France), né le 16/03/1995.
+        </div>
+        <div class="Title">Hébergement</div>
+        <div class="Text">
+                Le site est hébergé par la société OVH SAS, situé 2 rue Kellermann - BP 80157 - 59053 Roubaix Cedex 1, (contact téléphonique ou email : 1007).
+        </div>
+        <div class="Title">Directeur de publication</div>
+        <div class="Text">
+                Le Directeur de la publication du site est Mickaël Boudengen.
+        </div>
+        <div class="Title">Nous contacter</div>
+        <div class="Text">
+                Par email : boudengenmickael@lightmeet.fr
+        </div>
+        <div class="Title"> Données personnelles </div>
+        <div class="Text">
+        Le traitement de vos données à caractère personnel est régi par notre Charte du respect de la vie privée, disponible depuis la section " Charte de protection des données personnelles ", conformément au règlement général sur la protection des Données 2016/679 du 27 avril 2016 («RGPD»).</div>
+        </div>
+</section>
+{% endblock %}

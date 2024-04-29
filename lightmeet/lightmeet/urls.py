@@ -26,11 +26,16 @@ urlpatterns = [
     #path('connexion/delete_account', delete_account, name="Delete Account"),
 
     # Legal
-    path('mentions_légales/', LegalHome.as_view(), name="legal_home"),
-    path('mentions_légales/create/', LegalCreate.as_view(), name="legal_create"),
-    path('mentions_légales/<str:slug>/', LegalDetail.as_view(), name="legal_detail"),
-    path('mentions_légales/edit/<str:slug>/', LegalUpdate.as_view(), name="legal_edit"),
-    path('mentions_légales/delete/<str:slug>/', LegalDelete.as_view(), name="legal_delete"),
+    path('legal/consentement_visiteur/', legal_Control_Consentement.as_view(), name="legal_consentement_visiteur"),
+    path('legal/mentions_legales/', legal_Control_ML.as_view(), name="legal_mentions_legales"),
+    path('legal/mentions_legales/create/', LegalCreate.as_view(), name="legal_create"),
+    path('legal/mentions_legales/<str:slug>/', LegalDetail.as_view(), name="legal_detail"),
+    path('legal/mentions_legales/edit/<str:slug>/', LegalUpdate.as_view(), name="legal_edit"),
+    path('legal/mentions_legales/delete/<str:slug>/', LegalDelete.as_view(), name="legal_delete"),
+    path('legal/conditions_generales_utilisation', legal_Control_CGU.as_view(), name="legal_CGU"),
+    path('legal/politique_de_confidentialite/', legal_Control_PDC.as_view(), name="legal_PDC"),
+    path('legal/politique_de_cookies/', legal_Control_PC.as_view(), name="legal_PC"),
+
 
     # Partner_meet
     path('recherche/', PartnerMeetHome.as_view(), name="recherche_home"),
@@ -38,7 +43,7 @@ urlpatterns = [
     path('recherche/<int:pk>/', PartnerMeetDetail.as_view(), name="recherche_detail"),
     path('recherche/edit/<int:pk>/', PartnerMeetUpdate.as_view(), name="recherche_edit"),
     path('recherche/delete/<int:pk>/', PartnerMeetDelete.as_view(), name="recherche_delete"),
-    path('recherche/Sites/', PartnerMeetBestSite.as_view(), name="recherche_meilleur_site"), # nouveau
+    path('recherche/site_de_rencontres/', PartnerMeetBestSite.as_view(), name="recherche_meilleur_site"), # nouveau
 
     #Psy
     path('psy/', PsyHome.as_view(), name="psy_home"),

@@ -71,6 +71,35 @@ class PartnerMeetBestSite(ListView):
     context_object_name = "partnermeet"
     template_name = "partner_meet/recherche_rencontre.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['CATEGORIE_CHOICES'] = (
+            ("Généraliste", "Site généraliste"),
+            ("Libertin", "Site libertin"),
+            ("Senior", "Site senior"),
+            ("Extra-conjugales", "Site extra-conjugal"),
+            ("Tchat", "Site tchat instantané"),
+            ("Haut-de-gamme", "Site haut-de-gamme"),
+            ("Religion", "Site soutenant une religion"),
+            ("Handicap", "Site pour handicap"),
+            ("Insolite", "Site insolite"),
+            ("Géolocalisation", "Site axé sur la géolocalisation"),
+        )
+        context['AGE_CHOICES'] = (
+            ('18-25', '18-25 ans'),
+            ('25-35', '25-35 ans'),
+            ('35-45', '35-45 ans'),
+            ('45-55', '45-55 ans'),
+            ('plus', 'Plus de 55 ans')
+        )
+        context['RELATION_CHOICES'] = (
+            ('durables', 'Durables'),
+            ("Relation d'un soir", "Relation d'un soir"),
+            ('gays', 'Gays'),
+            ('lesbiennes', 'Lesbiennes')
+        )
+        return context
+
     def get_queryset(self):
         queryset = super().get_queryset()
 

@@ -46,7 +46,8 @@ class PartnerMeet(models.Model):
 
     trustpilot = models.FloatField(null=True, blank=True) # 4 - Note Utilisateur
     affiliation = models.BooleanField(default=False) # 5 - Sélection cocher # Ce partenaire est affilié à la société Listen2Meet par un contrat d'affiliation.
-
+    free = models.BooleanField(default=False)
+    co2 = models.BooleanField(default=False)
     description = models.TextField(null=True, blank=True) # Courte description du site de rencontres - 2 - Points forts en quelques mots
 
     ranking = models.PositiveIntegerField(null=True, blank=True) # Ce numéro positionne la variable selon l'algo de pertinence.

@@ -60,7 +60,59 @@ class PartnerMeetHome(ListView):
             ('lesbiennes', 'Lesbiennes')
         )
         return context
+    def get_queryset(self):
+        queryset = super().get_queryset()
 
+        # Filtrer par âge
+        age = self.request.GET.get('age')
+        if age:
+            queryset = queryset.filter(age=age)
+
+        # Filtrer par prix moyen
+        prix_avg = self.request.GET.get('prix_avg')
+        if prix_avg:
+            queryset = queryset.filter(prix_avg=prix_avg)
+
+        # Filtrer par note trustpilot
+        trustpilot = self.request.GET.get('trustpilot')
+        if trustpilot:
+            queryset = queryset.filter(trustpilot=trustpilot)
+
+        # Filtrer par affiliation
+        affiliation = self.request.GET.get('affiliation')
+        if affiliation == 'true':
+            queryset = queryset.filter(affiliation=True)
+        elif affiliation == 'false':
+            queryset = queryset.filter(affiliation=False)
+
+        # Filtre selon la gratuité
+        free = self.request.GET.get('free')
+        if free == 'true':
+            queryset = queryset.filter(free=True)
+        elif free == 'false':
+            queryset = queryset.filter(free=False)
+
+        # Filtre selon la émission de CO2
+        co2 = self.request.GET.get('co2')
+        if co2 == 'true':
+            queryset = queryset.filter(co2=True)
+        elif co2 == 'false':
+            queryset = queryset.filter(co2=False)
+
+        # Filtrer par description (recherche partielle)
+        description = self.request.GET.get('description')
+        if description:
+            queryset = queryset.filter(description__icontains=description)
+
+        # Filtrer par catégorie
+        categorie = self.request.GET.get('categorie')
+        if categorie:
+            queryset = queryset.filter(categorie=categorie)
+
+        # Trier par ranking (si disponible)
+        queryset = queryset.order_by('-ranking')
+
+        return queryset
 end = time.time()
 elapsed = end - start
 print(f'Temps d\'affichage des critères des sites de rencontre : {elapsed:.2}ms')
@@ -124,6 +176,20 @@ class PartnerMeetBestSite(ListView):
             queryset = queryset.filter(affiliation=True)
         elif affiliation == 'false':
             queryset = queryset.filter(affiliation=False)
+
+        # Filtre selon la gratuité
+        free = self.request.GET.get('free')
+        if free == 'true':
+            queryset = queryset.filter(free=True)
+        elif free == 'false':
+            queryset = queryset.filter(free=False)
+
+        # Filtre selon la émission de CO2
+        co2 = self.request.GET.get('co2')
+        if co2 == 'true':
+            queryset = queryset.filter(co2=True)
+        elif co2 == 'false':
+            queryset = queryset.filter(co2=False)
 
         # Filtrer par description (recherche partielle)
         description = self.request.GET.get('description')

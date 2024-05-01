@@ -1,13 +1,34 @@
 {% extends 'partner_meet/base_Partner_meet.html' %}
 {% load static %}
 {% block css %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const ratingContainers = document.querySelectorAll('.rating-container');
+        ratingContainers.forEach(container => {
+            const rating = parseFloat(container.getAttribute('data-rating'));
+            const ratingElement = document.createElement('p');
+            ratingElement.innerHTML = '';
+
+            for (let i = 0; i < 5; i++) {
+                if (i < rating) {
+                    ratingElement.innerHTML += `<svg width="40" height="37" viewBox="0 0 40 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 0L24.7023 13.5279L39.0211 13.8197L27.6085 22.4721L31.7557 36.1803L20 28L8.2443 36.1803L12.3915 22.4721L0.97887 13.8197L15.2977 13.5279L20 0Z" fill="#F6E045"/>
+</svg>
+`;
+                }
+            }
+
+            container.appendChild(ratingElement);
+            console.log(rating);
+        });
+    });
+</script>
 
 <link rel="stylesheet" href="{% static 'partner_meet/css/SearchPage.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
 {% load static %}
-
 
 {% block section %}
 <div class="ButtonPos">
@@ -20,7 +41,7 @@
             {% csrf_token %}
             <div class="containerCardSelector">
                 <div class="CardSelector">
-                    <h2>Catégorie du site</h2>
+                    <h2>Catégorie</h2>
                     <select class="selector" name="categorie">
                         {% for categorie_key, categorie_label in CATEGORIE_CHOICES %}
                         <option value="{{ categorie_key }}">{{ categorie_label }}</option>
@@ -37,7 +58,7 @@
                 </div>
                 <div class="CardSelector">
                     <h2>Tranche d'âge</h2>
-                    <select class="selector" name="age">
+                    <select class="selector" name="age"> <!-- Modifier le nom du champ à "age" -->
                         {% for age_key, age_label in AGE_CHOICES %}
                         <option class="optiontest" value="{{ age_key }}">{{ age_label }}</option>
                         {% endfor %}
@@ -55,21 +76,14 @@
                         <input type="checkbox" name="checkbox" id="free" />
                         <label for="free">Gratuit</label>
                     </div>
-                    <div>
-                        <input type="checkbox" name="checkbox" id="free" />
-                        <label for="free">Émission de C02</label>
-                    </div>
                 </div>
-
                 <button class="ButtonSearch" type="submit">Recherchez</button>
             </div>
         </form>
     </div>
 </div>
 
-
 <div class="containerResultats">
-
     <div class="FitlerResultats">
         <p class="Resultats"> Résultats</p>
         <div class="PosFitlerResultats">
@@ -86,24 +100,51 @@
     </div>
     {% for partner in partnermeet %}
     <div class="cardApp" action="get">
-        <img src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo"
-            style="width: 200px; height: 180px; border-radius: 30px;">
-        <p>{{ partner.description }}</p> <!-- Affichage de la description du partenaire -->
-        <p>{{ partner.prix_avg }} euros / mois</p> <!-- Affichage du prix moyen -->
-        <p>{{ partner.age }} ans est l'âge idéal</p>
-        <p>+ {{ partner.Visites_France}} Visites</p>
+
+        <div>
+            <div class="alignItems">
+                <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo">
+
+               <div class="containerTitleCard">
+
+                    <div class="PosStar">
+                    <h3 class="TitleCard">{{ partner.nom }}</h3>
+                    <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
+                </div>
+                    <!-- <p><i>{{ partner.trustpilot }}/5</i></p> Affichage de la note numérique -->
+                    <!-- Transformation de la note en étoiles -->
+                <div>
+                    <p class="textCard">Voyez plus grand pour vos rencontres</p>
+                    <div class="PosFlag">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="22" viewBox="0 0 35 22">
+                            <rect width="11.6667" height="22" fill="#0055A4" />
+                            <rect x="11.6667" width="11.6667" height="22" fill="#FFFFFF" />
+                            <rect x="23.3333" width="11.6667" height="22" fill="#EF4135" />
+                        </svg>
+                        <p>France</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="Line"></div>
+        <p>{{ partner.prix_avg }}€</p> <!-- Affichage du prix moyen -->
+        <div class="Line"></div>
+        <p>{{ partner.age }}ans</p>
+        <div class="Line"></div>
+        <p>+ {{ partner.Visites_France}}
+            <br> Visites / mois</p>
+            <div class="Line"></div>
+        <button class="buttonVisit" onclick="window.location.href='{{ partner.url }}'"> Visiter </button>
         {% if partner.trustpilot %}
-        <p><i>{{ partner.trustpilot }}/5</i></p> <!-- Affichage de la note moyenne si disponible -->
         {% endif %}
     </div>
-
     {% empty %}
     <div class="empty-message">
         <p>Ces sites de rencontres sont actuellement étudiés par l'équipe de <i>Lightmeet</i></p>
         <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
     </div>
     {% endfor %}
-
 </div>
 
 {% endblock %}

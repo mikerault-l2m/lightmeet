@@ -46,11 +46,12 @@ urlpatterns = [
     path('recherche/site_de_rencontres/', PartnerMeetBestSite.as_view(), name="recherche_meilleur_site"), # nouveau
 
     #Psy
-    path('psy/', PsyHome.as_view(), name="psy_home"),
+    path('recherche_therapeutes/', PsyMeetHome.as_view(), name="recherche_therapeutes"),
     path('psy/create', PsyCreate.as_view(), name="psy_create"),
     path('psy/<str:slug>', PsyDetail.as_view(), name="psy_detail"),
     path('psy/edit/<str:slug>', PsyUpdate.as_view(), name="psy_edit"),
     path('psy/delete/<str:slug>', PsyDelete.as_view(), name="psy_delete"),
+    path('recherche/site_des_thérapeutes/', PsyMeetBestSite.as_view(), name="recherche_meilleur_therapeutes"), # nouveau
 
     #Support
     path('support/', SupportModel.as_view(), name="Contact"),

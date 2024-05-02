@@ -1,0 +1,130 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{% static 'partner_meet/css/SearchPage.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+
+
+{% block section %}
+<div class="ButtonPos">
+    <button class="buttonOtherSearh">Rencontres</button>
+    <button class="buttonOtherSearh">Thérapeutes</button>
+</div>
+<div class="sites-de-rencontres">
+    <div class="containerBackground">
+        <form method="get" action="{% url 'recherche_meilleur_therapeutes' %}">
+            {% csrf_token %}
+            <div class="containerCardSelector">
+                <div class="CardSelector">
+                    <h2>Département</h2>
+                    <select class="selector" name="departement">
+                        {% for departement_key, departement_label in DEPARTEMENT_CHOICES %}
+                        <option value="{{ departement_key }}">{{ departement_label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="CardSelector">
+                    <h2>Diplôme</h2>
+                    <select class="selector" name="diplome">
+                        {% for diplome_key, diplome_label in DIPLOME_CHOICES %}
+                        <option value="{{ diplome_key }}">{{ diplome_label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="CardSelector">
+                    <h2>Spécialité</h2>
+                    <select class="selector" name="specialite">
+                        {% for specialite_key, specialite_label in SPECIALITE_CHOICES %}
+                        <option class="optiontest" value="{{ specialite_key }}">{{ specialite_label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+<div class="PosSearch">
+            <div class="PosFilter">
+               <p>Filtres populaires : </p>
+            <div>
+                <input type="checkbox" name="checkbox" id="partner" />
+                <label for="partner">Thérapeutes affiliés</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="checkbox" id="free" />
+                <label for="free">Émission de C02 du site web</label>
+            </div>
+ </div>
+
+                <button  class="ButtonSearch" type="submit">Recherchez</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="containerResultats">
+    <div class="FitlerResultats">
+        <p class="Resultats"> Résultats</p>
+        <div class="PosFitlerResultats">
+            <button class="ButtonFitlerResultats">
+                Les mieux notés
+            </button>
+            <button class="ButtonFitlerResultats">
+                Les plus populaires
+            </button>
+            <button class="ButtonFitlerResultats">
+                Les plus pertinentes
+            </button>
+        </div>
+    </div>
+    {% for psy in psymeet %}
+    <div class="cardApp" action="get">
+
+        <div>
+            <div class="alignItems">
+                <img class="SizeImgCard" src="{{ psy.LOGO.url }}" alt="{{ psy.nom }} Logo">
+
+               <div class="containerTitleCard">
+
+                    <div class="PosStar">
+                    <h3 class="TitleCard">{{ psy.nom }}</h3>
+                    <p class="rating-container" data-rating="{{ psy.trustpilot }}"></p>
+                </div>
+                    <!-- <p><i>{{ psy.trustpilot }}/5</i></p> Affichage de la note numérique -->
+                    <!-- Transformation de la note en étoiles -->
+                <div>
+                    <p class="textCard">Voyez plus grand pour vos rencontres</p>
+                    <div class="PosFlag">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="22" viewBox="0 0 35 22">
+                            <rect width="11.6667" height="22" fill="#0055A4" />
+                            <rect x="11.6667" width="11.6667" height="22" fill="#FFFFFF" />
+                            <rect x="23.3333" width="11.6667" height="22" fill="#EF4135" />
+                        </svg>
+                        <p>France</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="Line"></div>
+        <p>{{ psy.prix_avg }}€</p> <!-- Affichage du prix moyen -->
+        <div class="Line"></div>
+        <p>{{ psy.age }}ans</p>
+        <div class="Line"></div>
+        <p>+ {{ psy.Visites_France}}
+            <br> Visites / mois</p>
+            <div class="Line"></div>
+        <button class="buttonVisit" onclick="window.location.href='{{ partner.url }}'"> Visiter </button>
+        {% if psy.trustpilot %}
+        {% endif %}
+    </div>
+    {% empty %}
+    <div class="empty-message">
+        <p>Ces sites des thérapeutes sont actuellement étudiés par <i>Lightmeet</i></p>
+        <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

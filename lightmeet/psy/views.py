@@ -151,7 +151,7 @@ class PsyMeetHome(ListView):
         return queryset
 end = time.time()
 elapsed = end - start
-print(f'Temps d\'affichage des critères des sites de rencontre : {elapsed:.2}ms')
+print(f'Temps d\'affichage des critères des sites des thérapeutes : {elapsed:.2}ms')
 
 start = time.time()
 class PsyMeetBestSite(ListView):
@@ -330,7 +330,7 @@ class PsyMeetBestSite(ListView):
         return queryset
 end = time.time()
 elapsed = end - start
-print(f'Temps de recherche des sites de rencontre : {elapsed:.2}ms')
+print(f'Temps de recherche des sites des thérapeutes : {elapsed:.2}ms')
 
 
 

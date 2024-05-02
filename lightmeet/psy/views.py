@@ -9,6 +9,12 @@ from posts.models import *
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
+
+
+
+
+
+
 class PsyHome(ListView):
     model = PsyMeet
     context_object_name = "psys"

@@ -26,15 +26,16 @@ urlpatterns = [
     #path('connexion/delete_account', delete_account, name="Delete Account"),
 
     # Legal
-    path('legal/consentement_visiteur/', legal_Control_Consentement.as_view(), name="legal_consentement_visiteur"),
+    path('legal/consentement/', legal_Control_Consentement.as_view(), name="legal_consentement_visiteur"),
     path('legal/mentions_legales/', legal_Control_ML.as_view(), name="legal_mentions_legales"),
+    path('legal/conditions_generales_utilisation', legal_Control_CGU.as_view(), name="legal_CGU"),
+    path('legal/politique_de_confidentialite/', legal_Control_PDC.as_view(), name="legal_PDC"),
+    path('legal/politique_de_cookies/', legal_Control_PC.as_view(), name="legal_PC"),
     path('legal/mentions_legales/create/', LegalCreate.as_view(), name="legal_create"),
     path('legal/mentions_legales/<str:slug>/', LegalDetail.as_view(), name="legal_detail"),
     path('legal/mentions_legales/edit/<str:slug>/', LegalUpdate.as_view(), name="legal_edit"),
     path('legal/mentions_legales/delete/<str:slug>/', LegalDelete.as_view(), name="legal_delete"),
-    path('legal/conditions_generales_utilisation', legal_Control_CGU.as_view(), name="legal_CGU"),
-    path('legal/politique_de_confidentialite/', legal_Control_PDC.as_view(), name="legal_PDC"),
-    path('legal/politique_de_cookies/', legal_Control_PC.as_view(), name="legal_PC"),
+
 
 
     # Partner_meet
@@ -51,7 +52,7 @@ urlpatterns = [
     path('psy/<str:slug>', PsyDetail.as_view(), name="psy_detail"),
     path('psy/edit/<str:slug>', PsyUpdate.as_view(), name="psy_edit"),
     path('psy/delete/<str:slug>', PsyDelete.as_view(), name="psy_delete"),
-    path('recherche/site_des_thérapeutes/', PsyMeetBestSite.as_view(), name="recherche_meilleur_therapeutes"), # nouveau
+    path('recherche/sites_des_thérapeutes/', PsyMeetBestSite.as_view(), name="recherche_meilleur_therapeutes"), # nouveau
 
     #Support
     path('support/', SupportModel.as_view(), name="Contact"),

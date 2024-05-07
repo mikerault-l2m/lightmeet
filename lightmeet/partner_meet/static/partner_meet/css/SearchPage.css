@@ -32,6 +32,7 @@
 }
 
 .PosSearch {
+    width: 100%;
     margin-top: 1em;
     display: flex;
     justify-content: space-between;
@@ -101,6 +102,7 @@ form {
     font-size: 16px;
     position: relative;
     cursor: pointer;
+    color: black;
     background-image: url('data:image/svg+xml;utf8,<svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 8L0.669872 0.5L9.33013 0.5L5 8Z" fill="black" /></svg>');
     background-repeat: no-repeat;
     background-position: calc(100% - 20px) center;
@@ -116,15 +118,17 @@ form {
     border: none;
     font-size: 1.3em;
     font-weight: bold;
+    color: black;
 }
-
+a {
+    color: #000000;
+}
 .ButtonPos {
     margin-top: 4em;
     display: flex;
     width: 80%;
     justify-content: flex-start;
     gap: 1em;
-
 }
 
 .ButtonSearch {
@@ -135,15 +139,22 @@ form {
     font-size: 1em;
     font-weight: bold;
     padding: 1em 2em 1em 2em;
+    box-shadow: 0.5px 2px 4px 0.001px #0000009b;
 }
 
-.titleLightMeet {
-    display: none;
-    height: 0px;
+.ButtonSearch:active {
+    transform: translateY(1px);
+    box-shadow: 0px 1px 2px 0px #000000;
 }
+
+
 
 
 /* partie Résultats   */
+.VersionMobile {
+    display: none;
+    background-color: violet;
+}
 
 .containerApp {
     display: flex;
@@ -161,28 +172,40 @@ form {
     flex-direction: row;
     background: linear-gradient(#FFFFFF, #FBF1D6);
     border-radius: 1em;
-    gap: 1em;
+    gap: 0.3em;
     justify-content: space-between;
-
-
+    box-shadow: 0px 4px 4px 0px #00000080;
 }
 
-.PosFitlerResultats {
+.descriptionCard {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.PosFilterResultats {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 2em;
     width: 70%;
 }
 
-.FitlerResultats {
+.sizeStar {
+    width: auto;
+    height: 30px;
+}
+
+.FilterResultats {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     margin-top: 1em;
     align-items: center;
 }
 
-.ButtonFitlerResultats {
+.ButtonFilterResultats {
     background-color: #00000000;
     font-size: 1em;
     border: none;
@@ -196,24 +219,27 @@ form {
 }
 
 .containerResultats {
-    width: 65%;
+    width: 80%;
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
+    min-height: 50vh;
 }
 
 a {
     color: black;
 }
 
-.PosFlag{
+.PosFlag {
     display: flex;
     align-items: center;
-    gap:10px;
+    gap: 10px;
+    margin-top: 5px;
 }
-.TitleCard{
+
+.TitleCard {
     font-size: 1.3em;
     align-items: center;
     display: flex;
@@ -221,57 +247,82 @@ a {
     margin: 0;
 }
 
-.textCard{
+.textCard {
     width: 60%;
     margin: 0;
+    font-size: 0.9em;
 }
 
-.alignItems{
+.alignItems {
     display: flex;
     align-items: center;
 }
 
-.PosStar{
+.PosStar {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5px;
+    gap: 5%;
     width: 100%;
 }
-.rating-container{
+
+.PosStar p {
+    display: flex;
+}
+
+
+.rating-container {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 0%;
     align-items: center;
 }
+
 .rating-container p {
     margin: 0;
 }
-.containerTitleCard{
-    margin-left: 10px;
+
+.containerTitleCard {
+    margin-left: 20px;
 }
 
-.Line{
-    height: 100px;
+.Line {
+    height: 70px;
     width: 1px;
     background-color: #00000033;
 }
-.SizeImgCard{
-    width: 150px;
-        height: 100%;
-        border-radius: 30px;
+
+.SizeImgCard {
+    width: 120px;
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px 0px #00000040;
 }
 
-.buttonVisit{
+.buttonVisit {
     background-color: #000000;
     color: #FBFBFB;
     border-radius: 2em;
     border: 1px solid black;
+    box-shadow: 0px 2px 1px 0.1px #000000;
     font-size: 1.2em;
     padding: 0.5em 1em 0.5em 1em;
-    margin-right: 10px;
+    margin-right: 20px;
 
+}
+
+.buttonVisit:active {
+    transform: translateY(1px);
+    box-shadow: 0px 1px 2px 0px #000000;
+}
+
+.pays {
+    margin: 0;
+}
+
+.VersionMobile {
+    display: none;
 }
 
 @media(max-width: 1660px) {
@@ -312,6 +363,15 @@ a {
         font-size: 1.1em;
         font-weight: bold;
     }
+
+
+
+}
+
+@media(max-width: 1200px) {
+    .containerResultats {
+        width: 90%;
+    }
 }
 
 @media(max-width: 1030px) {
@@ -324,6 +384,19 @@ a {
     }
 }
 
+@media(max-width: 992px) {
+    .containerResultats {
+        width: 95%;
+    }
+
+    .SizeImgCard {
+        width: 100px;
+        height: 100%;
+        border-radius: 30px;
+        box-shadow: 0px 4px 4px 0px #00000040;
+    }
+}
+
 .ButtonPos {
     margin-top: 4em;
     display: flex;
@@ -333,6 +406,10 @@ a {
 }
 
 @media(max-width: 768px) {
+    .VersionMobile {
+        display: flex;
+    }
+
     .PosSearch {
 
         justify-content: space-between;
@@ -374,7 +451,6 @@ a {
         width: 200px;
         height: 50px;
         font-size: 1em;
-
     }
 
     .ButtonPos {
@@ -388,10 +464,92 @@ a {
         justify-content: center;
         align-items: center;
         margin-top: -10em;
+        margin-bottom: 3em;
     }
 
-    .titleLightMeet {
-        height: 0px;
+    .VersionPC {
+        display: none;
     }
 
+    .sizeStar {
+        width: auto;
+        height: 15px;
+    }
+
+    .TitleCard {
+        font-size: 12px;
+    }
+
+    .SizeImgCard {
+        width: 60px;
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px 0px #00000040;
+    }
+
+    .containerTitleCard {
+        margin-left: 6px;
+    }
+
+    .buttonVisit {
+        margin: 0;
+        padding: 0.2em 0.4em 0.2em 0.4em;
+        border-radius: 8px;
+        font-size: 15px;
+        box-shadow: 0px 0px 0px 0px #000000;
+    }
+
+    .alignItemsButton {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 60%;
+        gap: 0.6em;
+        margin-right: 6px;
+    }
+
+    .containerDescription p {
+        margin: 3px;
+        font-size: 10px;
+    }
+
+    .textCard {
+        font-size: 10px;
+        width: 60%;
+        margin-top: 3px;
+        margin-bottom: 3px;
+    }
+
+    .cardApp {
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+        padding: 0.4em;
+        width: 97%;
+    }
+
+    .alignItems {
+        display: flex;
+        align-items: center;
+        width: 90%;
+    }
+
+    .pays {
+        font-size: 10px;
+    }
+
+    .PosFlag {
+        margin: 0;
+    }
+
+    .Resultats {
+        font-size: 15px;
+    }
+
+    .ButtonFilterResultats {
+        display: none;
+    }
+
+    .containerResultats {
+        margin-bottom: 2em;
+    }
 }

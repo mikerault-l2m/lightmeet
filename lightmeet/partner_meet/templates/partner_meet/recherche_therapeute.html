@@ -1,13 +1,34 @@
 {% extends 'partner_meet/base_Partner_meet.html' %}
 {% load static %}
-
 {% block css %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const ratingContainers = document.querySelectorAll('.rating-container');
+        ratingContainers.forEach(container => {
+            const rating = parseFloat(container.getAttribute('data-rating'));
+            const ratingElement = document.createElement('p');
+            ratingElement.innerHTML = '';
+
+            for (let i = 0; i < 5; i++) {
+                if (i < rating) {
+                    ratingElement.innerHTML += `<svg class='sizeStar' viewBox="0 0 40 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 0L24.7023 13.5279L39.0211 13.8197L27.6085 22.4721L31.7557 36.1803L20 28L8.2443 36.1803L12.3915 22.4721L0.97887 13.8197L15.2977 13.5279L20 0Z" fill="#F6E045"/>
+</svg>
+`;
+                }
+            }
+
+            container.appendChild(ratingElement);
+            console.log(rating);
+        });
+    });
+</script>
 
 <link rel="stylesheet" href="{% static 'partner_meet/css/SearchPage.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
-
+{% load static %}
 
 {% block section %}
 <div class="ButtonPos">
@@ -16,115 +37,153 @@
 </div>
 <div class="sites-de-rencontres">
     <div class="containerBackground">
-        <form method="get" action="{% url 'recherche_meilleur_therapeutes' %}">
+        <form method="get" action="{% url 'recherche_meilleur_site' %}">
             {% csrf_token %}
             <div class="containerCardSelector">
                 <div class="CardSelector">
-                    <h2>Département</h2>
-                    <select class="selector" name="departement">
-                        {% for departement_key, departement_label in DEPARTEMENT_CHOICES %}
-                        <option value="{{ departement_key }}">{{ departement_label }}</option>
+                    <h2>Catégorie</h2>
+                    <select class="selector" name="categorie">
+                        {% for categorie_key, categorie_label in CATEGORIE_CHOICES %}
+                        <option value="{{ categorie_key }}">{{ categorie_label }}</option>
                         {% endfor %}
                     </select>
                 </div>
                 <div class="CardSelector">
-                    <h2>Diplôme</h2>
-                    <select class="selector" name="diplome">
-                        {% for diplome_key, diplome_label in DIPLOME_CHOICES %}
-                        <option value="{{ diplome_key }}">{{ diplome_label }}</option>
+                    <h2>Relation</h2>
+                    <select class="selector" name="relation">
+                        {% for relation_key, relation_label in RELATION_CHOICES %}
+                        <option value="{{ relation_key }}">{{ relation_label }}</option>
                         {% endfor %}
                     </select>
                 </div>
                 <div class="CardSelector">
-                    <h2>Spécialité</h2>
-                    <select class="selector" name="specialite">
-                        {% for specialite_key, specialite_label in SPECIALITE_CHOICES %}
-                        <option class="optiontest" value="{{ specialite_key }}">{{ specialite_label }}</option>
+                    <h2>Tranche d'âge</h2>
+                    <select class="selector" name="age"> <!-- Modifier le nom du champ à "age" -->
+                        {% for age_key, age_label in AGE_CHOICES %}
+                        <option class="optiontest" value="{{ age_key }}">{{ age_label }}</option>
                         {% endfor %}
                     </select>
                 </div>
             </div>
-<div class="PosSearch">
-            <div class="PosFilter">
-               <p>Filtres populaires : </p>
-            <div>
-                <input type="checkbox" name="checkbox" id="partner" />
-                <label for="partner">Thérapeutes affiliés</label>
-            </div>
-
-            <div>
-                <input type="checkbox" name="checkbox" id="free" />
-                <label for="free">Émission de C02 du site web</label>
-            </div>
- </div>
-
-                <button  class="ButtonSearch" type="submit">Recherchez</button>
+            <div class="PosSearch">
+                <div class="PosFilter">
+                    <p>Filtres populaires: </p>
+                    <div>
+                        <input type="checkbox" name="checkbox" id="partner" />
+                        <label for="partner">Partenaires affiliés</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="checkbox" id="free" />
+                        <label for="free">Gratuit</label>
+                    </div>
+                </div>
+                <button class="ButtonSearch" type="submit">Recherchez</button>
             </div>
         </form>
     </div>
 </div>
+
 <div class="containerResultats">
-    <div class="FitlerResultats">
+    <div class="FilterResultats">
         <p class="Resultats"> Résultats</p>
-        <div class="PosFitlerResultats">
-            <button class="ButtonFitlerResultats">
+        <div class="PosFilterResultats">
+            <button class="ButtonFilterResultats">
                 Les mieux notés
             </button>
-            <button class="ButtonFitlerResultats">
+            <button class="ButtonFilterResultats">
                 Les plus populaires
             </button>
-            <button class="ButtonFitlerResultats">
+            <button class="ButtonFilterResultats">
                 Les plus pertinentes
             </button>
         </div>
     </div>
-    {% for psy in psymeet %}
-    <div class="cardApp" action="get">
-
+    {% for partner in partnermeet %}
+    <div class="cardApp VersionPC" action="get">
         <div>
             <div class="alignItems">
-                <img class="SizeImgCard" src="{{ psy.LOGO.url }}" alt="{{ psy.nom }} Logo">
+                <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo">
 
-               <div class="containerTitleCard">
+                <div class="containerTitleCard">
 
                     <div class="PosStar">
-                    <h3 class="TitleCard">{{ psy.nom }}</h3>
-                    <p class="rating-container" data-rating="{{ psy.trustpilot }}"></p>
-                </div>
-                    <!-- <p><i>{{ psy.trustpilot }}/5</i></p> Affichage de la note numérique -->
-                    <!-- Transformation de la note en étoiles -->
-                <div>
+                        <h3 class="TitleCard">{{ partner.nom }}</h3>
+                        <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
+                    </div>
+
                     <p class="textCard">Voyez plus grand pour vos rencontres</p>
                     <div class="PosFlag">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="22" viewBox="0 0 35 22">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 35 22">
                             <rect width="11.6667" height="22" fill="#0055A4" />
-                            <rect x="11.6667" width="11.6667" height="22" fill="#FFFFFF" />
-                            <rect x="23.3333" width="11.6667" height="22" fill="#EF4135" />
+                            <rect x="11.6667" width="10.6667" height="22" fill="#FFFFFF" />
+                            <rect x="23.3333" width="10.6667" height="22" fill="#EF4135" />
                         </svg>
-                        <p>France</p>
+                        <p class="pays">France</p>
                     </div>
+
                 </div>
-            </div>
             </div>
         </div>
         <div class="Line"></div>
-        <p>{{ psy.prix_avg }}€</p> <!-- Affichage du prix moyen -->
+        <p class="descriptionCard bold">{{ partner.prix_avg }}€</p> <!-- Affichage du prix moyen -->
         <div class="Line"></div>
-        <p>{{ psy.age }}ans</p>
+        <p class="descriptionCard bold">{{ partner.age }}ans</p>
         <div class="Line"></div>
-        <p>+ {{ psy.Visites_France}}
-            <br> Visites / mois</p>
-            <div class="Line"></div>
+        <p class="descriptionCard">+ {{ partner.Visites_France}}
+            <br> Visites / mois
+        </p>
+        <div class="Line"></div>
         <button class="buttonVisit" onclick="window.location.href='{{ partner.url }}'"> Visiter </button>
-        {% if psy.trustpilot %}
+        {% if partner.trustpilot %}
+        {% endif %}
+    </div>
+
+    <div class="cardApp VersionMobile" action="get">
+
+            <div class="alignItems">
+                <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo">
+
+                <div class="containerTitleCard">
+
+                    <div class="PosStar">
+                        <h3 class="TitleCard">{{ partner.nom }}</h3>
+                        <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
+                    </div>
+
+                    <p class="textCard">Voyez plus grand pour vos rencontres</p>
+                    <div class="PosFlag">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10">
+                    <rect width="4.6667" height="10" fill="#0055A4" />
+                    <rect x="4.6667" width="4.6667" height="10" fill="#FFFFFF" />
+                    <rect x="9.3334" width="4.6667" height="10" fill="#EF4135" />
+                </svg>
+
+
+
+                        <p class="pays">France</p>
+                    </div>
+
+                </div>
+            </div>
+
+       <div class="alignItemsButton">
+
+       <div class="containerDescription">
+            <p class="descriptionCard bold">{{ partner.prix_avg }}€</p> <!-- Affichage du prix moyen -->
+            <p class="descriptionCard bold">{{ partner.age }}  ans</p>
+            <p class="descriptionCard">+ {{ partner.Visites_France}} Visites / mois
+            </p></div>
+            <button class="buttonVisit" onclick="window.location.href='{{ partner.url }}'"> > </button>
+        </div>
+        {% if partner.trustpilot %}
         {% endif %}
     </div>
     {% empty %}
     <div class="empty-message">
-        <p>Ces sites des thérapeutes sont actuellement étudiés par <i>Lightmeet</i></p>
+        <p>Ces sites de rencontres sont actuellement étudiés par <i>Lightmeet</i></p>
         <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
     </div>
     {% endfor %}
 </div>
-{% endblock %}
 
+{% endblock %}

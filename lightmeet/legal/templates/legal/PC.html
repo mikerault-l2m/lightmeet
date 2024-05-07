@@ -1,0 +1,81 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+
+{% block section %}
+<section>
+    <div class="Titre" style="font-size:45px;margin:20px 0px 40px 0px"> Politique des cookies</div>
+    <div class="Text">
+        Cette politique de confidentialité a été mise à jour pour la dernière fois le 06/05/2024 et s’applique aux utilisateurs de Lightmeet.
+    </div>
+    <div class="Title">1. INTRODUCTION</div>
+    <div class="Text">
+        <div class="subtitle">Notre plateforme Lightmeet (ci-après : « la plateforme ») utilise des cookies et d'autres technologies similaires. Dans ce document, nous vous informons de l’utilisation des cookies sur notre plateforme.</div>
+    </div>
+    <div class="Title">2. QU'EST-CE QUE LES COOKIES ?</div>
+    <div class="Text">
+        <div class="subtitle" style="font-weight: 300; margin: 10px;"> Un cookie est un petit fichier envoyé avec les pages de la plateforme et stocké par votre navigateur sur votre appareil. Les informations stockées peuvent être renvoyées à nos serveurs lors de visites ultérieures.</div>
+    </div>
+    <div class="Title">3. QU'EST-CE QU'UN SCRIPT ?</div>
+    <div class="Text">
+        <div class="subtitle">Un script est un code utilisé pour le bon fonctionnement et l'interactivité de la plateforme. Ce code est exécuté sur nos serveurs ou sur votre appareil.</div>
+    </div>
+    <div class="Title">4. QU'EST-CE QU'UNE BALISE INVISIBLE ?</div>
+    <div class="Text">
+        <div class="subtitle">Une balise invisible (ou balise web) est un élément caché sur la plateforme utilisé pour suivre le trafic. Elle stocke des données à des fins d'analyse.</div>
+    </div>
+    <div class="Title">5. COOKIES</div>
+    <div class="Text">
+        <div class="subtitle">5.1 Cookies techniques ou fonctionnels</div>
+        <div class="subText">Certains cookies assurent le bon fonctionnement de la plateforme et prennent en compte vos préférences. Nous pouvons placer ces cookies sans votre consentement.</div>
+        <div class="subtitle">5.2 Cookies statistiques</div>
+        <div class="subText">Nous utilisons des cookies statistiques pour améliorer votre expérience sur la plateforme. Nous demandons votre autorisation pour les placer.</div>
+        <div class="subtitle">5.3 Cookies de marketing/suivi</div>
+        <div class="subText">Ces cookies sont utilisés pour afficher des publicités ciblées ou suivre votre activité à des fins marketing.</div>
+        <div class="subtitle">5.4 Réseaux sociaux</div>
+        <div class="subText">Nous intégrons du contenu des réseaux sociaux qui peut placer des cookies à des fins de publicité personnalisée.</div>
+    </div>
+    <div class="Title">6. COOKIES PLACÉS</div>
+    <div class="Text">
+        <div class="subText">Pour le moment, aucun cookie n'est utilisé sur Lightmeet.</div>
+    </div>
+    <div class="Title">7. CONSENTEMENT</div>
+    <div class="Text">
+        Lors de votre première visite sur notre plateforme, nous vous informerons sur l'utilisation des cookies.
+        En cliquant sur « Ok », vous consentez à l'utilisation des cookies conformément à cette politique.
+        Vous pouvez désactiver les cookies, mais cela peut affecter le fonctionnement de la plateforme.
+    </div>
+    <div class="Title">8. ACTIVER/DESACTIVER ET SUPPRIMER LES COOKIES</div>
+    <div class="Text">
+        <div class="subText">Vous pouvez configurer votre navigateur pour gérer les cookies. Cependant, désactiver les cookies peut altérer le fonctionnement de la plateforme.</div>
+    </div>
+    <div class="Title">9. VOS DROITS CONCERNANT LES DONNÉES PERSONNELLES</div>
+    <div class="Text">
+        <div class="subtitle">Pour exercer vos droits sur vos données personnelles, veuillez nous contacter. Vous avez le droit de :</div>
+        <ul>
+            <li>Connaître la raison de la collecte de vos données et leur traitement.</li>
+            <li>Accéder à vos données personnelles.</li>
+            <li>Demander la rectification, la suppression ou le blocage de vos données.</li>
+            <li>Révoquer votre consentement et demander la suppression de vos données.</li>
+            <li>Demander le transfert de vos données à un autre responsable.</li>
+            <li>Vous opposer au traitement de vos données, sauf motifs légitimes.</li>
+        </ul>
+        <div class="subText">Vous avez également le droit de déposer une plainte auprès de l'autorité de protection des données.</div>
+    </div>
+    <div class="Title">10. COORDONNÉES</div>
+    <div class="Text">
+        <div class="subtitle">Pour toute question concernant cette politique, vous pouvez nous contacter :</div>
+        <ul>
+            <li><a href="{% url 'Contact' %}">Contactez l'équipe</a></li>
+            <li>Par email : support@lightmeet.com</li>
+            <li>Par courrier :</li>
+            <li>Délégué à la protection des données, Listen2Meet</li>
+            <li>8 Rue de Liège Pau 64000 FRANCE</li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

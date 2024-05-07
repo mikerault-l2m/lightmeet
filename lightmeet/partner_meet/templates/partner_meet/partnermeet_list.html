@@ -47,18 +47,12 @@
 <div class="PosSearch">
             <div class="PosFilter">
                <p>Filtres populaires : </p>
-            <div>
-                <input type="checkbox" name="checkbox" id="partner" />
-                <label for="partner">Partenaires affiliés</label>
-            </div>
-            <div>
-                <input type="checkbox" name="checkbox" id="free" />
-                <label for="free">Gratuit</label>
-            </div>
-            <div>
-                <input type="checkbox" name="checkbox" id="free" />
-                <label for="free">Émission de C02</label>
-            </div>
+                {% for partner in partnermeet %}
+                    <div>
+                        <input type="checkbox" name="checkbox" id="partner" />
+                        <label for="partner">Émission de C02</label>
+                    </div>
+                    {% endfor %}
         </div>
 
                 <button  class="ButtonSearch" type="submit">Recherchez</button>

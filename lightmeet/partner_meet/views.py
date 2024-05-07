@@ -25,7 +25,7 @@ class Home(TemplateView):
         posts = BlogPost.objects.all()
         context['posts'] = posts  # Ajouter les objets au contexte
         return context
-
+    # Def Consentement :Aller chercher la données 'consent' de la classe Legal de sorte à la rendre disponible sur la page Home => Design Figma Consentement
 start = time.time()
 class PartnerMeetHome(ListView):
     model = PartnerMeet
@@ -35,16 +35,12 @@ class PartnerMeetHome(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['CATEGORIE_CHOICES'] = (
+            #('Toutes','Toutes'),
             ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
             ("Extra-conjugales", "Site extra-conjugal"),
-            ("Tchat", "Site tchat instantané"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
-            ("Religion", "Site soutenant une religion"),
-            ("Handicap", "Site pour handicap"),
-            ("Insolite", "Site insolite"),
-            ("Géolocalisation", "Site axé sur la géolocalisation"),
         )
         context['AGE_CHOICES'] = (
             ('18-25', '18-25 ans'),
@@ -54,10 +50,10 @@ class PartnerMeetHome(ListView):
             ('plus', 'Plus de 55 ans')
         )
         context['RELATION_CHOICES'] = (
-            ('durables', 'Durables'),
+            #('Toutes','Toutes'),
+            ('Durables', 'Durables'),
             ("Relation d'un soir", "Relation d'un soir"),
-            ('gays', 'Gays'),
-            ('lesbiennes', 'Lesbiennes')
+            ('Homosexuelles', 'Homosexuelles'),
         )
         return context
     def get_queryset(self):
@@ -126,16 +122,12 @@ class PartnerMeetBestSite(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['CATEGORIE_CHOICES'] = (
+            #('Toutes','Toutes'),
             ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
             ("Extra-conjugales", "Site extra-conjugal"),
-            ("Tchat", "Site tchat instantané"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
-            ("Religion", "Site soutenant une religion"),
-            ("Handicap", "Site pour handicap"),
-            ("Insolite", "Site insolite"),
-            ("Géolocalisation", "Site axé sur la géolocalisation"),
         )
         context['AGE_CHOICES'] = (
             ('18-25', '18-25 ans'),
@@ -145,10 +137,10 @@ class PartnerMeetBestSite(ListView):
             ('plus', 'Plus de 55 ans')
         )
         context['RELATION_CHOICES'] = (
-            ('durables', 'Durables'),
+            #('Toutes','Toutes'),
+            ('Durables', 'Durables'),
             ("Relation d'un soir", "Relation d'un soir"),
-            ('gays', 'Gays'),
-            ('lesbiennes', 'Lesbiennes')
+            ('Homosexuelles', 'Homosexuelles'),
         )
         return context
 

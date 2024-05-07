@@ -11,7 +11,7 @@
 
             for (let i = 0; i < 5; i++) {
                 if (i < rating) {
-                    ratingElement.innerHTML += `<svg width="40" height="37" viewBox="0 0 40 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    ratingElement.innerHTML += `<svg class='sizeStar' viewBox="0 0 40 37" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M20 0L24.7023 13.5279L39.0211 13.8197L27.6085 22.4721L31.7557 36.1803L20 28L8.2443 36.1803L12.3915 22.4721L0.97887 13.8197L15.2977 13.5279L20 0Z" fill="#F6E045"/>
 </svg>
 `;
@@ -68,14 +68,12 @@
             <div class="PosSearch">
                 <div class="PosFilter">
                     <p>Filtres populaires: </p>
+                    {% for partner in partnermeet %}
                     <div>
                         <input type="checkbox" name="checkbox" id="partner" />
-                        <label for="partner">Partenaires affiliés</label>
+                        <label for="partner">Émission de C02</label>
                     </div>
-                    <div>
-                        <input type="checkbox" name="checkbox" id="free" />
-                        <label for="free">Gratuit</label>
-                    </div>
+                    {% endfor %}
                 </div>
                 <button class="ButtonSearch" type="submit">Recherchez</button>
             </div>
@@ -84,64 +82,103 @@
 </div>
 
 <div class="containerResultats">
-    <div class="FitlerResultats">
+    <div class="FilterResultats">
         <p class="Resultats"> Résultats</p>
-        <div class="PosFitlerResultats">
-            <button class="ButtonFitlerResultats">
+        <div class="PosFilterResultats">
+            <button class="ButtonFilterResultats">
                 Les mieux notés
             </button>
-            <button class="ButtonFitlerResultats">
+            <button class="ButtonFilterResultats">
                 Les plus populaires
             </button>
-            <button class="ButtonFitlerResultats">
+            <button class="ButtonFilterResultats">
                 Les plus pertinentes
             </button>
         </div>
     </div>
     {% for partner in partnermeet %}
-    <div class="cardApp" action="get">
-
+    <div class="cardApp VersionPC" action="get">
         <div>
             <div class="alignItems">
                 <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo">
 
-               <div class="containerTitleCard">
+                <div class="containerTitleCard">
 
                     <div class="PosStar">
-                    <h3 class="TitleCard">{{ partner.nom }}</h3>
-                    <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
-                </div>
-                    <!-- <p><i>{{ partner.trustpilot }}/5</i></p> Affichage de la note numérique -->
-                    <!-- Transformation de la note en étoiles -->
-                <div>
+                        <h3 class="TitleCard">{{ partner.nom }}</h3>
+                        <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
+                    </div>
+
                     <p class="textCard">Voyez plus grand pour vos rencontres</p>
                     <div class="PosFlag">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="22" viewBox="0 0 35 22">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 35 22">
                             <rect width="11.6667" height="22" fill="#0055A4" />
-                            <rect x="11.6667" width="11.6667" height="22" fill="#FFFFFF" />
-                            <rect x="23.3333" width="11.6667" height="22" fill="#EF4135" />
+                            <rect x="11.6667" width="10.6667" height="22" fill="#FFFFFF" />
+                            <rect x="23.3333" width="10.6667" height="22" fill="#EF4135" />
                         </svg>
-                        <p>France</p>
+                        <p class="pays">France</p>
                     </div>
+
                 </div>
-            </div>
             </div>
         </div>
         <div class="Line"></div>
-        <p>{{ partner.prix_avg }}€</p> <!-- Affichage du prix moyen -->
+        <p class="descriptionCard bold">{{ partner.prix_avg }}€</p> <!-- Affichage du prix moyen -->
         <div class="Line"></div>
-        <p>{{ partner.age }}ans</p>
+        <p class="descriptionCard bold">{{ partner.age }}ans</p>
         <div class="Line"></div>
-        <p>+ {{ partner.Visites_France}}
-            <br> Visites / mois</p>
-            <div class="Line"></div>
+        <p class="descriptionCard">+ {{ partner.Visites_France}}
+            <br> Visites / mois
+        </p>
+        <div class="Line"></div>
         <button class="buttonVisit" onclick="window.location.href='{{ partner.url }}'"> Visiter </button>
+        {% if partner.trustpilot %}
+        {% endif %}
+    </div>
+
+    <div class="cardApp VersionMobile" action="get">
+
+            <div class="alignItems">
+                <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo">
+
+                <div class="containerTitleCard">
+
+                    <div class="PosStar">
+                        <h3 class="TitleCard">{{ partner.nom }}</h3>
+                        <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
+                    </div>
+
+                    <p class="textCard">Voyez plus grand pour vos rencontres</p>
+                    <div class="PosFlag">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10">
+                    <rect width="4.6667" height="10" fill="#0055A4" />
+                    <rect x="4.6667" width="4.6667" height="10" fill="#FFFFFF" />
+                    <rect x="9.3334" width="4.6667" height="10" fill="#EF4135" />
+                </svg>
+
+
+
+                        <p class="pays">France</p>
+                    </div>
+
+                </div>
+            </div>
+
+       <div class="alignItemsButton">
+
+       <div class="containerDescription">
+            <p class="descriptionCard bold">{{ partner.prix_avg }}€</p> <!-- Affichage du prix moyen -->
+            <p class="descriptionCard bold">{{ partner.age }}  ans</p>
+            <p class="descriptionCard">+ {{ partner.Visites_France}} Visites / mois
+            </p></div>
+            <button class="buttonVisit" onclick="window.location.href='{{ partner.url }}'"> > </button>
+        </div>
         {% if partner.trustpilot %}
         {% endif %}
     </div>
     {% empty %}
     <div class="empty-message">
-        <p>Ces sites de rencontres sont actuellement étudiés par l'équipe de <i>Lightmeet</i></p>
+        <p>Ces sites de rencontres sont actuellement étudiés par <i>Lightmeet</i></p>
         <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
     </div>
     {% endfor %}

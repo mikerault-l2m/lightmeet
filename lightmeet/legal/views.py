@@ -55,4 +55,4 @@ class legal_Control_PC(TemplateView):
 
 class legal_Control_Consentement(TemplateView):
     model = Legal
-    template_name = "legal/Consentement.html"
+    template_name = "partner_meet/Consentement.html"

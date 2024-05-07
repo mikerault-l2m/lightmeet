@@ -17,7 +17,7 @@ body {
 .Title {
     font-size: 3.5em;
     font-style: thin;
-    font-weight: 300;
+    font-weight: lighter;
     margin: 1.5em 0em 0em 0em;
     font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -38,14 +38,15 @@ body {
 }
 
 .call-to-action {
-    background-color: #0D0C22;
+
+
     border-radius: 40px;
-    padding: 1em 6em 1em 6em;
+    padding: 0.7em 1em 0.7em 1em;
     margin: 20px 0;
     border: none;
     cursor: pointer;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .boxes {
@@ -139,25 +140,29 @@ h3 {
     border: none;
     border-radius: 1em;
     font-weight: bold;
-    font-size: 18px;
-    padding: 0.7em 3.5em 0.7em 3.5em;
+    font-size: 1em;
+    padding: 0.5em 1.1em 0.5em 1.1em;
     margin: 1em;
     color: black;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.buttonInfoComparateur:active {
+    transform: translateY(1px);
+    box-shadow: 0px 1px 2px 0px #000000;
+}
+
 
 .V2 {
     background-color: #FBF1D6;
 }
 
-
-
 .callToActionTitle h1 {
-    max-width: 55%;
+    max-width: 50%;
     letter-spacing: 2px;
     font-size: 3.5em;
-    font-weight: 200;
+    font-weight: lighter;
     text-align: center;
-
 }
 
 .callToActionTitle p {
@@ -190,6 +195,31 @@ h3 {
     font-size: 16px;
 }
 
+.call-to-action {
+    background-color: #0D0C22;
+    border-radius: 40px;
+    width: 230px;
+    padding: 1em 1em 1em 1em;
+    letter-spacing: 1px;
+    box-shadow: 0.5px 2px 4px 0.001px #0000009b;
+    margin: 20px 0;
+    border: none;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+    transition: transform 0s, box-shadow 0s;
+}
+
+.call-to-action:active {
+    transform: translateY(1px);
+    box-shadow: 0px 1px 2px 0px #0000009b;
+}
+.callToAction:active {
+    transform: translateY(1px);
+    box-shadow: 0px 1px 2px 0px #0000009b;
+}
+
+
 .buttonWhite {
     background-color: #FBFBFB;
     color: #000000;
@@ -202,8 +232,6 @@ h3 {
     margin: 1em;
     margin-top: 2em;
     margin-bottom: 3em;
-
-
     gap: 1em;
 }
 
@@ -220,9 +248,7 @@ h3 {
 }
 
 .imageSite {
-    width: 80%;
     width: 100%;
-
 }
 
 .TextImgSitePresentation {
@@ -255,44 +281,6 @@ h3 {
     margin-bottom: 6em;
 }
 
-
-/* page 2 listing app cree une autre page css par la suite  */
-.containerList {
-    min-height: 100vh;
-}
-
-.containerApp {
-    display: flex;
-    flex-direction: column;
-}
-
-.cardApp {
-    align-items: center;
-    padding: 0.5em;
-    display: flex;
-    width: 900px;
-    flex-direction: row;
-    background: linear-gradient(#FFFFFF, #FBF1D6);
-    border-radius: 1em;
-    justify-content: space-between;
-    gap: 1em;
-}
-
-.logo-link {
-    margin: 1em;
-    border-radius: 1em;
-    font-style: none;
-    color: #000000;
-    font-style: normal;
-    text-decoration: none;
-}
-
-.TitleList {
-    text-align: center;
-    margin-top: 3em;
-    margin-bottom: 2em;
-}
-
 @media(max-width: 1562px) {
     .callToActionTitle h1 {
         max-width: 70%;
@@ -303,8 +291,8 @@ h3 {
     }
 }
 
-
 @media(max-width: 992px) {
+
     .buttonLinkOtherPage {
         width: 100%;
         height: 200px;
@@ -335,12 +323,7 @@ h3 {
         font-size: 2.5em;
         min-width: 80%;
         margin-top: 2em;
-
     }
-
-
-
-
 }
 
 @media(max-width: 768px) {
@@ -386,6 +369,14 @@ h3 {
 }
 
 @media(max-width:992px) {
+    .boxesContainer {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 0em;
+            margin-top: 2em;
+            margin-bottom: 3em;
+            gap: 1em;
+        }
     .Social {
         margin: 0em 0em 0em -5%;
         display: flex;
@@ -413,7 +404,7 @@ h3 {
 
 
     .boxSite {
-        padding: 1em;
+        padding: 0.5em;
         background-color: none;
         border-radius: 15px;
         display: flex;
@@ -431,23 +422,6 @@ h3 {
 }
 
 @media(max-width:768px) {
-
-    .ListFooter {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: normal;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        margin-top: 1em;
-        margin-bottom: 1em;
-    }
-
-    .ListFooter li {
-        text-align: left;
-        padding: 0.5em 1em 0.5em 1em;
-    }
-
     .Contact,
     .Connect,
     .Prenom {
@@ -479,17 +453,27 @@ h3 {
 
     .boxes {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 1.3em;
     }
 
     .box {
         margin: 1.3em 0px 1.3em 0px;
-        width: 240px;
+        width: 270px;
     }
+ .boxSite {
+     padding: 1em;
+     width: 40%;
 
+ }
     .boxesContainer {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        gap: 0em;
+            width: 100%;
+            margin: 0.1em;
+            flex-wrap: wrap;
     }
 
     .call-to-action-container {
@@ -499,7 +483,9 @@ h3 {
         padding-bottom: 3em;
         width: 100%;
         margin-top: 2em;
+
     }
+
 
     .callToActionTitle h1 {
         font-size: 1.5em;
@@ -521,11 +507,16 @@ h3 {
     }
 
     .call-to-action {
-        padding: 0.7em 3em 0.7em 3em;
+        padding: 0.8em 1em 0.8em 1em;
+        width: 100%;
     }
 
     .buttonInfoComparateur {
-        padding: 0.7em 3em 0.7em 3em;
+        padding: 0.8em 1em 0.7em 1em;
+
+
+            border-radius: 80px;
+
 
     }
 

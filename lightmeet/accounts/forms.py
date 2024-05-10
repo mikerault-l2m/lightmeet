@@ -7,20 +7,13 @@ from django.contrib.auth import authenticate
 class LightenerForm(forms.ModelForm):
     class Meta:
         model = Lightener
-        fields = ['ip_address', 'location', 'engagement', 'clic_comparer', 'clic_rencontres', 'clic_therapeutes']
-
-# Ce modèle nous permet d'obtenir le consentement de l'utilisateur
-class Consentement_Utilisateur(forms.ModelForm):
-    class Meta:
-        model = Lightener
-        fields = ['ip_address','location','consentement']
+        fields = ['ip_adress', 'location', 'engagement', 'clic_comparer', 'clic_rencontres', 'clic_therapeutes']
 
 class CustomAuthenticationForm(AuthenticationForm):
     username = forms.EmailField(
         required=True,
         widget=forms.EmailInput(attrs={"class": "form-control1", "placeholder": "Adresse email *"})
     )
-
     password = forms.CharField(
         required=True,
         widget=forms.PasswordInput(attrs={"class": "form-control1", "placeholder": "Mot de passe *"})

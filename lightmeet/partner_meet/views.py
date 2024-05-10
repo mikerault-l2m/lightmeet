@@ -9,12 +9,15 @@ from partner_meet.models import *
 from partner_meet.forms import *
 from posts.models import *
 from posts.views import *
+from legal.models import *
 from django.conf import settings
 import time
 from django.db.models import F, ExpressionWrapper, DecimalField
 from decimal import Decimal
 from django.views.decorators.csrf import csrf_protect
 
+
+start = time.time()
 class Home(TemplateView):
     model = Lightener
     template_name = 'partner_meet/Home.html'
@@ -25,7 +28,24 @@ class Home(TemplateView):
         posts = BlogPost.objects.all()
         context['posts'] = posts  # Ajouter les objets au contexte
         return context
-    # Def Consentement :Aller chercher la données 'consent' de la classe Legal de sorte à la rendre disponible sur la page Home => Design Figma Consentement
+
+    def visiteur_consentement(request):
+        if request.method == "POST":
+            form = LightenerCreationForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect("Home")
+        else:
+            form = LightenerCreationForm()
+        context = {'form': form}
+        return render(request, "partner_meet/Home.html", context)
+
+
+end = time.time()
+elapsed = end - start
+print(f'Temps d\'affichage de la page principale de LightMeet : {elapsed:.2}ms')
+
+
 start = time.time()
 class PartnerMeetHome(ListView):
     model = PartnerMeet
@@ -80,13 +100,6 @@ class PartnerMeetHome(ListView):
             queryset = queryset.filter(affiliation=True)
         elif affiliation == 'false':
             queryset = queryset.filter(affiliation=False)
-
-        # Filtre selon la gratuité
-        free = self.request.GET.get('free')
-        if free == 'true':
-            queryset = queryset.filter(free=True)
-        elif free == 'false':
-            queryset = queryset.filter(free=False)
 
         # Filtre selon la émission de CO2
         co2 = self.request.GET.get('co2')

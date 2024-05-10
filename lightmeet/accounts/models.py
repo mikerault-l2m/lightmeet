@@ -33,7 +33,7 @@ class Lightener(AbstractBaseUser):
     weekly_likes = models.PositiveIntegerField(default=0)
     weekly_favorites = models.PositiveIntegerField(default=0)
     last_weekly_reset = models.DateField(default=timezone.now)
-    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    ip_adress = models.GenericIPAddressField(null=True, blank=True)
     location = models.CharField(max_length=100, blank=True)
     engagement = models.PositiveIntegerField(default=0)
     favorite_app = models.PositiveIntegerField(default=0)

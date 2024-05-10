@@ -13,6 +13,21 @@
 <a href="{% url 'recherche_home' %}">
     <button class="call-to-action call-to-action-comparer">Comparer</button>
 </a>
+
+<div class="call-to-action-container">
+    <img src="{% static 'Logos/Lightmeet.png' %}" alt="Lightmeet Logo" class="logo">
+    <h2>Votre vie privée nous tient à cœur</h2>
+    <p>Pour personnaliser votre expérience, nous collectons des informations sur la façon dont vous utilisez LightMeet, ce qui inclut les données personnelles telles que votre adresse IP. Ces informations sont utilisées pour améliorer votre expérience, stocker les informations contenues sur un appareil et y accéder, ainsi que pour la publicité personnalisée, les mesures de rendement de la publicité, les études sur l'audience et le développement des services. Pour en savoir plus, consultez notre Politique en matière de cookies.
+    LightMeet et ses 100 partenaires peuvent se baser sur l'intérêt légitime à certaines fins, plutôt que sur le consentement.
+    Cliquez sur « Préférences en matière de cookies » pour avoir plus d'informations à ce sujet et savoir comment vous y opposer, ou sélectionnez « OK » afin d'autoriser tous les cookies.</p>
+    <form method="post" action="{% url 'Home' %}">
+        {% csrf_token %}
+        {{ form.consentement }}
+        <button type="submit"> Valider les cookies</button>
+    </form>
+    <a href="{% url 'legal_PC' %}" class="cookie-preferences-link">Préférences des cookies</a>
+</div>
+
 <div class="boxes">
     <div class="box">
         <div class="iconBox">

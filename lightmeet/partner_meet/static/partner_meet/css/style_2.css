@@ -28,18 +28,7 @@ body {
     font-style: normal;
 }
 
-.call-to-action-container {
-    background-color: #FBF1D6;
-    padding: 0px;
-    margin-bottom: 3em;
-    padding-bottom: 5em;
-    width: 100%;
-    margin-top: 2em;
-}
-
 .call-to-action {
-
-
     border-radius: 40px;
     padding: 0.7em 1em 0.7em 1em;
     margin: 20px 0;
@@ -214,6 +203,7 @@ h3 {
     transform: translateY(1px);
     box-shadow: 0px 1px 2px 0px #0000009b;
 }
+
 .callToAction:active {
     transform: translateY(1px);
     box-shadow: 0px 1px 2px 0px #0000009b;
@@ -281,6 +271,93 @@ h3 {
     margin-bottom: 6em;
 }
 
+.TitleCookies {
+    font-size: 35px;
+    font-weight: 500;
+}
+
+
+.call-to-action-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4em;
+
+    background-color: #FBF1D6;
+    padding: 0px;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    width: 100%;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.call-to-action-containerCookies {
+    display: flex;
+    position: fixed;
+    z-index: 999;
+        bottom: 0;
+        width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 4em;
+    background-color: #FBF1D6;
+    padding: 0px;
+    margin-bottom: 0em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    width: 100%;
+    margin-top: 2em;
+    align-items: center;
+}
+.BlockCookies {
+    width: 40%;
+}
+
+.btnCookieWhite {
+    background-color: #FBFBFB;
+}
+
+.containerButton {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-top: 3em;
+
+}
+
+.TextCk {
+    font-size: 15px;
+}
+
+.cookiesBtn {
+    border-radius: 40px;
+    background-color: #0D0C22;
+    padding: 0.7em;
+    letter-spacing: 1px;
+    box-shadow: 0.5px 2px 4px 0.001px #0000009b;
+    border: none;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    transition: transform 0s, box-shadow 0s;
+    width: 350px;
+}
+
+.cookiesBtn:active {
+    transform: translateY(1px);
+    box-shadow: 0px 1px 2px 0px #0000009b;
+}
+
+.btnCookieWhite {
+    background-color: #FBFBFB;
+    color: black;
+
+}
+
 @media(max-width: 1562px) {
     .callToActionTitle h1 {
         max-width: 70%;
@@ -288,6 +365,29 @@ h3 {
 
     .callToActionTitle p {
         width: 55%;
+    }
+}
+
+@media(max-width: 1350px) {
+
+    .containerButton {
+        width: 300px;
+    }
+    
+    .call-to-action-containerCookies {
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5em;
+    }
+        .BlockCookies {
+            width: 60%;
+        }
+
+    .cookiesBtn {
+
+        width: 300px;
     }
 }
 
@@ -370,13 +470,14 @@ h3 {
 
 @media(max-width:992px) {
     .boxesContainer {
-            display: flex;
-            justify-content: space-evenly;
-            margin: 0em;
-            margin-top: 2em;
-            margin-bottom: 3em;
-            gap: 1em;
-        }
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0em;
+        margin-top: 2em;
+        margin-bottom: 3em;
+        gap: 1em;
+    }
+
     .Social {
         margin: 0em 0em 0em -5%;
         display: flex;
@@ -422,6 +523,7 @@ h3 {
 }
 
 @media(max-width:768px) {
+
     .Contact,
     .Connect,
     .Prenom {
@@ -462,18 +564,20 @@ h3 {
         margin: 1.3em 0px 1.3em 0px;
         width: 270px;
     }
- .boxSite {
-     padding: 1em;
-     width: 40%;
 
- }
+    .boxSite {
+        padding: 1em;
+        width: 40%;
+
+    }
+
     .boxesContainer {
         display: flex;
         flex-direction: row;
         gap: 0em;
-            width: 100%;
-            margin: 0.1em;
-            flex-wrap: wrap;
+        width: 100%;
+        margin: 0.1em;
+        flex-wrap: wrap;
     }
 
     .call-to-action-container {
@@ -484,8 +588,8 @@ h3 {
         width: 100%;
         margin-top: 2em;
 
-    }
-
+    } 
+    
 
     .callToActionTitle h1 {
         font-size: 1.5em;
@@ -515,7 +619,7 @@ h3 {
         padding: 0.8em 1em 0.7em 1em;
 
 
-            border-radius: 80px;
+        border-radius: 80px;
 
 
     }
@@ -550,6 +654,52 @@ h3 {
         margin: 0px;
     }
 
+         .call-to-action-containerCookies {
+             background-color: #FBF1D6;
+             padding: 0px;
+             flex-direction: column;
+             margin-bottom: 0em;
+             padding-bottom: 0em;
+             width: 100%;
+
+             gap: 0em;
+             margin-top: 2em;
+
+
+    
+         }
+         .logo {
+            display: none;
+
+         }
+
+         .TextCk{
+            font-size: 13px;
+         }
+         .TitleCookies{
+            font-size: 17px;
+         }
+
+         .BlockCookies{
+            width: 90%;
+         }
+         
+         .TextBtnCookie{
+            font-size: 10px;
+         }
+
+         .cookiesBtn{
+            font-size: 12px;
+            width: 200px;
+         }
+
+                 .containerButton {
+                     width: 90%;
+                     display: flex;
+                     flex-direction: column;
+                     align-items: center;
+                     gap: 0.8em;
+                     margin-top: 1em;}
 
 
 }

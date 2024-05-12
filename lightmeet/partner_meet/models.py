@@ -13,6 +13,7 @@ class PartnerMeet(models.Model):
             ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
+            ("Religieux","Religieux"),
             ("Extra-conjugales", "Site extra-conjugal"),
             ("Haut-de-gamme", "Site haut-de-gamme")
     )
@@ -27,11 +28,9 @@ class PartnerMeet(models.Model):
     relation = models.CharField(choices=RELATION_CHOICES, max_length=25, default='Toutes')
 
     AGE_CHOICES = (
-        ('18-25', '18-25 ans'),
-        ('25-35', '25-35 ans'),
-        ('35-45', '35-45 ans'),
-        ('45-55', '45-55 ans'),
-        ('plus', 'Plus de 55 ans')
+            ('18-25', '18-30 ans'),
+            ('31-45', '31-45 ans'),
+            ('46 et plus', '46 et plus'),
     )
     age = models.CharField(max_length=50, choices=AGE_CHOICES)
 
@@ -47,7 +46,7 @@ class PartnerMeet(models.Model):
     date_creation = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.LOGO} - {self.ranking} - {self.nom} - {self.affiliation} "
+        return f"{self.ranking} - {self.nom} "
 
     class Meta:
         verbose_name = "Notre site de rencontre partenaire"

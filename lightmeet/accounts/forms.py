@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate
 class LightenerForm(forms.ModelForm):
     class Meta:
         model = Lightener
-        fields = ['ip_adress', 'location', 'engagement', 'clic_comparer', 'clic_rencontres', 'clic_therapeutes']
+        fields = ['ip_address', 'location', 'consentement','engagement', 'clic_comparer', 'clic_rencontres', 'clic_therapeutes']
 
 class CustomAuthenticationForm(AuthenticationForm):
     username = forms.EmailField(

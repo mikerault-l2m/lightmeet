@@ -29,18 +29,18 @@ class Home(TemplateView):
         context['posts'] = posts  # Ajouter les objets au contexte
         return context
 
-    def visiteur_consentement(request):
-        if request.method == "POST":
-            form = LightenerCreationForm(request.POST)
-            if form.is_valid():
-                form.save()
-                return redirect("Home")
-        else:
-            form = LightenerCreationForm()
-        context = {'form': form}
-        return render(request, "partner_meet/Home.html", context)
-
-
+        def visiteur_consentement(request):
+            if request.method == "POST":
+                form = LightenerForm(request.POST)
+                if form.is_valid():
+                    form.save()
+                    return render(request, "partner_meet/Home.html", context)
+                else:
+                    print(form.error_messages)
+            else:
+                form = LightenerForm()
+                context = {"form": form, "error_messages": form.errors}
+            return render(request, "partner_meet/Home.html", context={"form": form})
 end = time.time()
 elapsed = end - start
 print(f'Temps d\'affichage de la page principale de LightMeet : {elapsed:.2}ms')
@@ -59,15 +59,14 @@ class PartnerMeetHome(ListView):
             ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
+            ("Religieux","Religieux"),
             ("Extra-conjugales", "Site extra-conjugal"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
         )
         context['AGE_CHOICES'] = (
-            ('18-25', '18-25 ans'),
-            ('25-35', '25-35 ans'),
-            ('35-45', '35-45 ans'),
-            ('45-55', '45-55 ans'),
-            ('plus', 'Plus de 55 ans')
+            ('18-25', '18-30 ans'),
+            ('31-45', '31-45 ans'),
+            ('46 et plus', '46 et plus'),
         )
         context['RELATION_CHOICES'] = (
             #('Toutes','Toutes'),
@@ -139,15 +138,14 @@ class PartnerMeetBestSite(ListView):
             ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
+            ("Religieux","Religieux"),
             ("Extra-conjugales", "Site extra-conjugal"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
         )
         context['AGE_CHOICES'] = (
-            ('18-25', '18-25 ans'),
-            ('25-35', '25-35 ans'),
-            ('35-45', '35-45 ans'),
-            ('45-55', '45-55 ans'),
-            ('plus', 'Plus de 55 ans')
+            ('18-25', '18-30 ans'),
+            ('31-45', '31-45 ans'),
+            ('46 et plus', '46 et plus'),
         )
         context['RELATION_CHOICES'] = (
             #('Toutes','Toutes'),

@@ -103,10 +103,10 @@ form {
     position: relative;
     cursor: pointer;
     color: black;
+    background-color: #FBFBFB;
     background-image: url('data:image/svg+xml;utf8,<svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 8L0.669872 0.5L9.33013 0.5L5 8Z" fill="black" /></svg>');
     background-repeat: no-repeat;
     background-position: calc(100% - 20px) center;
-
 }
 
 .buttonOtherSearh {
@@ -192,12 +192,7 @@ a {
     width: 70%;
 }
 
-.sizeStar {
-    width: auto;
-    height: 30px;
-}
-
-.FilterResultats {
+.FitlerResultats {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -205,7 +200,7 @@ a {
     align-items: center;
 }
 
-.ButtonFilterResultats {
+.ButtonFitlerResultats {
     background-color: #00000000;
     font-size: 1em;
     border: none;
@@ -551,5 +546,9 @@ a {
 
     .containerResultats {
         margin-bottom: 2em;
+    }
+
+    .PosFitlerResultats{
+        display: none;
     }
 }

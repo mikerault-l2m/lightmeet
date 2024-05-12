@@ -15,9 +15,6 @@
 <a href="{% url 'recherche_home' %}">
     <button class="call-to-action call-to-action-comparer">Comparer</button>
 </a>
-
-<<<<<<< HEAD
-=======
 <div class="call-to-action-containerCookies">
     <img src="../../static/partner_meet/Logos/lightMeetCookieLogo.svg" alt="Lightmeet Logo" class="logo">
 
@@ -57,8 +54,6 @@
     </div>
 </div>
 
-
->>>>>>> 453bc6b5bc24441c7615ecf065fddc0060ee6617
 <div class="boxes">
     <div class="box">
         <div class="iconBox">
@@ -141,8 +136,6 @@
 <h2 class="TitleImgSite">Derniers articles mis en ligne</h2>
 <div class="boxesContainer">
     {% for post in posts %}
-<<<<<<< HEAD
-
         <div class="boxSite">
             <div class="image-container">
                 <img src="{% static 'posts/Logos/2.png' %}" class="imageSite" alt="Lightmeet Blog">
@@ -154,22 +147,8 @@
 
     {% endfor %}
 </div>
-        {% endblock %}
-        </body>
-=======
-    <div class="boxSite">
-        <div class="image-container">
-            <img src="{% static 'posts/Logos/1.png' %}" class="imageSite" alt="Lightmeet Blog">
-        </div>
-        <p class=" TextImgSitePresentation"> {{ post.title }}</p>
-        <p class="TextImgSitePresentationHtag"> <em> #sites_de_rencontre #dating #apps #rencontres </em>{{
-            post.description }} </p>
-    </div>
-    {% endfor %}
-</div>
-{% endblock %}
 
-</body>
->>>>>>> 453bc6b5bc24441c7615ecf065fddc0060ee6617
+{% endblock %}
+        </body>
 
 </html>

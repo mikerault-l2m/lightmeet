@@ -46,7 +46,7 @@ f
         'Open Sans',
         'Helvetica Neue',
         sans-serif;
-    font-size: 85px;
+    font-size: 65px;
 }
 
 section {
@@ -56,9 +56,11 @@ section {
 }
 
 .Text {
-    font-size: 30px;
-    margin-top: 0.4em;
-    margin-bottom: 0.4em;
+    font-size: 18px;
+    text-align:justify;
+    margin-top: 0.6em;
+    margin-bottom: 0.6em;
+
 }
 
 

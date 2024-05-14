@@ -29,18 +29,16 @@ class Home(TemplateView):
         context['posts'] = posts  # Ajouter les objets au contexte
         return context
 
-        def visiteur_consentement(request):
-            if request.method == "POST":
-                form = LightenerForm(request.POST)
-                if form.is_valid():
-                    form.save()
-                    return render(request, "partner_meet/Home.html", context)
-                else:
-                    print(form.error_messages)
-            else:
-                form = LightenerForm()
-                context = {"form": form, "error_messages": form.errors}
-            return render(request, "partner_meet/Home.html", context={"form": form})
+    def visiteur_consentement(request):
+        if request.method == "POST":
+            form = LightenerForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return render(request, "partner_meet/Home.html", context)
+        else:
+            form = LightenerForm()
+            context = {"form": form}
+        return render(request, "partner_meet/Home.html", context={"form": form})
 end = time.time()
 elapsed = end - start
 print(f'Temps d\'affichage de la page principale de LightMeet : {elapsed:.2}ms')
@@ -349,3 +347,7 @@ def calculer_score(site1, site2):
 #             messages.error(request, 'Une erreur s\'est produite lors de l\'importation des données')
 
 #     return render(request, 'import_data.html')
+
+
+
+

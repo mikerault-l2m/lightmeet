@@ -44,7 +44,7 @@
 <body class="container">
     <header>
         <a href="{% url 'Home' %}" class="ListeHeader">
-            <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.png" alt="">
+            <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="">
         </a>
         <nav class="navPos">
             <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
@@ -74,7 +74,7 @@
         <div class="footerPc">
             <ul class="ListFooter">
                 <a class="linkFooter" href="{% url 'Home' %}">
-                    <li>® 2024 LightMeet</li>
+                    <h3>® 2024 LightMeet</h3>
                 </a>
                 <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">
                     <li>Mentions légales</li>
@@ -91,21 +91,22 @@
             </ul>
         </div>
         <div class="FooterMobile">
-            <a class="linkFooter" href="{% url 'Home' %}">
-                <h4 class="signature">© 2024 LightMeet</h4>
-            </a>
+                <a class="linkFooter" href="{% url 'Home' %}">
+                    <h3 class="signature">® 2024 LightMeet</h3>
+                </a>
             <ul class="ListFooter">
                 <a class="linkFooter" href="{% url 'legal_CGU' %}">
                     <li>Conditions générales d'utilisation</li>
                 </a>
-                -
+
                 <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">
                     <li>Mentions légales</li>
                 </a>
-                -
+
                 <a class="linkFooter" href="{% url 'legal_PC' %}">
                     <li>Politique de Cookies</li>
                 </a>
+
                 <a class="linkFooter" href="{% url 'legal_PDC' %}">
                     <li>Politique de confidentialité</li>
                 </a>

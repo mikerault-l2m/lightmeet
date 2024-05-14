@@ -10,12 +10,12 @@ class PartnerMeet(models.Model):
     Visites_France = models.CharField(max_length=100) # - 3 Membres - # Cette variable comptabilise tous les 3 mois le nombre de visiteurs du site web.
 
     CATEGORIE_CHOICES = (
-            ("Généraliste", "Site généraliste"),
+           ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
-            ("Religieux","Religieux"),
+            ("Religieux","Site Religieux"),
             ("Extra-conjugales", "Site extra-conjugal"),
-            ("Haut-de-gamme", "Site haut-de-gamme")
+            ("Haut-de-gamme", "Site haut-de-gamme"),
     )
     categorie = models.CharField(choices=CATEGORIE_CHOICES, max_length=25, default='Généraliste')
 
@@ -28,9 +28,9 @@ class PartnerMeet(models.Model):
     relation = models.CharField(choices=RELATION_CHOICES, max_length=25, default='Toutes')
 
     AGE_CHOICES = (
-            ('18-25', '18-30 ans'),
-            ('31-45', '31-45 ans'),
-            ('46 et plus', '46 et plus'),
+            ('18-25', '18-30 '),
+            ('31-45', '31-45 '),
+            ('+ 46', '+ 46'),
     )
     age = models.CharField(max_length=50, choices=AGE_CHOICES)
 

@@ -13,7 +13,7 @@ class PartnerMeet(models.Model):
            ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
-            ("Religieux","Site Religieux"),
+            ("Religieux","Site religieux"),
             ("Extra-conjugales", "Site extra-conjugal"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
     )

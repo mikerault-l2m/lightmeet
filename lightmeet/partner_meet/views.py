@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from accounts.models import *
+from accounts.models import *
 from accounts.forms import *
 from partner_meet.models import *
 from partner_meet.forms import *
@@ -15,7 +16,17 @@ import time
 from django.db.models import F, ExpressionWrapper, DecimalField
 from decimal import Decimal
 from django.views.decorators.csrf import csrf_protect
+from django.shortcuts import render
 
+# Étape 1 : Validation du consentement
+
+
+
+
+
+
+
+# Etape 2 : Outil pour comparer
 
 start = time.time()
 class Home(TemplateView):
@@ -26,21 +37,8 @@ class Home(TemplateView):
         context = super().get_context_data(**kwargs)
         # Récupérer tous les objets BlogPost
         posts = BlogPost.objects.all()
-        context['posts'] = posts  # Ajouter les objets au contexte
+        context['posts'] = posts
         return context
-
-        def visiteur_consentement(request):
-            if request.method == "POST":
-                form = LightenerForm(request.POST)
-                if form.is_valid():
-                    form.save()
-                    return render(request, "partner_meet/Home.html", context)
-                else:
-                    print(form.error_messages)
-            else:
-                form = LightenerForm()
-                context = {"form": form, "error_messages": form.errors}
-            return render(request, "partner_meet/Home.html", context={"form": form})
 end = time.time()
 elapsed = end - start
 print(f'Temps d\'affichage de la page principale de LightMeet : {elapsed:.2}ms')
@@ -59,13 +57,13 @@ class PartnerMeetHome(ListView):
             ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
-            ("Site Religieux","Site Religieux"),
+            ("Religieux","Site religieux"),
             ("Extra-conjugales", "Site extra-conjugal"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
         )
         context['AGE_CHOICES'] = (
-            ('18-25', '18-30 ans'),
-            ('31-45', '31-45 ans'),
+            ('18-25', '18-30 '),
+            ('31-45', '31-45 '),
             ('+ 46', '+ 46'),
         )
         context['RELATION_CHOICES'] = (
@@ -138,13 +136,13 @@ class PartnerMeetBestSite(ListView):
             ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
-            ("Site Religieux","Site Religieux"),
+            ("Religieux","Site religieux"),
             ("Extra-conjugales", "Site extra-conjugal"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
         )
         context['AGE_CHOICES'] = (
-            ('18-25', '18-30 ans'),
-            ('31-45', '31-45 ans'),
+            ('18-25', '18-30 '),
+            ('31-45', '31-45 '),
             ('+ 46', '+ 46'),
         )
         context['RELATION_CHOICES'] = (

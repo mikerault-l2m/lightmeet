@@ -15,45 +15,42 @@
 <a href="{% url 'recherche_home' %}">
     <button class="call-to-action call-to-action-comparer">Comparer</button>
 </a>
-<!--<div class="call-to-action-containerCookies">
-    <img src="../../static/partner_meet/Logos/lightMeetCookieLogo.svg" alt="Lightmeet Logo" class="logo">
+<!--
+ <div class="call-to-action-containerCookies">
+        <img src="{% static 'partner_meet/Logos/lightMeetCookieLogo.svg' %}" alt="Lightmeet Logo" class="logo">
 
-    <div class="BlockCookies">
+        <div class="BlockCookies">
+            <h2 class="TitleCookies">Votre vie privée nous tient à cœur</h2>
+            <p class="TextCk">
+                Pour personnaliser votre expérience, nous collectons des informations sur la façon dont vous utilisez
+                LightMeet, ce qui inclut les données personnelles telles que votre adresse IP. Ces informations sont
+                utilisées pour améliorer votre expérience, stocker les informations contenues sur un appareil et y accéder,
+                ainsi que pour la publicité personnalisée, les mesures de rendement de la publicité, les études sur
+                l'audience et le développement des services. Pour en savoir plus, consultez notre Politique en matière de
+                cookies. <br/><br/>
+                LightMeet et ses 100 partenaires peuvent se baser sur l'intérêt légitime à certaines fins, plutôt que sur le
+                consentement. Cliquez sur « Préférences en matière de cookies » pour avoir plus d'informations à ce sujet et
+                savoir comment vous y opposer, ou sélectionnez « Valider les cookies » afin d'autoriser tous les cookies.
+            </p>
+        </div>
 
-        <h2 class="TitleCookies">Votre vie privée nous tient à cœur</h2>
-        <p class="TextCk">Pour personnaliser votre expérience, nous collectons des informations sur la façon dont vous utilisez
-            LightMeet,
-            ce qui inclut les données personnelles telles que votre adresse IP. Ces informations sont utilisées pour
-            améliorer votre expérience, stocker les informations contenues sur un appareil et y accéder, ainsi que pour
-            la
-            publicité personnalisée, les mesures de rendement de la publicité, les études sur l'audience et le
-            développement
-            des services. Pour en savoir plus, consultez notre Politique en matière de cookies. <br/>
-            <br/>
-            LightMeet et ses 100 partenaires peuvent se baser sur l'intérêt légitime à certaines fins, plutôt que sur le
-            consentement.
-            Cliquez sur « Préférences en matière de cookies » pour avoir plus d'informations à ce sujet et savoir
-            comment
-            vous y opposer, ou sélectionnez « OK » afin d'autoriser tous les cookies.</p>
-    </div>
-    <div class="containerButton">
-        <form method="post" action="{% url 'Home' %}">
-            {% csrf_token %}
-            {{ form.consentement }}
-            <button class="cookiesBtn" type="submit">OK</button>
-        </form>
+        <div class="containerButton">
+            <form method="post" action="{% url 'Home' %}">
+                {% csrf_token %}
+                    {{ form.consentement }}
+                <button class="cookiesBtn" type="submit">Valider les cookies</button>
+            </form>
 
-        <a href="{% url 'legal_PC' %}" class="cookie-preferences-link"> <button class="cookiesBtn btnCookieWhite">
-            Paramètres des cookies
-            </button></a>
-        <p class="TextBtnCookie">
-            Gérez vos préférences ou retirez votre consentement à tout moment sur la page Paramètres de confidentialité,
-            dont le
-            lien se situe en pied de page.
-        </p>
-    </div>
-</div>
--->
+            <a href="{% url 'legal_PC' %}" class="cookie-preferences-link">
+                <button class="cookiesBtn btnCookieWhite">Paramètres des cookies</button>
+            </a>
+            <p class="TextBtnCookie">
+                Gérez vos préférences ou retirez votre consentement à tout moment sur la page Paramètres de confidentialité,
+                dont le lien se situe en pied de page.
+            </p>
+        </div>
+    </div>-->
+
 <div class="boxes">
     <div class="box">
         <div class="iconBox">

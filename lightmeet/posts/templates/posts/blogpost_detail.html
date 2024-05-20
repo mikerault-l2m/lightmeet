@@ -1,19 +1,28 @@
-{% extends 'posts/base_Posts.html' %}
+{% extends 'partner_meet/base_Partner_meet.html' %}
 {% load static %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
+<link rel="stylesheet" href="{% static 'posts/css/BlogArticle.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
 <html>
 
 {% block title %}
-    <title>  {{ post.title }}</title>
+    <title>  {{ post.title }} </title>
 {% endblock %}
 
 {% block section %}
+<div class="containerArticle">
+    <div class="BLogTitlePos">
+        <div class="LigneSeparationTitle"> </div>
+        <h1 class="Title">Blog</h1>
+        <div class="LigneSeparationTitle"></div>
+    </div>
+
     <article>
+
         <h1> {{ post.title }}</h1>
-        <div> {{ post.content|linebreaks|safe }}</div>
+        <p class="TextArticle"> {{ post.content|linebreaks|safe }}</p>
     </article>
+</div>
 {% endblock %}

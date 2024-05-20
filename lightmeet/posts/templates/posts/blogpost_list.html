@@ -1,36 +1,61 @@
-{% extends 'posts/base_Posts.html' %}
+{% extends 'partner_meet/base_Partner_meet.html' %}
 {% load static %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'posts/css/style_2.css' %}">
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
 {{ block.super }}
-<link rel="stylesheet" href="{% static 'posts/css/style_base.css' %}">
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
 <html>
 
 <body>
     {% block section %}
-    <div class="container">
-        <h1 class="Title">L'analyse du comparateur de rencontres</h1>
+    <div class="containerBlog">
+        <div class="BLogTitlePos">
+            <div class="LigneSeparationTitle"> </div>
+            <h1 class="Title">Blog</h1>
+            <div class="LigneSeparationTitle"></div>
+        </div>
+
         {% for post in posts %}
+
+
+
+       <div class="containerInfoBlog">
+
+
+        <!-- article  -->
         <article class="cardBlogPost">
-            <div class="containerInfoBlog">
-                <h2>{{ post.title }}</h2>
+
                 {% if user.is_authenticated %}
                 <div>
                     <a href="{% url 'blog_edit' slug=post.slug %}">Éditer</a>
                     <a href="{% url 'blog_delete' slug=post.slug %}">Supprimer</a>
                 </div>
                 {% endif %}
-                <h5>Publié par <i>LightMeet</i> le {{ post.created_on|date:'j F Y' }}</h5>
-                <div class="containerTextButton">
-                    <p>{{ post.content|safe|truncatewords:75 }}</p>
+                    <!-- image de l'article  -->
+                    <img class="ImgCardBlog"  src="../../static/posts/Logos/image.png" alt="test">
+                <div class="cardText">
+                    <!-- ajout de la date de l'article -->
+                <p class="Date"> 18 Avril 2024{{ post.created_on|date:'j F Y' }}</p>
+                <!-- titre de l'article  -->
+                <h2 class="TitleArticle">{{ post.title }}</h2>
+                    <!-- court texte de l'article  -->
+                    <p class="TextArticle">{{ post.content|safe|truncatewords:75 }}</p>
+                    <!-- liens vers larticle  -->
                     <form action="{% url  'blog_detail' slug=post.slug %}">
-                        <button> Lire l'article</button>
+                        <button class="ReadMore"> Lire la suite > </button>
                     </form>
-                </div>
-            </div>
+                    </div>
+
+
         </article>
+</div>
+
+
+
         {% endfor %}
+
+    <button class="buttonAllArticles">Découvrir tous les articles</button>
     </div>
     {% endblock %}
 </body>

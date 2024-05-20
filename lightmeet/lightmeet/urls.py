@@ -26,7 +26,6 @@ urlpatterns = [
     #path('connexion/delete_account', delete_account, name="Delete Account"),
 
     # Legal
-    path('legal/consentement/', legal_Control_Consentement.as_view(), name="legal_consentement_visiteur"),
     path('legal/mentions_legales/', legal_Control_ML.as_view(), name="legal_mentions_legales"),
     path('legal/conditions_generales_utilisation', legal_Control_CGU.as_view(), name="legal_CGU"),
     path('legal/politique_de_confidentialite/', legal_Control_PDC.as_view(), name="legal_PDC"),
@@ -39,6 +38,7 @@ urlpatterns = [
 
 
     # Partner_meet
+    path('valid/', visiteur_consentement, name="consentement_visiteur"),
     path('recherche/', PartnerMeetHome.as_view(), name="recherche_home"),
     path('recherche/create/', PartnerMeetCreate.as_view(), name="recherche_create"),
     path('recherche/<int:pk>/', PartnerMeetDetail.as_view(), name="recherche_detail"),

@@ -41,6 +41,18 @@ class Lightener(AbstractBaseUser):
     clic_rencontres = models.PositiveIntegerField(default=0)
     clic_therapeutes = models.PositiveIntegerField(default=0)
 
+    def recup_ip_adress(request,*args,**kwargs):
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(",")[0]
+        else:
+            ip = request.META.get("REMOTE_ADDR")
+
+        context = {
+            'ip':ip
+        }
+        return render (request,'partner_meet/Home.html',context)
+
     def update_ip_and_location(self):
         try:
             # Utilisation du service 'https://api.ipify.org' pour récupérer l'adresse IP publique

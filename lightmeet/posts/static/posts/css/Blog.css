@@ -1,0 +1,105 @@
+
+
+.containerInfoBlog {
+
+    margin: 1em;
+}
+
+.cardBlogPost {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    gap: 2em ;
+    flex-direction: row;
+}
+
+.containerTextButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.BLogTitlePos {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LigneSeparationTitle {
+    width: 100%;
+    height: 0.5px;
+    background-color: #6C6C6C;
+}
+
+.Title {
+    font-family: Roboto;
+    font-size: 85px;
+    font-weight: 100;
+    line-height: 99.61px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin: 10px;
+}
+
+
+
+.buttonAllArticles {
+    font-family: Roboto;
+    font-size: 24px;
+    border: none;
+    gap: 0px;
+    border-radius: 30px;
+    color: white;
+    opacity: 0px;
+    background-color: #0D0C22;
+    padding: 0.6em 1.6em 0.6em 1.6em;
+}
+
+.containerBlog {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top:1em ;
+    margin-bottom: 1em;
+}
+
+.ImgCardBlog{
+    width: 400px;
+    height: auto;
+}
+
+.cardText{
+    display: flex;
+    flex-direction:column ;
+    justify-content: space-around;
+}
+
+.TextArticle{
+    text-align: justify;
+    font-size: 20px;
+    margin: 0em;
+
+}
+.TitleArticle{
+    font-size: 35px;
+    margin: 0em ;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.Date{
+    margin: 0em;
+}
+
+.ReadMore {
+    font-size:20px ;
+    font-weight: 100;
+    margin-top: 2em;
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0);
+border: none;
+
+}

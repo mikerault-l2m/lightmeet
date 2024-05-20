@@ -16,15 +16,46 @@ import time
 from django.db.models import F, ExpressionWrapper, DecimalField
 from decimal import Decimal
 from django.views.decorators.csrf import csrf_protect
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
-# Étape 1 : Validation du consentement
+# Modifier visiteur_consentement
+# Étape 1 : le visiteur valide le consentement en donnant la donnée consentement (et aussi Adresse_IP codé le 20/05):
+start = time.time()
+def visiteur_consentement(request):
+    if request.method == "POST":
+        form = LightenerCreationForm(request.POST)
+        # Récupérer ici son adresse IP et sa localisation et intégrer la classe Home
+        # Récupère la variable ip_address
+        #def recup_ip_adress(request,*args,**kwargs):
+        #    x_forwarded_for = request.META.get('HTTP_X_FORWARDED')
+        #    if x_forwarded_for:
+        #        ip = x_forwarded_for.split(",")[0]
+        #    else:
+        #        ip = request.META.get("REMOTE_ADDR")
+        #   context = {
+        #        'ip':ip
+        #    }
+        #    return render (request,'partner_meet/Home.html',context)
 
+        if form.is_valid():
+            # Enregistrer le formulaire si valide
 
+            form.save()
+            # Rediriger vers la page d'accueil après avoir validé le consentement
+            return redirect("Home")
+    else:
+        # Créer un formulaire vide si la méthode n'est pas POST
+        form = LightenerCreationForm()
 
+    # Récupérer tous les objets BlogPost
+    posts = BlogPost.objects.all()
 
+    # Rendre le template avec le formulaire (soit rempli, soit vide) et les posts
+    return render(request, "partner_meet/Home.html", {"form": form, "posts": posts})
 
-
+end = time.time()
+elapsed = end - start
+print(f'Temps de validation du consentement de LightMeet : {elapsed:.2}ms')
 
 # Etape 2 : Outil pour comparer
 
@@ -33,12 +64,6 @@ class Home(TemplateView):
     model = Lightener
     template_name = 'partner_meet/Home.html'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # Récupérer tous les objets BlogPost
-        posts = BlogPost.objects.all()
-        context['posts'] = posts
-        return context
 end = time.time()
 elapsed = end - start
 print(f'Temps d\'affichage de la page principale de LightMeet : {elapsed:.2}ms')

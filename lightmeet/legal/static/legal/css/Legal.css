@@ -51,9 +51,9 @@ section {
 
 .Text {
     text-align: justify;
-    font-size: 30px;
-    margin-top: 0.4em;
-    margin-bottom: 0.4em;
+    font-size: 18px;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 
@@ -146,9 +146,9 @@ a {
 
     .Text {
         text-align: justify;
-        font-size: 25px;
-        margin-top: 0.4em;
-        margin-bottom: 0.4em;
+        font-size: 18px;
+        margin-top: 1em;
+        margin-bottom: 1em;
     }
 
     .Title {
@@ -170,9 +170,9 @@ a {
 
     .Text {
         text-align: justify;
-        font-size: 25px;
-        margin-top: 0.4em;
-        margin-bottom: 0.4em;
+        font-size: 18px;
+        margin-top: 1em;
+        margin-bottom: 1em;
     }
 
     .Title {

@@ -2,7 +2,6 @@ from django.db import models
 # Bug du serveur : il faut d'abord créer l'API avec 'python manage.py startapp import_export'
 #from import_export.models import resources
 
-
 class PartnerMeet(models.Model):
     nom = models.CharField(max_length=100)
     LOGO = models.ImageField(upload_to='MeetSites/', null=True, blank=True)
@@ -51,5 +50,3 @@ class PartnerMeet(models.Model):
     class Meta:
         verbose_name = "Notre site de rencontre partenaire"
         verbose_name_plural = "Nos sites de rencontres partenaires"
-
-

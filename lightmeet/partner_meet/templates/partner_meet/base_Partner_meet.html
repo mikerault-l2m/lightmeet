@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,9 +44,10 @@
 </head>
 
 <body class="container">
+    {% block content %}{% endblock %}
     <header>
         <a href="{% url 'Home' %}" class="ListeHeader">
-            <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="">
+            <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
         </a>
         <nav class="navPos">
             <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
@@ -75,7 +77,7 @@
         <div class="footerPc">
             <ul class="ListFooter">
                 <a class="linkFooter" href="{% url 'Home' %}">
-                    <h3>® 2024 LightMeet</h3>
+                    <li>® Lightmeet</li>
                 </a>
                 <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">
                     <li>Mentions légales</li>
@@ -119,7 +121,6 @@
     <script>
         const menuHamburger = document.querySelector('.menuHamburger');
         const navMenu = document.querySelector('.navMenu');
-
         menuHamburger.addEventListener('click', function () {
             menuHamburger.classList.toggle('active');
             navMenu.classList.toggle('active');

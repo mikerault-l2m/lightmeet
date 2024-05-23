@@ -31,10 +31,24 @@
 
 }
 
-.TextArticle p {
-    margin-top: 2em;
+
+
+ .custom-paragraph-class{
+    margin: 2em;
+   font-size: 30px;
+   text-align: justify;
+}
+.spaced-br {
+    content: "";
+    display: block;
+    margin-top: 1em ;
 }
 
-#text{
-    margin: 2em;
+.TextArticle p {
+    margin-top: 1em;
+
+}
+
+@media (max-width: 768px) {
+
 }

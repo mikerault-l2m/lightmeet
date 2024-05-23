@@ -7,6 +7,14 @@ from django.contrib import messages
 import random
 import time
 
+
+def inscription(request):
+    form = CustomAuthenticationForm()
+    return render(request, "accounts/signup.html", context={"form": form})
+
+def SocialNetwork(request):
+    return render(request, "accounts/ConnexionFacebook.html")
+
 @login_required
 def delete_account(request):
     if request.method == 'POST':
@@ -16,17 +24,9 @@ def delete_account(request):
 
         # You may also want to log the user out after deletion
         messages.success(request, 'Your account has been deleted successfully.')
-        return redirect('home')  # Redirect to the home page or any other desired page after deletion
+        return redirect('home')
 
     return render(request, 'delete_account.html')  # Create a template for the confirmation page
-
-def inscription(request):
-    form = CustomAuthenticationForm()
-    return render(request, "accounts/signup.html", context={"form": form})
-
-def SocialNetwork(request):
-    return render(request, "accounts/ConnexionFacebook.html")
-
 ########### Connexion
 def login_view(request):
     # If the user submitted the login form
@@ -41,6 +41,7 @@ def login_view(request):
         form = CustomAuthenticationForm()
     return render(request, 'accounts/signup.html', {'form':form})
 
+ # Redirect to the home page or any other desired page after deletion
 
 #### Déconnexion
 def logout_view(request):

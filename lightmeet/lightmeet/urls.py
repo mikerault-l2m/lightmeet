@@ -38,7 +38,8 @@ urlpatterns = [
 
 
     # Partner_meet
-    path('valid/', visiteur_consentement, name="consentement_visiteur"),
+    # path('valid/', nouveau_visiteur, name="consentement_visiteur"),
+    path('valid/', enregistrer_visiteur, name="consentement_visiteur"),
     path('recherche/', PartnerMeetHome.as_view(), name="recherche_home"),
     path('recherche/create/', PartnerMeetCreate.as_view(), name="recherche_create"),
     path('recherche/<int:pk>/', PartnerMeetDetail.as_view(), name="recherche_detail"),

@@ -4,6 +4,15 @@ from django.utils import timezone
 import requests
 from django.urls import reverse
 
+class Visitor(models.Model):
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    location = models.CharField(max_length=100, blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "Le visiteur de Lightmeet"
+        verbose_name_plural = "Les visiteurs de Lightmeet"
+
 class CustomListenerManager(BaseUserManager):
     def create_user(self, email, password=None):
         if not email:
@@ -34,7 +43,7 @@ class Lightener(AbstractBaseUser):
     weekly_favorites = models.PositiveIntegerField(default=0)
     last_weekly_reset = models.DateField(default=timezone.now)
     ip_address = models.GenericIPAddressField(null=True, blank=True)
-    location = models.CharField(max_length=100, blank=True)
+    location = models.CharField(max_length=100, blank=True,default=False)
     engagement = models.PositiveIntegerField(default=0)
     favorite_app = models.PositiveIntegerField(default=0)
     clic_comparer = models.PositiveIntegerField(default=0)

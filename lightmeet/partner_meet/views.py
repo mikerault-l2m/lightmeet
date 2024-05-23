@@ -18,45 +18,72 @@ from decimal import Decimal
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render,redirect
 
-# Modifier visiteur_consentement
-# Étape 1 : le visiteur valide le consentement en donnant la donnée consentement (et aussi Adresse_IP codé le 20/05):
+######## Création du statut de visiteur avec récupération de l'adresse IP et de la localisation :
 start = time.time()
-def visiteur_consentement(request):
+
+def enregistrer_visiteur(request):
+    form = LightenerCreationForm(request.POST)
     if request.method == "POST":
-        form = LightenerCreationForm(request.POST)
-        # Récupérer ici son adresse IP et sa localisation et intégrer la classe Home
-        # Récupère la variable ip_address
-        #def recup_ip_adress(request,*args,**kwargs):
-        #    x_forwarded_for = request.META.get('HTTP_X_FORWARDED')
-        #    if x_forwarded_for:
-        #        ip = x_forwarded_for.split(",")[0]
-        #    else:
-        #        ip = request.META.get("REMOTE_ADDR")
-        #   context = {
-        #        'ip':ip
-        #    }
-        #    return render (request,'partner_meet/Home.html',context)
-
-        if form.is_valid():
-            # Enregistrer le formulaire si valide
-
-            form.save()
-            # Rediriger vers la page d'accueil après avoir validé le consentement
-            return redirect("Home")
-    else:
-        # Créer un formulaire vide si la méthode n'est pas POST
-        form = LightenerCreationForm()
-
-    # Récupérer tous les objets BlogPost
+        ip_address = get_client_ip(request)
+        location = get_location(ip_address)
+        Visitor.objects.create(ip_address=ip_address, location=location)
+        posts = BlogPost.objects.all()
+        return render(request, "partner_meet/Home.html", {"form": form, "posts": posts})
+    # Récupère tous les objets BlogPost
     posts = BlogPost.objects.all()
-
-    # Rendre le template avec le formulaire (soit rempli, soit vide) et les posts
     return render(request, "partner_meet/Home.html", {"form": form, "posts": posts})
+
+
+# A: Récupération de l'adresse IP :
+def get_client_ip(request):
+    # Si l'en-tête HTTP_X_FORWARDED_FOR est présent, récupère la première adresse IP de la liste
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        # Sinon, récupère l'adresse IP directe du client depuis REMOTE_ADDR
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
+# B: Récupération de la localisation
+def get_location(ip):
+    try:
+        # Envoie une requête à l'API ip-api.com pour obtenir la localisation basée sur l'adresse IP fournie
+        response = requests.get(f'http://ip-api.com/json/{ip}')
+        data = response.json()
+        if data['status'] == 'success':
+            # Si la requête est réussie, extrait la ville et le pays de la réponse JSON
+            location = f"{data['city']}, {data['country']}"
+        else:
+            # Si la requête échoue, déclare la localisation comme "Unknown"
+            location = "Unknown"
+    except Exception as e:
+        # En cas d'exception, déclare la localisation comme "Unknown"
+        location = "Unknown"
+    return location
+
+# C : Nous avons un nouveau visiteur :
+# def nouveau_visiteur(request):
+#     if request.method == "POST":
+#         form = LightenerCreationForm(request.POST)
+#         if form.is_valid():
+#             lightener.ip_address = get_client_ip(request)
+#             lightener.location = get_location(lightener.ip_address)
+#             lightener.save()
+#             context = {"form": form}
+#             return render(request, "partner_meet/Home.html", context)
+#         else:
+#             print(form.errors)
+#     else:
+#         form = LightenerCreationForm()
+
+#     # Récupère tous les objets BlogPost
+#     posts = BlogPost.objects.all()
+#     return render(request, "partner_meet/Home.html", {"form": form, "posts": posts})
 
 end = time.time()
 elapsed = end - start
-print(f'Temps de validation du consentement de LightMeet : {elapsed:.2}ms')
-
+print(f'Temps de récupération adresse IP et location sur LightMeet : {elapsed:.2f}ms')
 # Etape 2 : Outil pour comparer
 
 start = time.time()
@@ -66,7 +93,7 @@ class Home(TemplateView):
 
 end = time.time()
 elapsed = end - start
-print(f'Temps d\'affichage de la page principale de LightMeet : {elapsed:.2}ms')
+print(f'Temps d\'affichage de LightMeet : {elapsed:.2}ms')
 
 
 start = time.time()

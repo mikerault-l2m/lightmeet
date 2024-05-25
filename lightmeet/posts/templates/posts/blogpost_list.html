@@ -26,15 +26,19 @@
                 </div>
                 {% endif %}
                 <img class="ImgCardBlog" src="../../static/posts/Logos/image.png" alt="test">
+                <div class="PosElementCardText">
                 <div
                     class="cardText {% if forloop.counter0|divisibleby:2 %}normal-text{% else %}reverse-text{% endif %}">
                     <p class="Date"> 18 Avril 2024{{ post.created_on|date:'j F Y' }}</p>
                     <h2 class="TitleArticle">{{ post.title }}</h2>
                     <p class="TextArticle">{{ post.content|safe|truncatewords:75 }}</p>
-                    <form action="{% url  'blog_detail' slug=post.slug %}">
-                        <button class="ReadMore"> Lire la suite > </button>
-                    </form>
+
                 </div>
+
+                <form class="posRM" action="{% url  'blog_detail' slug=post.slug %}">
+                        <button class="ReadMore"> Lire la suite > </button>
+                    </div>
+                </form>
             </article>
         </div>
         {% endfor %}

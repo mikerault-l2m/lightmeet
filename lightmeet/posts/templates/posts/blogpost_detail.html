@@ -19,8 +19,12 @@
         <div class="LigneSeparationTitle"></div>
     </div>
 
-    <article>
-        <h1>{{ post.title }}</h1>
+    <article class="PosElementArticle">
+        <h1 class="TitleArticle">{{ post.title }}</h1>
+        <p class="Date"> Publié le 'date' {{ post.created_on|date:'j F Y' }} - LightMeet</p>
+        <div  class="cardImageArticle">
+            <img class="ImageArticle" src="../../static/posts/Logos/imageTestBlog.png" alt="test image temporaire ">
+        </div>
         <div class="TextArticle">{{ post.content|linebreaks|safe }}</div>
 
     </article>
@@ -46,4 +50,3 @@
 {% endblock %}
 
 {% endblock %}
-

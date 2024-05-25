@@ -11,7 +11,7 @@
      flex-direction: row;
  }
 
- .containerTextButton {
+ .cardText .containerTextButton {
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -34,7 +34,6 @@
      font-family: Roboto;
      font-size: 85px;
      font-weight: 100;
-     line-height: 99.61px;
      letter-spacing: 0.04em;
      text-align: center;
      margin: 10px;
@@ -65,12 +64,20 @@
      margin-bottom: 1em;
  }
 
+ .cardText {
+     height: 90%;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+ }
+
  .ImgCardBlog {
      width: 400px;
      height: auto;
  }
 
  .cardText {
+     width: 100%;
      display: flex;
      flex-direction: column;
      justify-content: space-around;
@@ -97,7 +104,6 @@
  .ReadMore {
      font-size: 20px;
      font-weight: 100;
-     margin-top: 2em;
      text-decoration: underline;
      background-color: rgba(255, 255, 255, 0);
      border: none;
@@ -117,6 +123,12 @@
      flex-direction: row;
  }
 
+ .PosElementCardText {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+
  .containerInfoBlog.reverse .cardBlogPost {
      flex-direction: row-reverse;
  }
@@ -126,6 +138,17 @@
 
 
  }
+
+ .posRM {
+     display: flex;
+
+ }
+
+ .containerInfoBlog.reverse .posRM {
+     justify-content: flex-end;
+
+ }
+
 
  .containerTextButton {
      display: flex;
@@ -150,7 +173,7 @@
      font-family: Roboto;
      font-size: 85px;
      font-weight: 100;
-     line-height: 99.61px;
+
      letter-spacing: 0.04em;
      text-align: center;
      margin: 10px;
@@ -169,7 +192,7 @@
  }
 
  .containerBlog {
-     width: 80%;
+     width: 75%;
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -205,13 +228,14 @@
 
  .TitleArticle {
      font-size: 35px;
-     margin: 0em;
+     margin-bottom: 0.5em;
      text-transform: uppercase;
      letter-spacing: 0.2em;
  }
 
  .Date {
      margin: 0em;
+     margin-bottom: 0.5em;
      font-size: 20px;
      font-weight: lighter;
      font-style: italic;
@@ -220,7 +244,7 @@
  .ReadMore {
      font-size: 20px;
      font-weight: 100;
-     margin-top: 2em;
+
      text-decoration: underline;
      background-color: rgba(255, 255, 255, 0);
      border: none;
@@ -229,9 +253,11 @@
 
 
 
+
+
  @media (max-width: 1500px) {
      .containerBlog {
-         width: 85%;
+         width: 80%;
          display: flex;
          flex-direction: column;
          justify-content: center;
@@ -240,21 +266,17 @@
          margin-bottom: 1em;
      }
 
- }
-
- @media (max-width: 1500px) {
      .ImgCardBlog {
          width: auto;
          height: 300px;
      }
 
-     .cardBlogPost {
-         align-items: center;
-     }
+
 
      .cardText {
          justify-content: space-between;
          height: 100%;
+
      }
 
 
@@ -281,7 +303,20 @@
  }
 
 
+ @media (max-width: 1245px) {
+     .cardBlogPost {
+         align-items: center;
+     }
+ }
+
+
+
  @media (max-width:992px) {
+     .containerBlog {
+         width: 95%;
+
+     }
+
      .TitleArticle {
          font-size: 24px;
      }
@@ -304,6 +339,11 @@
  }
 
  @media (max-width:768px) {
+
+     .cardText {
+         width: 100%;
+     }
+
      .LigneSeparationTitle {
          display: none;
      }
@@ -323,6 +363,7 @@
 
 
      .TextArticle {
+         width: 95%;
          font-size: 10px;
      }
 
@@ -349,19 +390,40 @@
      }
 
      .cardBlogPost {
-         gap: 0.2em;
+         gap: 0.5em;
          margin: 0;
+         padding: 0px 5px 0px 5px;
      }
 
      .containerBlog {
-         width: 90%;
+         width: 95%;
+         min-height: 80vh;
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
 
      }
-     .containerInfoBlog{
-        box-shadow: 0.2px 2px 2px rgba(0, 0, 0, 0.224);
-        margin: 1em 0em 1em 0em;
-        padding: 5px;
-        border-radius: 15px;
+
+     .containerInfoBlog {
+         box-shadow: 0.2px 2px 2px rgba(0, 0, 0, 0.224);
+         margin: 0.3em 0em 0.3em 0em;
+         padding: 5px;
+         border-radius: 15px;
+
+     }
+
+     .containerInfoBlog.normal .posRM {
+         justify-content: flex-end;
+
+     }
+
+     .buttonAllArticles {
+         display: none;
+     }
+
+     .BLogTitlePos {
+         width: 100%;
+         display: flex;
 
      }
  }

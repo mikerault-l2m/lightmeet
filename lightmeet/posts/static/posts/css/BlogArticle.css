@@ -11,10 +11,17 @@
     font-weight: 100;
     line-height: 99.61px;
     letter-spacing: 0.04em;
-    text-align: center;
+
     margin: 10px;
 }
+.PosElementArticle{
+    margin-top:2em ;
+    margin-bottom: 2em;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .LigneSeparationTitle {
     width: 100%;
     height: 0.5px;
@@ -28,25 +35,48 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+}
+
+.cardImageArticle{
+    max-width:100% ;
 
 }
 
+.ImageArticle{
+    width: 100%;
+}
 
+.Date{
+
+    font-size: 30px;
+    margin: 0em 0em 1em 0em;
+}
+.TitleArticle{
+    font-family: Roboto;
+        font-size: 50px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-align: center;
+        margin: 2em 0em 0em 0em;
+}
 
  .custom-paragraph-class{
-    margin: 2em;
+    margin: 0em;
    font-size: 30px;
    text-align: justify;
+max-width: 98%;
 }
 .spaced-br {
     content: "";
     display: block;
     margin-top: 1em ;
+    text-align: justify !important;
 }
 
-.TextArticle p {
-    margin-top: 1em;
-
+.TextArticle{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 @media (max-width: 768px) {

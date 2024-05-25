@@ -13,7 +13,7 @@ class PartnerMeet(models.Model):
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
             ("Religieux","Site religieux"),
-            ("Extra-conjugales", "Site extra-conjugal"),
+            #("Extra-conjugales", "Site extra-conjugal"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
     )
     categorie = models.CharField(choices=CATEGORIE_CHOICES, max_length=25, default='Généraliste')
@@ -27,7 +27,7 @@ class PartnerMeet(models.Model):
     relation = models.CharField(choices=RELATION_CHOICES, max_length=25, default='Toutes')
 
     AGE_CHOICES = (
-            ('18-25', '18-30 '),
+            ('18-30', '18-30 '),
             ('31-45', '31-45 '),
             ('+ 46', '+ 46'),
     )

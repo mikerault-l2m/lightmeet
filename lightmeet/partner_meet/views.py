@@ -17,8 +17,20 @@ from django.db.models import F, ExpressionWrapper, DecimalField
 from decimal import Decimal
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render,redirect
+# Etape 1 : Lancement de la page principale Lightmeet :
 
-######## Création du statut de visiteur avec récupération de l'adresse IP et de la localisation :
+start = time.time()
+class Home(TemplateView):
+    model = Lightener
+    template_name = 'partner_meet/Home.html'
+
+end = time.time()
+elapsed = end - start
+print(f'Temps d\'affichage de LightMeet : {elapsed:.2}ms')
+
+
+
+######## Etape 2 : Création du statut de visiteur avec récupération de l'adresse IP et de la localisation :
 start = time.time()
 
 def enregistrer_visiteur(request):
@@ -29,8 +41,6 @@ def enregistrer_visiteur(request):
         Visitor.objects.create(ip_address=ip_address, location=location)
         posts = BlogPost.objects.all()
         return render(request, "partner_meet/Home.html", {"form": form, "posts": posts})
-    # Récupère tous les objets BlogPost
-    posts = BlogPost.objects.all()
     return render(request, "partner_meet/Home.html", {"form": form, "posts": posts})
 
 
@@ -62,38 +72,11 @@ def get_location(ip):
         location = "Unknown"
     return location
 
-# C : Nous avons un nouveau visiteur :
-# def nouveau_visiteur(request):
-#     if request.method == "POST":
-#         form = LightenerCreationForm(request.POST)
-#         if form.is_valid():
-#             lightener.ip_address = get_client_ip(request)
-#             lightener.location = get_location(lightener.ip_address)
-#             lightener.save()
-#             context = {"form": form}
-#             return render(request, "partner_meet/Home.html", context)
-#         else:
-#             print(form.errors)
-#     else:
-#         form = LightenerCreationForm()
-
-#     # Récupère tous les objets BlogPost
-#     posts = BlogPost.objects.all()
-#     return render(request, "partner_meet/Home.html", {"form": form, "posts": posts})
-
 end = time.time()
 elapsed = end - start
 print(f'Temps de récupération adresse IP et location sur LightMeet : {elapsed:.2f}ms')
-# Etape 2 : Outil pour comparer
 
-start = time.time()
-class Home(TemplateView):
-    model = Lightener
-    template_name = 'partner_meet/Home.html'
 
-end = time.time()
-elapsed = end - start
-print(f'Temps d\'affichage de LightMeet : {elapsed:.2}ms')
 
 
 start = time.time()
@@ -110,11 +93,11 @@ class PartnerMeetHome(ListView):
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
             ("Religieux","Site religieux"),
-            ("Extra-conjugales", "Site extra-conjugal"),
+            #("Extra-conjugales", "Site extra-conjugal"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
         )
         context['AGE_CHOICES'] = (
-            ('18-25', '18-30 '),
+            ('18-30', '18-30 '),
             ('31-45', '31-45 '),
             ('+ 46', '+ 46'),
         )
@@ -189,11 +172,11 @@ class PartnerMeetBestSite(ListView):
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
             ("Religieux","Site religieux"),
-            ("Extra-conjugales", "Site extra-conjugal"),
+            #("Extra-conjugales", "Site extra-conjugal"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
         )
         context['AGE_CHOICES'] = (
-            ('18-25', '18-30 '),
+            ('18-30', '18-30 '),
             ('31-45', '31-45 '),
             ('+ 46', '+ 46'),
         )

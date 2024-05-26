@@ -3,12 +3,27 @@ from django.shortcuts import render
 from django.conf import settings
 import time
 from psy.models import *
+from accounts.models import *
 from django.views.generic import ListView,CreateView,UpdateView,DetailView,DeleteView
 from django.urls import reverse_lazy
 from posts.models import *
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
+
+# Etape 1 : Lancement de la page principale Lightmeet :
+
+start = time.time()
+class Home(TemplateView):
+    model = Lightener
+    template_name = 'partner_meet/Home.html'
+
+end = time.time()
+elapsed = end - start
+print(f'Temps d\'affichage de LightMeet : {elapsed:.2}ms')
+
+
+# Étape 2
 
 start = time.time()
 class PsyMeetHome(ListView):
@@ -276,22 +291,30 @@ class PsyMeetBestSite(ListView):
         return context
 
     def get_queryset(self):
+        start = time.time()
         queryset = super().get_queryset()
 
-        # Filtrer par âge
-        age = self.request.GET.get('age')
-        if age:
-            queryset = queryset.filter(age=age)
+        departement = self.request.GET.get('departement')
+        if departement:
+            queryset = queryset.filter(departement=departement)
 
-        # Filtrer par prix moyen
-        prix_avg = self.request.GET.get('prix_avg')
-        if prix_avg:
-            queryset = queryset.filter(prix_avg=prix_avg)
+        diplome = self.request.GET.get('diplome')
+        if diplome:
+            queryset = queryset.filter(diplome=diplome)
 
-        # Filtrer par note trustpilot
-        trustpilot = self.request.GET.get('trustpilot')
-        if trustpilot:
-            queryset = queryset.filter(trustpilot=trustpilot)
+        specialite = self.request.GET.get('specialite')
+        if specialite:
+            queryset = queryset.filter(specialite=specialite)
+
+#        # Filtrer par prix moyen
+#        prix_avg = self.request.GET.get('prix_avg')
+#        if prix_avg:
+#            queryset = queryset.filter(prix_avg=prix_avg)
+
+#        # Filtrer par note trustpilot
+#        trustpilot = self.request.GET.get('trustpilot')
+#        if trustpilot:
+#            queryset = queryset.filter(trustpilot=trustpilot)
 
         # Filtrer par affiliation
         affiliation = self.request.GET.get('affiliation')
@@ -300,32 +323,12 @@ class PsyMeetBestSite(ListView):
         elif affiliation == 'false':
             queryset = queryset.filter(affiliation=False)
 
-        # Filtre selon la gratuité
-        free = self.request.GET.get('free')
-        if free == 'true':
-            queryset = queryset.filter(free=True)
-        elif free == 'false':
-            queryset = queryset.filter(free=False)
-
         # Filtre selon la émission de CO2
         co2 = self.request.GET.get('co2')
         if co2 == 'true':
             queryset = queryset.filter(co2=True)
         elif co2 == 'false':
             queryset = queryset.filter(co2=False)
-
-        # Filtrer par description (recherche partielle)
-        description = self.request.GET.get('description')
-        if description:
-            queryset = queryset.filter(description__icontains=description)
-
-        # Filtrer par catégorie
-        categorie = self.request.GET.get('categorie')
-        if categorie:
-            queryset = queryset.filter(categorie=categorie)
-
-        # Trier par ranking (si disponible)
-        queryset = queryset.order_by('-ranking')
 
         return queryset
 end = time.time()
@@ -337,13 +340,6 @@ print(f'Temps de recherche des sites des thérapeutes : {elapsed:.2}ms')
 class PsyHome(ListView):
     model = PsyMeet
     context_object_name = "psys"
-
-
-
-
-
-
-
 
 
 @method_decorator(login_required,"dispatch")

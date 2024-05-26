@@ -4,8 +4,6 @@
 {% block css %}
 
 <link rel="stylesheet" href="{% static 'partner_meet/css/SearchPage.css' %}">
-
-<link rel="stylesheet" href="{% static 'partner_meet/css/SearchPage.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
@@ -13,8 +11,12 @@
 
 {% block section %}
 <div class="ButtonPos">
-    <button class="buttonOtherSearh">Rencontres</button>
-    <button class="buttonOtherSearh">Thérapeutes</button>
+    <button class="buttonOtherSearh">
+        <a href="{% url 'recherche_home' %}" >Rencontres</a>
+    </button>
+     <button class="buttonOtherSearh">
+        <a href="{% url 'recherche_therapeutes' %}" >Thérapeutes</a>
+     </button>
 </div>
 <div class="sites-de-rencontres">
     <div class="containerBackground">

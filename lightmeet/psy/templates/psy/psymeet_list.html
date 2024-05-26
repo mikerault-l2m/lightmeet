@@ -11,8 +11,12 @@
 
 {% block section %}
 <div class="ButtonPos">
-    <button class="buttonOtherSearh">Rencontres</button>
-    <button class="buttonOtherSearh">Thérapeutes</button>
+    <button class="buttonOtherSearh">
+        <a href="{% url 'recherche_home' %}" class="buttonOtherSearh" >Rencontres</a>
+    </button>
+     <button class="buttonOtherSearh">
+        <a href="{% url 'recherche_therapeutes' %}" class="buttonOtherSearh" >Thérapeutes</a>
+     </button>
 </div>
 <div class="sites-de-rencontres">
     <div class="containerBackground">
@@ -52,10 +56,6 @@
                 <label for="partner">Thérapeutes affiliés</label>
             </div>
 
-            <div>
-                <input type="checkbox" name="checkbox" id="free" />
-                <label for="free">Émission de C02 du site web</label>
-            </div>
  </div>
 
                 <button  class="ButtonSearch" type="submit">Recherchez</button>

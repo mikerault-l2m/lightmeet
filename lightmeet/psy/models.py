@@ -150,10 +150,6 @@ class PsyMeet(models.Model):
     )
     genre = models.CharField(max_length=10, choices=GENRE_CHOICES)
 
-
-
-
-
     # Champ pour la marque du psychologue
     marque = models.CharField(max_length=100)
 

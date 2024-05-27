@@ -122,12 +122,15 @@
         <p>Comparez des milliers d’applications de rencontres et de thérapeutes de votre région</p>
     </div>
     <div class="callToActionSite">
-        <a href="{% url 'recherche_home' %}">
-            <button class="callToAction call-to-acti on-comparer">Sites de rencontres</button>
-        </a>
-        <a href="{% url 'Home' %}">
-            <button class="callToAction buttonWhite call-to-action-comparer">Thérapeutes</button>
-        </a>
+
+            <button class="callToAction call-to-acti on-comparer" onclick="window.location.href=`{% url 'recherche_home' %}`">Sites de rencontres</button>
+
+
+
+   <button class="callToAction buttonWhite call-to-action-comparer" onclick="window.location.href=`{% url 'recherche_therapeutes' %}`">Thérapeutes</button>
+
+
+
     </div>
 </div>
 <h2 class="TitleImgSite">Derniers articles mis en ligne</h2>

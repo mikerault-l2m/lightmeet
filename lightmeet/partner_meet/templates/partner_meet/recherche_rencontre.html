@@ -23,25 +23,25 @@
         });
     });
 </script>
-
-<link rel="stylesheet" href="{% static 'partner_meet/css/SearchPage.css' %}">
-{{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/SearchPage.css' %}">
 {% endblock %}
 {% load static %}
 
 {% block section %}
 <div class="ButtonPos">
-    <button class="buttonOtherSearh">
-        <a href="{% url 'recherche_home' %}"  >Rencontres</a>
+    <button class="buttonOtherSearh " onclick="window.location.href=`{% url 'recherche_home' %}`">
+        Rencontres
     </button>
-     <button class="buttonOtherSearh">
-        <a href="{% url 'recherche_therapeutes' %}" >Thérapeutes</a>
-     </button>
+    <button class="buttonOtherSearh selectButton" onclick="window.location.href=`{% url 'recherche_therapeutes' %}`">
+        Thérapeutes
+    </button>
 </div>
 <div class="sites-de-rencontres">
     <div class="containerBackground">
-        <form method="get" action="{% url 'recherche_meilleur_site' %}">
+        <form method="get" action="{% url 'recherche_meilleur_site' %}#resultats">
             {% csrf_token %}
             <div class="containerCardSelector">
                 <div class="CardSelector">
@@ -89,8 +89,8 @@
 
 <div class="containerResultats">
     <div class="FitlerResultats">
-        <p class="Resultats"> Résultats</p>
-        <!--<div class="PosFitlerResultats">
+        <p class="Resultats" id="resultats"> Résultats</p>
+        <div class="PosFitlerResultats">
             <button class="ButtonFitlerResultats">
                 Les mieux notés
             </button>
@@ -100,7 +100,7 @@
             <button class="ButtonFitlerResultats">
                 Les plus pertinentes
             </button>
-        </div>-->
+        </div>
     </div>
     {% for partner in partnermeet %}
     <div class="cardApp VersionPC" action="get">
@@ -181,7 +181,7 @@
         {% endif %}
     </div>
     {% empty %}
-    <div class="empty-message">
+    <div class="empty-message" id="resultats">
         <p>Ces sites de rencontres sont actuellement étudiés par <i>Lightmeet</i></p>
         <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
     </div>

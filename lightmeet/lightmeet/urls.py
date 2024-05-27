@@ -59,6 +59,7 @@ urlpatterns = [
 
     # Blog
     path('blog/', BlogHome.as_view(), name="blog_home"),
+    #path('blog/articles', Articles, name="blog_articles"),
     path('blog/create', BlogPostCreate.as_view(), name="blog_create"),
     path('blog/<str:slug>', BlogPostDetail.as_view(), name="blog_detail"),
     path('blog/edit/<str:slug>', BlogPostUpdate.as_view(), name="blog_edit"),

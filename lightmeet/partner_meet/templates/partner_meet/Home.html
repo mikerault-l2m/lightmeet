@@ -1,5 +1,7 @@
 {% extends 'partner_meet/base_Partner_meet.html' %}
 {% load static %}
+
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
 {{ block.super }}
@@ -18,7 +20,7 @@
 
 {% if not form.consentement %}
 <div class="call-to-action-containerCookies">
-     <img src="{% static 'partner_meet/Logos/lightMeetCookieLogo.svg' %}" alt="Lightmeet Logo" class="logo">
+    <img src="{% static 'partner_meet/Logos/lightMeetCookieLogo.svg' %}" alt="Lightmeet Logo" class="logo">
 
     <div class="BlockCookies">
         <h2 class="TitleCookies">Votre vie privée nous tient à cœur</h2>
@@ -28,7 +30,7 @@
             utilisées pour améliorer votre expérience, stocker les informations contenues sur un appareil et y accéder,
             ainsi que pour la publicité personnalisée, les études sur
             l'audience et le développement des services. Pour en savoir plus, consultez notre Politique en matière de
-            cookies. <br/><br/>
+            cookies. <br /><br />
             LightMeet et ses 100 partenaires peuvent se baser sur l'intérêt légitime à certaines fins, plutôt que sur le
             consentement. Cliquez sur « Préférences en matière de cookies » pour avoir plus d'informations à ce sujet et
             savoir comment vous y opposer, ou sélectionnez « Valider les cookies » afin d'autoriser tous les cookies.
@@ -123,11 +125,13 @@
     </div>
     <div class="callToActionSite">
 
-            <button class="callToAction call-to-acti on-comparer" onclick="window.location.href=`{% url 'recherche_home' %}`">Sites de rencontres</button>
+        <button class="callToAction call-to-acti on-comparer"
+            onclick="window.location.href=`{% url 'recherche_home' %}`">Sites de rencontres</button>
 
 
 
-   <button class="callToAction buttonWhite call-to-action-comparer" onclick="window.location.href=`{% url 'recherche_therapeutes' %}`">Thérapeutes</button>
+        <button class="callToAction buttonWhite call-to-action-comparer"
+            onclick="window.location.href=`{% url 'recherche_therapeutes' %}`">Thérapeutes</button>
 
 
 
@@ -135,7 +139,7 @@
 </div>
 <h2 class="TitleImgSite">Derniers articles mis en ligne</h2>
 <div class="boxesContainer">
-{% for post in posts|slice:":3" %}
+    {% for post in posts|slice:":3" %}
     <div class="boxSite">
         <div class="image-container">
             <img src="{% static 'posts/Logos/2.png' %}" class="imageSite" alt="Lightmeet Blog">
@@ -146,9 +150,223 @@
         </p>
     </div>
 {% endfor %}
+
 </div>
 
+<div class="faq-container">
+    <h3>Trouver sa rencontre idéale avec Lightmeet</h3>
+    <div class="faq-item">
+
+        <div class="part1FAQ">
+            <div class="cardQuestion">
+                <div class="faq-question">
+                    <div class="PosTxt">
+                        <p> Comment fonctionne LightMeet ?
+                        </p>
+                        <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.849173L9.5 9L18.5 0.849173" stroke="black" stroke-width="1.5" />
+                            </svg>
+
+                    </div>
+
+                    </span>
+                    <div class="ligneSeparationFaq"></div>
+                </div>
+
+                <div class="faq-answer">
+                    Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le
+                    Web
+                    pour
+                    trouver les
+                    meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs des services de rencontre
+                    et
+                    autres critères
+                    au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il
+                    suffit de
+                    vous inscrire
+                    ou de contacter directement le prestataire.
+
+                </div>
+            </div>
+            <div class="cardQuestion">
+                <div class="faq-question">
+                    <div class="PosTxt">
+                        <p> Comment trouver le site de rencontre le moins cher avec Lightmeet ?
+                        </p>
+                        <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.849173L9.5 9L18.5 0.849173" stroke="black" stroke-width="1.5" />
+                            </svg>
+
+                    </div>
+
+                    </span>
+                    <div class="ligneSeparationFaq"></div>
+                </div>
+
+                <div class="faq-answer">
+                    Pour trouver des sites de rencontres efficaces, c'est facile : chaque mois, plus de 3 millions de
+                    célibataires avisés
+                    viennent sur notre site pour trouver le site de rencontre plus efficace.
+                    Voici quelques conseils simples pour tirer le meilleur parti de votre recherche de site de
+                    rencontre.
+
+                    Gagnez du temps et de l'argent - Qu'il s'agisse du site web le plus rapide et élégant ou de la
+                    plateforme la
+                    plus
+                    avantageuse, vous pouvez choisir votre site de rencontre en fonction des notes réelles des
+                    célibataires.
+
+                    Cherchez où vous le sentez - Vous avez envie de découvrir une personnalité au delà de vos frontières
+                    ?
+                    Cherchez bientôt
+                    dans « le monde entier » pour trouver le site de rencontre le moins cher et envisager un futur en un
+                    lieu
+                    que vous aimez
+                    vraiment.
+
+                    Misez sur la gratuité - Sélectionné par Lightmeet, nos partenaires proposent parfois des
+                    fonctionnalités
+                    entièrement
+                    gratuites. En un clic, vous les identifiez. Vous vous donnez une chance d'enfin vivre la plus belle
+                    histoire
+                    de votre
+                    vie.
+                </div>
+
+            </div>
+
+            <div class="cardQuestion">
+                <div class="faq-question">
+                    <div class="PosTxt">
+                        <p>
+                            Que se passe-t-il une fois que je me suis inscrit ?
+                        </p>
+                        <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.849173L9.5 9L18.5 0.849173" stroke="black" stroke-width="1.5" />
+                            </svg>
+
+                    </div>
+
+                    </span>
+                    <div class="ligneSeparationFaq"></div>
+                </div>
+
+                <div class="faq-answer">
+                    Votre e-mail de confirmation d'inscription et toutes les autres informations dont vous aurez besoin
+                    proviendront du site
+                    de rencontre sur lequel vous êtes inscrits. Si vous avez des questions concernant le suivi de votre
+                    inscription, ou si
+                    vous souhaitez modifier ou annuler votre inscription, adressez-vous directement à eux.
+                </div>
+            </div>
+        </div>
+
+        <div class="Part2Faq">
+
+            <div class="cardQuestion">
+                <div class="faq-question">
+                    <div class="PosTxt">
+                        <p>
+                            Peut-on rechercher aussi des thérapeutes sur LightMeet ?
+                        </p>
+                        <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.849173L9.5 9L18.5 0.849173" stroke="black" stroke-width="1.5" />
+                            </svg>
+
+                    </div>
+
+                    </span>
+                    <div class="ligneSeparationFaq"></div>
+                </div>
+
+                <div class="faq-answer">
+                    Oui ! Vous pouvez utiliser la puissance de notre moteur de recherche de site de rencontre pour
+                    trouver
+                    ce
+                    thérapeute qui
+                    répond à vos besoins.
+                </div>
+            </div>
+
+            <div class="cardQuestion">
+                <div class="faq-question">
+                    <div class="PosTxt">
+                        <p>
+                            Dans quel pays puis-je actuellement trouver un site de rencontre ?
+                        </p>
+                        <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.849173L9.5 9L18.5 0.849173" stroke="black" stroke-width="1.5" />
+                            </svg>
+
+                    </div>
+                    </span>
+                    <div class="ligneSeparationFaq"></div>
+                </div>
+
+                <div class="faq-answer">
+                    Actuellement, la France est le premier pays où vous trouverez des site de rencontres sérieux.
+                </div>
+            </div>
+
+            <div class="cardQuestion">
+                <div class="faq-question">
+                    <div class="PosTxt">
+                        <p>
+                            Puis je m'inscrire sur un site web émettant moins de CO2 ?
+                        </p>
+                        <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.5 0.849173L9.5 9L18.5 0.849173" stroke="black" stroke-width="1.5" />
+                            </svg>
+                    </div>
+                    </span>
+                    <div class="ligneSeparationFaq"></div>
+                </div>
+
+                <div class="faq-answer">
+                    En cours de développement.
+
+                    Depuis que nous avons commencé à afficher le critère d'émission de CO2 des sites web (lorsque cette
+                    information est
+                    disponible), nous avons noté un net intérêt de la communauté soutenant avec passion le travail de
+                    nos
+                    développeurs.
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(function (question) {
+            question.addEventListener('click', function () {
+                var answer = question.nextElementSibling;
+                var arrow = question.querySelector('.arrow svg');
+
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.style.display = 'block';
+                    arrow.style.transform = 'rotate(180deg)';
+                }
+                question.classList.toggle('active');
+            });
+        });
+    });
+</script>
 {% endblock %}
-        </body>
+</body>
 
 </html>

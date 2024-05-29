@@ -4,6 +4,9 @@
 {% block css %}
 
 <link rel="stylesheet" href="{% static 'partner_meet/css/SearchPage.css' %}">
+
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/therapeute.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}

@@ -1,5 +1,6 @@
 .sites-de-rencontres{
-background: url(../css/Logos/backgroundPsy.png);
+background: url(../Logos/backgroundPsy.png);
+background-size: cover;
 }
 
 .buttonOtherSearh {

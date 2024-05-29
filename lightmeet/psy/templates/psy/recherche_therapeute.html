@@ -28,6 +28,8 @@
 
 <link rel="stylesheet" href="{% static 'partner_meet/css/SearchPage.css' %}">
 {{ block.super }}
+<link rel="stylesheet" href="{% static 'css/therapeute.css' %}">
+{{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
 
@@ -36,7 +38,7 @@
     <button class="buttonOtherSearh " onclick="window.location.href=`{% url 'recherche_home' %}`">
         Rencontres
     </button>
-    <button class="buttonOtherSearh" onclick="window.location.href=`{% url 'recherche_therapeutes' %}`">
+    <button class="buttonOtherSearh selectButton" onclick="window.location.href=`{% url 'recherche_therapeutes' %}`">
         Thérapeutes
     </button>
 </div>
@@ -44,11 +46,15 @@
     <div class="containerBackground">
         <form method="get" action="{% url 'recherche_meilleur_therapeutes' %}">
             {% csrf_token %}
-            <div class="sites-de-rencontres">
-    <div class="containerBackground">
-        <form method="get" action="{% url 'recherche_meilleur_therapeutes' %}">
-            {% csrf_token %}
             <div class="containerCardSelector">
+                <div class="CardSelector">
+                    <h2>Spécialité</h2>
+                    <select class="selector" name="specialite">
+                        {% for specialite_key, specialite_label in SPECIALITE_CHOICES %}
+                        <option value="{{ specialite_key }}">{{ specialite_label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <div class="CardSelector">
                     <h2>Département</h2>
                     <select class="selector" name="departement">
@@ -61,15 +67,7 @@
                     <h2>Diplôme</h2>
                     <select class="selector" name="diplome">
                         {% for diplome_key, diplome_label in DIPLOME_CHOICES %}
-                        <option value="{{ diplome_key }}">{{ diplome_label }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="CardSelector">
-                    <h2>Spécialité</h2>
-                    <select class="selector" name="specialite">
-                        {% for specialite_key, specialite_label in SPECIALITE_CHOICES %}
-                        <option class="optiontest" value="{{ specialite_key }}">{{ specialite_label }}</option>
+                        <option class="optiontest" value="{{ diplome_key }}">{{ diplome_label }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -79,7 +77,7 @@
                     <p>Filtres populaires: </p>
                     <div>
                         <input type="checkbox" name="affiliated_partner" id="partner" />
-                        <label for="partner">Thérapeutes affiliés</label>
+                        <label for="partner">Partenaires affiliés</label>
                     </div>
                 </div>
                 <button class="ButtonSearch" type="submit">Recherchez</button>
@@ -93,30 +91,53 @@
     <div class="cardApp VersionPC" action="get">
         <div>
             <div class="alignItems">
-                <img class="SizeImgCard" src="{{ psy.photo.url }}" alt="{{ psy.nom }} Logo">
+                <img class="SizeImgCard" src="{{ psy.photo.url }}">
                 <div class="containerTitleCard">
                     <div class="PosStar">
                         <h3 class="TitleCard">{{ psy.nom }} {{psy.prenom}}</h3>
-                        <p class="rating-container" ></p>
+                        <p class="textCard"> {{psy.adresse}} - {{psy.ville}} </p>
+                        <p class="textCard">{{psy.code_postal}}</p>
                     </div>
+
                     <div class="PosFlag">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 35 22">
                             <rect width="11.6667" height="22" fill="#0055A4" />
                             <rect x="11.6667" width="10.6667" height="22" fill="#FFFFFF" />
                             <rect x="23.3333" width="10.6667" height="22" fill="#EF4135" />
                         </svg>
-                        <p class="pays">{{psy.adresse}}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <p class="descriptionCard bold">{{ psy.code_postal }} {{psy.ville}}</p>
+        <p class="descriptionCard bold">{{ psy.telephone }}</p>
+        <button class="buttonVisit" onclick="window.location.href='{{ psy.url }}'">Visiter</button>
+    </div>
+
+    <div class="cardApp VersionMobile" action="get">
+        <div>
+            <div class="alignItems">
+                <img class="SizeImgCard" src="{{ psy.photo.url }}">
+                <div class="containerTitleCard">
+                    <div class="PosStar">
+                        <h3 class="TitleCard">{{ psy.nom }} {{psy.prenom}}</h3>
+                        <p> {{psy.adresse}} - {{psy.ville}}</p>
+                        <p> {{psy.code_postal}}</p>
+                    </div>
+                    <p class="textCard"></p>
+                    <div class="PosFlag">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 35 22">
+                            <rect width="11.6667" height="22" fill="#0055A4" />
+                            <rect x="11.6667" width="10.6667" height="22" fill="#FFFFFF" />
+                            <rect x="23.3333" width="10.6667" height="22" fill="#EF4135" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="Line"></div>
-        <p class="descriptionCard">{{psy.telephone}}</p>
-        {{psy.facebook}}
-        {{psy.instagram}}
-        {{psy.linkedin}}
-        <button class="buttonVisit" onclick="window.location.href='{{ psy.site_web }}'">Visiter</button>
+        <p class="descriptionCard bold">{{ psy.telephone }}</p>
+        <div class="Line"></div>
+        <button class="buttonVisit" onclick="window.location.href='{{ psy.url }}'">Visiter </button>
     </div>
     {% empty %}
     <div class="empty-message">

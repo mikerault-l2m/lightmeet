@@ -132,26 +132,24 @@ class PsyMeet(models.Model):
     specialite = models.CharField(max_length=100, choices=SPECIALITE_CHOICES)
 
 
-
+    photo = models.FileField(upload_to='PsyMeetPhoto/', blank=True, null=True)
     # Champ pour le nom du psychologue
     nom = models.CharField(max_length=100)
     # Champ pour le prénom du psychologue
     prenom = models.CharField(max_length=100)
+    # Champ pour l'adresse du psychologue
+    adresse = models.CharField(max_length=255)
     # Champ pour le code postal du psychologue avec des choix prédéfinis
     code_postal = models.CharField(max_length=5)
     # Champ pour la ville du psychologue
     ville = models.CharField(max_length=100)
-    # Champ pour l'adresse du psychologue
-    adresse = models.CharField(max_length=255)
     # Champ pour le genre du psychologue avec des choix prédéfinis
+
     GENRE_CHOICES = (
         ("Homme", "Homme"),   # Genre masculin
         ("Femme", "Femme"),   # Genre féminin
     )
     genre = models.CharField(max_length=10, choices=GENRE_CHOICES)
-
-    # Champ pour la marque du psychologue
-    marque = models.CharField(max_length=100)
 
     # Champ pour le site web du psychologue
     site_web = models.URLField(blank=True)
@@ -164,9 +162,6 @@ class PsyMeet(models.Model):
 
     # Champ pour le lien Facebook du psychologue (optionnel)
     facebook = models.URLField(blank=True)
-
-    # Champ pour le lien Twitter du psychologue (optionnel)
-    twitter = models.URLField(blank=True)
 
     # Champ pour le lien LinkedIn du psychologue (optionnel)
     linkedin = models.URLField(blank=True)

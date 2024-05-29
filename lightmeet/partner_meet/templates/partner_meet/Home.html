@@ -135,17 +135,17 @@
 </div>
 <h2 class="TitleImgSite">Derniers articles mis en ligne</h2>
 <div class="boxesContainer">
-    {% for post in posts %}
-        <div class="boxSite">
-            <div class="image-container">
-                <img src="{% static 'posts/Logos/2.png' %}" class="imageSite" alt="Lightmeet Blog">
-            </div>
-            <p class="TextImgSitePresentation"> {{ post.title }}</p>
-            <p class="TextImgSitePresentationHtag"> <em> #DevenirMarqueReconnue #ApprocheInclusive #NormesGenre #StratégieMarque  </em>
-            </p>
+{% for post in posts|slice:":3" %}
+    <div class="boxSite">
+        <div class="image-container">
+            <img src="{% static 'posts/Logos/2.png' %}" class="imageSite" alt="Lightmeet Blog">
         </div>
-
-    {% endfor %}
+        <p class="TextImgSitePresentation">{{ post.title }}</p>
+        <p class="TextImgSitePresentationHtag">
+            <em>#DevenirMarqueReconnue #ApprocheInclusive #NormesGenre #StratégieMarque</em>
+        </p>
+    </div>
+{% endfor %}
 </div>
 
 {% endblock %}

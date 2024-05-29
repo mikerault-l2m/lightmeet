@@ -23,9 +23,17 @@
 </div>
 <div class="sites-de-rencontres">
     <div class="containerBackground">
-        <form method="get" action="{% url 'recherche_meilleur_therapeutes' %}">
+        <form method="get" action="{% url 'recherche_meilleur_therapeutes' %}#resultats">
             {% csrf_token %}
             <div class="containerCardSelector">
+                <div class="CardSelector">
+                    <h2>Spécialité</h2>
+                    <select class="selector" name="specialite">
+                        {% for specialite_key, specialite_label in SPECIALITE_CHOICES %}
+                        <option class="optiontest" value="{{ specialite_key }}">{{ specialite_label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <div class="CardSelector">
                     <h2>Département</h2>
                     <select class="selector" name="departement">
@@ -42,26 +50,18 @@
                         {% endfor %}
                     </select>
                 </div>
-                <div class="CardSelector">
-                    <h2>Spécialité</h2>
-                    <select class="selector" name="specialite">
-                        {% for specialite_key, specialite_label in SPECIALITE_CHOICES %}
-                        <option class="optiontest" value="{{ specialite_key }}">{{ specialite_label }}</option>
-                        {% endfor %}
-                    </select>
+            </div>
+            <div class="PosSearch">
+                <div class="PosFilter">
+                    <p>Filtres populaires : </p>
+                    <div>
+                        <input type="checkbox" name="checkbox" id="partner" />
+                        <label for="partner">Thérapeutes affiliés</label>
+                    </div>
+
                 </div>
-            </div>
-<div class="PosSearch">
-            <div class="PosFilter">
-               <p>Filtres populaires : </p>
-            <div>
-                <input type="checkbox" name="checkbox" id="partner" />
-                <label for="partner">Thérapeutes affiliés</label>
-            </div>
 
- </div>
-
-                <button  class="ButtonSearch" type="submit">Recherchez</button>
+                <button class="ButtonSearch" type="submit">Recherchez</button>
             </div>
         </form>
     </div>

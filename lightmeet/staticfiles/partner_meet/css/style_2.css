@@ -73,11 +73,13 @@ body {
 }
 
 h3 {
+    text-align: center;
     margin: 0px;
     font-size: 1.1em;
     width: 180px;
     font-weight: 500;
 }
+
 
 .titleList {
     width: 80%;

@@ -1,6 +1,6 @@
-.sites-de-rencontres{
-background: url(../Logos/backgroundPsy.png);
-background-size: cover;
+.sites-de-rencontres {
+    background: url(../Logos/backgroundPsy.png);
+    background-size: cover;
 }
 
 .buttonOtherSearh {
@@ -15,22 +15,22 @@ background-size: cover;
     color: black;
 }
 
-.selectButton{
+.selectButton {
     background-color: #FBFBFB;
-   border:9px  solid #FBF1D6 ;
-   border-bottom: none;
+    border: 9px solid #FBF1D6;
+    border-bottom: none;
 }
 
-.ResPsy{
+.ResPsy {
     text-align: left;
 
-            font-size: 1.8em;
-            font-weight: 500;
-            margin:1em 0em 1em 0em;
-        width: 100%;
+    font-size: 1.8em;
+    font-weight: 500;
+    margin: 1em 0em 1em 0em;
+    width: 100%;
 }
 
-.CardPsyPosition{
+.CardPsyPosition {
     display: flex;
     width: 80%;
     align-items: center;
@@ -38,7 +38,7 @@ background-size: cover;
 
 }
 
-.PosImgInfoPsy{
+.PosImgInfoPsy {
     margin: 0;
     display: flex;
     align-items: center;
@@ -46,69 +46,214 @@ background-size: cover;
 }
 
 .PsyName {
-    margin: 0.3em 0em 0.3em 0em;
+    margin: 0em 0em 0.3em 0em;
     font-size: 40px;
 }
 
-.PsyAdress{
+.PsyAdress {
     margin: 0.3em 0em 0.3em 0em;
     font-size: 25px;
 }
+
 .Specialite {
     margin: 0.3em 0em 0.3em 0em;
     font-size: 25px;
 }
 
-.diplome{
-        margin: 0.3em 0em 0.3em 0em;
-        font-size: 25px;
-    }
+.diplome {
+    margin: 0.3em 0em 0.3em 0em;
+    font-size: 25px;
+}
 
 .PsyPostal {
-
     margin: 0;
     font-size: 25px;
 }
 
-.PsyTel{
-
-            margin: 0;
-            font-size: 25px;
-        font-weight: 600;        }
-
-
+.PsyTel {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+}
 
 .SizeImgCard {
     width: 130px;
     height: 130px;
     border-radius: 100px;
-        position: relative;
-            padding: 09px;
-        background: linear-gradient(180deg, #FBF1D6 0%, #0D0C22 100%);
-            z-index: 1;
-
-
+    position: relative;
+    padding: 09px;
+    background: linear-gradient(180deg, #FBF1D6 0%, #0D0C22 100%);
+    z-index: 1;
 }
-.posTelPostal{
+
+.posTelPostal {
     display: flex;
     align-items: center;
     gap: 0.5em;
     margin: 0.3em 0em 0.3em 0em;
 }
 
-.ligneSeparationCardPsy{
+.ligneSeparationCardPsy {
     width: 0.5px;
     height: 100px;
     background-color: #00000033;
 
 }
 
-.logoLinkedin{
-    margin:0.3em 0em 0.3em 0em ;
+.PosRS {
+    margin: 0.3em 0em 0.3em 0em;
+    display: flex;
+    gap: 1.2em;
 }
 
 
-.sitePsy{
+.sitePsy {
     color: blue;
     font-size: 20px;
+}
+
+.posSeparation {
+    display: flex;
+    flex-direction: row;
+    gap: 4em;
+    align-items: center;
+}
+
+.LogoRs {
+    width: 30px;
+    height: 30px;
+}
+
+
+@media (max-width:1300px) {
+    .CardPsyPosition {
+        width: 90%;
+    }
+
+    .posSeparation {
+        gap: 3em;
+    }
+}
+
+@media (max-width:992px) {
+    .CardPsyPosition {
+        width: 90%;
+    }
+
+    .PsyName {
+        font-size: 30px;
+    }
+
+    .PsyAdress {
+        font-size: 20px;
+    }
+
+    .Specialite {
+        font-size: 20px;
+    }
+
+    .diplome {
+        font-size: 20px;
+    }
+
+    .PsyPostal {
+        font-size: 20px;
+    }
+
+    .PsyTel {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .sitePsy {
+        color: blue;
+        font-size: 15px;
+    }
+
+    .posSeparation {
+        gap: 2em;
+    }
+}
+
+@media (max-width:768px) {
+    .CardPsyPosition {
+        width: 100%;
+    }
+
+    .PsyName {
+        font-size: 12px;
+    }
+
+    .PsyAdress {
+        font-size: 12px;
+    }
+
+    .Specialite {
+        font-size: 12px;
+    }
+
+    .diplome {
+        font-size: 12px;
+    }
+
+    .PsyPostal {
+        font-size: 12px;
+    }
+
+    .PsyTel {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .sitePsy {
+        color: blue;
+        font-size: 12px;
+    }
+
+    .posSeparation {
+        gap: 0.5em;
+    }
+
+    .SizeImgCard {
+        width: 60px;
+        height: 60px;
+        border-radius: 100px;
+        position: relative;
+        padding: 5px;
+        background: linear-gradient(180deg, #FBF1D6 0%, #0D0C22 100%);
+        z-index: 1;
+    }
+
+    .PosImgInfoPsy {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .VersionPc {
+        display: none;
+    }
+
+    .PsyName {
+        display: flex;
+    }
+
+    .LogoRs {
+        width: 20Px;
+        height: auto;
+    }
+
+    .ligneSeparationCardPsy {
+        height: 60px;
+    }
+
+.posTelPostal {
+    gap: 0.2em;
+}
+.PosRS{
+    gap:0.7em ;
+}
+
+
 }

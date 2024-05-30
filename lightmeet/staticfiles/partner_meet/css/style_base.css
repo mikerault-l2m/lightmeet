@@ -392,13 +392,12 @@ footer {
     }
 
     .FooterMobile {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-        .LightMeetLogo {
-            width: 150px;
-        }
-
-
-
+    .LightMeetLogo {
+        width: 150px;
+    }
 }

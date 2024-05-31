@@ -17,6 +17,17 @@ from django.db.models import F, ExpressionWrapper, DecimalField
 from decimal import Decimal
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render,redirect
+
+from django.http import HttpResponse
+from django.utils.translation import gettext as _
+
+
+#def my_view(request):
+#    output = _("Welcome to my site.")
+#    return HttpResponse(output)
+
+
+
 # Etape 1 : Lancement de la page principale Lightmeet :
 
 start = time.time()

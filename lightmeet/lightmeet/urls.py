@@ -39,7 +39,7 @@ urlpatterns = [
 
     # Partner_meet
     path('valid/', enregistrer_visiteur, name="consentement_visiteur"),
-    path('recherche_rencontres/', PartnerMeetHome.as_view(), name="recherche_home"),
+    path('rencontres/', PartnerMeetHome.as_view(), name="recherche_home"),
     path('recherche/create/', PartnerMeetCreate.as_view(), name="recherche_create"),
     path('recherche/<int:pk>/', PartnerMeetDetail.as_view(), name="recherche_detail"),
     path('recherche/edit/<int:pk>/', PartnerMeetUpdate.as_view(), name="recherche_edit"),
@@ -47,7 +47,7 @@ urlpatterns = [
     path('recherche/site_de_rencontres/', PartnerMeetBestSite.as_view(), name="recherche_meilleur_site"), # nouveau
 
     #Psy
-    path('recherche_therapeutes/', PsyMeetHome.as_view(), name="recherche_therapeutes"),
+    path('therapeutes/', PsyMeetHome.as_view(), name="recherche_therapeutes"),
     path('psy/create', PsyCreate.as_view(), name="psy_create"),
     path('psy/<str:slug>', PsyDetail.as_view(), name="psy_detail"),
     path('psy/edit/<str:slug>', PsyUpdate.as_view(), name="psy_edit"),

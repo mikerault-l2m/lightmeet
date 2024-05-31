@@ -1,7 +1,7 @@
 import os
 import environ
 from pathlib import Path
-from django.utils.translation import gettext as _
+#from django.utils.translation import gettext as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -59,7 +59,7 @@ MIDDLEWARE = [
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    #'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -126,10 +126,11 @@ DATABASES = {
 #    }
 #}
 
-LANGUAGES = [
-    ('en',_('English')),
-    ('fr',_('French')),
-    ('sp',_('Spanish'))]
+#LANGUAGES = [
+#    ('en',_('English')),
+#    ('fr',_('French')),
+#    ('sp',_('Spanish'))]
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

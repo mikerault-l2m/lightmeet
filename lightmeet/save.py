@@ -4,7 +4,7 @@
 #
 # Étape 1 : Migrer la table dbsave vers tables dump sans une base car elle doit être renouvellé :
 
-# sqlite3 dbsave.sqlite3 ".dump" | grep -v 'CREATE TABLE "la_podcast"' > tables_dump.sql
+# sqlite3 dbsave.sqlite3 ".dump" > tables_dump.sql
 
 
 # Étape 2 : Créer la nouvelle base :

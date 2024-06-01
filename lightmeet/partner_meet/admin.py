@@ -4,10 +4,9 @@ from partner_meet.models import *
 #from partner_meet.models import PartnerMeetResource
 
 
-# Version corrigée
 class PartnerMeetAdmin(admin.ModelAdmin):
     model = PartnerMeet
-    list_display = ['nom', 'LOGO', 'age', 'co2','prix_avg', 'free','relation', 'categorie', 'ranking', 'url', 'affiliation', 'Visites_France', 'trustpilot', 'description']
+    list_display = ['nom', 'LOGO', 'age', 'co2','date_creation','prix_avg', 'free','relation', 'categorie', 'ranking', 'url', 'affiliation', 'Visites_France', 'trustpilot', 'description']
 
 admin.site.register(PartnerMeet)
 

@@ -137,22 +137,26 @@
 
     </div>
 </div>
+
 <h2 class="TitleImgSite">Derniers articles mis en ligne</h2>
 <div class="boxesContainer">
     {% for post in posts|slice:":3" %}
     <div class="boxSite">
-    <div class="image-container">
-        <img src="{% static 'posts/Logos/1.png' %}" class="imageSite" alt="Lightmeet Blog">
+        <div class="image-container">
+            <img src="{{ post.image.url }}" class="imageSite" alt="{{ post.title }}">
+        </div>
+        <p class="TextImgSitePresentation">{{ post.title }}</p>
+        <p class="TextImgSitePresentationHtag">
+            <em>{{post.hashtag}}</em>
+        </p>
     </div>
-    <p class="TextImgSitePresentation">{{ post.title }}</p>
-    <p class="TextImgSitePresentationHtag">
-        <em>{{ post.hashtag }}</em>
-    </p>
+    {% endfor %}
 </div>
 
-{% endfor %}
 
-</div>
+
+
+
 
 <div class="faq-container">
     <h3>Trouver sa rencontre idéale avec Lightmeet</h3>

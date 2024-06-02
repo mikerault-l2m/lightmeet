@@ -25,7 +25,7 @@
                 <a href="{% url 'blog_delete' slug=post.slug %}">Supprimer</a>
             </div>
             {% endif %}
-            <img class="ImgCardBlog" src="{{ post.image }}" alt="test">
+            <img class="ImgCardBlog" src="{{ post.image.url }}" alt="test">
             <div class="PosElementCardText">
                 <div class="cardText {% if forloop.counter0|divisibleby:2 %}normal-text{% else %}reverse-text{% endif %}">
                     <p class="Date">{{ post.created_on|date:'j F Y' }}</p>

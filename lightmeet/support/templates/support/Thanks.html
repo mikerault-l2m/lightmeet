@@ -1,0 +1,19 @@
+{% extends 'support/base_Support.html' %}
+{% load static %}
+/* Correspond au premier visuel Figma de l'application de Recherche */
+
+{% block css %} <link rel="stylesheet" href="{% static 'support/css/style_3.css' %}">{% endblock %}
+{% block section %}
+<section>
+    <img class="Purple"src="{% static 'support/Logos/Purple.png' %}" style="position:absolute;z-index:10;width:100%;height:83%;">
+    <div class="Title"> Votre message a bien été envoyé. </div>
+    <img class="Letter" src="{% static 'support/Logos/Letter.png' %}" opacity="0.7">
+    <div class="Remerciements" style="font-size: 14px;"> L’équipe LightMeet vous répondra dans les plus brefs délais.</div>
+    <div class="Suivi_1">Restez connecté, des nouvelles du lancement vous seront prochainement envoyées par e-mail !</div>
+    <div class="Suivi_2">En attendant, suivez-nous sur les réseaux sociaux :</div>
+    <div class="Network" style="display:flex;flex-direction:row;justify-content:space-evenly;text-align:center;align-items:center;z-index:200;">
+        <a href="https://www.instagram.com/lightmeet.fr/"> <div><img style="margin:12px;z-index:100;text-align:center;align-items:center;" src="{% static 'support/Logos/Instagram.png' %}" width = "30px" height="30px" ></div></a>
+        <a href="https://www.linkedin.com/in/micka%C3%ABl-boudengen-4ba351131/"> <div><img style="margin:12px;z-index:100;text-align:center;align-items:center;" src="{% static 'support/Logos/LinkedIn.png' %}" width = "30px" height="30px" ></div></a>
+    </div>
+</section>
+{% endblock %}

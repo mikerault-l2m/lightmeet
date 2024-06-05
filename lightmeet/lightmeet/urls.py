@@ -25,6 +25,10 @@ urlpatterns = [
     #path('connexion/forget_password', forget_password, name="forget_password"),
     #path('connexion/delete_account', delete_account, name="Delete Account"),
 
+    #Support
+    path('support', SupportContact, name="Support"),
+    path('support/Thanks', SupportContact, name="Support-merci"),
+
     # Legal
     path('legal/mentions_legales/', legal_Control_ML.as_view(), name="legal_mentions_legales"),
     path('legal/conditions_generales_utilisation', legal_Control_CGU.as_view(), name="legal_CGU"),
@@ -53,9 +57,6 @@ urlpatterns = [
     path('psy/edit/<str:slug>', PsyUpdate.as_view(), name="psy_edit"),
     path('psy/delete/<str:slug>', PsyDelete.as_view(), name="psy_delete"),
     path('recherche/sites_des_thérapeutes/', PsyMeetBestSite.as_view(), name="recherche_meilleur_therapeutes"), # nouveau
-
-    #Support
-    path('support/', SupportModel.as_view(), name="Contact"),
 
     # Blog
     path('blog/', BlogHome.as_view(), name="blog_home"),

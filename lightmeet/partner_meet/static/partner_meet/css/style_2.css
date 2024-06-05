@@ -73,16 +73,14 @@ body {
 }
 
 h3 {
-    text-align: center;
     margin: 0px;
     font-size: 1.1em;
     width: 180px;
     font-weight: 500;
 }
 
-
 .titleList {
-    width: 80%;
+    width: 100%;
     font-size: 1.3em;
     text-align: center;
     margin-top: 2em;
@@ -113,8 +111,14 @@ h3 {
 
 .listComparateur li {
     font-size: 1.2em;
+    align-items: center;
     padding: 0.3em;
-    list-style-image: url("../Logos/Puces.png");
+    list-style-image: url("../Logos/Puces.svg");
+
+}
+
+li{
+    align-items: center;
 }
 
 .containerListing {
@@ -149,7 +153,7 @@ h3 {
 }
 
 .callToActionTitle h1 {
-    max-width: 50%;
+    max-width: 100%;
     letter-spacing: 2px;
     font-size: 3.5em;
     font-weight: lighter;
@@ -157,10 +161,11 @@ h3 {
 }
 
 .callToActionTitle p {
-    width: 35%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
     letter-spacing: 2px;
     font-size: 1.5em;
-    font-weight: 300;
+    font-weight:lighter;
     text-align: center;
     margin: 0;
 }
@@ -168,8 +173,9 @@ h3 {
 .callToActionSite {
     display: flex;
     justify-content: center;
-    gap: 0.6em;
-    margin-top: 2em;
+    gap: 0.7em;
+    margin-top:
+    0em;
 }
 
 .callToAction {
@@ -286,7 +292,6 @@ h3 {
     flex-direction: column;
     justify-content: center;
     gap: 4em;
-
     background-color: #FBF1D6;
     padding: 0px;
     margin-bottom: 3em;
@@ -424,7 +429,7 @@ h3 {
 
 @media(max-width: 1562px) {
     .callToActionTitle h1 {
-        max-width: 70%;
+        max-width: 100%;
     }
 
     .callToActionTitle p {
@@ -529,7 +534,7 @@ h3 {
     .callToActionSite {
         display: flex;
         justify-content: space-evenly;
-        gap: 0em;
+        gap: 0.3em;
         margin-top: 2em;
     }
 }
@@ -734,6 +739,11 @@ h3 {
 
 
     }
+
+        .call-to-action-container {
+            gap: 0em;
+            margin-top: 2em;
+        }
 
     .logo {
         display: none;

@@ -13,14 +13,25 @@
     <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
     {% endblock %}
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16540386379"></script>
+
+<!-- Google tag (gtag.js) - Wyylde -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNRHQJSY82"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'AW-16540386379');
+  gtag('config', 'G-ZNRHQJSY82');
+</script>
+
+<!-- Google tag (gtag.js) - Daytin -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SH9P6CRLT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1SH9P6CRLT');
 </script>
 
 
@@ -47,7 +58,7 @@
         </a>
         <nav class="navPos">
             <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
-            <a href="{% url 'Contact' %}" class="ListeHeader">Support</a>
+            <a href="{% url 'Support' %}" class="ListeHeader">Contact</a>
         </nav>
     <nav class="navHeader">
         <div class="menuHamburger">
@@ -60,7 +71,7 @@
             <li><a href="{% url 'blog_home' %}" class="ListeHeader">Thérapeutes</a></li>
             <li><a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a></li>
             <li><a href="{% url 'blog_home' %}" class="ListeHeader">FAQ</a></li>
-            <li><a href="{% url 'Contact' %}" class="ListeHeader">Support</a></li>
+            <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
         </ul>
     </nav>
     </header>

@@ -109,7 +109,6 @@
      text-decoration: underline;
      background-color: rgba(255, 255, 255, 0);
      border: none;
-
  }
 
 
@@ -163,6 +162,7 @@
      display: flex;
      align-items: center;
      justify-content: center;
+     
  }
 
  .LigneSeparationTitle {
@@ -171,14 +171,15 @@
      background-color: #6C6C6C;
  }
 
- .Title {
-     font-size: 85px;
-     font-weight: 100;
+.Title {
+    font-family: Roboto;
+    font-size: 85px;
+    font-weight: 100;
+    margin: 0px 10px 0px 10px;
 
-     letter-spacing: 0.04em;
-     text-align: center;
-     margin: 10px;
- }
+
+
+}
 
  .buttonAllArticles {
      font-size: 24px;
@@ -243,7 +244,7 @@
 
  .ReadMore {
      font-size: 20px;
-     font-weight: 100;
+     font-weight: lighter;
 
      text-decoration: underline;
      background-color: rgba(255, 255, 255, 0);
@@ -268,7 +269,7 @@
 
      .ImgCardBlog {
          width: auto;
-         height: 300px;
+         height: 260px;
      }
 
 
@@ -281,7 +282,8 @@
 
 
      .TitleArticle {
-         font-size: 30px;
+         font-size: 25px;
+         margin:0em ;
      }
 
      .TextArticle {
@@ -326,7 +328,8 @@
      }
 
      .ReadMore {
-         font-size: 16px;
+        margin-top: 1em;
+         font-size: 14px;
      }
 
      .Date {
@@ -339,7 +342,6 @@
  }
 
  @media (max-width:768px) {
-
      .cardText {
          width: 100%;
      }
@@ -349,7 +351,7 @@
      }
 
      .Title {
-         font-size: 20px;
+         font-size: 25px;
          margin: 0;
      }
 
@@ -386,7 +388,6 @@
          -webkit-box-orient: vertical;
          -webkit-line-clamp: 4;
          line-clamp: 4;
-
      }
 
      .cardBlogPost {
@@ -401,7 +402,6 @@
          display: flex;
          flex-direction: column;
          justify-content: flex-start;
-
      }
 
      .containerInfoBlog {

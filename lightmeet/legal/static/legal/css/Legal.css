@@ -1,6 +1,6 @@
 body {
     background: #FBFBFB;
-    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 100;
     color: black;
     transition: all 2s ease;
@@ -18,14 +18,9 @@ body {
 
 
 .Title {
-font-family: Roboto;
-    font-size: 50px;
+
+    font-size: 35px;
     font-weight: 400;
-<<<<<<< HEAD
-
-=======
-
->>>>>>> 1510c3837e7833a35216d5e52ba508fa201a4396
     letter-spacing: 0.2em;
     text-align: left;
 }
@@ -33,15 +28,6 @@ font-family: Roboto;
 .Titre {
     text-align: center;
     font-weight: 100;
-    font-family: 'thin', '-apple-system',
-        'BlinkMacSystemFont',
-        'Segoe UI',
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        'Open Sans',
-        'Helvetica Neue',
-        sans-serif;
     font-size: 85px;
     margin: 0;
     margin-bottom: 0.5em;
@@ -55,7 +41,7 @@ section {
 
 .Text {
     text-align: justify;
-    font-size: 18px;
+    font-size: 23px;
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -102,7 +88,7 @@ article {
 }
 
 .mb2 {
-    margin-bottom: 1em;
+    margin-bottom: 3em;
 }
 
 .Title3::before {
@@ -156,7 +142,7 @@ a {
     }
 
     .Title {
-        font-size: 35px;
+        font-size: 25px;
     }
 
     .Titre {
@@ -180,15 +166,15 @@ a {
     }
 
     .Title {
-        font-size: 30px;
+        font-size: 22px;
     }
 
     .TextList {
-        font-size: 30px;
+        font-size: 18px;
     }
 
     .Title3 {
-        font-size: 25px;
+        font-size: 22px;
 
     }
 
@@ -209,12 +195,13 @@ a {
     }
 
     .Title {
-        font-size: 22px;
+        font-weight: 500;
+        font-size: 20px;
         text-align: left;
     }
 
     .Title3 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .TextList {

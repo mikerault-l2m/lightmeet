@@ -5,7 +5,7 @@ class SupportTicket(models.Model):
     sender_email = models.EmailField()
     SUJET = (
     ("Informations","Je souhaite en savoir plus"),
-    ("Partenariat","Je cherche à réalisker un partenariat"),
+    ("Partenariat","Je cherche à réaliser un partenariat"),
     ("Technique","Soucis technique sur la plateforme"),
 )
     subject = models.CharField(choices=SUJET,max_length=25,default='')

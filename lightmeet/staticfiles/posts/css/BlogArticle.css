@@ -9,10 +9,10 @@
     font-family: Roboto;
     font-size: 85px;
     font-weight: 100;
-    line-height: 99.61px;
-    letter-spacing: 0.04em;
+    margin: 0px 10px 0px 10px;
 
-    margin: 10px;
+
+
 }
 .PosElementArticle{
     margin-top:2em ;
@@ -78,7 +78,51 @@ max-width: 98%;
     align-items: center;
     flex-direction: column;
 }
+@media (max-width: 992px){
 
+    .containerArticle{
+        width: 90%;
+    }
+
+    .TitleArticle{
+        margin: 0px;
+
+        font-size: 35px;
+    }
+
+        .Date {
+
+            font-size: 20px;
+            margin: 0.5em 0em 1em 0em;
+        }
+    .ImageArticle{
+        margin-bottom: 10px;
+    }
+}
 @media (max-width: 768px) {
+    .TitleArticle {
+        margin-top: 0em;
+            font-size: 26px;
+        }
 
+        .containerArticle{
+            width: 97%;
+        }
+
+        .Date{
+            font-size: 16px;
+        }
+
+        .custom-paragraph-class{
+            font-size: 16px;
+        }
+
+                         .LigneSeparationTitle {
+                             display: none;
+                         }
+
+                         .Title {
+                             font-size: 25px;
+                             margin: 0;
+                         }
 }

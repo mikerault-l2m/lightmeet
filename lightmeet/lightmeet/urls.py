@@ -8,6 +8,7 @@ from legal.views import *
 from psy.views import *
 from support.views import *
 from posts.views import *
+#from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     # Administrateur :

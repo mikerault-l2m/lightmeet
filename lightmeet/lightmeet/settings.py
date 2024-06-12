@@ -17,6 +17,7 @@ LOCAL_APPS = [
     'accounts',
     'legal',
     'posts',
+    'locale',
     'support',
     'presse',
     'psy',
@@ -126,10 +127,15 @@ DATABASES = {
 #    }
 #}
 
+1
 #LANGUAGES = [
 #    ('en',_('English')),
 #    ('fr',_('French')),
 #    ('sp',_('Spanish'))]
+
+#LOCALE_PATHS = [
+#    BASE_DIR / 'locale/',
+#    ]
 
 AUTH_PASSWORD_VALIDATORS = [
     {

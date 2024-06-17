@@ -46,23 +46,23 @@
         <a href="{% url 'Home' %}" class="ListeHeader">
             <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="">
         </a>
-        <nav class="navPos">
+    <nav class="navPos">
             <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
             <a href="{% url 'Contact' %}" class="ListeHeader">Support</a>
-        </nav>
+    </nav>
     <nav class="navHeader">
-        <div class="menuHamburger">
-            <div class="line Line1"></div>
-            <div class="line Line2"></div>
-            <div class="line Line3"></div>
-        </div>
-        <ul class="navMenu">
-            <li><a href="{% url 'blog_home' %}" class="ListeHeader">Site de rencontres</a></li>
-            <li><a href="{% url 'blog_home' %}" class="ListeHeader">Thérapeutes</a></li>
-            <li><a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a></li>
-            <li><a href="{% url 'blog_home' %}" class="ListeHeader">FAQ</a></li>
-            <li><a href="{% url 'Contact' %}" class="ListeHeader">Support</a></li>
-        </ul>
+            <div class="menuHamburger">
+                <div class="line Line1"></div>
+                <div class="line Line2"></div>
+                <div class="line Line3"></div>
+            </div>
+            <ul class="navMenu">
+                <li><a href="{% url 'recherche_home' %}" class="ListeHeader">Site de rencontres</a></li>
+                <li><a href="{% url 'recherche_therapeutes' %}" class="ListeHeader">Thérapeutes</a></li>
+                <li><a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a></li>
+                <li><a href="{% url 'Home' %}" class="ListeHeader">FAQ</a></li>
+                <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
+            </ul>
     </nav>
     </header>
     {% block aside %}

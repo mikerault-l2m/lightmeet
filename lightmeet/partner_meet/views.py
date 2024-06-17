@@ -17,6 +17,17 @@ from django.db.models import F, ExpressionWrapper, DecimalField
 from decimal import Decimal
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render,redirect
+
+from django.http import HttpResponse
+#from django.utils.translation import gettext as _
+
+
+#def my_view(request):
+#    output = _("Welcome to my site.")
+#    return HttpResponse(output)
+
+
+
 # Etape 1 : Lancement de la page principale Lightmeet :
 
 start = time.time()
@@ -88,12 +99,10 @@ class PartnerMeetHome(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['CATEGORIE_CHOICES'] = (
-            #('Toutes','Toutes'),
             ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
-            ("Religieux","Site religieux"),
-            #("Extra-conjugales", "Site extra-conjugal"),
+            ("Religieux", "Site religieux"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
         )
         context['AGE_CHOICES'] = (
@@ -102,12 +111,12 @@ class PartnerMeetHome(ListView):
             ('+ 46', '+ 46'),
         )
         context['RELATION_CHOICES'] = (
-            #('Toutes','Toutes'),
             ('Durables', 'Durables'),
             ("Relation d'un soir", "Relation d'un soir"),
             ('Homosexuelles', 'Homosexuelles'),
         )
         return context
+
     def get_queryset(self):
         queryset = super().get_queryset()
 
@@ -121,10 +130,10 @@ class PartnerMeetHome(ListView):
         if prix_avg:
             queryset = queryset.filter(prix_avg=prix_avg)
 
-        # Filtrer par note trustpilot
-        trustpilot = self.request.GET.get('trustpilot')
-        if trustpilot:
-            queryset = queryset.filter(trustpilot=trustpilot)
+        # Trier par trustpilot (si disponible)
+        sort_by = self.request.GET.get('sort_by')
+        if sort_by == 'trustpilot':
+            queryset = queryset.order_by('-trustpilot')
 
         # Filtrer par affiliation
         affiliation = self.request.GET.get('affiliation')
@@ -151,7 +160,9 @@ class PartnerMeetHome(ListView):
             queryset = queryset.filter(categorie=categorie)
 
         # Trier par ranking (si disponible)
-        queryset = queryset.order_by('-ranking')
+        sort_by = self.request.GET.get('sort_by')
+        if sort_by == 'ranking':
+            queryset = queryset.order_by('ranking')
 
         return queryset
 end = time.time()
@@ -201,10 +212,10 @@ class PartnerMeetBestSite(ListView):
         if prix_avg:
             queryset = queryset.filter(prix_avg=prix_avg)
 
-        # Filtrer par note trustpilot
-        trustpilot = self.request.GET.get('trustpilot')
-        if trustpilot:
-            queryset = queryset.filter(trustpilot=trustpilot)
+       # Trier par trustpilot (si disponible)
+        sort_by = self.request.GET.get('sort_by')
+        if sort_by == 'trustpilot':
+            queryset = queryset.order_by('-trustpilot')
 
         # Filtrer par affiliation
         affiliation = self.request.GET.get('affiliation')
@@ -237,8 +248,10 @@ class PartnerMeetBestSite(ListView):
         if categorie:
             queryset = queryset.filter(categorie=categorie)
 
-        # Trier par ranking (si disponible)
-        queryset = queryset.order_by('-ranking')
+       # Trier par ranking (si disponible)
+        sort_by = self.request.GET.get('sort_by')
+        if sort_by == 'ranking':
+            queryset = queryset.order_by('ranking')
 
         return queryset
 end = time.time()

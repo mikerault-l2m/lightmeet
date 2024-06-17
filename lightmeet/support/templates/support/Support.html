@@ -1,4 +1,4 @@
-{% extends 'partner_meet/base_Partner_meet.html' %}
+{% extends 'support/base_Support.html' %}
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
@@ -8,17 +8,17 @@
 {% block section %}
 <section>
     <div class="Title">Contactez-nous par e-mail</div>
-    <div class="Formulaire" style="font-size: 12px;margin:-15px 0px -5px 0px ;">Utilisez le formulaire ci-dessous</div>
+    <div class="Formulaire">Utilisez le formulaire ci-dessous</div>
     <form class="form" method="POST">
         {% csrf_token %}
         <table>
             <div class="Apellation" >
-                {{ form.email }}
+                {{ form.sender_email }}
             </div>
         </table>
         <table>
             <div class="Apellation2">
-                {{ form.sujet }}
+                {{ form.subject }}
             </div>
         </table>
         <table>
@@ -26,8 +26,7 @@
                 {{ form.message }}
             </div>
         </table>
-        <img class="line" src="{% static 'support/Logos/Line.png' %}" style="margin:20px 0px 20px 0px;">
-        <a href ="{% url 'Home' %}" style="z-index:100;color:#E5E5E5;text-decoration:none;display:flex;flex-direction:column;justify-content: space-evenly;text-align:center;align-items:center;"><input class="Inscription" type="submit" value="Envoyer"></a>
+        <a href ="{% url 'Home' %}"><input class="Inscription" type="submit" value="Envoyer"></a>
     </form>
 </section>
 {% endblock %}

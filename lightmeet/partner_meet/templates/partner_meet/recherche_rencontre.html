@@ -88,20 +88,22 @@
 </div>
 
 <div class="containerResultats">
-    <div class="FitlerResultats">
-        <p class="Resultats" id="resultats"> Résultats</p>
+        <p class="Resultats" id="resultats">Résultats</p>
         <div class="PosFitlerResultats">
-            <button class="ButtonFitlerResultats">
-                Les mieux notés
-            </button>
-            <button class="ButtonFitlerResultats">
-                Les plus populaires
-            </button>
-            <button class="ButtonFitlerResultats">
-                Les plus pertinentes
-            </button>
+            <form method="get">
+                <input type="hidden" name="sort_by" value="ranking">
+                <button type="submit" class="ButtonFitlerResultats">
+                    Les mieux classés
+                </button>
+            </form>
+            <form method="get">
+                <input type="hidden" name="sort_by" value="trustpilot">
+                <button type="submit" class="ButtonFitlerResultats">
+                    Les mieux notés
+                </button>
+            </form>
         </div>
-    </div>
+
     {% for partner in partnermeet %}
     <div class="cardApp VersionPC" action="get">
         <div>
@@ -115,7 +117,7 @@
                         <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
                     </div>
 
-                    <p class="textCard">Voyez plus grand pour vos rencontres</p>
+                    <p class="textCard">{{partner.description}}</p>
                     <div class="PosFlag">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 35 22">
                             <rect width="11.6667" height="22" fill="#0055A4" />

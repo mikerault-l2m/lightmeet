@@ -1,7 +1,7 @@
 import os
 import environ
 from pathlib import Path
-
+from django.utils.translation import gettext_lazy as _  # Utilisez gettext_lazy au lieu de gettext
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -17,6 +17,7 @@ LOCAL_APPS = [
     'accounts',
     'legal',
     'posts',
+    'locale',
     'support',
     'presse',
     'psy',
@@ -59,6 +60,7 @@ MIDDLEWARE = [
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -114,16 +116,15 @@ DATABASES = {
  }
 
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'lightmeet',
-#        'USER': 'mike',
-#       'PASSWORD': 'votre_mot_de_passe_postgresql',
-#       'HOST': 'localhost',  # Ou l'adresse IP de votre serveur PostgreSQL
-#        'PORT': '5432',            # Laissez vide pour utiliser le port par défaut (5432)
-#    }
-#}
+LANGUAGES = [
+    ('en', _('English')),
+    ('fr', _('French')),
+    ('sp', _('Spanish')),
+]
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale/',
+]
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -152,6 +153,7 @@ AUTHENTICATION_BACKENDS = [
 
 LANGUAGE_CODE = 'fr-fr'
 
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -170,6 +172,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
+
 LOGIN_REDIRECT_URL = '/accounts/'
 
 LOGOUT_URL = 'logout'
@@ -186,6 +189,6 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 #AJOUT ci-dessous pour corriger bug, sinon doit changer
 # ACCOUNT_AUTHENTICATION_METHOD en autre chose que 'email'
 # cf https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_REQUIRED=True
+ACCOUNT_EMAIL_REQUIRED = True
 
 ACCOUNT_EMAIL_VERIFICATION = "none"

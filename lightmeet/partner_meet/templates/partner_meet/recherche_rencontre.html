@@ -76,10 +76,6 @@
                         <input type="checkbox" name="checkbox" id="partner" />
                         <label for="partner">Partenaires affiliés</label>
                     </div>
-                    <!--<div>
-                        <input type="checkbox" name="checkbox" id="free" />
-                        <label for="free">Gratuit</label>
-                    </div>-->
                 </div>
                 <button class="ButtonSearch" type="submit">Rechercher</button>
             </div>
@@ -97,6 +93,12 @@
                 </button>
             </form>
             <form method="get">
+                <input type="hidden" name="sort_by" value="affiliation">
+                <button type="submit" class="ButtonFitlerResultats">
+                    La sélection Lightmeet
+                </button>
+            </form>
+            <form method="get">
                 <input type="hidden" name="sort_by" value="trustpilot">
                 <button type="submit" class="ButtonFitlerResultats">
                     Les mieux notés
@@ -105,6 +107,7 @@
         </div>
 
     {% for partner in partnermeet %}
+        {% if partner.affiliation %}
     <div class="cardApp VersionPC" action="get">
         <div>
             <div class="alignItems">
@@ -182,6 +185,7 @@
         {% if partner.trustpilot %}
         {% endif %}
     </div>
+    {% endif %}
     {% empty %}
     <div class="empty-message" id="resultats">
         <p>Ces sites de rencontres sont actuellement étudiés par <i>Lightmeet</i></p>

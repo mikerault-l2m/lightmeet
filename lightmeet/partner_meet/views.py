@@ -100,30 +100,23 @@ class PartnerMeetHome(ListView):
         context = super().get_context_data(**kwargs)
         context['CATEGORIE_CHOICES'] = (
             ("Généraliste", "Site généraliste"),
-            ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
-            ("Religieux", "Site religieux"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
+        )
+        context['RELATION_CHOICES'] = (
+            ('Durables', 'Durables'),
+            ('Homosexuelles', 'Homosexuelles'),
         )
         context['AGE_CHOICES'] = (
             ('18-30', '18-30 '),
             ('31-45', '31-45 '),
             ('+ 46', '+ 46'),
         )
-        context['RELATION_CHOICES'] = (
-            ('Durables', 'Durables'),
-            ("Relation d'un soir", "Relation d'un soir"),
-            ('Homosexuelles', 'Homosexuelles'),
-        )
+
         return context
 
     def get_queryset(self):
         queryset = super().get_queryset()
-
-        # Filtrer par âge
-        age = self.request.GET.get('age')
-        if age:
-            queryset = queryset.filter(age=age)
 
         # Filtrer par prix moyen
         prix_avg = self.request.GET.get('prix_avg')
@@ -135,19 +128,11 @@ class PartnerMeetHome(ListView):
         if sort_by == 'trustpilot':
             queryset = queryset.order_by('-trustpilot')
 
-        # Filtrer par affiliation
-        affiliation = self.request.GET.get('affiliation')
-        if affiliation == 'true':
-            queryset = queryset.filter(affiliation=True)
-        elif affiliation == 'false':
-            queryset = queryset.filter(affiliation=False)
+        # Trier par affiliation (si disponible)
+        sort_by = self.request.GET.get('sort_by')
+        if sort_by == 'affiliation':
+            queryset = queryset.order_by('affiliation')
 
-        # Filtre selon la émission de CO2
-        co2 = self.request.GET.get('co2')
-        if co2 == 'true':
-            queryset = queryset.filter(co2=True)
-        elif co2 == 'false':
-            queryset = queryset.filter(co2=False)
 
         # Filtrer par description (recherche partielle)
         description = self.request.GET.get('description')
@@ -178,24 +163,18 @@ class PartnerMeetBestSite(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['CATEGORIE_CHOICES'] = (
-            #('Toutes','Toutes'),
             ("Généraliste", "Site généraliste"),
-            ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
-            ("Religieux","Site religieux"),
-            #("Extra-conjugales", "Site extra-conjugal"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
+        )
+        context['RELATION_CHOICES'] = (
+            ('Durables', 'Durables'),
+            ('Homosexuelles', 'Homosexuelles'),
         )
         context['AGE_CHOICES'] = (
             ('18-30', '18-30 '),
             ('31-45', '31-45 '),
             ('+ 46', '+ 46'),
-        )
-        context['RELATION_CHOICES'] = (
-            #('Toutes','Toutes'),
-            ('Durables', 'Durables'),
-            ("Relation d'un soir", "Relation d'un soir"),
-            ('Homosexuelles', 'Homosexuelles'),
         )
         return context
 

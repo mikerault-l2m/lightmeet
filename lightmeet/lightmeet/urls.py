@@ -8,6 +8,7 @@ from legal.views import *
 from psy.views import *
 from support.views import *
 from posts.views import *
+#from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     # Administrateur :
@@ -25,6 +26,10 @@ urlpatterns = [
     #path('connexion/forget_password', forget_password, name="forget_password"),
     #path('connexion/delete_account', delete_account, name="Delete Account"),
 
+    # Support
+    path('support', SupportContact, name="Support"),
+    path('support/Thanks', SupportContact, name="Support-merci"),
+
     # Legal
     path('legal/mentions_legales/', legal_Control_ML.as_view(), name="legal_mentions_legales"),
     path('legal/conditions_generales_utilisation', legal_Control_CGU.as_view(), name="legal_CGU"),
@@ -35,27 +40,22 @@ urlpatterns = [
     path('legal/mentions_legales/edit/<str:slug>/', LegalUpdate.as_view(), name="legal_edit"),
     path('legal/mentions_legales/delete/<str:slug>/', LegalDelete.as_view(), name="legal_delete"),
 
-
-
     # Partner_meet
     path('valid/', enregistrer_visiteur, name="consentement_visiteur"),
-    path('recherche/', PartnerMeetHome.as_view(), name="recherche_home"),
+    path('rencontres/', PartnerMeetHome.as_view(), name="recherche_home"),
     path('recherche/create/', PartnerMeetCreate.as_view(), name="recherche_create"),
     path('recherche/<int:pk>/', PartnerMeetDetail.as_view(), name="recherche_detail"),
     path('recherche/edit/<int:pk>/', PartnerMeetUpdate.as_view(), name="recherche_edit"),
     path('recherche/delete/<int:pk>/', PartnerMeetDelete.as_view(), name="recherche_delete"),
-    path('recherche/site_de_rencontres/', PartnerMeetBestSite.as_view(), name="recherche_meilleur_site"), # nouveau
+    path('recherche/site_de_rencontres/', PartnerMeetBestSite.as_view(), name="recherche_meilleur_site"),  # nouveau
 
-    #Psy
-    path('recherche_therapeutes/', PsyMeetHome.as_view(), name="recherche_therapeutes"),
+    # Psy
+    path('therapeutes/', PsyMeetHome.as_view(), name="recherche_therapeutes"),
     path('psy/create', PsyCreate.as_view(), name="psy_create"),
     path('psy/<str:slug>', PsyDetail.as_view(), name="psy_detail"),
     path('psy/edit/<str:slug>', PsyUpdate.as_view(), name="psy_edit"),
     path('psy/delete/<str:slug>', PsyDelete.as_view(), name="psy_delete"),
-    path('recherche/sites_des_thérapeutes/', PsyMeetBestSite.as_view(), name="recherche_meilleur_therapeutes"), # nouveau
-
-    #Support
-    path('support/', SupportModel.as_view(), name="Contact"),
+    path('recherche/sites_des_thérapeutes/', PsyMeetBestSite.as_view(), name="recherche_meilleur_therapeutes"),  # nouveau
 
     # Blog
     path('blog/', BlogHome.as_view(), name="blog_home"),

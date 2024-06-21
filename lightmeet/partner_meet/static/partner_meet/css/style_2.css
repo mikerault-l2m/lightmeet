@@ -853,4 +853,8 @@ li {
         justify-content: center;
         align-items: center;
     }
+
+          .PosFitlerResultats {
+              display: none;
+          }
 }

@@ -77,10 +77,10 @@
                     <p>Filtres populaires: </p>
                     <div>
                         <input type="checkbox" name="affiliated_partner" id="partner" />
-                        <label for="partner">Partenaires affiliés</label>
+                        <label for="partner">Thérapeutes affiliés</label>
                     </div>
                 </div>
-                <button class="ButtonSearch" type="submit">Recherchez</button>
+                <button class="ButtonSearch" type="submit">Rechercher</button>
             </div>
         </form>
     </div>
@@ -103,7 +103,7 @@
                                 fill="black" />
                             <circle cx="5" cy="5" r="5" fill="#E01919" />
                         </svg>
-                        <p class="PsyPostal"> {{psy.code_postal}}- {{psy.ville}}</p>
+                        <p class="PsyPostal"> {{psy.code_postal}} - {{psy.ville}}</p>
                     </div>
 
 
@@ -139,7 +139,7 @@
                     <img class="LogoRs" src="../../static/Logos/InstagramLogo.png" alt="">
                     <img class="LogoRs" src="../../static/Logos/LinkedinLogo.png" alt="">
                     </div>
-                    <a class="sitePsy" href=" https://www.lightmeet.fr/"> www.lightMeet.fr</a>
+                    <a class="sitePsy" href="{{psy.site_web}}">{{psy.site_web}}</a>
                 </div>
             </div>
             <!-- <button class="buttonVisit" onclick="window.location.href='{{ psy.url }}'">Consultez</button> -->

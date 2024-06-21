@@ -12,22 +12,39 @@
     {% block css %}
     <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
     {% endblock %}
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP9DEQYW1Z"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
 
-        gtag('config', 'G-SP9DEQYW1Z');
-    </script>
-    <!-- Google tag (gtag.js) event -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TLZMTBDC');</script>
+<!-- End Google Tag Manager -->
+
+
+<!-- Event snippet for Rencontres_Wyylde conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16540386379/Y-E8CNPR5bkZEMuIic89'});
+</script>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SP9DEQYW1Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SP9DEQYW1Z');
+</script>
+
 <!-- Google tag (gtag.js) event -->
 <script>
   gtag('event', 'conversion_event_page_view', {
     // <event_parameters>
   });
 </script>
+
 
     <!-- Hotjar Tracking Code for Site Lightmeet -->
 <script>
@@ -45,6 +62,10 @@
 </head>
 
 <body class="container">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLZMTBDC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     {% block content %}{% endblock %}
     <header>
         <a href="{% url 'Home' %}" class="ListeHeader">
@@ -52,7 +73,7 @@
         </a>
         <nav class="navPos">
             <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
-            <a href="{% url 'Contact' %}" class="ListeHeader">Support</a>
+            <a href="{% url 'Support' %}" class="ListeHeader">Contact</a>
         </nav>
     <nav class="navHeader">
         <div class="menuHamburger">
@@ -61,11 +82,11 @@
             <div class="line Line3"></div>
         </div>
         <ul class="navMenu">
-            <li><a href="{% url 'blog_home' %}" class="ListeHeader">Site de rencontres</a></li>
-            <li><a href="{% url 'blog_home' %}" class="ListeHeader">Thérapeutes</a></li>
+            <li><a href="{% url 'recherche_home' %}" class="ListeHeader">Site de rencontres</a></li>
+            <li><a href="{% url 'recherche_therapeutes' %}" class="ListeHeader">Thérapeutes</a></li>
             <li><a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a></li>
-            <li><a href="{% url 'blog_home' %}" class="ListeHeader">FAQ</a></li>
-            <li><a href="{% url 'Contact' %}" class="ListeHeader">Support</a></li>
+            <li><a href="{% url 'Home' %}" class="ListeHeader">FAQ</a></li>
+            <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
         </ul>
     </nav>
     </header>
@@ -96,7 +117,7 @@
         </div>
         <div class="FooterMobile">
                 <a class="linkFooter" href="{% url 'Home' %}">
-                    <h3 class="signature">© 2024 Lightmeet</h3>
+                    <h3 class="signature">® 2024 Lightmeet</h3>
                 </a>
             <ul class="ListFooter">
                 <a class="linkFooter" href="{% url 'legal_CGU' %}">

@@ -10,7 +10,6 @@
 
 {% block section %}
 
-
 <h1 class="Title">Éclairez vos rencontres</h1>
 <h2 class="SubTitle">Trouvez le site de rencontres qui vous correspond.</h2>
 
@@ -20,7 +19,7 @@
 
 {% if not form.consentement %}
 <div class="call-to-action-containerCookies">
-    <img src="{% static 'partner_meet/Logos/lightMeetCookieLogo.svg' %}" alt="Lightmeet Logo" class="logo">
+    <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
 
     <div class="BlockCookies">
         <h2 class="TitleCookies">Votre vie privée nous tient à cœur</h2>
@@ -137,15 +136,14 @@
     {% for post in posts|slice:":3" %}
     <div class="boxSite">
         <div class="image-container">
-            <img src="{% static 'posts/Logos/2.png' %}" class="imageSite" alt="Lightmeet Blog">
+            <img src="{{ post.image.url }}" class="imageSite" alt="{{ post.title }}">
         </div>
         <p class="TextImgSitePresentation">{{ post.title }}</p>
         <p class="TextImgSitePresentationHtag">
-            <em>#DevenirMarqueReconnue #ApprocheInclusive #NormesGenre #StratégieMarque</em>
+            <em>{{post.hashtag}}</em>
         </p>
     </div>
     {% endfor %}
-
 </div>
 
 <div class="faq-container">

@@ -1,8 +1,14 @@
 from django.db import models
 
 class SupportTicket(models.Model):
+
     sender_email = models.EmailField()
-    subject = models.CharField(max_length=255)
+    SUJET = (
+    ("Informations","Je souhaite en savoir plus"),
+    ("Partenariat","Je cherche à réaliser un partenariat"),
+    ("Technique","Soucis technique sur la plateforme"),
+)
+    subject = models.CharField(choices=SUJET,max_length=25,default='')
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 

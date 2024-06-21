@@ -1,9 +1,9 @@
-{% extends 'partner_meet/base_Partner_meet.html' %}
+{% extends 'legal/base_Legal.html' %}
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'legal/css/Legal.css' %}">
 {{ block.super }}
-<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+<link rel="stylesheet" href="{% static 'legal/css/style_base.css' %}">
 {% endblock %}
 
 {% block section %}
@@ -499,7 +499,7 @@
             disposez de différentes options ci-dessous :</p>
         <ul class="Text">
             <li class="TextList">
-                <a href="{% url 'Contact' %}">Contacter l'équipe </a>
+                <a href="{% url 'Support' %}">Contacter l'équipe </a>
             </li>
             <li class="TextList">Par email : support@lightmeet.fr </li>
             <li class="TextList">Par la poste : </li>

@@ -1,9 +1,9 @@
-{% extends 'partner_meet/base_Partner_meet.html' %}
+{% extends 'legal/base_Legal.html' %}
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'legal/css/Legal.css' %}">
 {{ block.super }}
-<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+<link rel="stylesheet" href="{% static 'legal/css/style_base.css' %}">
 {% endblock %}
 
 {% block section %}
@@ -109,7 +109,7 @@
             Pour toute question concernant cette politique, vous pouvez nous contacter :
         </p>
         <ul class="ListMarginL">
-            <li class="Text"><a href="{% url 'Contact' %}">Contactez l'équipe</a></li>
+            <li class="Text"><a href="{% url 'Support' %}">Contactez l'équipe</a></li>
             <li class="Text">Par email : support@lightmeet.com</li>
             <li class="Text">Par courrier :</li>
             <li class="Text">Délégué à la protection des données, Listen2Meet</li>

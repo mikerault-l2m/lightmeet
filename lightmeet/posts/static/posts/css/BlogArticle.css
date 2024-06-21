@@ -91,7 +91,11 @@ max-width: 98%;
     }
 
         .Date {
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 536d4d710d361e5521efba6ce570637696c3158b
             font-size: 20px;
             margin: 0.5em 0em 1em 0em;
         }
@@ -120,7 +124,11 @@ max-width: 98%;
                          .LigneSeparationTitle {
                              display: none;
                          }
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 536d4d710d361e5521efba6ce570637696c3158b
                          .Title {
                              font-size: 25px;
                              margin: 0;

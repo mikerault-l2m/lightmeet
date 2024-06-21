@@ -2,6 +2,17 @@
 {% load static %}
 
 {% block css %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16540386379"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16540386379');
+</script>
+
+
 
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {{ block.super }}
@@ -64,7 +75,7 @@
                         <label for="free">Émission de C02</label>
                     </div>-->
                 </div>
-                <button class="ButtonSearch" type="submit">Recherchez</button>
+                <button class="ButtonSearch" type="submit">Rechercher</button>
             </div>
         </form>
     </div>

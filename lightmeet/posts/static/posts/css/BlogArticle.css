@@ -17,7 +17,6 @@
 .PosElementArticle{
     margin-top:2em ;
     margin-bottom: 2em;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,9 +61,9 @@
 
  .custom-paragraph-class{
     margin: 0em;
-   font-size: 30px;
-   text-align: justify;
-max-width: 98%;
+    font-size: 30px;
+    text-align: justify;
+    max-width: 98%;
 }
 .spaced-br {
     content: "";
@@ -86,12 +85,10 @@ max-width: 98%;
 
     .TitleArticle{
         margin: 0px;
-
         font-size: 35px;
     }
 
         .Date {
-
             font-size: 20px;
             margin: 0.5em 0em 1em 0em;
         }

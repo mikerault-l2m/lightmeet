@@ -1,32 +1,31 @@
 {% extends 'support/base_Support.html' %}
 {% load static %}
 {% block css %}
-<link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
-{{ block.super }}
+
+
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'support/css/contact.css' %}">
 {% endblock %}
 {% block section %}
-<section>
-    <div class="Title">Contactez-nous par e-mail</div>
-    <div class="Formulaire">Utilisez le formulaire ci-dessous</div>
+<section class="ContainerSupport">
+    <h1 class="Title">Contactez-nous par e-mail</h1>
+    <h2 class="subTitle">Utilisez le formulaire ci-dessous</h2>
     <form class="form" method="POST">
         {% csrf_token %}
-        <table>
+
             <div class="Apellation" >
                 {{ form.sender_email }}
             </div>
-        </table>
-        <table>
             <div class="Apellation2">
                 {{ form.subject }}
-            </div>
-        </table>
-        <table>
+            </div><a href="/lightmeet/support/static/contact.css"></a>
+
             <div class="Apellation3">
                 {{ form.message }}
             </div>
-        </table>
-        <a href ="{% url 'Home' %}"><input class="Inscription" type="submit" value="Envoyer"></a>
+
+        <a href ="{% url 'Home' %}"><input class="SendMessage" type="submit" value="Envoyer"></a>
     </form>
 </section>
 {% endblock %}

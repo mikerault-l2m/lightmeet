@@ -35,11 +35,12 @@
  }
 
  .Title {
-     font-size: 85px;
-     font-weight: 100;
-     letter-spacing: 0.04em;
-     text-align: center;
-     margin: 10px;
+    font-size: 80px;
+    font-weight: 100;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin: 10px;
+    font-family:'Roboto';
  }
 
 
@@ -162,7 +163,6 @@
      display: flex;
      align-items: center;
      justify-content: center;
-
  }
 
  .LigneSeparationTitle {
@@ -203,52 +203,51 @@
  }
 
  .ImgCardBlog {
-     width: 400px;
-     height: auto;
+    width: 400px;
+    height: auto;
  }
 
  .cardText {
-     display: flex;
-     flex-direction: column;
-     justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
  }
 
  .cardText.normal-text {
-     align-items: flex-start;
+    align-items: flex-start;
  }
 
  .cardText.reverse-text {
-     align-items: flex-end;
+    align-items: flex-end;
  }
 
  .TextArticle {
-     text-align: justify;
-     font-size: 20px;
-     margin: 0em;
+    text-align: justify;
+    font-size: 20px;
+    margin: 0em;
  }
 
  .TitleArticle {
-     font-size: 35px;
-     margin-bottom: 0.5em;
-     text-transform: uppercase;
-     letter-spacing: 0.2em;
+    font-size: 35px;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
  }
 
  .Date {
-     margin: 0em;
-     margin-bottom: 0.5em;
-     font-size: 20px;
-     font-weight: lighter;
-     font-style: italic;
+    margin: 0em;
+    margin-bottom: 0.5em;
+    font-size: 20px;
+    font-weight: lighter;
+    font-style: italic;
  }
 
  .ReadMore {
-     font-size: 20px;
-     font-weight: lighter;
-
-     text-decoration: underline;
-     background-color: rgba(255, 255, 255, 0);
-     border: none;
+    font-size: 20px;
+    font-weight: lighter;
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
  }
 
 

@@ -19,14 +19,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render,redirect
 
 from django.http import HttpResponse
-#from django.utils.translation import gettext as _
-
-
-#def my_view(request):
-#    output = _("Welcome to my site.")
-#    return HttpResponse(output)
-
-
+from django.utils.translation import gettext as _
 
 # Etape 1 : Lancement de la page principale Lightmeet :
 
@@ -99,13 +92,13 @@ class PartnerMeetHome(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['CATEGORIE_CHOICES'] = (
-            ("Généraliste", "Site généraliste"),
-            ("Senior", "Site senior"),
-            ("Haut-de-gamme", "Site haut-de-gamme"),
+            ("Généraliste", _("Site généraliste")),
+            ("Senior",_("Site senior")),
+            ("Haut-de-gamme", _("Site haut-de-gamme")),
         )
         context['RELATION_CHOICES'] = (
-            ('Durables', 'Durables'),
-            ('Homosexuelles', 'Homosexuelles'),
+            ('Durables', _("Durables")),
+            ('Homosexuelles', _('Homosexuelles')),
         )
         context['AGE_CHOICES'] = (
             ('18-30', '18-30 '),
@@ -163,13 +156,13 @@ class PartnerMeetBestSite(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['CATEGORIE_CHOICES'] = (
-            ("Généraliste", "Site généraliste"),
-            ("Senior", "Site senior"),
-            ("Haut-de-gamme", "Site haut-de-gamme"),
+            ("Généraliste", _("Site généraliste")),
+            ("Senior", _("Site senior")),
+            ("Haut-de-gamme", _("Site haut-de-gamme")),
         )
         context['RELATION_CHOICES'] = (
-            ('Durables', 'Durables'),
-            ('Homosexuelles', 'Homosexuelles'),
+            ('Durables', _('Durables')),
+            ('Homosexuelles', _('Homosexuelles')),
         )
         context['AGE_CHOICES'] = (
             ('18-30', '18-30 '),

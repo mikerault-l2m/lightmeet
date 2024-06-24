@@ -1,6 +1,6 @@
 {% extends 'partner_meet/base_Partner_meet.html' %}
 {% load static %}
-
+{% load i18n %}
 
 {% block css %}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_2.css' %}">
@@ -10,7 +10,7 @@
 
 {% block section %}
 
-<h1 class="Title">Éclairez vos rencontres</h1>
+<h1 class="Title">{% trans 'Éclairez vos rencontres' %}</h1>
 <h2 class="SubTitle">Trouvez le site de rencontres qui vous correspond.</h2>
 
 <a href="{% url 'recherche_home' %}">
@@ -102,7 +102,7 @@
             </svg>
         </div>
         <h3>+ 100 sites de rencontres</h3>
-        <p class="InfoBox">séléctionnées avec soin</p>
+        <p class="InfoBox">séléctionnés avec soin</p>
     </div>
 </div>
 <div class="containerListing">
@@ -118,9 +118,9 @@
     <button class="buttonInfoComparateur"> En voir plus </button>
 </div>
 <div class="call-to-action-container">
-    <div class="callToActionTitle">
+    <div class="callToActionTitle" >
         <h1>Comparez le meilleur dans le </br>domaine de la rencontre</h1>
-        <p class="subTitleCall">Comparez des milliers d’applications de rencontres
+        <p>Comparez des milliers d’applications de rencontres
             <br /> et de thérapeutes de votre région
         </p>
     </div>

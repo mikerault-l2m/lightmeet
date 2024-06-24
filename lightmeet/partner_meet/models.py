@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 # Bug du serveur : il faut d'abord créer l'API avec 'python manage.py startapp import_export'
 #from import_export.models import resources
 
@@ -9,20 +10,15 @@ class PartnerMeet(models.Model):
     Visites_France = models.CharField(max_length=100) # - 3 Membres - # Cette variable comptabilise tous les 3 mois le nombre de visiteurs du site web.
 
     CATEGORIE_CHOICES = (
-           ("Généraliste", "Site généraliste"),
-            ("Libertin", "Site libertin"),
-            ("Senior", "Site senior"),
-            ("Religieux","Site religieux"),
-            #("Extra-conjugales", "Site extra-conjugal"),
-            ("Haut-de-gamme", "Site haut-de-gamme"),
+           ("Généraliste", _("Site généraliste")),
+            ("Senior", _("Site senior")),
+            ("Haut-de-gamme", _("Site haut-de-gamme")),
     )
     categorie = models.CharField(choices=CATEGORIE_CHOICES, max_length=25, default='Généraliste')
 
     RELATION_CHOICES = (
-        #('Toutes','Toutes'),
-            ('Durables', 'Durables'),
-            ("Relation d'un soir", "Relation d'un soir"),
-            ('Homosexuelles', 'Homosexuelles'),
+            ('Durables', _('Durables')),
+            ('Homosexuelles',_('Homosexuelles')),
     )
     relation = models.CharField(choices=RELATION_CHOICES, max_length=25, default='Toutes')
 

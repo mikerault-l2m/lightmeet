@@ -1,7 +1,7 @@
 import os
 import environ
 from pathlib import Path
-#from django.utils.translation import gettext_lazy, gettext as _  # Utilisez gettext_lazy au lieu de gettext
+from django.utils.translation import gettext_lazy, gettext as _  # Utilisez gettext_lazy au lieu de gettext
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -48,7 +48,7 @@ INSTALLED_APPS = THIRD_PARTY_APPS + DJANGO_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    #'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -102,9 +102,9 @@ TEMPLATES = [
     },
 ]
 
-#LOCALE_PATHS = (
-#    os.path.join (BASE_DIR, 'locale')
-#)
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
 
 WSGI_APPLICATION = 'lightmeet.wsgi.application'
 
@@ -119,12 +119,12 @@ DATABASES = {
      }
  }
 
-
-#LANGUAGES = [
-#    ('en', _('English')),
-#    ('fr', _('French')),
-#    ('sp', _('Spanish')),
-#]
+from django.utils.translation import gettext_lazy as _
+LANGUAGES = [
+    ('en', _('English')),
+    ('fr', _('French')),
+    ('sp', _('Spanish')),
+]
 
 
 AUTH_PASSWORD_VALIDATORS = [

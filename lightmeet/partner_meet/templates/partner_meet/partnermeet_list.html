@@ -12,6 +12,33 @@
   gtag('config', 'AW-16540386379');
 </script>
 
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TLZMTBDC');</script>
+<!-- End Google Tag Manager -->
+<!-- Event snippet for GADS - Elite Rencontre + 50 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16540386379/CFbeCM6Kgr0ZEMuIic89',
+      'value': 5.0,
+      'currency': 'EUR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
 
 
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
@@ -102,7 +129,7 @@
                 <div class="Line"></div>
                 <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
                 <div class="Line"></div>
-                <button class="buttonVisit" onclick="window.location.href='{{ partner.url }}'">Visiter</button>
+                <button class="buttonVisit" onclick="return gtag_report_conversion('{{ partner.url }}')">Visiter</button>
             </div>
 
             <div class="cardApp VersionMobile">
@@ -130,7 +157,7 @@
                         <p class="descriptionCard bold">{{ partner.age }} ans</p>
                         <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
                     </div>
-                    <button class="buttonVisit" onclick="window.location.href='{{ partner.url }}'">></button>
+                    <button class="buttonVisit" onclick="return gtag_report_conversion('{{ partner.url }}')">></button>
                 </div>
             </div>
             {% endif %}

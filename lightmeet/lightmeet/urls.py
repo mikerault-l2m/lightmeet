@@ -8,7 +8,7 @@ from legal.views import *
 from psy.views import *
 from support.views import *
 from posts.views import *
-#from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     # Administrateur :
@@ -66,3 +66,10 @@ urlpatterns = [
     path('blog/delete/<str:slug>', BlogPostDelete.as_view(), name="blog_delete"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+urlpatterns += i18n_patterns(
+
+    #FR
+    path('fr/', Home.as_view(), name="Home")
+    )

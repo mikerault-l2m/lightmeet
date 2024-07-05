@@ -105,42 +105,16 @@ class PartnerMeetHome(ListView):
             ('31-45', '31-45 '),
             ('+ 46', '+ 46'),
         )
-
         return context
 
     def get_queryset(self):
         queryset = super().get_queryset()
 
-        # Filtrer par prix moyen
-        prix_avg = self.request.GET.get('prix_avg')
-        if prix_avg:
-            queryset = queryset.filter(prix_avg=prix_avg)
-
-        # Trier par trustpilot (si disponible)
-        sort_by = self.request.GET.get('sort_by')
-        if sort_by == 'trustpilot':
-            queryset = queryset.order_by('-trustpilot')
-
         # Trier par affiliation (si disponible)
         sort_by = self.request.GET.get('sort_by')
-        if sort_by == 'affiliation':
-            queryset = queryset.order_by('affiliation')
-
-
-        # Filtrer par description (recherche partielle)
-        description = self.request.GET.get('description')
-        if description:
-            queryset = queryset.filter(description__icontains=description)
-
-        # Filtrer par catégorie
-        categorie = self.request.GET.get('categorie')
-        if categorie:
-            queryset = queryset.filter(categorie=categorie)
-
-        # Trier par ranking (si disponible)
-        sort_by = self.request.GET.get('sort_by')
         if sort_by == 'ranking':
-            queryset = queryset.order_by('ranking')
+            queryset = queryset.order_by('-ranking')
+
 
         return queryset
 end = time.time()
@@ -173,52 +147,6 @@ class PartnerMeetBestSite(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-
-        # Filtrer par âge
-        age = self.request.GET.get('age')
-        if age:
-            queryset = queryset.filter(age=age)
-
-        # Filtrer par prix moyen
-        prix_avg = self.request.GET.get('prix_avg')
-        if prix_avg:
-            queryset = queryset.filter(prix_avg=prix_avg)
-
-       # Trier par trustpilot (si disponible)
-        sort_by = self.request.GET.get('sort_by')
-        if sort_by == 'trustpilot':
-            queryset = queryset.order_by('-trustpilot')
-
-        # Filtrer par affiliation
-        affiliation = self.request.GET.get('affiliation')
-        if affiliation == 'true':
-            queryset = queryset.filter(affiliation=True)
-        elif affiliation == 'false':
-            queryset = queryset.filter(affiliation=False)
-
-        # Filtre selon la gratuité
-        free = self.request.GET.get('free')
-        if free == 'true':
-            queryset = queryset.filter(free=True)
-        elif free == 'false':
-            queryset = queryset.filter(free=False)
-
-        # Filtre selon la émission de CO2
-        co2 = self.request.GET.get('co2')
-        if co2 == 'true':
-            queryset = queryset.filter(co2=True)
-        elif co2 == 'false':
-            queryset = queryset.filter(co2=False)
-
-        # Filtrer par description (recherche partielle)
-        description = self.request.GET.get('description')
-        if description:
-            queryset = queryset.filter(description__icontains=description)
-
-        # Filtrer par catégorie
-        categorie = self.request.GET.get('categorie')
-        if categorie:
-            queryset = queryset.filter(categorie=categorie)
 
        # Trier par ranking (si disponible)
         sort_by = self.request.GET.get('sort_by')

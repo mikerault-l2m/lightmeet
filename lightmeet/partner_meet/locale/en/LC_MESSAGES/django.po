@@ -1,43 +1,23 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
-msgid ""
-msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 13:48+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: partner_meet/models.py:13 partner_meet/views.py:95 partner_meet/views.py:159
+#: partner_meet/models.py:13 partner_meet/views.py:95 partner_meet/views.py:133
 msgid "Site généraliste"
 msgstr "Generalist site"
 
-#: partner_meet/models.py:14 partner_meet/views.py:96 partner_meet/views.py:160
+#: partner_meet/models.py:14 partner_meet/views.py:96 partner_meet/views.py:134
 msgid "Site senior"
 msgstr "Senior site"
 
-#: partner_meet/models.py:15 partner_meet/views.py:97 partner_meet/views.py:161
+#: partner_meet/models.py:15 partner_meet/views.py:97 partner_meet/views.py:135
 msgid "Site haut-de-gamme"
 msgstr "High-end site"
 
-#: partner_meet/models.py:20 partner_meet/views.py:100 partner_meet/views.py:164
+#: partner_meet/models.py:20 partner_meet/views.py:100 partner_meet/views.py:138
 msgid "Durables"
 msgstr "Sustainable"
 
-#: partner_meet/models.py:21 partner_meet/views.py:101 partner_meet/views.py:165
+#: partner_meet/models.py:21 partner_meet/views.py:101 partner_meet/views.py:139
 msgid "Homosexuelles"
 msgstr "Homosexual"
 
 #: partner_meet/templates/partner_meet/Home.html:13
 msgid "Éclairez vos rencontres"
-msgstr "Illuminate your meetings"
+msgstr "Illuminate your dates"

@@ -40,29 +40,33 @@
 
 
 </head>
-
 <body class="container">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLZMTBDC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    {% block content %}{% endblock %}
     <header>
         <a href="{% url 'Home' %}" class="ListeHeader">
-            <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="">
+            <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
         </a>
-    <nav class="navPos">
+        <nav class="navPos">
             <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
-            <a href="{% url 'Contact' %}" class="ListeHeader">Support</a>
-    </nav>
+            <a href="{% url 'Support' %}" class="ListeHeader">Contact</a>
+        </nav>
     <nav class="navHeader">
-            <div class="menuHamburger">
-                <div class="line Line1"></div>
-                <div class="line Line2"></div>
-                <div class="line Line3"></div>
-            </div>
-            <ul class="navMenu">
-                <li><a href="{% url 'recherche_home' %}" class="ListeHeader">Site de rencontres</a></li>
-                <li><a href="{% url 'recherche_therapeutes' %}" class="ListeHeader">Thérapeutes</a></li>
-                <li><a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a></li>
-                <li><a href="{% url 'Home' %}" class="ListeHeader">FAQ</a></li>
-                <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
-            </ul>
+        <div class="menuHamburger">
+            <div class="line Line1"></div>
+            <div class="line Line2"></div>
+            <div class="line Line3"></div>
+        </div>
+        <ul class="navMenu">
+            <li><a href="{% url 'recherche_home' %}" class="ListeHeader">Site de rencontres</a></li>
+            <li><a href="{% url 'recherche_therapeutes' %}" class="ListeHeader">Thérapeutes</a></li>
+            <li><a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a></li>
+            <li><a href="{% url 'Home' %}" class="ListeHeader">FAQ</a></li>
+            <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
+        </ul>
     </nav>
     </header>
     {% block aside %}
@@ -74,7 +78,7 @@
         <div class="footerPc">
             <ul class="ListFooter">
                 <a class="linkFooter" href="{% url 'Home' %}">
-                    <li>® 2024 LightMeet</li>
+                    <li>® 2024 Lightmeet</li>
                 </a>
                 <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">
                     <li>Mentions légales</li>
@@ -92,13 +96,13 @@
         </div>
         <div class="FooterMobile">
                 <a class="linkFooter" href="{% url 'Home' %}">
-                    <li class="signature">® 2024 LightMeet</li>
+                    <h3 class="signature">® 2024 Lightmeet</h3>
                 </a>
             <ul class="ListFooter">
                 <a class="linkFooter" href="{% url 'legal_CGU' %}">
                     <li>Conditions générales d'utilisation</li>
                 </a>
-
+-
                 <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">
                     <li>Mentions légales</li>
                 </a>
@@ -106,7 +110,7 @@
                 <a class="linkFooter" href="{% url 'legal_PC' %}">
                     <li>Politique de Cookies</li>
                 </a>
-
+-
                 <a class="linkFooter" href="{% url 'legal_PDC' %}">
                     <li>Politique de confidentialité</li>
                 </a>
@@ -118,7 +122,6 @@
     <script>
         const menuHamburger = document.querySelector('.menuHamburger');
         const navMenu = document.querySelector('.navMenu');
-
         menuHamburger.addEventListener('click', function () {
             menuHamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
@@ -131,5 +134,4 @@
 
     </script>
 </body>
-
 </html>

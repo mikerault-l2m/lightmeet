@@ -17,6 +17,10 @@ class BlogPost(models.Model):
     content = models.TextField(blank=True,verbose_name="Contenu")
     description = models.TextField(verbose_name="Description")
 
+    #comment = models.CharField(default=False,max_length=500,verbose_name="Commentaire")
+    #like = models.BooleanField(default=False,verbose_name="Liké")
+
+
     class Meta:
         verbose_name = "Notre Article"
         verbose_name_plural = "Nos Articles"

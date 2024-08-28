@@ -11,35 +11,33 @@
     {% block css %}
     <link rel="stylesheet" href="{% static 'legal/css/style_base.css' %}">
     {% endblock %}
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SP9DEQYW1Z"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+<!-- Visitor Tracking -->
+<script async defer src='https://app.visitortracking.com/assets/js/tracer.js'></script>
+<script>
+function init_tracer() {
+   var tracer = new Tracer({
+   websiteId : "bf6d09fc-7223-4dba-a994-36a534160065",
+   async : true,
+   debug : false });
+ }
+ </script>
+ <!-- End VT -->
 
-        gtag('config', 'G-SP9DEQYW1Z');
-    </script>
-    <!-- Google tag (gtag.js) event -->
-<script>
-  gtag('event', 'conversion_event_page_view', {
-    // <event_parameters>
-  });
-</script>
-    <!-- Hotjar Tracking Code for Site Lightmeet -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:4960613,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
+<!-- Hotjar -->
+ <script>
+    (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:4960613,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 
+<!-- End Hotjar -->
+
 
 </head>
+
 <body class="container">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLZMTBDC"
@@ -77,45 +75,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <footer>
         <div class="footerPc">
             <ul class="ListFooter">
-                <a class="linkFooter" href="{% url 'Home' %}">
+                <li class="linkFooter" href="{% url 'Home' %}">
                     <li>® 2024 Lightmeet</li>
-                </a>
-                <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">
+                </li>
+                <li class="linkFooter" href="{% url 'legal_mentions_legales' %}">
                     <li>Mentions légales</li>
-                </a>
-                <a class="linkFooter" href="{% url 'legal_PDC' %}">
+                </li>
+                <li class="linkFooter" href="{% url 'legal_PDC' %}">
                     <li>Politique de confidentialité</li>
-                </a>
-                <a class="linkFooter" href="{% url 'legal_CGU' %}">
+                </li>
+                <li class="linkFooter" href="{% url 'legal_CGU' %}">
                     <li>Conditions générales d'utilisation</li>
-                </a>
-                <a class="linkFooter" href="{% url 'legal_PC' %}">
+                </li>
+                <li class="linkFooter" href="{% url 'legal_PC' %}">
                     <li>Politique de Cookies</li>
-                </a>
+                </li>
             </ul>
         </div>
         <div class="FooterMobile">
-                <a class="linkFooter" href="{% url 'Home' %}">
+                <li class="linkFooter" href="{% url 'Home' %}">
                     <h3 class="signature">® 2024 Lightmeet</h3>
-                </a>
-            <ul class="ListFooter">
-                <a class="linkFooter" href="{% url 'legal_CGU' %}">
+                </li>
+            <li class="ListFooter">
+                <li class="linkFooter" href="{% url 'legal_CGU' %}">
                     <li>Conditions générales d'utilisation</li>
-                </a>
+                </li>
 -
-                <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">
+                <li class="linkFooter" href="{% url 'legal_mentions_legales' %}">
                     <li>Mentions légales</li>
-                </a>
+                </li>
 
-                <a class="linkFooter" href="{% url 'legal_PC' %}">
+                <li class="linkFooter" href="{% url 'legal_PC' %}">
                     <li>Politique de Cookies</li>
-                </a>
+                </li>
 -
-                <a class="linkFooter" href="{% url 'legal_PDC' %}">
+                <li class="linkFooter" href="{% url 'legal_PDC' %}">
                     <li>Politique de confidentialité</li>
                 </a>
 
-            </ul>
+            </li>
         </div>
     </footer>
     {% endblock %}
@@ -134,4 +132,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </script>
 </body>
+
 </html>

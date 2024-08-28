@@ -14,8 +14,10 @@ urlpatterns = [
     # Administrateur :
     path('lightmeet-admin/', admin.site.urls),
 
-    # Page principale / CTA Comparer
+    # Page principale francais - anglais - espagnol / CTA Comparer
     path('', Home.as_view(), name="Home"),
+    #path('en/', Home.as_view(), name="Home"),
+    #path('sp/',Home.as_view(),name="Home"),
 
     # Accounts
     #path('connexion', inscription, name="Connexion"),
@@ -31,10 +33,10 @@ urlpatterns = [
     path('support/Thanks', SupportContact, name="Support-merci"),
 
     # Legal
-    path('legal/mentions_legales/', legal_Control_ML.as_view(), name="legal_mentions_legales"),
-    path('legal/conditions_generales_utilisation', legal_Control_CGU.as_view(), name="legal_CGU"),
-    path('legal/politique_de_confidentialite/', legal_Control_PDC.as_view(), name="legal_PDC"),
-    path('legal/politique_de_cookies/', legal_Control_PC.as_view(), name="legal_PC"),
+    path('legal/mentions_legales/', LegalControlML.as_view(), name="legal_mentions_legales"),
+    path('legal/conditions_generales_utilisation', LegalControlCGU.as_view(), name="legal_CGU"),
+    path('legal/politique_de_confidentialite/', LegalControlPDC.as_view(), name="legal_PDC"),
+    path('legal/politique_de_cookies/', LegalControlPC.as_view(), name="legal_PC"),
     path('legal/mentions_legales/create/', LegalCreate.as_view(), name="legal_create"),
     path('legal/mentions_legales/<str:slug>/', LegalDetail.as_view(), name="legal_detail"),
     path('legal/mentions_legales/edit/<str:slug>/', LegalUpdate.as_view(), name="legal_edit"),
@@ -58,18 +60,11 @@ urlpatterns = [
     path('recherche/sites_des_thérapeutes/', PsyMeetBestSite.as_view(), name="recherche_meilleur_therapeutes"),  # nouveau
 
     # Blog
-    path('blog/', BlogHome.as_view(), name="blog_home"),
+    path('blog/main_article',BlogPost1.as_view(), name="blog_home"),
     #path('blog/articles', Articles, name="blog_articles"),
     path('blog/create', BlogPostCreate.as_view(), name="blog_create"),
     path('blog/<str:slug>', BlogPostDetail.as_view(), name="blog_detail"),
     path('blog/edit/<str:slug>', BlogPostUpdate.as_view(), name="blog_edit"),
     path('blog/delete/<str:slug>', BlogPostDelete.as_view(), name="blog_delete"),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-urlpatterns += i18n_patterns(
-
-    #FR
-    path('fr/', Home.as_view(), name="Home")
-    )
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

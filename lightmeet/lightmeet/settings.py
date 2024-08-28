@@ -19,7 +19,6 @@ LOCAL_APPS = [
     'posts',
     'locale',
     'support',
-    'presse',
     'psy',
     'partner_meet',
 ]
@@ -34,7 +33,6 @@ DJANGO_APPS = [
     'django.contrib.sites',
 ]
 THIRD_PARTY_APPS = [
-    # AJOUT POUR PACKAGE ALLAUTH
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -48,8 +46,8 @@ INSTALLED_APPS = THIRD_PARTY_APPS + DJANGO_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -86,7 +84,6 @@ TEMPLATES = [
                     os.path.join(BASE_DIR, 'legal/templates'),
                     os.path.join(BASE_DIR, 'partner_meet/templates'),
                     os.path.join(BASE_DIR, 'psy/templates'),
-                    os.path.join(BASE_DIR, 'presse/templates'),
                     os.path.join(BASE_DIR, 'accounts/templates'),
                     os.path.join(BASE_DIR, 'support/templates')],
         'APP_DIRS': True,
@@ -120,10 +117,11 @@ DATABASES = {
  }
 
 from django.utils.translation import gettext_lazy as _
+
 LANGUAGES = [
     ('en', _('English')),
     ('fr', _('French')),
-    ('sp', _('Spanish')),
+    ('es', _('Spanish')),
 ]
 
 

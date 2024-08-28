@@ -10,14 +10,7 @@
 <body>
     {% block section %}
     <div class="containerBlog">
-        <div class="BLogTitlePos">
-            <div class="LigneSeparationTitle"> </div>
-            <h1 class="Title">Blog</h1>
-            <div class="LigneSeparationTitle"></div>
-        </div>
-
-        {% for post in posts %}
-    <div class="containerInfoBlog {% if forloop.counter0|divisibleby:2 %}normal{% else %}reverse{% endif %}">
+    <div class="containerInfoBlog ">
         <article class="cardBlogPost">
             {% if user.is_authenticated %}
             <div>
@@ -25,22 +18,8 @@
                 <a href="{% url 'blog_delete' slug=post.slug %}">Supprimer</a>
             </div>
             {% endif %}
-            <img class="ImgCardBlog" src="{{ post.image.url }}" alt="test">
-            <div class="PosElementCardText">
-                <div class="cardText {% if forloop.counter0|divisibleby:2 %}normal-text{% else %}reverse-text{% endif %}">
-                    <p class="Date">{{ post.created_on|date:'j F Y' }}</p>
-                    <h2 class="TitleArticle">{{ post.title }}</h2>
-                    <p class="TextArticle">{{ post.content|safe|truncatewords:75 }}</p>
-                </div>
-                <a href="{% url 'blog_detail' slug=post.slug %}" class="posRM">
-                    <button class="ReadMore">Lire la suite ></button>
-                </a>
-            </div>
-        </article>
-    </div>
-{% endfor %}
 
-    </div>
+
     {% endblock %}
 </body>
 

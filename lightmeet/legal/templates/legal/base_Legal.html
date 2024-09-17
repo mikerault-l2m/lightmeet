@@ -56,50 +56,48 @@ function init_tracer() {
     {% block section %}
     {% endblock %}
     {% block footer %}
-    <footer>
-        <div class="footerPc">
-            <li class="ListFooter">
-                <li class="linkFooter" href="{% url 'Home' %}">
-                    <li>® 2024 Lightmeet</li>
-                </li>
-                <li class="linkFooter" href="{% url 'legal_mentions_legales' %}">
-                    <li>Mentions légales</li>
-                </li>
-                <li class="linkFooter" href="{% url 'legal_PDC' %}">
-                    <li>Politique de confidentialité</li>
-                </li>
-                <li class="linkFooter" href="{% url 'legal_CGU' %}">
-                    <li>Conditions générales d'utilisation</li>
-                </li>
-                <li class="linkFooter" href="{% url 'legal_PC' %}">
-                    <li>Politique de Cookies</li>
-                </li>
+<footer>
+    <div class="footerPc">
+        <ul class="ListFooter">
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'Home' %}">® 2024 Lightmeet</a>
             </li>
-        </div>
-        <div class="FooterMobile">
-                <li class="linkFooter" href="{% url 'Home' %}">
-                    <h3 class="signature">® 2024 Lightmeet</h3>
-                </li>
-            <li class="ListFooter">
-                <li class="linkFooter" href="{% url 'legal_CGU' %}">
-                    <li>Conditions générales d'utilisation</li>
-                </li>
--
-                <li class="linkFooter" href="{% url 'legal_mentions_legales' %}">
-                    <li>Mentions légales</li>
-                </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">Mentions légales</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_PDC' %}">Politique de confidentialité</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_PC' %}">Politique de Cookies</a>
+            </li>
+        </ul>
+    </div>
+    <div class="FooterMobile">
+        <ul class="ListFooter">
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'Home' %}">® 2024 Lightmeet</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">Mentions légales</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_PC' %}">Politique de Cookies</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_PDC' %}">Politique de confidentialité</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+{% endblock %}
 
-                <li class="linkFooter" href="{% url 'legal_PC' %}">
-                    <li>Politique de Cookies</li>
-                </li>
--
-                <li class="linkFooter" href="{% url 'legal_PDC' %}">
-                    <li>Politique de confidentialité</li>
-                </li>
-            </li>
-        </div>
-    </footer>
-    {% endblock %}
     <script>
         const menuHamburger = document.querySelector('.menuHamburger');
         const navMenu = document.querySelector('.navMenu');

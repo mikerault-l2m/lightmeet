@@ -233,15 +233,19 @@ p.Resultats {
     font-weight: 100;}
 
 .containerResultats {
-    width: 97%;
+    width: 95%; /* Réduit pour optimiser l'affichage */
     position: relative;
-    background: url(../Logos/Background.png);
+    background: url('../Logos/Background.webp'); /* Utilisation du format .webp pour une meilleure compression */
     background-size: cover;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     min-height: 50vh;
+    padding: 10px; /* Ajout d'un peu de padding pour aérer le contenu */
+    border-radius: 8px; /* Ajout de coins arrondis pour un design plus moderne */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour un meilleur contraste visuel */
+    overflow: hidden; /* Assure que le contenu ne dépasse pas */
 }
 
 a {

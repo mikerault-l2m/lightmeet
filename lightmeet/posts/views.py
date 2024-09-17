@@ -44,9 +44,18 @@ class BlogPostDelete(DeleteView):
     model = BlogPost
     success_url = reverse_lazy("blog_home")
 
+
+class BlogPostHome(TemplateView):
+    model = BlogPost
+    template_name = "posts/blogpost_list.html"
+
 class BlogPost1(TemplateView):
     model = BlogPost
     template_name = "posts/First_Article.html"
+
+class BlogPost2(TemplateView):
+    model = BlogPost
+    template_name = "posts/Second_Article.html"
 
     def get_queryset(self):
         return BlogPost.objects.all().select_related('author')

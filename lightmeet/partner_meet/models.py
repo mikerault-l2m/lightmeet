@@ -4,18 +4,21 @@ from django.utils.translation import gettext_lazy as _
 #from import_export.models import resources
 
 class PartnerMeet(models.Model):
+    nom = models.CharField(max_length=100)
+    LOGO = models.ImageField(upload_to='MeetSites/', null=True, blank=True)
+    url = models.URLField(blank=True) # URL de redirection du site web associé à la variable 'affiliation'
     Visites_France = models.CharField(max_length=100) # - 3 Membres - # Cette variable comptabilise tous les 3 mois le nombre de visiteurs du site web.
 
     CATEGORIE_CHOICES = (
-           ("Généraliste", "Site généraliste"),
+            ("Généraliste", "Site généraliste"),
             ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
             ("Religieux","Site religieux"),
             #("Extra-conjugales", "Site extra-conjugal"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
-           ("Généraliste", _("Site généraliste")),
-            ("Senior", _("Site senior")),
-            ("Haut-de-gamme", _("Site haut-de-gamme")),
+            ("Généraliste", ("Site généraliste")),
+            ("Senior", ("Site senior")),
+            ("Haut-de-gamme", ("Site haut-de-gamme")),
     )
     categorie = models.CharField(choices=CATEGORIE_CHOICES, max_length=25, default='Généraliste')
 
@@ -24,8 +27,8 @@ class PartnerMeet(models.Model):
             ('Durables', 'Durables'),
             ("Relation d'un soir", "Relation d'un soir"),
             ('Homosexuelles', 'Homosexuelles'),
-            ('Durables', _('Durables')),
-            ('Homosexuelles',_('Homosexuelles')),
+            ('Durables', ('Durables')),
+            ('Homosexuelles',('Homosexuelles')),
     )
     relation = models.CharField(choices=RELATION_CHOICES, max_length=25, default='Toutes')
 

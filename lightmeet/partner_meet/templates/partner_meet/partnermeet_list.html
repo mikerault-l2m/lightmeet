@@ -2,63 +2,6 @@
 {% load static %}
 {% load i18n %}
 {% block css %}
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16540386379"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-16540386379');
-</script>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TLZMTBDC');</script>
-<!-- End Google Tag Manager -->
-
-
-
-<!-- Event snippet for Edarling +50 conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-16540386379/QFUYCOTmnMEZEMuIic89',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
-<!-- Event snippet for GADS - Elite Rencontre + 50 conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-16540386379/CFbeCM6Kgr0ZEMuIic89',
-      'value': 5.0,
-      'currency': 'EUR',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
-
 
 
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
@@ -83,7 +26,8 @@ function gtag_report_conversion(url) {
             {% if partner.affiliation %}
             <div class="cardApp VersionPC">
                 <div class="alignItems">
-                    <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo">
+                    <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo" loading="lazy">
+
                     <div class="containerTitleCard">
                         <div class="PosStar">
                             <h3 class="TitleCard">{{ partner.nom }}</h3>
@@ -107,12 +51,12 @@ function gtag_report_conversion(url) {
                 <div class="Line"></div>
                 <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
                 <div class="Line"></div>
-                <button class="buttonVisit" id="button_{{ partner.id }}" onclick="return gtag_report_conversion('{{ partner.url }}')">Visiter</button>
+                <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'">Visiter</button>
             </div>
 
             <div class="cardApp VersionMobile">
                 <div class="alignItems">
-                    <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo">
+                    <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo" loading="lazy">
                     <div class="containerTitleCard">
                         <div class="PosStar">
                             <h3 class="TitleCard">{{ partner.nom }}</h3>
@@ -135,7 +79,7 @@ function gtag_report_conversion(url) {
                         <p class="descriptionCard bold">{{ partner.age }} ans</p>
                         <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
                     </div>
-                    <button class="buttonVisit" id="button_{{ partner.id }}" onclick="return gtag_report_conversion('{{ partner.url }}')">></button>
+                   <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'">></button>
                 </div>
             </div>
             {% endif %}

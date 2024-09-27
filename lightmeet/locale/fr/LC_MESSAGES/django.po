@@ -1,0 +1,770 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-19 19:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: accounts/models.py:8 accounts/models.py:43
+msgid "Adresse IP"
+msgstr ""
+
+#: accounts/models.py:9 accounts/models.py:44
+msgid "Localisation"
+msgstr ""
+
+#: accounts/models.py:10
+msgid "Horodatage"
+msgstr ""
+
+#: accounts/models.py:13
+msgid "Visiteur de Lightmeet"
+msgstr ""
+
+#: accounts/models.py:14
+msgid "Visiteurs de Lightmeet"
+msgstr ""
+
+#: accounts/models.py:19
+msgid "L'adresse e-mail est obligatoire."
+msgstr ""
+
+#: accounts/models.py:33
+msgid "E-mail"
+msgstr ""
+
+#: accounts/models.py:34
+msgid "Actif"
+msgstr ""
+
+#: accounts/models.py:35
+msgid "Membre du personnel"
+msgstr ""
+
+#: accounts/models.py:36
+msgid "Administrateur"
+msgstr ""
+
+#: accounts/models.py:37
+msgid "Date de naissance"
+msgstr ""
+
+#: accounts/models.py:38 psy/models.py:131
+msgid "Prénom"
+msgstr ""
+
+#: accounts/models.py:39 legal/views.py:74
+msgid "Consentement"
+msgstr ""
+
+#: accounts/models.py:40
+msgid "J'aime hebdomadaires"
+msgstr ""
+
+#: accounts/models.py:41
+msgid "Favoris hebdomadaires"
+msgstr ""
+
+#: accounts/models.py:42
+msgid "Dernière réinitialisation hebdomadaire"
+msgstr ""
+
+#: accounts/models.py:45
+msgid "Engagement"
+msgstr ""
+
+#: accounts/models.py:46
+msgid "Application préférée"
+msgstr ""
+
+#: accounts/models.py:47
+msgid "Clics Comparer"
+msgstr ""
+
+#: accounts/models.py:48
+msgid "Clics Rencontres"
+msgstr ""
+
+#: accounts/models.py:49
+msgid "Clics Thérapeutes"
+msgstr ""
+
+#: accounts/models.py:55
+msgid "Compte utilisateur"
+msgstr ""
+
+#: accounts/models.py:56
+msgid "Comptes utilisateurs"
+msgstr ""
+
+#: accounts/models.py:79 accounts/models.py:82 accounts/models.py:85
+msgid "Informations de localisation non disponibles"
+msgstr ""
+
+#: accounts/models.py:81 accounts/models.py:84
+msgid "Adresse IP non disponible"
+msgstr ""
+
+#: accounts/views.py:26
+msgid "Your account has been deleted successfully."
+msgstr ""
+
+#: accounts/views.py:40
+msgid "Programme Frileux"
+msgstr ""
+
+#: accounts/views.py:50 accounts/views.py:80
+msgid "page_accueil"
+msgstr ""
+
+#: legal/views.py:24
+msgid "Créer un document juridique"
+msgstr ""
+
+#: legal/views.py:25 legal/views.py:34 legal/views.py:42
+msgid "Documents juridiques"
+msgstr ""
+
+#: legal/views.py:33
+msgid "Modifier un document juridique"
+msgstr ""
+
+#: legal/views.py:41
+msgid "Supprimer un document juridique"
+msgstr ""
+
+#: legal/views.py:50
+msgid "Politique de Mentions Légales"
+msgstr ""
+
+#: legal/views.py:56
+msgid "Conditions Générales d'Utilisation"
+msgstr ""
+
+#: legal/views.py:62
+msgid "Politique de Confidentialité"
+msgstr ""
+
+#: legal/views.py:68
+msgid "Politique de Cookies"
+msgstr ""
+
+#: lightmeet/settings.py:123
+msgid "English"
+msgstr ""
+
+#: lightmeet/settings.py:124
+msgid "French"
+msgstr ""
+
+#: lightmeet/settings.py:125
+msgid "Spanish"
+msgstr ""
+
+#: posts/models.py:10
+msgid "Image"
+msgstr ""
+
+#: posts/models.py:11
+msgid "Titre"
+msgstr ""
+
+#: posts/models.py:12
+msgid "Hashtag"
+msgstr ""
+
+#: posts/models.py:13
+msgid "Slug"
+msgstr ""
+
+#: posts/models.py:14
+msgid "Auteur"
+msgstr ""
+
+#: posts/models.py:15
+msgid "Dernière mise à jour"
+msgstr ""
+
+#: posts/models.py:16 support/models.py:15
+msgid "Date de création"
+msgstr ""
+
+#: posts/models.py:17
+msgid "Publié"
+msgstr ""
+
+#: posts/models.py:18
+msgid "Contenu"
+msgstr ""
+
+#: posts/models.py:19
+msgid "Description"
+msgstr ""
+
+#: posts/models.py:25
+msgid "Article"
+msgstr ""
+
+#: posts/models.py:26
+msgid "Articles"
+msgstr ""
+
+#: psy/models.py:8
+msgid "01 - Ain"
+msgstr ""
+
+#: psy/models.py:9
+msgid "02 - Aisne"
+msgstr ""
+
+#: psy/models.py:10
+msgid "03 - Allier"
+msgstr ""
+
+#: psy/models.py:11
+msgid "04 - Alpes-de-Haute-Provence"
+msgstr ""
+
+#: psy/models.py:12
+msgid "05 - Hautes-Alpes"
+msgstr ""
+
+#: psy/models.py:13
+msgid "06 - Alpes-Maritimes"
+msgstr ""
+
+#: psy/models.py:14
+msgid "07 - Ardèche"
+msgstr ""
+
+#: psy/models.py:15
+msgid "08 - Ardennes"
+msgstr ""
+
+#: psy/models.py:16
+msgid "09 - Ariège"
+msgstr ""
+
+#: psy/models.py:17
+msgid "10 - Aube"
+msgstr ""
+
+#: psy/models.py:18
+msgid "11 - Aude"
+msgstr ""
+
+#: psy/models.py:19
+msgid "12 - Aveyron"
+msgstr ""
+
+#: psy/models.py:20
+msgid "13 - Bouches-du-Rhône"
+msgstr ""
+
+#: psy/models.py:21
+msgid "14 - Calvados"
+msgstr ""
+
+#: psy/models.py:22
+msgid "15 - Cantal"
+msgstr ""
+
+#: psy/models.py:23
+msgid "16 - Charente"
+msgstr ""
+
+#: psy/models.py:24
+msgid "17 - Charente-Maritime"
+msgstr ""
+
+#: psy/models.py:25
+msgid "18 - Cher"
+msgstr ""
+
+#: psy/models.py:26
+msgid "19 - Corrèze"
+msgstr ""
+
+#: psy/models.py:27
+msgid "21 - Côte-d'Or"
+msgstr ""
+
+#: psy/models.py:28
+msgid "22 - Côtes-d'Armor"
+msgstr ""
+
+#: psy/models.py:29
+msgid "23 - Creuse"
+msgstr ""
+
+#: psy/models.py:30
+msgid "24 - Dordogne"
+msgstr ""
+
+#: psy/models.py:31
+msgid "25 - Doubs"
+msgstr ""
+
+#: psy/models.py:32
+msgid "26 - Drôme"
+msgstr ""
+
+#: psy/models.py:33
+msgid "27 - Eure"
+msgstr ""
+
+#: psy/models.py:34
+msgid "28 - Eure-et-Loir"
+msgstr ""
+
+#: psy/models.py:35
+msgid "29 - Finistère"
+msgstr ""
+
+#: psy/models.py:36
+msgid "2A - Corse-du-Sud"
+msgstr ""
+
+#: psy/models.py:37
+msgid "2B - Haute-Corse"
+msgstr ""
+
+#: psy/models.py:38
+msgid "30 - Gard"
+msgstr ""
+
+#: psy/models.py:39
+msgid "31 - Haute-Garonne"
+msgstr ""
+
+#: psy/models.py:40
+msgid "32 - Gers"
+msgstr ""
+
+#: psy/models.py:41
+msgid "33 - Gironde"
+msgstr ""
+
+#: psy/models.py:42
+msgid "34 - Hérault"
+msgstr ""
+
+#: psy/models.py:43
+msgid "35 - Ille-et-Vilaine"
+msgstr ""
+
+#: psy/models.py:44
+msgid "36 - Indre"
+msgstr ""
+
+#: psy/models.py:45
+msgid "37 - Indre-et-Loire"
+msgstr ""
+
+#: psy/models.py:46
+msgid "38 - Isère"
+msgstr ""
+
+#: psy/models.py:47
+msgid "39 - Jura"
+msgstr ""
+
+#: psy/models.py:48
+msgid "40 - Landes"
+msgstr ""
+
+#: psy/models.py:49
+msgid "41 - Loir-et-Cher"
+msgstr ""
+
+#: psy/models.py:50
+msgid "42 - Loire"
+msgstr ""
+
+#: psy/models.py:51
+msgid "43 - Haute-Loire"
+msgstr ""
+
+#: psy/models.py:52
+msgid "44 - Loire-Atlantique"
+msgstr ""
+
+#: psy/models.py:53
+msgid "45 - Loiret"
+msgstr ""
+
+#: psy/models.py:54
+msgid "46 - Lot"
+msgstr ""
+
+#: psy/models.py:55
+msgid "47 - Lot-et-Garonne"
+msgstr ""
+
+#: psy/models.py:56
+msgid "48 - Lozère"
+msgstr ""
+
+#: psy/models.py:57
+msgid "49 - Maine-et-Loire"
+msgstr ""
+
+#: psy/models.py:58
+msgid "50 - Manche"
+msgstr ""
+
+#: psy/models.py:59
+msgid "51 - Marne"
+msgstr ""
+
+#: psy/models.py:60
+msgid "52 - Haute-Marne"
+msgstr ""
+
+#: psy/models.py:61
+msgid "53 - Mayenne"
+msgstr ""
+
+#: psy/models.py:62
+msgid "54 - Meurthe-et-Moselle"
+msgstr ""
+
+#: psy/models.py:63
+msgid "55 - Meuse"
+msgstr ""
+
+#: psy/models.py:64
+msgid "56 - Morbihan"
+msgstr ""
+
+#: psy/models.py:65
+msgid "57 - Moselle"
+msgstr ""
+
+#: psy/models.py:66
+msgid "58 - Nièvre"
+msgstr ""
+
+#: psy/models.py:67
+msgid "59 - Nord"
+msgstr ""
+
+#: psy/models.py:68
+msgid "60 - Oise"
+msgstr ""
+
+#: psy/models.py:69
+msgid "61 - Orne"
+msgstr ""
+
+#: psy/models.py:70
+msgid "62 - Pas-de-Calais"
+msgstr ""
+
+#: psy/models.py:71
+msgid "63 - Puy-de-Dôme"
+msgstr ""
+
+#: psy/models.py:72
+msgid "64 - Pyrénées-Atlantiques"
+msgstr ""
+
+#: psy/models.py:73
+msgid "65 - Hautes-Pyrénées"
+msgstr ""
+
+#: psy/models.py:74
+msgid "66 - Pyrénées-Orientales"
+msgstr ""
+
+#: psy/models.py:75
+msgid "67 - Bas-Rhin"
+msgstr ""
+
+#: psy/models.py:76
+msgid "68 - Haut-Rhin"
+msgstr ""
+
+#: psy/models.py:77
+msgid "69 - Rhône"
+msgstr ""
+
+#: psy/models.py:78
+msgid "70 - Haute-Saône"
+msgstr ""
+
+#: psy/models.py:79
+msgid "71 - Saône-et-Loire"
+msgstr ""
+
+#: psy/models.py:80
+msgid "72 - Sarthe"
+msgstr ""
+
+#: psy/models.py:81
+msgid "73 - Savoie"
+msgstr ""
+
+#: psy/models.py:82
+msgid "74 - Haute-Savoie"
+msgstr ""
+
+#: psy/models.py:83
+msgid "75 - Paris"
+msgstr ""
+
+#: psy/models.py:84
+msgid "76 - Seine-Maritime"
+msgstr ""
+
+#: psy/models.py:85
+msgid "77 - Seine-et-Marne"
+msgstr ""
+
+#: psy/models.py:86
+msgid "78 - Yvelines"
+msgstr ""
+
+#: psy/models.py:87
+msgid "79 - Deux-Sèvres"
+msgstr ""
+
+#: psy/models.py:88
+msgid "80 - Somme"
+msgstr ""
+
+#: psy/models.py:89
+msgid "81 - Tarn"
+msgstr ""
+
+#: psy/models.py:90
+msgid "82 - Tarn-et-Garonne"
+msgstr ""
+
+#: psy/models.py:91
+msgid "83 - Var"
+msgstr ""
+
+#: psy/models.py:92
+msgid "84 - Vaucluse"
+msgstr ""
+
+#: psy/models.py:93
+msgid "85 - Vendée"
+msgstr ""
+
+#: psy/models.py:94
+msgid "86 - Vienne"
+msgstr ""
+
+#: psy/models.py:95
+msgid "87 - Haute-Vienne"
+msgstr ""
+
+#: psy/models.py:96
+msgid "88 - Vosges"
+msgstr ""
+
+#: psy/models.py:97
+msgid "89 - Yonne"
+msgstr ""
+
+#: psy/models.py:98
+msgid "90 - Territoire de Belfort"
+msgstr ""
+
+#: psy/models.py:99
+msgid "91 - Essonne"
+msgstr ""
+
+#: psy/models.py:100
+msgid "92 - Hauts-de-Seine"
+msgstr ""
+
+#: psy/models.py:101
+msgid "93 - Seine-Saint-Denis"
+msgstr ""
+
+#: psy/models.py:102
+msgid "94 - Val-de-Marne"
+msgstr ""
+
+#: psy/models.py:103
+msgid "95 - Val-d'Oise"
+msgstr ""
+
+#: psy/models.py:104
+msgid "971 - Guadeloupe"
+msgstr ""
+
+#: psy/models.py:105
+msgid "972 - Martinique"
+msgstr ""
+
+#: psy/models.py:106
+msgid "973 - Guyane"
+msgstr ""
+
+#: psy/models.py:107
+msgid "974 - La Réunion"
+msgstr ""
+
+#: psy/models.py:108
+msgid "976 - Mayotte"
+msgstr ""
+
+#: psy/models.py:110
+msgid "Département"
+msgstr ""
+
+#: psy/models.py:114 psy/views.py:137 psy/views.py:282
+msgid "Diplômé d'état"
+msgstr ""
+
+#: psy/models.py:115 psy/views.py:138 psy/views.py:283
+msgid "Indépendant"
+msgstr ""
+
+#: psy/models.py:117
+msgid "Diplôme"
+msgstr ""
+
+#: psy/models.py:119
+msgid "Document du diplôme"
+msgstr ""
+
+#: psy/models.py:123 psy/views.py:141 psy/views.py:286
+msgid "Psychologie clinique"
+msgstr ""
+
+#: psy/models.py:124 psy/views.py:142 psy/views.py:287
+msgid "Psychologie du travail"
+msgstr ""
+
+#: psy/models.py:125 psy/views.py:143 psy/views.py:288
+msgid "Psychologie sociale"
+msgstr ""
+
+#: psy/models.py:127
+msgid "Spécialité"
+msgstr ""
+
+#: psy/models.py:129
+msgid "Photo"
+msgstr ""
+
+#: psy/models.py:130
+msgid "Nom"
+msgstr ""
+
+#: psy/models.py:132
+msgid "Adresse"
+msgstr ""
+
+#: psy/models.py:133
+msgid "Code postal"
+msgstr ""
+
+#: psy/models.py:134
+msgid "Ville"
+msgstr ""
+
+#: psy/models.py:138
+msgid "Homme"
+msgstr ""
+
+#: psy/models.py:139
+msgid "Femme"
+msgstr ""
+
+#: psy/models.py:141
+msgid "Genre"
+msgstr ""
+
+#: psy/models.py:143
+msgid "Site web"
+msgstr ""
+
+#: psy/models.py:144
+msgid "Téléphone"
+msgstr ""
+
+#: psy/models.py:145
+msgid "Instagram"
+msgstr ""
+
+#: psy/models.py:146
+msgid "Facebook"
+msgstr ""
+
+#: psy/models.py:147
+msgid "LinkedIn"
+msgstr ""
+
+#: psy/models.py:148
+msgid "Profil vérifié"
+msgstr ""
+
+#: psy/models.py:154
+msgid "Thérapeute professionnel"
+msgstr ""
+
+#: psy/models.py:155
+msgid "Thérapeutes professionnels"
+msgstr ""
+
+#: psy/views.py:26 psy/views.py:171
+msgid "psymeet"
+msgstr ""
+
+#: psy/views.py:329
+msgid "psys"
+msgstr ""
+
+#: psy/views.py:345
+msgid "psy"
+msgstr ""
+
+#: support/models.py:6
+msgid "Adresse e-mail de l'expéditeur"
+msgstr ""
+
+#: support/models.py:9
+msgid "Je souhaite en savoir plus"
+msgstr ""
+
+#: support/models.py:10
+msgid "Je cherche à réaliser un partenariat"
+msgstr ""
+
+#: support/models.py:11
+msgid "Soucis technique sur la plateforme"
+msgstr ""
+
+#: support/models.py:13
+msgid "Sujet"
+msgstr ""
+
+#: support/models.py:14
+msgid "Message"
+msgstr ""
+
+#: support/models.py:21
+msgid "Contact avec le client"
+msgstr ""
+
+#: support/models.py:22
+msgid "Contacts avec les clients"
+msgstr ""

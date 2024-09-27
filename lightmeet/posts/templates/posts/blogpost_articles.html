@@ -5,44 +5,53 @@
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
-<html>
 
-<body>
+{% block head %}
+<!-- Balises Meta pour le SEO -->
+<meta name="description" content="Découvrez des articles de blog captivants sur Lightmeet, avec des conseils sur les rencontres, les relations et bien plus encore.">
+<meta name="keywords" content="rencontres, relations, blog, conseils, Lightmeet">
+<link rel="canonical" href="{% url 'blog_home' %}" />
+
+<!-- Open Graph pour le partage sur les réseaux sociaux -->
+<meta property="og:title" content="Blog Lightmeet : Conseils sur les Rencontres et Relations" />
+<meta property="og:description" content="Explorez des conseils de rencontres, des astuces relationnelles et bien plus encore sur le blog Lightmeet." />
+<meta property="og:image" content="{% static 'posts/Logos/default-og-image.png' %}" />
+<meta property="og:url" content="{% url 'blog_home' %}" />
+<meta property="og:type" content="website" />
+{% endblock %}
+
+<main>
     {% block section %}
-    <div class="containerBlog">
-        <div class="BLogTitlePos">
-            <div class="LigneSeparationTitle"> </div>
+    <section class="containerBlog">
+        <header class="BLogTitlePos">
+            <div class="LigneSeparationTitle"></div>
             <h1 class="Title">Blog</h1>
             <div class="LigneSeparationTitle"></div>
-        </div>
+        </header>
 
         {% for post in posts %}
-    <div class="containerInfoBlog {% if forloop.counter0|divisibleby:2 %}normal{% else %}reverse{% endif %}">
-        <article class="cardBlogPost">
-            {% if user.is_authenticated %}
-            <div>
-                <a href="{% url 'blog_edit' slug=post.slug %}">Éditer</a>
-                <a href="{% url 'blog_delete' slug=post.slug %}">Supprimer</a>
-            </div>
-            {% endif %}
-            <img class="ImgCardBlog" src="{{ post.image_url|default:'/static/posts/Logos/image.png' }}" alt="{{ post.title }}">
-            <div class="PosElementCardText">
-                <div class="cardText {% if forloop.counter0|divisibleby:2 %}normal-text{% else %}reverse-text{% endif %}">
-                    <p class="Date">{{ post.created_on|date:'j F Y' }}</p>
-                    <h2 class="TitleArticle">{{ post.title }}</h2>
-                    <p class="TextArticle">{{ post.content|safe|truncatewords:75 }}</p>
+        <article class="containerInfoBlog {% cycle 'normal' 'reverse' %}">
+            <div class="cardBlogPost">
+                {% if user.is_authenticated %}
+                <div class="admin-links">
+                    <a href="{% url 'blog_edit' slug=post.slug %}">Éditer</a>
+                    <a href="{% url 'blog_delete' slug=post.slug %}">Supprimer</a>
                 </div>
-                <form class="posRM" action="{% url 'blog_detail' slug=post.slug %}">
-                    <button class="ReadMore">Lire la suite ></button>
-                </form>
+                {% endif %}
+                <img class="ImgCardBlog" src="{{ post.image_url|default:'/static/posts/Logos/image.png' }}" alt="{{ post.title }}">
+                <div class="PosElementCardText">
+                    <div class="cardText {% cycle 'normal-text' 'reverse-text' %}">
+                        <p class="Date">{{ post.created_on|date:'j F Y' }}</p>
+                        <h2 class="TitleArticle">{{ post.title }}</h2>
+                        <p class="TextArticle">{{ post.content|safe|truncatewords:75 }}</p>
+                    </div>
+                    <form class="posRM" action="{% url 'blog_detail' slug=post.slug %}">
+                        <button class="ReadMore">Lire la suite ></button>
+                    </form>
+                </div>
             </div>
         </article>
-    </div>
-{% endfor %}
-
-
-    </div>
+        {% endfor %}
+    </section>
     {% endblock %}
-</body>
-
-</html>
+</main>

@@ -1,0 +1,115 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: es\n"
+
+msgid "Éclairez vos rencontres"
+msgstr "Ilumina tus encuentros\n"
+
+msgid "Trouvez le site de rencontres qui vous correspond."
+msgstr "Encuentra el sitio de citas que te conviene\n"
+
+msgid "Comparer"
+msgstr "Comparar\n"
+
+msgid "Votre vie privée nous tient à cœur"
+msgstr "Nos importa su privacidad\n"
+
+msgid "Valider les cookies"
+msgstr "Validar las cookies\n"
+
+msgid "Paramètres des cookies"
+msgstr "Ajustes de cookies\n"
+
+msgid "Gérez vos préférences ou retirez votre consentement à tout moment sur la page Paramètres de confidentialité, dont le lien se situe en pied de page."
+msgstr "Gestione sus preferencias o retire su consentimiento en cualquier momento en la página de Configuración de privacidad, cuyo enlace se encuentra en el pie de página.\n"
+
+msgid "Comparaison rapide et gratuite"
+msgstr "Comparación rápida y gratuita\n"
+
+msgid "des sites de rencontres"
+msgstr "de sitios de citas\n"
+
+msgid "Gain de temps précieux"
+msgstr "Ahorra tiempo valioso\n"
+
+msgid "en comparant en 1 clic"
+msgstr "comparando en un solo clic\n"
+
+msgid "+ 100 sites de rencontres"
+msgstr "Más de 100 sitios de citas\n"
+
+msgid "sélectionnés avec soin"
+msgstr "seleccionados cuidadosamente\n"
+
+msgid "Trouvez l'application de rencontres qui correspond à vos besoins réels."
+msgstr "Encuentra la aplicación de citas que se adapte a tus necesidades reales.\n"
+
+msgid "Gagnez du temps et de l’argent en comparant facilement en 1 clic."
+msgstr "Ahorra tiempo y dinero comparando fácilmente en un solo clic.\n"
+
+msgid "Découvrez l’ensemble des sites de rencontres du marché."
+msgstr "Descubre todos los sitios de citas del mercado.\n"
+
+msgid "Comparez les différents abonnements proposés par les sites de rencontres."
+msgstr "Compara las diferentes suscripciones que ofrecen los sitios de citas.\n"
+
+msgid "En voir plus"
+msgstr "Ver más\n"
+
+msgid "Comparez le meilleur dans le domaine de la rencontre"
+msgstr "Compara lo mejor en el ámbito de las citas\n"
+
+msgid "Comparez des milliers d’applications de rencontres <br/> et de thérapeutes de votre région"
+msgstr "Compara miles de aplicaciones de citas <br/> y terapeutas de tu región\n"
+
+msgid "Derniers articles mis en ligne"
+msgstr "Últimos artículos publicados\n"
+
+msgid "Trouver sa rencontre idéale avec Lightmeet"
+msgstr "Encuentra tu cita ideal con Lightmeet\n"
+
+msgid "Comment fonctionne LightMeet ?"
+msgstr "¿Cómo funciona LightMeet?\n"
+
+msgid "Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le Web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs des services de rencontre et autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il suffit de vous inscrire ou de contacter directement le prestataire."
+msgstr "Lightmeet es un motor de búsqueda de sitios de citas y terapeutas. Buscamos en la web para encontrar los mejores sitios de citas, para que puedas comparar tarifas y otros criterios en un solo lugar. Una vez que encuentres tu sitio de citas o terapeuta, solo tienes que registrarte o contactar directamente al proveedor.\n"
+
+msgid "Peut-on rechercher aussi des thérapeutes sur LightMeet ?"
+msgstr "¿También podemos buscar terapeutas en LightMeet?\n"
+
+msgid "Pour trouver des sites de rencontres efficaces, c'est facile : chaque mois, plus de 3 millions de célibataires avisés viennent sur notre site pour trouver le site de rencontre plus efficace. Voici quelques conseils simples pour tirer le meilleur parti de votre recherche de site de rencontre."
+msgstr "Para encontrar sitios de citas efectivos, es fácil: cada mes, más de 3 millones de solteros expertos visitan nuestro sitio para encontrar el sitio de citas más efectivo. Aquí tienes algunos consejos simples para sacar el máximo provecho de tu búsqueda de sitio de citas.\n"
+
+msgid "Gagnez du temps et de l'argent"
+msgstr "Ahorra tiempo y dinero\n"
+
+msgid "Cherchez où vous le sentez "
+msgstr "Busca donde lo sientas\n"
+
+msgid "- Vous avez envie de découvrir une personnalité au delà de vos frontières ? Cherchez bientôt dans « le monde entier » pour trouver le site de rencontre le moins cher et envisager un futur en un lieu que vous aimez vraiment."
+msgstr "- ¿Te gustaría descubrir una personalidad más allá de tus fronteras? Busca pronto en 'todo el mundo' para encontrar el sitio de citas más barato y planear un futuro en un lugar que realmente te guste.\n"
+
+msgid "Misez sur la gratuité"
+msgstr "Apuesta por la gratuidad\n"
+
+msgid "- Sélectionné par Lightmeet, nos partenaires proposent parfois des fonctionnalités entièrement gratuites. En un clic, vous les identifiez. Vous vous donnez une chance d'enfin vivre la plus belle histoire de votre vie."
+msgstr "- Seleccionado por Lightmeet, nuestros socios a veces ofrecen funciones completamente gratuitas. Con un solo clic, los identificas. Te das una oportunidad de vivir la historia de amor más hermosa de tu vida.\n"
+
+msgid "Que se passe-t-il une fois que je me suis inscrit ?"
+msgstr "¿Qué pasa una vez que me he registrado?\n"
+
+msgid "Votre e-mail de confirmation d'inscription et toutes les autres informations dont vous aurez besoin proviendront du site de rencontre sur lequel vous êtes inscrits. Si vous avez des questions concernant le suivi de votre inscription, ou si vous souhaitez modifier ou annuler votre inscription, adressez-vous directement à eux."
+msgstr "El correo electrónico de confirmación de tu inscripción y toda la información que necesites provendrá del sitio de citas en el que te hayas registrado. Si tienes preguntas sobre tu inscripción o deseas modificarla o cancelarla, contacta directamente con ellos.\n"
+
+msgid "Dans quel pays puis-je actuellement trouver un site de rencontre ?"
+msgstr "¿En qué países puedo encontrar actualmente un sitio de citas?\n"
+
+msgid "Actuellement, la France est le premier pays où vous trouverez des site de rencontres sérieux."
+msgstr "Actualmente, Francia es el primer país donde encontrarás sitios de citas serios.\n"
+
+msgid "Puis je m'inscrire sur un site web émettant moins de CO2 ?"
+msgstr "¿Puedo registrarme en un sitio web que emita menos CO2?\n"
+
+msgid "En cours de développement. Depuis que nous avons commencé à afficher le critère d'émission de CO2 des sites web (lorsque cette information est disponible), nous avons noté un net intérêt de la communauté soutenant avec passion le travail de nos développeurs."
+msgstr "En desarrollo. Desde que comenzamos a mostrar el criterio de emisión de CO2 de los sitios web (cuando esta información está disponible), hemos notado un gran interés de la comunidad, que apoya con pasión el trabajo de nuestros desarrolladores.\n"

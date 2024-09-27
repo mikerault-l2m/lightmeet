@@ -26,7 +26,8 @@ class BlogPostCreate(CreateView):
     # Adding verbose_name for translatable field labels
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['label_suffix'] = _('')  # Add this if you have labels with suffix
+        # kwargs['label_suffix'] = _('') # cause problem -> traduction d'une chaine vide, remplacer par '' (pareil pour la ligne 40)
+        kwargs['label_suffix'] = ''
         return kwargs
 
 class BlogPostUpdate(UpdateView):
@@ -37,7 +38,8 @@ class BlogPostUpdate(UpdateView):
     # Adding verbose_name for translatable field labels
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['label_suffix'] = _('')  # Add this if you have labels with suffix
+        # kwargs['label_suffix'] = _('')  # Add this if you have labels with suffix --->>>>>> cause problem --> traduction d'une chaine vide, remplacer par '' (pareil pour la ligne 29)
+        kwargs['label_suffix'] = ''
         return kwargs
 
 class BlogPostDelete(DeleteView):

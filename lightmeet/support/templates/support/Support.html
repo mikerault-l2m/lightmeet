@@ -1,31 +1,51 @@
 {% extends 'support/base_Support.html' %}
 {% load static %}
-{% block css %}
+<head>
+    <title>Contactez notre équipe de support - Lightmeet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez notre équipe de support pour toute question ou préoccupation. Remplissez le formulaire ci-dessous et nous vous répondrons rapidement.">
+    <meta name="keywords" content="contact, support, formulaire de contact, aide, questions fréquentes, Lightmeet">
+    <meta name="author" content="Votre Nom ou Votre Entreprise">
+    <link rel="canonical" href="https://www.votresite.com/contact">
 
+    {% load static %}
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+    <link rel="stylesheet" href="{% static 'support/css/contact.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block section %}
+    <section class="ContainerSupport">
+        <h1 class="Title">Contactez notre équipe de support</h1>
+        <h2 class="subTitle">Utilisez le formulaire ci-dessous pour nous envoyer un message</h2>
 
-<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
-{{ block.super }}
-<link rel="stylesheet" href="{% static 'support/css/contact.css' %}">
-{% endblock %}
-{% block section %}
-<section class="ContainerSupport">
-    <h1 class="Title">Contactez-nous par e-mail</h1>
-    <h2 class="subTitle">Utilisez le formulaire ci-dessous</h2>
-    <form class="form" method="POST">
-        {% csrf_token %}
+        <p style="text-align: justify;">Si vous avez des questions ou des préoccupations, n'hésitez pas à nous contacter. Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
 
-            <div class="Apellation" >
+        <form class="form" method="POST" aria-labelledby="contact-form">
+            {% csrf_token %}
+
+            <div class="Apellation">
+                <label for="id_sender_email">Votre e-mail :</label>
                 {{ form.sender_email }}
             </div>
+
             <div class="Apellation2">
+                <label for="id_subject">Sujet :</label>
                 {{ form.subject }}
-            </div><a href="/lightmeet/support/static/contact.css"></a>
+            </div>
 
             <div class="Apellation3">
+                <label for="id_message">Votre message :</label>
                 {{ form.message }}
             </div>
 
-        <a href ="{% url 'Home' %}"><input class="SendMessage" type="submit" value="Envoyer"></a>
-    </form>
-</section>
-{% endblock %}
+            <input class="SendMessage" type="submit" value="Envoyer" aria-label="Envoyer le message">
+        </form>
+
+        <p style="text-align: justify;">Nous nous engageons à vous répondre rapidement. Consultez notre <a href="{% url 'Home' %}">FAQ</a> pour des réponses immédiates à vos questions courantes.</p>
+    </section>
+    {% endblock %}
+</body>
+</html>

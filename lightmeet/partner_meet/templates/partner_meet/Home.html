@@ -8,46 +8,66 @@
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
 
+
 {% block section %}
 
-{% load i18n %}
+<!--<form action="{% url 'set_language' %}" method="post">-->
+<!--    {% csrf_token %}-->
+<!--    <input name="next" type="hidden" value="{{ request.path }}">-->
+<!--    <select name="language">-->
+<!--        {% get_current_language as LANGUAGE_CODE %}-->
+<!--        {% get_available_languages as LANGUAGES %}-->
+<!--        {% for lang in LANGUAGES %}-->
+<!--            <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>-->
+<!--                {{ lang.1 }}-->
+<!--            </option>-->
+<!--        {% endfor %}-->
+<!--    </select>-->
+<!--    <button type="submit">{% trans "Changer de langue" %}</button>-->
+<!--</form>-->
+
+
 <h1 class="Title">{% trans 'Éclairez vos rencontres' %}</h1>
-<h2 class="SubTitle">Trouvez le site de rencontres qui vous correspond.</h2>
+<h2 class="SubTitle">{% trans 'Trouvez le site de rencontres qui vous correspond.' %}</h2>
 
 <a href="{% url 'recherche_home' %}">
-    <button class="call-to-action call-to-action-comparer">Comparer</button>
+    <button class="call-to-action call-to-action-comparer">{% trans 'Comparer' %}</button>
 </a>
 
 {% if not form.consentement %}
 <div class="call-to-action-containerCookies">
     <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
 
-    <div class="BlockCookies">
-        <h2 class="TitleCookies">Votre vie privée nous tient à cœur</h2>
+     <div class="BlockCookies">
+        <h2 class="TitleCookies">{% trans 'Votre vie privée nous tient à cœur' %}</h2>
         <p class="TextCk">
+            {% blocktrans %}
             Pour personnaliser votre expérience, nous collectons des informations sur la façon dont vous utilisez
             LightMeet, ce qui inclut les données personnelles telles que votre adresse IP. Ces informations sont
             utilisées pour améliorer votre expérience, stocker les informations contenues sur un appareil et y accéder,
             ainsi que pour la publicité personnalisée, les études sur
             l'audience et le développement des services. Pour en savoir plus, consultez notre Politique en matière de
-            cookies. <br /><br />
+            cookies.
+            {% endblocktrans %}
+            <br /><br />
+            {% blocktrans %}
             LightMeet et ses 100 partenaires peuvent se baser sur l'intérêt légitime à certaines fins, plutôt que sur le
             consentement. Cliquez sur « Préférences en matière de cookies » pour avoir plus d'informations à ce sujet et
             savoir comment vous y opposer, ou sélectionnez « Valider les cookies » afin d'autoriser tous les cookies.
+            {% endblocktrans %}
         </p>
     </div>
 
     <div class="containerButton">
         <form method="post" action="{% url 'consentement_visiteur' %}">
             {% csrf_token %}
-            <button class="cookiesBtn" type="submit">Valider les cookies</button>
+            <button class="cookiesBtn" type="submit">{% trans 'Valider les cookies' %}</button>
         </form>
         <a href="{% url 'legal_PC' %}" class="cookie-preferences-link">
-            <button class="cookiesBtn btnCookieWhite">Paramètres des cookies</button>
+            <button class="cookiesBtn btnCookieWhite">{% trans 'Paramètres des cookies' %}</button>
         </a>
         <p class="TextBtnCookie">
-            Gérez vos préférences ou retirez votre consentement à tout moment sur la page Paramètres de confidentialité,
-            dont le lien se situe en pied de page.
+            {% trans 'Gérez vos préférences ou retirez votre consentement à tout moment sur la page Paramètres de confidentialité, dont le lien se situe en pied de page.' %}
         </p>
     </div>
 </div>
@@ -68,8 +88,8 @@
                 </defs>
             </svg>
         </div>
-        <h3>Comparaison rapide et gratuite</h3>
-        <p class="InfoBox">des sites de rencontres</p>
+        <h3>{% trans 'Comparaison rapide et gratuite' %}</h3>
+        <p class="InfoBox">{% trans 'des sites de rencontres' %}</p>
     </div>
     <div class="box">
         <div class="iconBox">
@@ -85,8 +105,8 @@
                 </defs>
             </svg>
         </div>
-        <h3>Gain de temps précieux</h3>
-        <p class="InfoBox">en comparant en 1 clic </p>
+        <h3>{% trans 'Gain de temps précieux' %}</h3>
+        <p class="InfoBox">{% trans 'en comparant en 1 clic' %}</p>
     </div>
     <div class="box">
         <div class="iconBox">
@@ -102,37 +122,39 @@
                 </defs>
             </svg>
         </div>
-        <h3>+ 100 sites de rencontres</h3>
-        <p class="InfoBox">séléctionnés avec soin</p>
+        <h3>{% trans '+ 100 sites de rencontres' %}</h3>
+        <p class="InfoBox">{% trans 'sélectionnés avec soin' %}</p>
     </div>
 </div>
 <div class="containerListing">
-    <h2 class="titleList">Le comparateur qui répond à vos besoins réels pour trouver
-        <br />l’application qui <strong>VOUS</strong> correspond
+    <h2 class="titleList">
+        {% blocktrans %}
+        Le comparateur qui répond à vos besoins réels pour trouver
+        l’application qui <strong>VOUS</strong> correspond
+        {% endblocktrans %}
     </h2>
     <ul class="listComparateur">
-        <li>Trouvez l'application de rencontres qui correspond à vos besoins réels.</li>
-        <li>Gagnez du temps et de l’argent en comparant facilement en 1 clic.</li>
-        <li>Découvrez l’ensemble des sites de rencontres du marché.</li>
-        <li>Comparez les différents abonnements proposés par les sites de rencontres.</li>
+        <li>{% trans "Trouvez l'application de rencontres qui correspond à vos besoins réels." %}</li>
+        <li>{% trans "Gagnez du temps et de l’argent en comparant facilement en 1 clic." %}</li>
+        <li>{% trans "Découvrez l’ensemble des sites de rencontres du marché." %}</li>
+        <li>{% trans "Comparez les différents abonnements proposés par les sites de rencontres." %}</li>
     </ul>
-    <button class="buttonInfoComparateur"> En voir plus </button>
+    <button class="buttonInfoComparateur">{% trans 'En voir plus' %}</button>
 </div>
+
 <div class="call-to-action-container">
-    <div class="callToActionTitle" >
-        <h1>Comparez le meilleur dans le </br>domaine de la rencontre</h1>
-        <p>Comparez des milliers d’applications de rencontres
-            <br /> et de thérapeutes de votre région
-        </p>
+    <div class="callToActionTitle">
+        <h1>{% trans 'Comparez le meilleur dans le domaine de la rencontre' %}</h1>
+        <p>{% trans 'Comparez des milliers d’applications de rencontres <br/> et de thérapeutes de votre région' %}</p>
     </div>
     <div class="callToActionSite">
-        <button class="callToAction call-to-acti on-comparer"
-            onclick="window.location.href=`{% url 'recherche_home' %}`">Sites de rencontres</button>
+        <button class="callToAction call-to-action-comparer"
+            onclick="window.location.href='{% url 'recherche_home' %}'">{% trans 'Sites de rencontres' %}</button>
         <button class="callToAction buttonWhite call-to-action-comparer"
-            onclick="window.location.href=`{% url 'recherche_therapeutes' %}`">Thérapeutes</button>
+            onclick="window.location.href='{% url 'recherche_therapeutes' %}'">{% trans 'Thérapeutes' %}</button>
     </div>
 </div>
-<h2 class="TitleImgSite">Derniers articles mis en ligne</h2>
+<h2 class="TitleImgSite">{% trans 'Derniers articles mis en ligne' %}</h2>
 <div class="boxesContainer">
     {% for post in posts|slice:":3" %}
     <div class="boxSite">
@@ -148,15 +170,14 @@
 </div>
 
 <div class="faq-container">
-    <h3 class="titleFaq">Trouver sa rencontre idéale avec Lightmeet</h3>
+    <h3 class="titleFaq">{% trans 'Trouver sa rencontre idéale avec Lightmeet' %}</h3>
     <div class="faq-item">
 
         <div class="part1FAQ">
             <div class="cardQuestion">
                 <div class="faq-question">
                     <div class="PosTxt">
-                        <h4 class="TitleQuestion"> Comment fonctionne LightMeet ?
-                        </h4>
+                        <h4 class="TitleQuestion">{% trans 'Comment fonctionne LightMeet ?' %}</h4>
                         <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.5 0.849173L9.5 9L18.5 0.849173" stroke="black" stroke-width="1.5" />
@@ -168,24 +189,13 @@
                 </div>
 
                 <div class="faq-answer">
-                    Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le
-                    Web
-                    pour
-                    trouver les
-                    meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs des services de rencontre
-                    et
-                    autres critères
-                    au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il
-                    suffit de
-                    vous inscrire
-                    ou de contacter directement le prestataire.
-
+                    {% trans "Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le Web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs des services de rencontre et autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il suffit de vous inscrire ou de contacter directement le prestataire." %}
                 </div>
             </div>
             <div class="cardQuestion">
                 <div class="faq-question">
                     <div class="PosTxt">
-                        <h4 class="TitleQuestion"> Comment trouver le site de rencontre le moins cher avec Lightmeet ?
+                        <h4 class="TitleQuestion">{% trans 'Peut-on rechercher aussi des thérapeutes sur LightMeet ?' %}</h4>
                         </h4>
                         <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -199,22 +209,29 @@
                 </div>
 
                 <div class="faq-answer">
+                    {% blocktrans %}
                     Pour trouver des sites de rencontres efficaces, c'est facile : chaque mois, plus de 3 millions de
                     célibataires avisés
                     viennent sur notre site pour trouver le site de rencontre plus efficace.
                     Voici quelques conseils simples pour tirer le meilleur parti de votre recherche de site de
                     rencontre.
+                    {% endblocktrans %}
                     <p>
-                        <em class="Bold"> Gagnez du temps et de l'argent </em>- Qu'il s'agisse du site web le plus rapide et élégant
+                        <em class="Bold"> {% trans "Gagnez du temps et de l'argent" %} </em>
+                        {% blocktrans %}
+                        - Qu'il s'agisse du site web le plus rapide et élégant
                         ou de la
                         plateforme la
                         plus
                         avantageuse, vous pouvez choisir votre site de rencontre en fonction des notes réelles des
                         célibataires.
+                        {% endblocktrans %}
                     </p>
 
                     <p>
-                        <em  class="Bold">Cherchez où vous le sentez </em> - Vous avez envie de découvrir une personnalité au delà de
+                        <em  class="Bold">{% trans 'Cherchez où vous le sentez ' %}</em>
+                        {% blocktrans %}
+                        - Vous avez envie de découvrir une personnalité au delà de
                         vos frontières
                         ?
                         Cherchez bientôt
@@ -223,10 +240,13 @@
                         lieu
                         que vous aimez
                         vraiment.
+                        {% endblocktrans %}
                     </p>
 
                     <p>
-                        <em  class="Bold"> Misez sur la gratuité</em> - Sélectionné par Lightmeet, nos partenaires proposent parfois
+                        <em  class="Bold"> {% trans 'Misez sur la gratuité' %}</em>
+                        {% blocktrans %}
+                        - Sélectionné par Lightmeet, nos partenaires proposent parfois
                         des
                         fonctionnalités
                         entièrement
@@ -235,9 +255,8 @@
                         histoire
                         de votre
                         vie.
-
+                        {% endblocktrans %}
                     </p>
-
                 </div>
 
             </div>
@@ -246,7 +265,7 @@
                 <div class="faq-question">
                     <div class="PosTxt">
                         <h4 class="TitleQuestion">
-                            Que se passe-t-il une fois que je me suis inscrit ?
+                            {% trans 'Que se passe-t-il une fois que je me suis inscrit ?' %}
                         </h4>
                         <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -259,11 +278,13 @@
                 </div>
 
                 <div class="faq-answer">
+                    {% blocktrans %}
                     Votre e-mail de confirmation d'inscription et toutes les autres informations dont vous aurez besoin
                     proviendront du site
                     de rencontre sur lequel vous êtes inscrits. Si vous avez des questions concernant le suivi de votre
                     inscription, ou si
                     vous souhaitez modifier ou annuler votre inscription, adressez-vous directement à eux.
+                    {% endblocktrans %}
                 </div>
             </div>
         </div>
@@ -273,13 +294,12 @@
                 <div class="faq-question">
                     <div class="PosTxt">
                         <h4 class="TitleQuestion">
-                            Peut-on rechercher aussi des thérapeutes sur LightMeet ?
+                            {% trans 'Peut-on rechercher aussi des thérapeutes sur LightMeet ?' %}
                         </h4>
                         <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.5 0.849173L9.5 9L18.5 0.849173" stroke="black" stroke-width="1.5" />
                             </svg>
-
                     </div>
 
                     </span>
@@ -287,11 +307,13 @@
                 </div>
 
                 <div class="faq-answer">
+                    {% blocktrans %}
                     Oui ! Vous pouvez utiliser la puissance de notre moteur de recherche de site de rencontre pour
                     trouver
                     ce
                     thérapeute qui
                     répond à vos besoins.
+                    {% endblocktrans %}
                 </div>
             </div>
 
@@ -299,7 +321,7 @@
                 <div class="faq-question">
                     <div class="PosTxt">
                         <h4 class="TitleQuestion">
-                            Dans quel pays puis-je actuellement trouver un site de rencontre ?
+                            {% trans 'Dans quel pays puis-je actuellement trouver un site de rencontre ?' %}
                         </h4>
                         <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -312,7 +334,7 @@
                 </div>
 
                 <div class="faq-answer">
-                    Actuellement, la France est le premier pays où vous trouverez des site de rencontres sérieux.
+                    {% trans 'Actuellement, la France est le premier pays où vous trouverez des site de rencontres sérieux.' %}
                 </div>
             </div>
 
@@ -320,7 +342,7 @@
                 <div class="faq-question">
                     <div class="PosTxt">
                         <h4 class="TitleQuestion">
-                            Puis je m'inscrire sur un site web émettant moins de CO2 ?
+                            {% trans "Puis je m'inscrire sur un site web émettant moins de CO2 ?" %}
                         </h4>
                         <span class="arrow"> <svg width="19" height="11" viewBox="0 0 19 11" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -332,6 +354,7 @@
                 </div>
 
                 <div class="faq-answer">
+                    {% blocktrans %}
                     En cours de développement.
 
                     Depuis que nous avons commencé à afficher le critère d'émission de CO2 des sites web (lorsque cette
@@ -339,6 +362,7 @@
                     disponible), nous avons noté un net intérêt de la communauté soutenant avec passion le travail de
                     nos
                     développeurs.
+                    {% endblocktrans %}
                 </div>
             </div>
 

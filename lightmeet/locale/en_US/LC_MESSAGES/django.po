@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-20 09:50+0000\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Éclairez vos rencontres\n"
+msgstr "Light up your meetings\n"
+
+msgid "Trouvez le site de rencontres qui vous correspond.\n"
+msgstr "Find the dating site that suits you.\n"
+
+msgid "Comparer\n"
+msgstr "Compare\n"
+
+msgid "Votre vie privée nous tient à cœur\n"
+msgstr "We care about your privacy\n"
+
+msgid "Valider les cookies\n"
+msgstr "Validate cookies\n"
+
+msgid "Paramètres des cookies\n"
+msgstr "Cookie settings\n"
+
+msgid "Gérez vos préférences ou retirez votre consentement à tout moment sur la page Paramètres de confidentialité, dont le lien se situe en pied de page.\n"
+msgstr "Manage your preferences or withdraw your consent at any time on the Privacy Settings page, the link of which is in the footer.\n"
+
+msgid "Comparaison rapide et gratuite\n"
+msgstr "Quick and free comparison\n"
+
+msgid "des sites de rencontres\n"
+msgstr "of dating sites\n"
+
+msgid "Gain de temps précieux\n"
+msgstr "Save valuable time\n"
+
+msgid "en comparant en 1 clic\n"
+msgstr "by comparing with one click\n"
+
+msgid "+ 100 sites de rencontres\n"
+msgstr "Over 100 dating sites\n"
+
+msgid "sélectionnés avec soin\n"
+msgstr "carefully selected\n"
+
+msgid "Trouvez l'application de rencontres qui correspond à vos besoins réels.\n"
+msgstr "Find the dating app that fits your real needs.\n"
+
+msgid "Gagnez du temps et de l’argent en comparant facilement en 1 clic.\n"
+msgstr "Save time and money by easily comparing with one click.\n"
+
+msgid "Découvrez l’ensemble des sites de rencontres du marché.\n"
+msgstr "Discover all the dating sites on the market.\n"
+
+msgid "Comparez les différents abonnements proposés par les sites de rencontres.\n"
+msgstr "Compare the different subscriptions offered by dating sites.\n"
+
+msgid "En voir plus\n"
+msgstr "See more\n"
+
+msgid "Comparez le meilleur dans le domaine de la rencontre\n"
+msgstr "Compare the best in the field of dating\n"
+
+msgid "Comparez des milliers d’applications de rencontres <br/> et de thérapeutes de votre région\n"
+msgstr "Compare thousands of dating apps <br/> and therapists in your area\n"
+
+msgid "Derniers articles mis en ligne\n"
+msgstr "Latest articles posted\n"
+
+msgid "Trouver sa rencontre idéale avec Lightmeet\n"
+msgstr "Find your ideal match with Lightmeet\n"
+
+msgid "Comment fonctionne LightMeet ?\n"
+msgstr "How does LightMeet work?\n"
+
+msgid "Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le Web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs des services de rencontre et autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il suffit de vous inscrire ou de contacter directement le prestataire.\n"
+msgstr "Lightmeet is a search engine for dating sites and therapists. We search the web to find the best dating sites, so you can compare service fees and other criteria in one place. Once you’ve found your dating site or therapist, you just need to sign up or contact the provider directly.\n"
+
+msgid "Peut-on rechercher aussi des thérapeutes sur LightMeet ?\n"
+msgstr "Can we also search for therapists on LightMeet?\n"
+
+msgid "Pour trouver des sites de rencontres efficaces, c'est facile : chaque mois, plus de 3 millions de célibataires avisés viennent sur notre site pour trouver le site de rencontre plus efficace. Voici quelques conseils simples pour tirer le meilleur parti de votre recherche de site de rencontre.\n"
+msgstr "Finding effective dating sites is easy: every month, more than 3 million savvy singles visit our site to find the most effective dating site. Here are a few simple tips to make the most of your dating site search.\n"
+
+msgid "Gagnez du temps et de l'argent\n"
+msgstr "Save time and money\n"
+
+msgid "Cherchez où vous le sentez \n"
+msgstr "Search wherever you feel like\n"
+
+msgid "- Vous avez envie de découvrir une personnalité au delà de vos frontières ? Cherchez bientôt dans « le monde entier » pour trouver le site de rencontre le moins cher et envisager un futur en un lieu que vous aimez vraiment.\n"
+msgstr "- Want to discover a personality beyond your borders? Soon, search 'around the world' to find the cheapest dating site and plan a future in a place you truly love.\n"
+
+msgid "Misez sur la gratuité\n"
+msgstr "Bet on free options\n"
+
+msgid "- Sélectionné par Lightmeet, nos partenaires proposent parfois des fonctionnalités entièrement gratuites. En un clic, vous les identifiez. Vous vous donnez une chance d'enfin vivre la plus belle histoire de votre vie.\n"
+msgstr "- Selected by Lightmeet, our partners sometimes offer completely free features. With one click, you can identify them and give yourself a chance to finally live the greatest love story of your life.\n"
+
+msgid "Que se passe-t-il une fois que je me suis inscrit ?\n"
+msgstr "What happens after I sign up?\n"
+
+msgid "Votre e-mail de confirmation d'inscription et toutes les autres informations dont vous aurez besoin proviendront du site de rencontre sur lequel vous êtes inscrits. Si vous avez des questions concernant le suivi de votre inscription, ou si vous souhaitez modifier ou annuler votre inscription, adressez-vous directement à eux.\n"
+msgstr "The confirmation email and all other information you’ll need will come from the dating site you signed up with. If you have any questions about your registration, or if you want to modify or cancel your registration, contact them directly.\n"
+
+msgid "Dans quel pays puis-je actuellement trouver un site de rencontre ?\n"
+msgstr "In which country can I currently find a dating site?\n"
+
+msgid "Actuellement, la France est le premier pays où vous trouverez des site de rencontres sérieux.\n"
+msgstr "Currently, France is the top country where you can find serious dating sites.\n"
+
+msgid "Puis je m'inscrire sur un site web émettant moins de CO2 ?\n"
+msgstr "Can I register on a website with lower CO2 emissions?\n"
+
+msgid "En cours de développement. Depuis que nous avons commencé à afficher le critère d'émission de CO2 des sites web (lorsque cette information est disponible), nous avons noté un net intérêt de la communauté soutenant avec passion le travail de nos développeurs.\n"
+msgstr "In development. Since we started displaying the CO2 emissions criteria of websites (when available), we've seen a keen interest from the community, passionately supporting the work of our developers.\n"

@@ -1,14 +1,23 @@
 {% extends 'partner_meet/base_Partner_meet.html' %}
 {% load static %}
 {% load i18n %}
+
+{% block head %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Comparez les sites de rencontres et de thérapie avec Lightmeet. Sélectionnez le meilleur service en fonction de vos besoins.">
+<meta name="keywords" content="rencontres, sites de rencontres, thérapies, comparateur, services en ligne">
+<meta name="robots" content="index, follow">
+<title>Lightmeet - Comparateur de Rencontres et Thérapies</title>
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+{{ block.super }}
+{% endblock %}
+
 {% block css %}
-
-
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/SearchPage.css' %}">
 {% endblock %}
-
 
 {% block section %}
 <div class="ButtonPos">
@@ -21,116 +30,74 @@
 </div>
 
 <div class="containerResultats">
-        <p class="Resultats" >La sélection Lightmeet</p>
-        {% for partner in partnermeet|dictsort:"ranking" %}
-            {% if partner.affiliation %}
-            <div class="cardApp VersionPC">
-                <div class="alignItems">
-                    <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo" loading="lazy">
+    <h2 class="Resultats">La sélection Lightmeet</h2>
+    {% for partner in partnermeet|dictsort:"ranking" %}
+        {% if partner.affiliation %}
+        <div class="cardApp VersionPC">
+            <div class="alignItems">
+                <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
 
-                    <div class="containerTitleCard">
-                        <div class="PosStar">
-                            <h3 class="TitleCard">{{ partner.nom }}</h3>
-                            <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
-                        </div>
-                        <p class="textCard">{{ partner.description }}</p>
-                        <div class="PosFlag">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 35 22">
-                                <rect width="11.6667" height="22" fill="#0055A4"/>
-                                <rect x="11.6667" width="10.6667" height="22" fill="#FFFFFF"/>
-                                <rect x="23.3333" width="10.6667" height="22" fill="#EF4135"/>
-                            </svg>
-                            <p class="pays">France</p>
-                        </div>
+                <div class="containerTitleCard">
+                    <div class="PosStar">
+                        <h3 class="TitleCard">{{ partner.nom }}</h3>
+                        <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
                     </div>
-                </div>
-                <div class="Line"></div>
-                <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
-                <div class="Line"></div>
-                <p class="descriptionCard bold">{{ partner.age }} ans</p>
-                <div class="Line"></div>
-                <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
-                <div class="Line"></div>
-                <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'">Visiter</button>
-            </div>
-
-            <div class="cardApp VersionMobile">
-                <div class="alignItems">
-                    <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="{{ partner.nom }} Logo" loading="lazy">
-                    <div class="containerTitleCard">
-                        <div class="PosStar">
-                            <h3 class="TitleCard">{{ partner.nom }}</h3>
-                            <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
-                        </div>
-                        <p class="textCard">{{ partner.description }}</p>
-                        <div class="PosFlag">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10">
-                                <rect width="4.6667" height="10" fill="#0055A4"/>
-                                <rect x="4.6667" width="4.6667" height="10" fill="#FFFFFF"/>
-                                <rect x="9.3334" width="4.6667" height="10" fill="#EF4135"/>
-                            </svg>
-                            <p class="pays">France</p>
-                        </div>
+                    <p class="textCard">{{ partner.description }}</p>
+                    <div class="PosFlag">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 35 22">
+                            <rect width="11.6667" height="22" fill="#0055A4"/>
+                            <rect x="11.6667" width="10.6667" height="22" fill="#FFFFFF"/>
+                            <rect x="23.3333" width="10.6667" height="22" fill="#EF4135"/>
+                        </svg>
+                        <p class="pays">France</p>
                     </div>
-                </div>
-                <div class="alignItemsButton">
-                    <div class="containerDescription">
-                        <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
-                        <p class="descriptionCard bold">{{ partner.age }} ans</p>
-                        <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
-                    </div>
-                   <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'">></button>
                 </div>
             </div>
-            {% endif %}
-        {% empty %}
-        <div class="empty-message" id="resultats">
-            <p>Ces sites de rencontres sont actuellement étudiés par <i>Lightmeet</i></p>
-            <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
+            <div class="Line"></div>
+            <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
+            <div class="Line"></div>
+            <p class="descriptionCard bold">{{ partner.age }} ans</p>
+            <div class="Line"></div>
+            <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
+            <div class="Line"></div>
+            <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">Visiter</button>
         </div>
-        {% endfor %}
-    </div>
-<!--<div class="sites-de-rencontres">
-    <div class="containerBackground">
-        <form method="get" action="{% url 'recherche_meilleur_site' %}#resultats">
-            {% csrf_token %}
-            <div class="containerCardSelector">
-                <div class="CardSelector">
-                    <h2>Catégorie</h2>
-                    <select class="selector" name="categorie">
-                        {% for categorie_key, categorie_label in CATEGORIE_CHOICES %}
-                        <option value="{{ categorie_key }}">{{ categorie_label }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="CardSelector">
-                    <h2>Relation</h2>
-                    <select class="selector" name="relation">
-                        {% for relation_key, relation_label in RELATION_CHOICES %}
-                        <option value="{{ relation_key }}">{{ relation_label }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="CardSelector">
-                    <h2>Tranche d'âge</h2>
-                    <select class="selector" name="age">
-                        {% for age_key, age_label in AGE_CHOICES %}
-                        <option class="optiontest" value="{{ age_key }}">{{ age_label }} ans</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-            <div class="PosSearch">
-                <div class="PosFilter">
-                    <p>Filtre populaire : </p>
-                    <div>
-                        <input type="checkbox" name="checkbox" id="partner" />
-                        <label for="partner">Partenaires affiliés</label>
+
+        <div class="cardApp VersionMobile">
+            <div class="alignItems">
+                <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
+                <div class="containerTitleCard">
+                    <div class="PosStar">
+                        <h3 class="TitleCard">{{ partner.nom }}</h3>
+                        <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
+                    </div>
+                    <p class="textCard">{{ partner.description }}</p>
+                    <div class="PosFlag">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10">
+                            <rect width="4.6667" height="10" fill="#0055A4"/>
+                            <rect x="4.6667" width="4.6667" height="10" fill="#FFFFFF"/>
+                            <rect x="9.3334" width="4.6667" height="10" fill="#EF4135"/>
+                        </svg>
+                        <p class="pays">France</p>
                     </div>
                 </div>
-                <button class="ButtonSearch" type="submit">Rechercher</button>
             </div>
-        </form>
+            <div class="alignItemsButton">
+                <div class="containerDescription">
+                    <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
+                    <p class="descriptionCard bold">{{ partner.age }} ans</p>
+                    <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
+                </div>
+                <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">></button>
+            </div>
+        </div>
+        {% endif %}
+    {% empty %}
+    <div class="empty-message" id="resultats">
+        <p>Ces sites de rencontres sont actuellement étudiés par <i>Lightmeet</i></p>
+        <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
     </div>
-</div>-->
+    {% endfor %}
+</div>
+
 {% endblock %}

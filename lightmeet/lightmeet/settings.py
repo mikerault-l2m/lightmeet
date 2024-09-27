@@ -1,7 +1,8 @@
 import os
 import environ
 from pathlib import Path
-from django.utils.translation import gettext_lazy, gettext as _  # Utilisez gettext_lazy au lieu de gettext
+# from django.utils.translation import gettext_lazy, gettext as _  # Utilisez gettext_lazy au lieu de gettext
+from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,7 +32,6 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # AJOUT POUR PACKAGE ALLAUTH
     'django.contrib.sites',
 ]
 THIRD_PARTY_APPS = [
@@ -118,12 +118,19 @@ DATABASES = {
      }
  }
 
-from django.utils.translation import gettext_lazy as _
+LANGUAGE_CODE = 'en-us'
+
+
+TIME_ZONE = 'UTC'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = True
 
 LANGUAGES = [
-    ('en', _('English')),
-    ('fr', _('French')),
-    ('es', _('Spanish')),
+    ('en-us', 'English'),
+    # ('fr', 'French'),
+    #('de', 'Deutsch'),
+    #('es','Spanish'),
 ]
 
 
@@ -152,14 +159,6 @@ AUTHENTICATION_BACKENDS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'fr-fr'
-
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_TZ = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

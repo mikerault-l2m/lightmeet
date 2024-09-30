@@ -1,0 +1,184 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: it\n"
+
+msgid "Éclairez vos rencontres"
+msgstr "Illumina i tuoi incontri\n"
+
+msgid "Trouvez le site de rencontres qui vous correspond."
+msgstr "Trova il sito di incontri che fa per te\n"
+
+msgid "Comparer"
+msgstr "Confrontare\n"
+
+msgid "Votre vie privée nous tient à cœur"
+msgstr "La tua privacy è importante per noi\n"
+
+msgid "Valider les cookies"
+msgstr "Conferma i cookie\n"
+
+msgid "Paramètres des cookies"
+msgstr "Impostazioni dei cookie\n"
+
+msgid "Gérez vos préférences ou retirez votre consentement à tout moment sur la page Paramètres de confidentialité, dont le lien se situe en pied de page."
+msgstr "Gestisci le tue preferenze o ritira il tuo consenso in qualsiasi momento nella pagina Impostazioni della privacy, il cui link si trova a piè di pagina.\n"
+
+msgid "Comparaison rapide et gratuite"
+msgstr "Confronto rapido e gratuito\n"
+
+msgid "des sites de rencontres"
+msgstr "dei siti di incontri\n"
+
+msgid "Gain de temps précieux"
+msgstr "Risparmia tempo prezioso\n"
+
+msgid "en comparant en 1 clic"
+msgstr "confrontando con un solo clic\n"
+
+msgid "+ 100 sites de rencontres"
+msgstr "Oltre 100 siti di incontri\n"
+
+msgid "sélectionnés avec soin"
+msgstr "selezionati con cura\n"
+
+msgid "Trouvez l'application de rencontres qui correspond à vos besoins réels."
+msgstr "Trova l'app di incontri che soddisfa le tue reali esigenze.\n"
+
+msgid "Gagnez du temps et de l’argent en comparant facilement en 1 clic."
+msgstr "Risparmia tempo e denaro confrontando facilmente con un clic.\n"
+
+msgid "Découvrez l’ensemble des sites de rencontres du marché."
+msgstr "Scopri tutti i siti di incontri sul mercato.\n"
+
+msgid "Comparez les différents abonnements proposés par les sites de rencontres."
+msgstr "Confronta i diversi abbonamenti offerti dai siti di incontri.\n"
+
+msgid "En voir plus"
+msgstr "Vedi di più\n"
+
+msgid "Comparez le meilleur dans le domaine de la rencontre"
+msgstr "Confronta il meglio nel campo degli incontri\n"
+
+msgid "Comparez des milliers d’applications de rencontres <br/> et de thérapeutes de votre région"
+msgstr "Confronta migliaia di app di incontri <br/> e terapisti nella tua zona\n"
+
+msgid "Derniers articles mis en ligne"
+msgstr "Ultimi articoli pubblicati\n"
+
+msgid "Trouver sa rencontre idéale avec Lightmeet"
+msgstr "Trova il tuo incontro ideale con Lightmeet\n"
+
+msgid "Pour personnaliser votre expérience, nous collectons des informations sur la façon dont vous utilisez LightMeet, ce qui inclut les données personnelles telles que votre adresse IP. Ces informations sont utilisées pour améliorer votre expérience, stocker les informations contenues sur un appareil et y accéder, ainsi que pour la publicité personnalisée, les études sur l'audience et le développement des services. Pour en savoir plus, consultez notre Politique en matière de cookies."
+msgstr "Per personalizzare la tua esperienza, raccogliamo informazioni su come utilizzi LightMeet, inclusi i dati personali come il tuo indirizzo IP. Queste informazioni vengono utilizzate per migliorare la tua esperienza, memorizzare e accedere alle informazioni contenute su un dispositivo, oltre che per la pubblicità personalizzata, studi sull'audience e lo sviluppo dei servizi. Per maggiori informazioni, consulta la nostra Politica sui cookie.\n"
+
+msgid "LightMeet et ses 100 partenaires peuvent se baser sur l'intérêt légitime à certaines fins, plutôt que sur le consentement. Cliquez sur « Préférences en matière de cookies » pour avoir plus d'informations à ce sujet et savoir comment vous y opposer, ou sélectionnez « Valider les cookies » afin d'autoriser tous les cookies."
+msgstr "LightMeet e i suoi 100 partner possono basarsi su un interesse legittimo per determinati scopi, anziché sul consenso. Clicca su « Preferenze sui cookie » per ulteriori informazioni su questo argomento e su come opporti, o seleziona « Conferma i cookie » per autorizzare tutti i cookie.\n"
+
+msgid "Comment fonctionne LightMeet ?"
+msgstr "Come funziona LightMeet?\n"
+
+msgid "Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le Web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs des services de rencontre et autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il suffit de vous inscrire ou de contacter directement le prestataire."
+msgstr "Lightmeet è un motore di ricerca per siti di incontri e terapisti. Cerchiamo sul web i migliori siti di incontri, così puoi confrontare tariffe e altri criteri in un unico posto. Una volta trovato il tuo sito di incontri o terapista, devi solo registrarti o contattare direttamente il fornitore.\n"
+
+msgid "Peut-on rechercher aussi des thérapeutes sur LightMeet ?"
+msgstr "Possiamo cercare anche terapisti su LightMeet?\n"
+
+msgid "Pour trouver des sites de rencontres efficaces, c'est facile : chaque mois, plus de 3 millions de célibataires avisés viennent sur notre site pour trouver le site de rencontre plus efficace. Voici quelques conseils simples pour tirer le meilleur parti de votre recherche de site de rencontre."
+msgstr "Trovare siti di incontri efficaci è facile: ogni mese più di 3 milioni di single intelligenti visitano il nostro sito per trovare il sito di incontri più efficace. Ecco alcuni semplici consigli per ottenere il massimo dalla tua ricerca di un sito di incontri.\n"
+
+msgid "Gagnez du temps et de l'argent"
+msgstr "Risparmia tempo e denaro\n"
+
+msgid "Concurrence et innovation"
+msgstr "Concorrenza e innovazione\n"
+
+msgid "Sites de rencontres"
+msgstr "Siti di incontri\n"
+
+msgid "Thérapeutes"
+msgstr "Terapisti\n"
+
+msgid "Devenir une marque reconnue"
+msgstr "Diventare un marchio riconosciuto\n"
+
+msgid "Marques & Réseaux sociaux"
+msgstr "Marchi & Social network\n"
+
+msgid "Cherchez où vous le sentez "
+msgstr "Cerca dove ti senti a tuo agio\n"
+
+msgid "- Vous avez envie de découvrir une personnalité au delà de vos frontières ? Cherchez bientôt dans « le monde entier » pour trouver le site de rencontre le moins cher et envisager un futur en un lieu que vous aimez vraiment."
+msgstr "- Vuoi scoprire una personalità oltre i tuoi confini? Presto cerca in « tutto il mondo » per trovare il sito di incontri più economico e pianificare un futuro in un luogo che ami davvero.\n"
+
+msgid "Misez sur la gratuité"
+msgstr "Punta sulla gratuità\n"
+
+msgid "- Sélectionné par Lightmeet, nos partenaires proposent parfois des fonctionnalités entièrement gratuites. En un clic, vous les identifiez. Vous vous donnez une chance d'enfin vivre la plus belle histoire de votre vie."
+msgstr "- Selezionato da Lightmeet, i nostri partner offrono a volte funzionalità completamente gratuite. Con un solo clic, li identifichi e ti dai la possibilità di vivere finalmente la storia d'amore più bella della tua vita.\n"
+
+msgid "Que se passe-t-il une fois que je me suis inscrit ?"
+msgstr "Cosa succede dopo che mi sono iscritto?\n"
+
+msgid "Votre e-mail de confirmation d'inscription et toutes les autres informations dont vous aurez besoin proviendront du site de rencontre sur lequel vous êtes inscrits. Si vous avez des questions concernant le suivi de votre inscription, ou si vous souhaitez modifier ou annuler votre inscription, adressez-vous directement à eux."
+msgstr "L'e-mail di conferma dell'iscrizione e tutte le altre informazioni di cui avrai bisogno ti saranno inviate dal sito di incontri al quale ti sei iscritto. Se hai domande riguardo la tua iscrizione o desideri modificarla o annullarla, contatta direttamente loro.\n"
+
+msgid "Dans quel pays puis-je actuellement trouver un site de rencontre ?"
+msgstr "In quale paese posso attualmente trovare un sito di incontri?\n"
+
+msgid "Actuellement, la France est le premier pays où vous trouverez des site de rencontres sérieux."
+msgstr "Attualmente, la Francia è il primo paese dove puoi trovare siti di incontri seri.\n"
+
+msgid "Puis je m'inscrire sur un site web émettant moins de CO2 ?"
+msgstr "Posso registrarmi su un sito web che emette meno CO2?\n"
+
+msgid "En cours de développement. Depuis que nous avons commencé à afficher le critère d'émission de CO2 des sites web (lorsque cette information est disponible), nous avons noté un net intérêt de la communauté soutenant avec passion le travail de nos développeurs."
+msgstr "In sviluppo. Da quando abbiamo iniziato a visualizzare il criterio di emissione di CO2 dei siti web (quando queste informazioni sono disponibili), abbiamo notato un notevole interesse della comunità, che supporta con passione il lavoro dei nostri sviluppatori.\n"
+
+msgid "Le comparateur qui répond à vos besoins réels pour trouver l’application qui vous correspond"
+msgstr "Il comparatore che risponde alle tue reali esigenze per trovare l'app che fa per TE\n"
+
+msgid "- Qu'il s'agisse du site web le plus rapide et élégant ou de la plateforme la plus avantageuse, vous pouvez choisir votre site de rencontre en fonction des notes réelles des célibataires."
+msgstr "- Che si tratti del sito web più veloce ed elegante o della piattaforma più vantaggiosa, puoi scegliere il tuo sito di incontri in base alle recensioni reali dei single.\n"
+
+msgid "Oui ! Vous pouvez utiliser la puissance de notre moteur de recherche de site de rencontre pour trouver ce thérapeute qui répond à vos besoins."
+msgstr "Sì! Puoi utilizzare la potenza del nostro motore di ricerca di siti di incontri per trovare quel terapista che soddisfi le tue esigenze.\n"
+
+msgid "La sélection Lightmeet"
+msgstr "La selezione di Lightmeet\n"
+
+msgid "France"
+msgstr "Francia\n"
+
+msgid "Ces sites de rencontres sont actuellement étudiés par"
+msgstr "Questi siti di incontri sono attualmente studiati da\n"
+
+msgid "BIENTÔT disponible"
+msgstr "PRESTO disponibile\n"
+
+msgid "Rencontrez des célibataires qui partagent vos valeurs et vos aspirations."
+msgstr "Incontra single che condividono i tuoi valori e le tue aspirazioni.\n"
+
+msgid "Trouvez votre partenaire idéal parmi les célibataires exigeants et cultivés."
+msgstr "Trova il tuo partner ideale tra single esigenti e colti.\n"
+
+msgid "Retrouvez l'amour à tout âge avec une plateforme dédiée aux seniors actifs."
+msgstr "Trova l'amore a qualsiasi età con una piattaforma dedicata ai senior attivi.\n"
+
+msgid "Trouvez des relations seniors de qualité"
+msgstr "Trova relazioni senior di qualità\n"
+
+msgid "Rencontrez des célibataires de plus de 50 ans prêts à vivre de nouvelles aventures."
+msgstr "Incontra single over 50 pronti a vivere nuove avventure.\n"
+
+msgid "Match, le site de rencontres en ligne numéro un mondial."
+msgstr "Match, il sito di incontri online numero uno al mondo.\n"
+
+msgid "ans"
+msgstr "anni\n"
+
+msgid "Visites / mois"
+msgstr "Visite / mese\n"
+
+msgid "Visiter"
+msgstr "Visitare\n"

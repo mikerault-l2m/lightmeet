@@ -1,152 +1,167 @@
 {% extends 'partner_meet/base_Partner_meet.html' %}
 {% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
 {% block css %}
 <link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
-<style>
-    /* Appliquer une police plus épaisse à tous les titres */
-    h1, h2, h3 {
-        font-family: 'Roboto';
-        font-weight: 800; /* Rendre la police plus épaisse */
-    }
-
-    /* Ajouter un cadre autour du premier titre H1 et centrer */
-    .BLogTitlePos {
-        border: 2px solid black;
-        padding: 20px;
-        text-align: center;
-        width: fit-content;
-        margin: 0 auto; /* Centrer l'élément */
-    }
-
-    /* Supprimer le soulignement et changer la couleur par défaut des liens */
-    a {
-        text-decoration: none;
-        color: inherit;
-        font-weight: bold;
-    }
-</style>
 {% endblock %}
 <body>
 
 {% block section %}
 
-    <!-- Titre H1 avec cadre, texte en gras et centré -->
+<div style="padding: 20px;">
+    <form id="language-form" style="display: flex; justify-content: center; align-items: center; text-align: center; background: #FBF1D6; border-radius: 20px; padding: 10px; border: 1px solid grey;">
+        <img style="width: 30px; height: 30px; padding-right: 20px; vertical-align: middle;" src="{% static 'partner_meet/Logos/earth.png' %}" alt="Earth Icon">
+        <input name="next" type="hidden" value="{{ request.path }}">
+        {% csrf_token %}
+        <div id="language-selector" style="border: none; border-radius: 20px; padding: 5px; display: inline-block;">
+            <select name="language" onchange="submitLanguageForm();" style="border: none; outline: none; background: transparent; appearance: none; padding: 10px; text-align: center;">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% for lang in LANGUAGES %}
+                    <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ lang.1 }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div id="language-button" style="display: none;">
+            <button type="button" onclick="alert('Langue changée !');" style="border: 2px solid grey; border-radius: 25px; padding: 10px; background: lightgrey; cursor: pointer; text-align: center;">
+                Langue changée
+            </button>
+        </div>
+    </form>
+
+    <script>
+        function submitLanguageForm() {
+            // Soumet le formulaire
+            document.getElementById('language-form').submit();
+        }
+
+        // Écoute les changements de langue
+        document.getElementById('language-form').onsubmit = function() {
+            // Cache le sélecteur et montre le bouton
+            document.getElementById('language-selector').style.display = 'none';
+            document.getElementById('language-button').style.display = 'block';
+        };
+    </script>
+</script>
+    <!-- H1 Title with border, bold text, and centered -->
     <h1 class="BLogTitlePos">
-        Trouver l'amour grâce à un comparateur de sites de rencontres
+        {% trans "Trouver l'amour grâce à un comparateur de sites de rencontres" %}
     </h1>
 
-    <!-- Paragraphe avec marges de 10% et interligne 2 -->
+    <!-- Paragraph with margins and line height -->
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Trouver l'amour grâce à un comparateur de sites de rencontres. Lorsque l’on se lance dans la recherche de l’amour en ligne, la multitude de sites de rencontre disponibles peut rapidement devenir déroutante.
-        </br> <strong> Face à cette offre abondante, l'utilisation d'un comparateur de sites de rencontres sérieux devient un véritable atout pour faire des rencontres adaptées à ses attentes.</strong>
+        {% trans "Trouver l'amour grâce à un comparateur de sites de rencontres. Lorsque l’on se lance dans la recherche de l’amour en ligne, la multitude de sites de rencontre disponibles peut rapidement devenir déroutante." %}
+        <br> <strong>{% trans "Face à cette offre abondante, l'utilisation d'un comparateur de sites de rencontres sérieux devient un véritable atout pour faire des rencontres adaptées à ses attentes." %}</strong>
     </p>
 
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        En quelques clics, un comparateur vous fait gagner un temps précieux en vous proposant une vue d'ensemble des meilleurs sites de rencontres tels que
+        {% trans "En quelques clics, un comparateur vous fait gagner un temps précieux en vous proposant une vue d'ensemble des meilleurs sites de rencontres tels que" %}
         <a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=2167&promoid=193178"><strong>Meetic</strong></a>,
         <a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=5383&promoid=257685"><strong>Disons Demain</strong></a>,
         <a href="https://urlr.me/5qpsC"><strong>Elite Rencontre</strong></a>,
         <a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=6006&promoid=178757"><strong>Nos Belles Années</strong></a>,
         <a href="https://urlr.me/GkHDj"><strong>eDarling</strong></a>,
         <strong>Attractive World</strong> et
-        <a href="https://action.metaffiliation.com/trk.php?mclic=P510E17583609113"><strong>NousLib</strong></a>. Plus besoin de naviguer des heures pour faire une rencontre. Vous pouvez ainsi faire un choix éclairé, en vous concentrant sur les plateformes qui correspondent vraiment à vos besoins, que ce soit pour des rencontres sérieuses, amoureuses, seniors, ou même pour rencontrer des célibataires à la recherche du grand amour.
+        <a href="https://action.metaffiliation.com/trk.php?mclic=P510E17583609113"><strong>NousLib</strong></a>.
+        {% trans "Plus besoin de naviguer des heures pour faire une rencontre. Vous pouvez ainsi faire un choix éclairé, en vous concentrant sur les plateformes qui correspondent vraiment à vos besoins, que ce soit pour des rencontres sérieuses, amoureuses, seniors, ou même pour rencontrer des célibataires à la recherche du grand amour." %}
     </p>
 
-    <!-- Titre H2 -->
+    <!-- H2 Title -->
     <h2>
-        1 - Garder l'esprit ouvert face aux différentes plateformes de rencontre
+        {% trans "1 - Garder l'esprit ouvert face aux différentes plateformes de rencontre" %}
     </h2>
 
-    <!-- Titre H3 -->
+    <!-- H3 Titles -->
     <h3>
-        A - S'inscrire sur plusieurs plateformes
+        {% trans "A - S'inscrire sur plusieurs plateformes" %}
     </h3>
 
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Ne limitez pas vos options. Multipliez vos inscriptions pour explorer divers environnements, notamment sur des sites de rencontre comme
+        {% trans "Ne limitez pas vos options. Multipliez vos inscriptions pour explorer divers environnements, notamment sur des sites de rencontre comme" %}
         <a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=2167&promoid=193178"><strong>Meetic</strong></a>,
-        <a href="https://urlr.me/5qpsC"><strong>Elite Rencontre</strong></a>, ou même <strong>Adopte un Mec</strong>, afin de maximiser vos chances de faire des rencontres sérieuses.
+        <a href="https://urlr.me/5qpsC"><strong>Elite Rencontre</strong></a>, ou même <strong>{% trans "Adopte un Mec" %}</strong>, {% trans "afin de maximiser vos chances de faire des rencontres sérieuses." %}
     </p>
 
-    <!-- Titre H3 -->
     <h3>
-        B - Critères essentiels à considérer
+        {% trans "B - Critères essentiels à considérer" %}
     </h3>
 
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Lors de votre inscription sur un site de rencontres, il est essentiel de prêter attention à la qualité des profils, à la modération des contenus et à la sécurité. Que vous recherchiez des rencontres amoureuses, sérieuses, ou même des rencontres discrètes, ces aspects sont cruciaux pour garantir une expérience de dating agréable.
+        {% trans "Lors de votre inscription sur un site de rencontres, il est essentiel de prêter attention à la qualité des profils, à la modération des contenus et à la sécurité. Que vous recherchiez des rencontres amoureuses, sérieuses, ou même des rencontres discrètes, ces aspects sont cruciaux pour garantir une expérience de dating agréable." %}
     </p>
 
-    <!-- Titre H3 -->
     <h3>
-        C - Qualité des profils et des fonctionnalités
+        {% trans "C - Qualité des profils et des fonctionnalités" %}
     </h3>
 
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Les plateformes comme
+        {% trans "Les plateformes comme" %}
         <a href="https://urlr.me/GkHDj"><strong>eDarling</strong></a>,
-        <strong>Parship</strong> et
-        <a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=6006&promoid=178757"><strong>Nos Belles Années</strong></a> se distinguent par des profils vérifiés et des outils avancés, tels que le test de personnalité, qui facilitent des connexions durables et authentiques. Ces sites permettent également de rencontrer des célibataires compatibles en fonction des affinités.
+        <strong>{% trans "Parship" %}</strong> et
+        <a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=6006&promoid=178757"><strong>Nos Belles Années</strong></a>
+        {% trans "se distinguent par des profils vérifiés et des outils avancés, tels que le test de personnalité, qui facilitent des connexions durables et authentiques. Ces sites permettent également de rencontrer des célibataires compatibles en fonction des affinités." %}
     </p>
 
-    <!-- Titre H2 -->
     <h2>
-        2 - Critères à considérer lors de la comparaison de plateformes de rencontre
+        {% trans "2 - Critères à considérer lors de la comparaison de plateformes de rencontre" %}
     </h2>
 
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Lorsque vous utilisez un comparateur de sites de rencontres, plusieurs critères doivent être pris en compte pour choisir un site de rencontre qui correspond à vos attentes.
+        {% trans "Lorsque vous utilisez un comparateur de sites de rencontres, plusieurs critères doivent être pris en compte pour choisir un site de rencontre qui correspond à vos attentes." %}
     </p>
 
-    <!-- Liste des critères -->
+    <!-- Criteria List -->
     <ul style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        <li>Popularité et Fiabilité : Les meilleurs sites de rencontre tels que
+        <li>{% trans "Popularité et Fiabilité : Les meilleurs sites de rencontre tels que" %}
             <a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=2167&promoid=193178"><strong>Meetic</strong></a>,
             <a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=5383&promoid=257685"><strong>Disons Demain</strong></a>, et
-            <a href="https://urlr.me/5qpsC"><strong>Elite Rencontre</strong></a> bénéficient d’une grande communauté et d’une solide réputation. Leur cadre sécurisé favorise les rencontres sérieuses et de qualité.</li>
-        <li>Rencontre par affinités : Des sites comme
+            <a href="https://urlr.me/5qpsC"><strong>Elite Rencontre</strong></a>
+            {% trans "bénéficient d’une grande communauté et d’une solide réputation. Leur cadre sécurisé favorise les rencontres sérieuses et de qualité." %}</li>
+        <li>{% trans "Rencontre par affinités : Des sites comme" %}
             <a href="https://urlr.me/GkHDj"><strong>eDarling</strong></a> et
-            <strong>Parship</strong> mettent l’accent sur la compatibilité en se basant sur des critères de personnalité, vous permettant de rencontrer l'âme sœur ou de faire de belles rencontres.</li>
-        <li>Inscription gratuite et offres payantes : Avant de souscrire à un abonnement sur un site de rencontres sérieux, testez les fonctionnalités gratuites pour vous assurer que la plateforme correspond bien à vos attentes en matière de relations sérieuses.</li>
-        <li>Avis des utilisateurs : Prenez en compte les témoignages et expériences d'autres membres, qu'il s'agisse de rencontres seniors ou de rencontres par affinités, pour mieux comprendre le fonctionnement et la fiabilité du site.</li>
+            <strong>{% trans "Parship" %}</strong>
+            {% trans "mettent l’accent sur la compatibilité en se basant sur des critères de personnalité, vous permettant de rencontrer l'âme sœur ou de faire de belles rencontres." %}</li>
+        <li>{% trans "Inscription gratuite et offres payantes : Avant de souscrire à un abonnement sur un site de rencontres sérieux, testez les fonctionnalités gratuites pour vous assurer que la plateforme correspond bien à vos attentes en matière de relations sérieuses." %}</li>
+        <li>{% trans "Avis des utilisateurs : Prenez en compte les témoignages et expériences d'autres membres, qu'il s'agisse de rencontres seniors ou de rencontres par affinités, pour mieux comprendre le fonctionnement et la fiabilité du site." %}</li>
     </ul>
 
-    <!-- Titre H2 -->
     <h2>
-        3 - Témoignages : Trouver l'amour avec un comparateur de sites de rencontres
+        {% trans "3 - Témoignages : Trouver l'amour avec un comparateur de sites de rencontres" %}
     </h2>
 
     <table border="1" style="margin-left: 10%; margin-right: 10%;">
         <thead>
             <tr>
-                <th>Comparateur de sites de rencontre</th>
-                <th>Métriques</th>
+                <th>{% trans "Comparateur de sites de rencontre" %}</th>
+                <th>{% trans "Métriques" %}</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Nombre de sites comparés</td>
+                <td>{% trans "Nombre de sites comparés" %}</td>
                 <td>20</td>
             </tr>
             <tr>
-                <td>Nombre d'utilisateurs actifs</td>
+                <td>{% trans "Nombre d'utilisateurs actifs" %}</td>
                 <td>800 000</td>
             </tr>
             <tr>
-                <td>Taux de réussite</td>
+                <td>{% trans "Taux de réussite" %}</td>
                 <td>35%</td>
             </tr>
             <tr>
-                <td>Nombre de couples formés</td>
+                <td>{% trans "Nombre de couples formés" %}</td>
                 <td>15 000</td>
             </tr>
         </tbody>
     </table>
 
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Ces chiffres témoignent de l'efficacité des comparateurs de sites de rencontres. Utiliser un outil de comparaison vous permettra non seulement de gagner du temps, mais également de maximiser vos chances de trouver l'amour. Ne laissez pas le hasard décider de votre bonheur, faites le choix d'une recherche éclairée pour des rencontres sérieuses.
+        {% trans "Ces chiffres témoignent de l'efficacité des comparateurs de sites de rencontres. Utiliser un outil de comparaison vous permettra non seulement de gagner du temps, mais également de maximiser vos chances de trouver l'amour. Ne laissez pas le hasard décider de votre bonheur, faites le choix d'une recherche éclairée pour des rencontres sérieuses." %}
     </p>
 
 {% endblock %}

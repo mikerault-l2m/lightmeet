@@ -1,5 +1,6 @@
 {% extends 'partner_meet/base_Partner_meet.html' %}
 {% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
 {% block css %}
 <link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
 {{ block.super }}
@@ -31,71 +32,106 @@
 <body>
 
 {% block section %}
+<div style="padding: 20px;">
+    <form id="language-form" style="display: flex; justify-content: center; align-items: center; text-align: center; background: #FBF1D6; border-radius: 20px; padding: 10px; border: 1px solid grey;">
+        <img style="width: 30px; height: 30px; padding-right: 20px; vertical-align: middle;" src="{% static 'partner_meet/Logos/earth.png' %}" alt="Earth Icon">
+        <input name="next" type="hidden" value="{{ request.path }}">
+        {% csrf_token %}
+        <div id="language-selector" style="border: none; border-radius: 20px; padding: 5px; display: inline-block;">
+            <select name="language" onchange="submitLanguageForm();" style="border: none; outline: none; background: transparent; appearance: none; padding: 10px; text-align: center;">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% for lang in LANGUAGES %}
+                    <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ lang.1 }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div id="language-button" style="display: none;">
+            <button type="button" onclick="alert('Langue changée !');" style="border: 2px solid grey; border-radius: 25px; padding: 10px; background: lightgrey; cursor: pointer; text-align: center;">
+                Langue changée
+            </button>
+        </div>
+    </form>
 
+    <script>
+        function submitLanguageForm() {
+            // Soumet le formulaire
+            document.getElementById('language-form').submit();
+        }
+
+        // Écoute les changements de langue
+        document.getElementById('language-form').onsubmit = function() {
+            // Cache le sélecteur et montre le bouton
+            document.getElementById('language-selector').style.display = 'none';
+            document.getElementById('language-button').style.display = 'block';
+        };
+    </script>
     <!-- Titre H1 avec cadre, texte en gras et centré -->
     <h1 class="BLogTitlePos">
-        Rencontres en ligne : Les avantages méconnus d'un comparateur de sites de rencontres
+        {% trans "Rencontres en ligne : Les avantages méconnus d'un comparateur de sites de rencontres" %}
     </h1>
 
     <!-- Introduction -->
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Les rencontres en ligne ont connu une popularité croissante ces dernières années, permettant aux célibataires de trouver l'amour ou des relations stables via des plateformes spécialisées. Cependant, face à la multitude de sites de rencontres disponibles, il peut être difficile de dénicher celui qui répond le mieux à ses attentes. C'est là que le rôle d'un comparateur de sites de rencontres sérieux prend tout son sens, offrant une multitude d'avantages souvent méconnus.
+        {% trans "Les rencontres en ligne ont connu une popularité croissante ces dernières années, permettant aux célibataires de trouver l'amour ou des relations stables via des plateformes spécialisées. Cependant, face à la multitude de sites de rencontres disponibles, il peut être difficile de dénicher celui qui répond le mieux à ses attentes. C'est là que le rôle d'un comparateur de sites de rencontres sérieux prend tout son sens, offrant une multitude d'avantages souvent méconnus." %}
     </p>
 
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        En utilisant un comparateur, vous pouvez identifier les sites les plus efficaces, économiser du temps et de l'argent, profiter de conseils personnalisés, éviter les arnaques et découvrir de nouvelles fonctionnalités.
+        {% trans "En utilisant un comparateur, vous pouvez identifier les sites les plus efficaces, économiser du temps et de l'argent, profiter de conseils personnalisés, éviter les arnaques et découvrir de nouvelles fonctionnalités." %}
     </p>
 
     <!-- Identifiez le site le plus efficace -->
     <h2>
-        Identifier le site de rencontre le plus efficace
+        {% trans "Identifier le site de rencontre le plus efficace" %}
     </h2>
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Comparer les fonctionnalités, les tarifs, les avis des utilisateurs et les taux de réussite aide à choisir le site qui correspond le mieux à vos attentes.
+        {% trans "Comparer les fonctionnalités, les tarifs, les avis des utilisateurs et les taux de réussite aide à choisir le site qui correspond le mieux à vos attentes." %}
     </p>
 
     <!-- Économisez du temps et de l'argent -->
     <h2>
-        Économiser du temps et de l'argent
+        {% trans "Économiser du temps et de l'argent" %}
     </h2>
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Un comparateur vous permet d'éviter de vous inscrire sur plusieurs sites et d'éviter les frais inutiles, en choisissant directement un site adapté à vos besoins.
+        {% trans "Un comparateur vous permet d'éviter de vous inscrire sur plusieurs sites et d'éviter les frais inutiles, en choisissant directement un site adapté à vos besoins." %}
     </p>
 
     <!-- Profitez de conseils personnalisés -->
     <h2>
-        Profiter de conseils et recommandations personnalisés
+        {% trans "Profiter de conseils et recommandations personnalisés" %}
     </h2>
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Obtenez des recommandations basées sur vos critères personnels comme l'âge et les centres d'intérêt pour trouver les sites les plus adaptés.
+        {% trans "Obtenez des recommandations basées sur vos critères personnels comme l'âge et les centres d'intérêt pour trouver les sites les plus adaptés." %}
     </p>
 
     <!-- Évitez les arnaques -->
     <h2>
-        Éviter les arnaques et les faux profils
+        {% trans "Éviter les arnaques et les faux profils" %}
     </h2>
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Choisissez des plateformes réputées et sécurisées pour éviter les faux profils et les escroqueries.
+        {% trans "Choisissez des plateformes réputées et sécurisées pour éviter les faux profils et les escroqueries." %}
     </p>
 
     <!-- Découvrez de nouvelles fonctionnalités -->
     <h2>
-        Découvrir de nouvelles fonctionnalités
+        {% trans "Découvrir de nouvelles fonctionnalités" %}
     </h2>
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Explorez des outils innovants comme les tests de personnalité et les événements pour enrichir votre expérience de rencontre en ligne.
+        {% trans "Explorez des outils innovants comme les tests de personnalité et les événements pour enrichir votre expérience de rencontre en ligne." %}
     </p>
 
     <!-- Bénéficiez d'un suivi personnalisé -->
     <h2>
-        Bénéficier d'un suivi et d'un support client personnalisé
+        {% trans "Bénéficier d'un suivi et d'un support client personnalisé" %}
     </h2>
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        Profitez d'une assistance dédiée et de guides pour optimiser votre utilisation des plateformes de rencontres.
+        {% trans "Profitez d'une assistance dédiée et de guides pour optimiser votre utilisation des plateformes de rencontres." %}
     </p>
 
     <p style="margin-left: 10%; margin-right: 10%; line-height: 2; text-align: justify;">
-        En conclusion, un comparateur de sites de rencontres sérieux peut grandement améliorer votre expérience en ligne, vous aidant à trouver la relation que vous recherchez en évitant les erreurs courantes.
+        {% trans "En conclusion, un comparateur de sites de rencontres sérieux peut grandement améliorer votre expérience en ligne, vous aidant à trouver la relation que vous recherchez en évitant les erreurs courantes." %}
     </p>
 
 {% endblock %}

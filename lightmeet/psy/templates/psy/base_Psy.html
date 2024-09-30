@@ -33,7 +33,21 @@ function init_tracer() {
             <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
         </a>
         <nav class="navPos">
-            <a href="{% url 'blog_home_1' %}" class="ListeHeader">Blog</a>
+            <form action="{% url 'set_language' %}" method="post">
+            <input name="next" type="hidden" value="{{ request.path }}">
+            {% csrf_token %}
+            <select name="language">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% for lang in LANGUAGES %}
+                    <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ lang.1 }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <button type="submit">{% trans "Changer de langue" %}</button>
+            </form>
+            <a href="{% url '1_Blog_Article' %}" class="ListeHeader">Blog</a>
             <a href="{% url 'Support' %}" class="ListeHeader">Contact</a>
         </nav>
     <nav class="navHeader">
@@ -45,7 +59,7 @@ function init_tracer() {
         <ul class="navMenu">
             <li><a href="{% url 'recherche_home' %}" class="ListeHeader">Site de rencontres</a></li>
             <li><a href="{% url 'recherche_therapeutes' %}" class="ListeHeader">Thérapeutes</a></li>
-            <li><a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a></li>
+            <li><a href="{% url '1_Blog_Article' %}" class="ListeHeader">Blog</a></li>
             <li><a href="{% url 'Home' %}" class="ListeHeader">FAQ</a></li>
             <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
         </ul>

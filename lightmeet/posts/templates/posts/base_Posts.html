@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UV-Compatible" content="ie=edge">
     <meta name="description" content="LightMeet, le premier comparateur de sites de rencontres. Être éclairé pour trouver l'amour.  ">
+    <!-- Titre de la page -->
+    <title>Lightmeet - Votre moteur de recherche pour les rencontres</title>
+<!-- Mots-clés -->
+<meta name="keywords" content="rencontres, sites de rencontres, comparateur, Lightmeet">
+<!-- Auteur -->
+<meta name="author" content="Lightmeet">
+<!-- Robots -->
+<meta name="robots" content="index, follow">
+
     <title>LightMeet</title>
     {% block css %}
     <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
@@ -26,13 +35,13 @@ function init_tracer() {
 </head>
 
 <body class="container">
-    {% block content %}{% endblock %}
     <header>
         <a href="{% url 'Home' %}" class="ListeHeader">
             <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
         </a>
         <nav class="navPos">
-            <a href="{% url 'blog_home_1' %}" class="ListeHeader">Blog</a>
+
+            <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
             <a href="{% url 'Support' %}" class="ListeHeader">Contact</a>
         </nav>
     <nav class="navHeader">
@@ -44,16 +53,16 @@ function init_tracer() {
         <ul class="navMenu">
             <li><a href="{% url 'recherche_home' %}" class="ListeHeader">Site de rencontres</a></li>
             <li><a href="{% url 'recherche_therapeutes' %}" class="ListeHeader">Thérapeutes</a></li>
-            <li><a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a></li>
+            <li><a href="{% url '1_Blog_Article' %}" class="ListeHeader">Blog</a></li>
             <li><a href="{% url 'Home' %}" class="ListeHeader">FAQ</a></li>
             <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
         </ul>
     </nav>
     </header>
-    {% block aside %}
-    {% endblock %}
     {% block section %}
     {% endblock %}
+
+    {% block content %}{% endblock %}
     {% block footer %}
 <footer>
     <div class="footerPc">
@@ -112,6 +121,5 @@ function init_tracer() {
 
     </script>
 
-{% endblock %}
 </body>
 </html>

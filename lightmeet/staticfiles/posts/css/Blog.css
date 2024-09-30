@@ -6,6 +6,27 @@ body {
     font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/* Apply a thicker font to all headings */
+    h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 800; /* Make the font thicker */
+    }
+
+    /* Add a border around the first H1 title and center it */
+    .BLogTitlePos {
+        border: 2px solid black;
+        padding: 20px;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto; /* Center the element */
+    }
+
+    /* Remove underline and change default link color */
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: bold;
+    }
 /* Titres */
 h1, h2, h3 {
     font-weight: 800; /* Rendre la police plus épaisse */
@@ -19,6 +40,28 @@ h1, h2, h3 {
     width: fit-content;
     margin: 0 auto; /* Centrer l'élément */
 }
+
+/* Appliquer une police plus épaisse à tous les titres */
+    h1, h2, h3 {
+        font-family: 'Roboto';
+        font-weight: 800; /* Rendre la police plus épaisse */
+    }
+
+    /* Ajouter un cadre autour du premier titre H1 et centrer */
+    .BLogTitlePos {
+        border: 2px solid black;
+        padding: 20px;
+        text-align: center;
+        width: fit-content;
+        margin: 0 auto; /* Centrer l'élément */
+    }
+
+    /* Supprimer le soulignement et changer la couleur par défaut des liens */
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: bold;
+    }
 
 /* Liens */
 a {

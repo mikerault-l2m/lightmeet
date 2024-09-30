@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-20 08:52+0000\n"
+"POT-Creation-Date: 2024-09-27 23:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-#: partner_meet/templates/partner_meet/Home.html:26
+
+#: partner_meet/templates/partner_meet/Home.html:27
+#: partner_meet/templates/partner_meet/base_Partner_meet.html:52
+#: partner_meet/templates/partner_meet/partnermeet_list.html:37
 msgid "Changer de langue"
 msgstr ""
 
@@ -39,130 +42,121 @@ msgstr ""
 
 #: partner_meet/templates/partner_meet/Home.html:44
 msgid ""
-"\n"
-"            Pour personnaliser votre expérience, nous collectons des "
-"informations sur la façon dont vous utilisez\n"
-"            LightMeet, ce qui inclut les données personnelles telles que "
-"votre adresse IP. Ces informations sont\n"
-"            utilisées pour améliorer votre expérience, stocker les "
-"informations contenues sur un appareil et y accéder,\n"
-"            ainsi que pour la publicité personnalisée, les études sur\n"
-"            l'audience et le développement des services. Pour en savoir "
-"plus, consultez notre Politique en matière de\n"
-"            cookies.\n"
-"            "
+"Pour personnaliser votre expérience, nous collectons des informations sur la "
+"façon dont vous utilisez LightMeet, ce qui inclut les données personnelles "
+"telles que votre adresse IP. Ces informations sont utilisées pour améliorer "
+"votre expérience, stocker les informations contenues sur un appareil et y "
+"accéder, ainsi que pour la publicité personnalisée, les études sur "
+"l'audience et le développement des services. Pour en savoir plus, consultez "
+"notre Politique en matière de cookies."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:46
+msgid ""
+"LightMeet et ses 100 partenaires peuvent se baser sur l\\'intérêt légitime à "
+"certaines fins, plutôt que sur le consentement. Cliquez sur « Préférences en "
+"matière de cookies » pour avoir plus d'informations à ce sujet et savoir "
+"comment vous y opposer, ou sélectionnez « Valider les cookies » afin "
+"d'autoriser tous les cookies."
 msgstr ""
 
 #: partner_meet/templates/partner_meet/Home.html:53
-msgid ""
-"\n"
-"            LightMeet et ses 100 partenaires peuvent se baser sur l'intérêt "
-"légitime à certaines fins, plutôt que sur le\n"
-"            consentement. Cliquez sur « Préférences en matière de cookies » "
-"pour avoir plus d'informations à ce sujet et\n"
-"            savoir comment vous y opposer, ou sélectionnez « Valider les "
-"cookies » afin d'autoriser tous les cookies.\n"
-"            "
-msgstr ""
-
-#: partner_meet/templates/partner_meet/Home.html:64
 msgid "Valider les cookies"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:67
+#: partner_meet/templates/partner_meet/Home.html:56
 msgid "Paramètres des cookies"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:70
+#: partner_meet/templates/partner_meet/Home.html:59
 msgid ""
 "Gérez vos préférences ou retirez votre consentement à tout moment sur la "
 "page Paramètres de confidentialité, dont le lien se situe en pied de page."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:91
+#: partner_meet/templates/partner_meet/Home.html:80
 msgid "Comparaison rapide et gratuite"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:92
+#: partner_meet/templates/partner_meet/Home.html:81
 msgid "des sites de rencontres"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:108
+#: partner_meet/templates/partner_meet/Home.html:97
 msgid "Gain de temps précieux"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:109
+#: partner_meet/templates/partner_meet/Home.html:98
 msgid "en comparant en 1 clic"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:125
+#: partner_meet/templates/partner_meet/Home.html:114
 msgid "+ 100 sites de rencontres"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:126
+#: partner_meet/templates/partner_meet/Home.html:115
 msgid "sélectionnés avec soin"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:131
+#: partner_meet/templates/partner_meet/Home.html:120
 msgid ""
-"\n"
-"        Le comparateur qui répond à vos besoins réels pour trouver\n"
-"        l’application qui <strong>VOUS</strong> correspond\n"
-"        "
+"Le comparateur qui répond à vos besoins réels pour trouver l’application qui "
+"vous correspond"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:137
+#: partner_meet/templates/partner_meet/Home.html:123
 msgid "Trouvez l'application de rencontres qui correspond à vos besoins réels."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:138
+#: partner_meet/templates/partner_meet/Home.html:124
 msgid "Gagnez du temps et de l’argent en comparant facilement en 1 clic."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:139
+#: partner_meet/templates/partner_meet/Home.html:125
 msgid "Découvrez l’ensemble des sites de rencontres du marché."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:140
+#: partner_meet/templates/partner_meet/Home.html:126
 msgid ""
 "Comparez les différents abonnements proposés par les sites de rencontres."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:142
+#: partner_meet/templates/partner_meet/Home.html:128
 msgid "En voir plus"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:147
+#: partner_meet/templates/partner_meet/Home.html:133
 msgid "Comparez le meilleur dans le domaine de la rencontre"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:148
+#: partner_meet/templates/partner_meet/Home.html:134
 msgid ""
 "Comparez des milliers d’applications de rencontres <br/> et de thérapeutes "
 "de votre région"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:152
+#: partner_meet/templates/partner_meet/Home.html:138
 msgid "Sites de rencontres"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:154
+#: partner_meet/templates/partner_meet/Home.html:140
+#: partner_meet/templates/partner_meet/partnermeet_list.html:45
 msgid "Thérapeutes"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:157
+#: partner_meet/templates/partner_meet/Home.html:143
 msgid "Derniers articles mis en ligne"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:173
+#: partner_meet/templates/partner_meet/Home.html:159
 msgid "Trouver sa rencontre idéale avec Lightmeet"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:180
+#: partner_meet/templates/partner_meet/Home.html:166
 msgid "Comment fonctionne LightMeet ?"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:192
+#: partner_meet/templates/partner_meet/Home.html:178
 msgid ""
 "Lightmeet est un moteur de recherche de sites de rencontres et de "
 "thérapeutes. Nous parcourons le Web pour trouver les meilleurs sites de "
@@ -172,142 +166,91 @@ msgid ""
 "de contacter directement le prestataire."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:198
-#: partner_meet/templates/partner_meet/Home.html:297
+#: partner_meet/templates/partner_meet/Home.html:184
+#: partner_meet/templates/partner_meet/Home.html:244
 msgid "Peut-on rechercher aussi des thérapeutes sur LightMeet ?"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:212
+#: partner_meet/templates/partner_meet/Home.html:198
 msgid ""
-"\n"
-"                    Pour trouver des sites de rencontres efficaces, c'est "
-"facile : chaque mois, plus de 3 millions de\n"
-"                    célibataires avisés\n"
-"                    viennent sur notre site pour trouver le site de "
-"rencontre plus efficace.\n"
-"                    Voici quelques conseils simples pour tirer le meilleur "
-"parti de votre recherche de site de\n"
-"                    rencontre.\n"
-"                    "
+"Pour trouver des sites de rencontres efficaces, c'est facile : chaque mois, "
+"plus de 3 millions de célibataires avisés viennent sur notre site pour "
+"trouver le site de rencontre plus efficace. Voici quelques conseils simples "
+"pour tirer le meilleur parti de votre recherche de site de rencontre."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:220
+#: partner_meet/templates/partner_meet/Home.html:200
 msgid "Gagnez du temps et de l'argent"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:221
+#: partner_meet/templates/partner_meet/Home.html:201
 msgid ""
-"\n"
-"                        - Qu'il s'agisse du site web le plus rapide et "
-"élégant\n"
-"                        ou de la\n"
-"                        plateforme la\n"
-"                        plus\n"
-"                        avantageuse, vous pouvez choisir votre site de "
-"rencontre en fonction des notes réelles des\n"
-"                        célibataires.\n"
-"                        "
+"- Qu'il s'agisse du site web le plus rapide et élégant ou de la plateforme "
+"la plus avantageuse, vous pouvez choisir votre site de rencontre en fonction "
+"des notes réelles des célibataires."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:232
+#: partner_meet/templates/partner_meet/Home.html:205
 msgid "Cherchez où vous le sentez "
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:233
+#: partner_meet/templates/partner_meet/Home.html:206
 msgid ""
-"\n"
-"                        - Vous avez envie de découvrir une personnalité au "
-"delà de\n"
-"                        vos frontières\n"
-"                        ?\n"
-"                        Cherchez bientôt\n"
-"                        dans « le monde entier » pour trouver le site de "
-"rencontre le moins cher et envisager un futur\n"
-"                        en un\n"
-"                        lieu\n"
-"                        que vous aimez\n"
-"                        vraiment.\n"
-"                        "
+"- Vous avez envie de découvrir une personnalité au delà de vos frontières ? "
+"Cherchez bientôt dans « le monde entier » pour trouver le site de rencontre "
+"le moins cher et envisager un futur en un lieu que vous aimez vraiment."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:247
+#: partner_meet/templates/partner_meet/Home.html:210
 msgid "Misez sur la gratuité"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:248
+#: partner_meet/templates/partner_meet/Home.html:211
 msgid ""
-"\n"
-"                        - Sélectionné par Lightmeet, nos partenaires "
-"proposent parfois\n"
-"                        des\n"
-"                        fonctionnalités\n"
-"                        entièrement\n"
-"                        gratuites. En un clic, vous les identifiez. Vous "
-"vous donnez une chance d'enfin vivre la plus\n"
-"                        belle\n"
-"                        histoire\n"
-"                        de votre\n"
-"                        vie.\n"
-"                        "
+"- Sélectionné par Lightmeet, nos partenaires proposent parfois des "
+"fonctionnalités entièrement gratuites. En un clic, vous les identifiez. Vous "
+"vous donnez une chance d'enfin vivre la plus belle histoire de votre vie."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:268
+#: partner_meet/templates/partner_meet/Home.html:221
 msgid "Que se passe-t-il une fois que je me suis inscrit ?"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:281
+#: partner_meet/templates/partner_meet/Home.html:234
 msgid ""
-"\n"
-"                    Votre e-mail de confirmation d'inscription et toutes les "
-"autres informations dont vous aurez besoin\n"
-"                    proviendront du site\n"
-"                    de rencontre sur lequel vous êtes inscrits. Si vous avez "
-"des questions concernant le suivi de votre\n"
-"                    inscription, ou si\n"
-"                    vous souhaitez modifier ou annuler votre inscription, "
-"adressez-vous directement à eux.\n"
-"                    "
+"Votre e-mail de confirmation d'inscription et toutes les autres informations "
+"dont vous aurez besoin proviendront du site de rencontre sur lequel vous "
+"êtes inscrits. Si vous avez des questions concernant le suivi de votre "
+"inscription, ou si vous souhaitez modifier ou annuler votre inscription, "
+"adressez-vous directement à eux."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:310
+#: partner_meet/templates/partner_meet/Home.html:257
 msgid ""
-"\n"
-"                    Oui ! Vous pouvez utiliser la puissance de notre moteur "
-"de recherche de site de rencontre pour\n"
-"                    trouver\n"
-"                    ce\n"
-"                    thérapeute qui\n"
-"                    répond à vos besoins.\n"
-"                    "
+"Oui ! Vous pouvez utiliser la puissance de notre moteur de recherche de site "
+"de rencontre pour trouver ce thérapeute qui répond à vos besoins."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:324
+#: partner_meet/templates/partner_meet/Home.html:265
 msgid "Dans quel pays puis-je actuellement trouver un site de rencontre ?"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:337
+#: partner_meet/templates/partner_meet/Home.html:278
 msgid ""
 "Actuellement, la France est le premier pays où vous trouverez des site de "
 "rencontres sérieux."
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:345
+#: partner_meet/templates/partner_meet/Home.html:286
 msgid "Puis je m'inscrire sur un site web émettant moins de CO2 ?"
 msgstr ""
 
-#: partner_meet/templates/partner_meet/Home.html:357
+#: partner_meet/templates/partner_meet/Home.html:298
 msgid ""
-"\n"
-"                    En cours de développement.\n"
-"\n"
-"                    Depuis que nous avons commencé à afficher le critère "
-"d'émission de CO2 des sites web (lorsque cette\n"
-"                    information est\n"
-"                    disponible), nous avons noté un net intérêt de la "
-"communauté soutenant avec passion le travail de\n"
-"                    nos\n"
-"                    développeurs.\n"
-"                    "
+"En cours de développement. Depuis que nous avons commencé à afficher le "
+"critère d'émission de CO2 des sites web (lorsque cette information est "
+"disponible), nous avons noté un net intérêt de la communauté soutenant avec "
+"passion le travail de nos développeurs."
 msgstr ""
 
 #: partner_meet/templates/partner_meet/base_Partner_meet.html:38
@@ -316,4 +259,37 @@ msgstr ""
 
 #: partner_meet/templates/partner_meet/base_Partner_meet.html:39
 msgid "English"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:42
+msgid "Rencontres"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:52
+msgid "La sélection Lightmeet"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:71
+#: partner_meet/templates/partner_meet/partnermeet_list.html:100
+msgid "France"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:78
+msgid "ans"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:80
+msgid "Visites / mois"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:82
+msgid "Visiter"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:116
+msgid "Ces sites de rencontres sont actuellement étudiés par"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:117
+msgid "BIENTÔT disponible"
 msgstr ""

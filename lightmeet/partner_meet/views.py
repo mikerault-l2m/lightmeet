@@ -17,6 +17,7 @@ from decimal import Decimal
 from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse
 import requests  # Ensure you import requests since you are using it in get_location
+from django.utils.translation import activate, get_language_from_request, gettext as _ #pour la langue
 
 # Etape 1 : Lancement de la page principale Lightmeet :
 start = time.time()
@@ -33,13 +34,22 @@ print(f"Temps d'affichage de LightMeet : {elapsed:.2f}ms")
 start = time.time()
 
 def enregistrer_visiteur(request):
+    # Détecter la langue de l'utilisateur
+    user_language = get_language_from_request(request)
+    # Activer la langue pour cette requête
+    activate(user_language)
+
     form = LightenerCreationForm(request.POST)
     if request.method == "POST":
         ip_address = get_client_ip(request)
         location = get_location(ip_address)
         Visitor.objects.create(ip_address=ip_address, location=location)
-        posts = BlogPost.objects.all()
-        return render(request, "partner_meet/Home.html", {"form": form, "posts": posts})
+
+    # Récupérer les articles de blog et traduire les titres dynamiquement
+    posts = BlogPost.objects.all()
+    for post in posts:
+        post.title = _(post.title)  # Traduire dynamiquement le titre en fonction de la langue active
+
     return render(request, "partner_meet/Home.html", {"form": form, "posts": posts})
 
 # A: Récupération de l'adresse IP :
@@ -135,6 +145,10 @@ class PartnerMeetHome(ListView):
         description = self.request.GET.get('description')
         if description:
             queryset = queryset.filter(description__icontains=description)
+
+        # Traduire dynamiquement la description pour chaque partenaire
+        for partner in queryset:
+            partner.description = _(partner.description)
 
         return queryset
 

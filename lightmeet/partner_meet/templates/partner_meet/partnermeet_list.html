@@ -5,10 +5,10 @@
 {% block head %}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Comparez les sites de rencontres et de thérapie avec Lightmeet. Sélectionnez le meilleur service en fonction de vos besoins.">
+<meta name="description" content="Comparez les sites de rencontres avec Lightmeet. Sélectionnez le meilleur service en fonction de vos besoins.">
 <meta name="keywords" content="rencontres, sites de rencontres, thérapies, comparateur, services en ligne">
 <meta name="robots" content="index, follow">
-<title>Lightmeet - Comparateur de Rencontres et Thérapies</title>
+<title>Lightmeet - Comparateur de Rencontres</title>
 <link rel="canonical" href="{{ request.build_absolute_uri }}">
 {{ block.super }}
 {% endblock %}
@@ -20,84 +20,120 @@
 {% endblock %}
 
 {% block section %}
-<div class="ButtonPos">
-    <button class="buttonOtherSearh " onclick="window.location.href=`{% url 'recherche_home' %}`">
-        Rencontres
-    </button>
-    <button class="buttonOtherSearh selectButton" onclick="window.location.href=`{% url 'recherche_therapeutes' %}`">
-        Thérapeutes
-    </button>
-</div>
-
-<div class="containerResultats">
-    <h2 class="Resultats">La sélection Lightmeet</h2>
-    {% for partner in partnermeet|dictsort:"ranking" %}
-        {% if partner.affiliation %}
-        <div class="cardApp VersionPC">
-            <div class="alignItems">
-                <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
-
-                <div class="containerTitleCard">
-                    <div class="PosStar">
-                        <h3 class="TitleCard">{{ partner.nom }}</h3>
-                        <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
-                    </div>
-                    <p class="textCard">{{ partner.description }}</p>
-                    <div class="PosFlag">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 35 22">
-                            <rect width="11.6667" height="22" fill="#0055A4"/>
-                            <rect x="11.6667" width="10.6667" height="22" fill="#FFFFFF"/>
-                            <rect x="23.3333" width="10.6667" height="22" fill="#EF4135"/>
-                        </svg>
-                        <p class="pays">France</p>
-                    </div>
-                </div>
-            </div>
-            <div class="Line"></div>
-            <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
-            <div class="Line"></div>
-            <p class="descriptionCard bold">{{ partner.age }} ans</p>
-            <div class="Line"></div>
-            <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
-            <div class="Line"></div>
-            <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">Visiter</button>
+<div style="padding: 20px;">
+    <form id="language-form" style="display: flex; justify-content: center; align-items: center; text-align: center; background: #FBF1D6; border-radius: 20px; padding: 10px; border: 1px solid grey;">
+        <img style="width: 30px; height: 30px; padding-right: 20px; vertical-align: middle;" src="{% static 'partner_meet/Logos/earth.png' %}" alt="Earth Icon">
+        <input name="next" type="hidden" value="{{ request.path }}">
+        {% csrf_token %}
+        <div id="language-selector" style="border: none; border-radius: 20px; padding: 5px; display: inline-block;">
+            <select name="language" onchange="submitLanguageForm();" style="border: none; outline: none; background: transparent; appearance: none; padding: 10px; text-align: center;">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% for lang in LANGUAGES %}
+                    <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
+                        {{ lang.1 }}
+                    </option>
+                {% endfor %}
+            </select>
         </div>
-
-        <div class="cardApp VersionMobile">
-            <div class="alignItems">
-                <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
-                <div class="containerTitleCard">
-                    <div class="PosStar">
-                        <h3 class="TitleCard">{{ partner.nom }}</h3>
-                        <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
-                    </div>
-                    <p class="textCard">{{ partner.description }}</p>
-                    <div class="PosFlag">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10">
-                            <rect width="4.6667" height="10" fill="#0055A4"/>
-                            <rect x="4.6667" width="4.6667" height="10" fill="#FFFFFF"/>
-                            <rect x="9.3334" width="4.6667" height="10" fill="#EF4135"/>
-                        </svg>
-                        <p class="pays">France</p>
-                    </div>
-                </div>
-            </div>
-            <div class="alignItemsButton">
-                <div class="containerDescription">
-                    <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
-                    <p class="descriptionCard bold">{{ partner.age }} ans</p>
-                    <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
-                </div>
-                <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">></button>
-            </div>
+        <div id="language-button" style="display: none;">
+            <button type="button" onclick="alert('Langue changée !');" style="border: 2px solid grey; border-radius: 25px; padding: 10px; background: lightgrey; cursor: pointer; text-align: center;">
+                Langue changée
+            </button>
         </div>
-        {% endif %}
-    {% empty %}
-    <div class="empty-message" id="resultats">
-        <p>Ces sites de rencontres sont actuellement étudiés par <i>Lightmeet</i></p>
-        <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
+    </form>
+
+    <script>
+        function submitLanguageForm() {
+            // Soumet le formulaire
+            document.getElementById('language-form').submit();
+        }
+
+        // Écoute les changements de langue
+        document.getElementById('language-form').onsubmit = function() {
+            // Cache le sélecteur et montre le bouton
+            document.getElementById('language-selector').style.display = 'none';
+            document.getElementById('language-button').style.display = 'block';
+        };
+    </script>
+
+    <div class="ButtonPos">
+        <button class="buttonOtherSearh" onclick="window.location.href=`{% url 'recherche_home' %}`">
+            {% trans "Rencontres" %}
+        </button>
+        <!--<button class="buttonOtherSearh selectButton" onclick="window.location.href=`{% url 'recherche_therapeutes' %}`">
+            {% trans "Thérapeutes" %}
+        </button>-->
     </div>
-    {% endfor %}
-</div>
 
+    <div class="containerResultats">
+        <h2 class="Resultats" style="font-size:40px;font-weight:100;font-family:'Roboto';">{% trans "La sélection Lightmeet" %}</h2>
+        {% for partner in partnermeet|dictsort:"ranking" %}
+            {% if partner.affiliation %}
+            <div class="cardApp VersionPC">
+                <div class="alignItems">
+                    <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
+                    <div class="containerTitleCard">
+                        <div class="PosStar">
+                            <h3 class="TitleCard">{{ partner.nom }}</h3>
+                            <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
+                        </div>
+                        <p class="textCard">{{ partner.description }}</p>
+                        <div class="PosFlag">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 35 22">
+                                <rect width="11.6667" height="22" fill="#0055A4"/>
+                                <rect x="11.6667" width="10.6667" height="22" fill="#FFFFFF"/>
+                                <rect x="23.3333" width="10.6667" height="22" fill="#EF4135"/>
+                            </svg>
+                            <p class="pays">{% trans "France" %}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="Line"></div>
+                <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
+                <div class="Line"></div>
+                <p class="descriptionCard bold">{{ partner.age }} {% trans "ans" %}</p>
+                <div class="Line"></div>
+                <p class="descriptionCard">+ {{ partner.Visites_France }} {% trans "Visites / mois" %} </p>
+                <div class="Line"></div>
+                <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">{% trans "Visiter" %}</button>
+            </div>
+
+            <div class="cardApp VersionMobile">
+                <div class="alignItems">
+                    <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
+                    <div class="containerTitleCard">
+                        <div class="PosStar">
+                            <h3 class="TitleCard">{{ partner.nom }}</h3>
+                            <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
+                        </div>
+                        <p class="textCard">{{ partner.description }}</p>
+                        <div class="PosFlag">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10">
+                                <rect width="4.6667" height="10" fill="#0055A4"/>
+                                <rect x="4.6667" width="4.6667" height="10" fill="#FFFFFF"/>
+                                <rect x="9.3334" width="4.6667" height="10" fill="#EF4135"/>
+                            </svg>
+                            <p class="pays">{% trans "France" %}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="alignItemsButton">
+                    <div class="containerDescription">
+                        <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
+                        <p class="descriptionCard bold">{{ partner.age }} ans</p>
+                        <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
+                    </div>
+                    <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">></button>
+                </div>
+            </div>
+            {% endif %}
+        {% empty %}
+        <div class="empty-message" id="resultats">
+            <p>{% trans "Ces sites de rencontres sont actuellement étudiés par" %} <i>Lightmeet</i></p>
+            <p style="text-align:center;"><strong style="font-size:30px;">{% trans "BIENTÔT disponible" %}</strong></p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

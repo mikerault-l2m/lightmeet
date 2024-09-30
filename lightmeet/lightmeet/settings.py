@@ -1,8 +1,7 @@
 import os
 import environ
 from pathlib import Path
-# from django.utils.translation import gettext_lazy, gettext as _  # Utilisez gettext_lazy au lieu de gettext
-from django.utils.translation import gettext_lazy as _
+from django.utils.translation import gettext_lazy, gettext as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -33,6 +32,7 @@ DJANGO_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'modeltranslation',
 ]
 THIRD_PARTY_APPS = [
     'allauth',
@@ -118,7 +118,7 @@ DATABASES = {
      }
  }
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-fr'
 
 
 TIME_ZONE = 'UTC'
@@ -127,10 +127,12 @@ USE_L10N = True
 USE_TZ = True
 
 LANGUAGES = [
-    ('en-us', 'English'),
-    # ('fr', 'French'),
-    #('de', 'Deutsch'),
-    #('es','Spanish'),
+    #('en_US', 'English'),
+    ('fr', 'French'),
+    ('de', 'Deutsch'),
+    ('es','Spanish'),
+    ('nl', 'Nederlands'),
+    ('it', 'Italiano'),
 ]
 
 

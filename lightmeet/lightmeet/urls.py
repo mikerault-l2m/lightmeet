@@ -55,8 +55,8 @@ urlpatterns += i18n_patterns(
     path('recherche/sites_des_thérapeutes/', PsyMeetBestSite.as_view(), name="recherche_meilleur_therapeutes"),  # nouveau
 
     # Blog
-    path('blog/main_article',BlogPost1.as_view(), name="blog_home_1"),
-    path('blog/second_article',BlogPost2.as_view(), name="blog_home_2"),
+    path('blog/main_article',BlogPost1.as_view(), name="1_Blog_Article"),
+    path('blog/second_article',BlogPost2.as_view(), name="2_Blog_Article"),
     path('blog/menu',BlogPostHome.as_view(), name="blog_home"),
     path('blog/create', BlogPostCreate.as_view(), name="blog_create"),
     path('blog/<str:slug>', BlogPostDetail.as_view(), name="blog_detail"),

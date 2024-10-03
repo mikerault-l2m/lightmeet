@@ -13,6 +13,14 @@
     <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
     {% endblock %}
 
+    <!-- Mots-clés -->
+<meta name="keywords" content="rencontres, sites de rencontres, comparateur, Lightmeet">
+<!-- Auteur -->
+<meta name="author" content="Lightmeet">
+<!-- Robots -->
+<meta name="robots" content="index, follow">
+
+
     <!-- Visitor Tracking -->
     <script async defer src='https://app.visitortracking.com/assets/js/tracer.js'></script>
     <script>
@@ -31,76 +39,74 @@
     {% block content %}{% endblock %}
     <header>
         <a href="{% url 'Home' %}" class="ListeHeader">
-            <img class="LightMeetLogo" src="{% static 'partner_meet/Logos/LightMeet.svg' %}" alt="Logo LightMeet">
+            <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
         </a>
         <nav class="navPos">
-            <a href="{% url '1_Blog_Article' %}" class="ListeHeader">Blog</a>
+            <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
             <a href="{% url 'Support' %}" class="ListeHeader">Contact</a>
         </nav>
-        <nav class="navHeader">
-            <div class="menuHamburger">
-                <div class="line Line1"></div>
-                <div class="line Line2"></div>
-                <div class="line Line3"></div>
-            </div>
-            <ul class="navMenu">
-                <li><a href="{% url 'recherche_home' %}" class="ListeHeader">Site de rencontres</a></li>
-                <li><a href="{% url 'recherche_therapeutes' %}" class="ListeHeader">Thérapeutes</a></li>
-                <li><a href="{% url '1_Blog_Article' %}" class="ListeHeader">Blog</a></li>
-                <li><a href="{% url 'Home' %}" class="ListeHeader">FAQ</a></li>
-                <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
-            </ul>
-        </nav>
+    <nav class="navHeader">
+        <div class="menuHamburger">
+            <div class="line Line1"></div>
+            <div class="line Line2"></div>
+            <div class="line Line3"></div>
+        </div>
+        <ul class="navMenu">
+            <li><a href="{% url 'recherche_home' %}" class="ListeHeader">Site de rencontres</a></li>
+            <li><a href="{% url 'recherche_therapeutes' %}" class="ListeHeader">Thérapeutes</a></li>
+            <li><a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a></li>
+            <li><a href="{% url 'Home' %}" class="ListeHeader">FAQ</a></li>
+            <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
+        </ul>
+    </nav>
     </header>
-
     {% block aside %}
     {% endblock %}
-
     {% block section %}
     {% endblock %}
+{% block footer %}
+<footer>
+    <div class="footerPc">
+        <ul class="ListFooter">
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'Home' %}">® 2024 Lightmeet</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">Mentions légales</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_PDC' %}">Politique de confidentialité</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_PC' %}">Politique de Cookies</a>
+            </li>
+        </ul>
+    </div>
+    <div class="FooterMobile">
+        <ul class="ListFooter">
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'Home' %}">® 2024 Lightmeet</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">Mentions légales</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_PC' %}">Politique de Cookies</a>
+            </li>
+            <li class="linkFooter">
+                <a class="linkFooter" href="{% url 'legal_PDC' %}">Politique de confidentialité</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+{% endblock %}
 
-    {% block footer %}
-    <footer>
-        <div class="footerPc">
-            <ul class="ListFooter">
-                <li class="linkFooter">
-                    <a class="linkFooter" href="{% url 'Home' %}">® 2024 Lightmeet</a>
-                </li>
-                <li class="linkFooter">
-                    <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">Mentions légales</a>
-                </li>
-                <li class="linkFooter">
-                    <a class="linkFooter" href="{% url 'legal_PDC' %}">Politique de confidentialité</a>
-                </li>
-                <li class="linkFooter">
-                    <a class="linkFooter" href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a>
-                </li>
-                <li class="linkFooter">
-                    <a class="linkFooter" href="{% url 'legal_PC' %}">Politique de Cookies</a>
-                </li>
-            </ul>
-        </div>
-        <div class="FooterMobile">
-            <ul class="ListFooter">
-                <li class="linkFooter">
-                    <a class="linkFooter" href="{% url 'Home' %}">® 2024 Lightmeet</a>
-                </li>
-                <li class="linkFooter">
-                    <a class="linkFooter" href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a>
-                </li>
-                <li class="linkFooter">
-                    <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">Mentions légales</a>
-                </li>
-                <li class="linkFooter">
-                    <a class="linkFooter" href="{% url 'legal_PC' %}">Politique de Cookies</a>
-                </li>
-                <li class="linkFooter">
-                    <a class="linkFooter" href="{% url 'legal_PDC' %}">Politique de confidentialité</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-    {% endblock %}
 
     <script>
         const menuHamburger = document.querySelector('.menuHamburger');
@@ -114,6 +120,7 @@
                 document.body.style.overflow = '';
             }
         });
+
     </script>
 </body>
 

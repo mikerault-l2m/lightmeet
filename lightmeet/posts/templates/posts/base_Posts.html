@@ -35,12 +35,12 @@ function init_tracer() {
 </head>
 
 <body class="container">
+    {% block content %}{% endblock %}
     <header>
         <a href="{% url 'Home' %}" class="ListeHeader">
             <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
         </a>
         <nav class="navPos">
-
             <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
             <a href="{% url 'Support' %}" class="ListeHeader">Contact</a>
         </nav>
@@ -59,11 +59,11 @@ function init_tracer() {
         </ul>
     </nav>
     </header>
+    {% block aside %}
+    {% endblock %}
     {% block section %}
     {% endblock %}
-
-    {% block content %}{% endblock %}
-    {% block footer %}
+{% block footer %}
 <footer>
     <div class="footerPc">
         <ul class="ListFooter">
@@ -106,6 +106,7 @@ function init_tracer() {
 </footer>
 {% endblock %}
 
+
     <script>
         const menuHamburger = document.querySelector('.menuHamburger');
         const navMenu = document.querySelector('.navMenu');
@@ -120,6 +121,6 @@ function init_tracer() {
         });
 
     </script>
-
 </body>
+
 </html>

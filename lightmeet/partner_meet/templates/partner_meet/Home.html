@@ -153,33 +153,39 @@
         <li>{% trans "Découvrez l’ensemble des sites de rencontres du marché." %}</li>
         <li>{% trans "Comparez les différents abonnements proposés par les sites de rencontres." %}</li>
     </ul>
-    <button class="buttonInfoComparateur">{% trans 'En voir plus' %}</button>
+    <a href="{% url 'recherche_home' %}" style="text-decoration: none;">
+        <button class="buttonInfoComparateur">{% trans 'En voir plus' %}</button>
+    </a>
 </div>
 
 <div class="call-to-action-container">
     <div class="callToActionTitle">
-        <h1>{% trans 'Comparez le meilleur dans le domaine de la rencontre' %}</h1>
-        <p>{% trans 'Comparez des milliers d’applications de rencontres <br/> et de thérapeutes de votre région' %}</p>
+        <h1>{% trans 'Comparez le meilleur du domaine de la rencontre' %}</h1>
+        <p>{% trans 'Comparez des dizaines d’applications de rencontres' %}</p>
     </div>
     <div class="callToActionSite">
         <button class="callToAction call-to-action-comparer"
-            onclick="window.location.href='{% url 'recherche_home' %}'">{% trans "Sites de rencontres" %}</button>
-        <!--<button class="callToAction buttonWhite call-to-action-comparer"
-            onclick="window.location.href='{% url 'recherche_therapeutes' %}'">{% trans "Thérapeutes" %}</button>-->
+            onclick="window.location.href='{% url 'recherche_home' %}'">{% trans "Sites de rencontres" %}
+        </button>
     </div>
 </div>
 <h2 class="TitleImgSite">{% trans 'Derniers articles mis en ligne' %}</h2>
 <div class="boxesContainer">
     {% for post in posts|slice:":3" %}
+    <a style="text-decoration:none" href="{{ post.url }}">
     <div class="boxSite">
         <div class="image-container">
-            <img style="border-radius:25px;" src="{{ post.image.url }}" class="imageSite" alt="{{ post.title }}">
+            <img style="border-radius:30px; width:250px; height: 250px; object-fit: cover;" src="{{ post.image.url }}" class="imageSite" alt="{{ post.title }}">
         </div>
-        <p class="TextImgSitePresentation">{{ post.title }}</p>
-        <p class="TextImgSitePresentationHtag">
+        <p class="TextImgSitePresentation" style="color: black;">{{ post.title }}</p>
+        <p class="TextImgSitePresentationHtag" style="color: black;">
             <em>{{ post.hashtag }}</em>
         </p>
     </div>
+</a>
+
+</a>
+
     {% endfor %}
 </div>
 
@@ -202,13 +208,13 @@
                 </div>
 
                 <div class="faq-answer" style="text-align:justify;">
-                    {% trans "Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le Web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs des services de rencontre et autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il suffit de vous inscrire ou de contacter directement le prestataire." %}
+                    {% trans "Lightmeet est un moteur de recherche de sites de rencontres. Nous parcourons le Web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs et autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre, il suffit de vous inscrire gratuitement sur le site en question." %}
                 </div>
             </div>
             <div class="cardQuestion">
                 <div class="faq-question">
                     <div class="PosTxt">
-                        <h4 class="TitleQuestion" >{% trans 'Peut-on rechercher aussi des thérapeutes sur LightMeet ?' %}</h4>
+                        <h4 class="TitleQuestion" >{% trans 'Peut-on trouver tous les sites de rencontres sur LightMeet ?' %}</h4>
                         <span class="arrow">
                             <svg width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.5 0.849173L9.5 9L18.5 0.849173" stroke="black" stroke-width="1.5" />
@@ -260,24 +266,6 @@
             <div class="cardQuestion">
                 <div class="faq-question">
                     <div class="PosTxt">
-                        <h4 class="TitleQuestion" >{% trans "Peut-on rechercher aussi des thérapeutes sur LightMeet ?" %}</h4>
-                        <span class="arrow">
-                            <svg width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.5 0.849173L9.5 9L18.5 0.849173" stroke="black" stroke-width="1.5" />
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="ligneSeparationFaq"></div>
-                </div>
-
-                <div class="faq-answer" style="text-align:justify;">
-                    {% trans "Oui ! Vous pouvez utiliser la puissance de notre moteur de recherche de site de rencontre pour trouver ce thérapeute qui répond à vos besoins." %}
-                </div>
-            </div>
-
-            <div class="cardQuestion">
-                <div class="faq-question">
-                    <div class="PosTxt">
                         <h4 class="TitleQuestion" >{% trans "Dans quel pays puis-je actuellement trouver un site de rencontre ?" %}</h4>
                         <span class="arrow">
                             <svg width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -286,24 +274,9 @@
                         </span>
                     </div>
                     <div class="ligneSeparationFaq"></div>
-                </div>
-
-                <div class="faq-answer" style="text-align:justify;">
-                    {% trans "Actuellement, la France est le premier pays où vous trouverez des site de rencontres sérieux." %}
-                </div>
-            </div>
-
-            <div class="cardQuestion">
-                <div class="faq-question">
-                    <div class="PosTxt">
-                        <h4 class="TitleQuestion" >{% trans "Puis je m'inscrire sur un site web émettant moins de CO2 ?" %}</h4>
-                        <span class="arrow">
-                            <svg width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.5 0.849173L9.5 9L18.5 0.849173" stroke="black" stroke-width="1.5" />
-                            </svg>
-                        </span>
+                    <div class="faq-answer" style="text-align:justify;">
+                        {% trans "Actuellement, la France est le premier pays où vous trouverez des site de rencontres sérieux." %}
                     </div>
-                    <div class="ligneSeparationFaq"></div>
                 </div>
             </div>
         </div>

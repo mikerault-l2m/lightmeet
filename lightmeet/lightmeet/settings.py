@@ -127,12 +127,101 @@ USE_L10N = True
 USE_TZ = True
 
 LANGUAGES = [
-    #('en_US', 'English'),
+    #('en-us', 'English'),
     ('fr', 'French'),
     ('de', 'Deutsch'),
     ('es','Spanish'),
     ('nl', 'Nederlands'),
     ('it', 'Italiano'),
+]
+
+# Test de traduction par gettext_noop à tester
+# LANGUAGE_CODE = "en-us"
+
+#LANGUAGES = [
+    # Europe de l'Est :
+    # ("az", gettext_noop("Azerbaijani")),
+    # ("bg", gettext_noop("Bulgarian")),
+    # ("be", gettext_noop("Belarusian")),
+    # ("bs", gettext_noop("Bosnian")),
+    # ("cs", gettext_noop("Czech")),
+    # ("et", gettext_noop("Estonian")),
+    # ("hr", gettext_noop("Croatian")),
+    # ("hu", gettext_noop("Hungarian")),
+    # ("lt", gettext_noop("Lithuanian")),
+    # ("lv", gettext_noop("Latvian")),
+    # ("mk", gettext_noop("Macedonian")),
+    # ("pl", gettext_noop("Polish")),
+    # ("ro", gettext_noop("Romanian")),
+    # ("ru", gettext_noop("Russian")),
+    # ("sk", gettext_noop("Slovak")),
+    # ("sl", gettext_noop("Slovenian")),
+    # ("sq", gettext_noop("Albanian")),
+    # ("sr", gettext_noop("Serbian")),
+    # ("sr-latn", gettext_noop("Serbian Latin")),
+    # ("uk", gettext_noop("Ukrainian")),
+
+    # Europe du Nord / Ouest :
+    # ("da", gettext_noop("Danish")),
+    # ("de", gettext_noop("German")),
+    # ("en", gettext_noop("English")),
+    # ("en-au", gettext_noop("Australian English")),
+    # ("en-gb", gettext_noop("British English")),
+    # ("fi", gettext_noop("Finnish")),
+    # ("fr", gettext_noop("French")),
+    # ("fy", gettext_noop("Frisian")),
+    # ("ga", gettext_noop("Irish")),
+    # ("gd", gettext_noop("Scottish Gaelic")),
+    # ("is", gettext_noop("Icelandic")),
+    # ("it", gettext_noop("Italian")),
+    # ("nl", gettext_noop("Dutch")),
+    # ("nb", gettext_noop("Norwegian Bokmål")),
+    # ("sv", gettext_noop("Swedish")),
+    # ("gl", gettext_noop("Galician")),
+    # ("pt", gettext_noop("Portuguese")),
+
+    # Afrique :
+    # ("kab", gettext_noop("Kabyle")),
+    # ("sw", gettext_noop("Swahili")),
+    # ("ig", gettext_noop("Igbo")),
+    # ("mg", gettext_noop("Malagasy")),  # Madagascar ajouté
+
+    # Amérique du Nord et du Sud :
+    # ("es", gettext_noop("Spanish")),
+    # ("es-ar", gettext_noop("Argentinian Spanish")),
+    # ("es-co", gettext_noop("Colombian Spanish")),
+    # ("es-mx", gettext_noop("Mexican Spanish")),
+    # ("es-ni", gettext_noop("Nicaraguan Spanish")),
+    # ("es-ve", gettext_noop("Venezuelan Spanish")),
+    # ("pt-br", gettext_noop("Brazilian Portuguese")),
+
+    # Asie :
+    # ("bn", gettext_noop("Bengali")),
+    # ("fa", gettext_noop("Persian")),
+    # ("he", gettext_noop("Hebrew")),
+    # ("hi", gettext_noop("Hindi")),
+    # ("id", gettext_noop("Indonesian")),
+    # ("ja", gettext_noop("Japanese")),
+    # ("km", gettext_noop("Khmer")),
+    # ("ko", gettext_noop("Korean")),
+    # ("ml", gettext_noop("Malayalam")),
+    # ("my", gettext_noop("Burmese")),
+    # ("ne", gettext_noop("Nepali")),
+    # ("ta", gettext_noop("Tamil")),
+    # ("te", gettext_noop("Telugu")),
+    # ("th", gettext_noop("Thai")),
+    # ("vi", gettext_noop("Vietnamese")),
+    # ("zh-hans", gettext_noop("Simplified Chinese")),
+    # ("zh-hant", gettext_noop("Traditional Chinese")),
+
+    # Moyen-Orient et Asie Centrale :
+    # ("hy", gettext_noop("Armenian")),
+    # ("ka", gettext_noop("Georgian")),
+    # ("kk", gettext_noop("Kazakh")),
+    # ("ky", gettext_noop("Kyrgyz")),
+    # ("tg", gettext_noop("Tajik")),
+    # ("tk", gettext_noop("Turkmen")),
+    # ("tr", gettext_noop("Turkish")),
 ]
 
 

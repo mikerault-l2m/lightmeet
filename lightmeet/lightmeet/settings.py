@@ -222,7 +222,7 @@ LANGUAGES = [
     # ("tg", gettext_noop("Tajik")),
     # ("tk", gettext_noop("Turkmen")),
     # ("tr", gettext_noop("Turkish")),
-]
+#]
 
 
 AUTH_PASSWORD_VALIDATORS = [

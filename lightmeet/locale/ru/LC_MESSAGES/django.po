@@ -1,0 +1,215 @@
+msgid "Éclairez vos rencontres"
+msgstr "Осветите ваши встречи\n"
+
+msgid "Trouvez le site de rencontres qui vous correspond."
+msgstr "Найдите сайт знакомств, который вам подходит.\n"
+
+msgid "Comparer"
+msgstr "Сравнить\n"
+
+msgid "Votre vie privée nous tient à cœur"
+msgstr "Ваша конфиденциальность важна для нас.\n"
+
+msgid "Valider les cookies"
+msgstr "Подтвердить использование файлов cookie\n"
+
+msgid "Paramètres des cookies"
+msgstr "Настройки файлов cookie\n"
+
+msgid "Gérez vos préférences ou retirez votre consentement à tout moment sur la page Paramètres de confidentialité, dont le lien se situe en pied de page."
+msgstr "Управляйте своими предпочтениями или отозовите свое согласие в любое время на странице настроек конфиденциальности, ссылка на которую находится внизу страницы.\n"
+
+msgid "Comparaison rapide et gratuite"
+msgstr "Быстрое и бесплатное сравнение\n"
+
+msgid "des sites de rencontres"
+msgstr "сайтов знакомств\n"
+
+msgid "Gain de temps précieux"
+msgstr "Сэкономьте ценное время\n"
+
+msgid "en comparant en 1 clic"
+msgstr "сравнивая одним кликом\n"
+
+msgid "+ 100 sites de rencontres"
+msgstr "Более 100 сайтов знакомств\n"
+
+msgid "sélectionnés avec soin"
+msgstr "тщательно отобранные\n"
+
+msgid "Trouvez l'application de rencontres qui correspond à vos besoins réels."
+msgstr "Найдите приложение для знакомств, которое соответствует вашим реальным потребностям.\n"
+
+msgid "Gagnez du temps et de l’argent en comparant facilement en 1 clic."
+msgstr "Сэкономьте время и деньги, легко сравнивая одним кликом.\n"
+
+msgid "Découvrez l’ensemble des sites de rencontres du marché."
+msgstr "Откройте для себя все сайты знакомств на рынке.\n"
+
+msgid "Comparez les différents abonnements proposés par les sites de rencontres."
+msgstr "Сравните различные подписки, предлагаемые сайтами знакомств.\n"
+
+msgid "En voir plus"
+msgstr "Увидеть больше\n"
+
+msgid "Comparez le meilleur dans le domaine de la rencontre"
+msgstr "Сравните лучшее в области знакомств\n"
+
+msgid "Comparez des milliers d’applications de rencontres <br/> et de thérapeutes de votre région"
+msgstr "Сравните тысячи приложений для знакомств <br/> и терапевтов в вашем регионе\n"
+
+msgid "Derniers articles mis en ligne"
+msgstr "Последние опубликованные статьи\n"
+
+msgid "Trouver sa rencontre idéale avec Lightmeet"
+msgstr "Найдите свою идеальную пару с Lightmeet\n"
+
+msgid "Pour personnaliser votre expérience, nous collectons des informations sur la façon dont vous utilisez LightMeet, ce qui inclut les données personnelles telles que votre adresse IP. Ces informations sont utilisées pour améliorer votre expérience, stocker les informations contenues sur un appareil et y accéder, ainsi que pour la publicité personnalisée, les études sur l'audience et le développement des services. Pour en savoir plus, consultez notre Politique en matière de cookies."
+msgstr "Чтобы персонализировать ваш опыт, мы собираем информацию о том, как вы используете LightMeet, включая личные данные, такие как ваш IP-адрес. Эта информация используется для улучшения вашего опыта, хранения информации на устройстве и доступа к ней, а также для персонализированной рекламы, исследований аудитории и разработки услуг. Чтобы узнать больше, ознакомьтесь с нашей Политикой в отношении файлов cookie.\n"
+
+msgid "LightMeet et ses 100 partenaires peuvent se baser sur l'intérêt légitime à certaines fins, plutôt que sur le consentement. Cliquez sur « Préférences en matière de cookies » pour avoir plus d'informations à ce sujet et savoir comment vous y opposer, ou sélectionnez « Valider les cookies » afin d'autoriser tous les cookies."
+msgstr "LightMeet и его 100 партнеров могут опираться на законные интересы для определенных целей, а не на согласие. Нажмите на «Настройки файлов cookie», чтобы получить дополнительную информацию об этом и узнать, как с этим бороться, или выберите «Подтвердить файлы cookie», чтобы разрешить все файлы cookie.\n"
+
+msgid "Comment fonctionne LightMeet ?"
+msgstr "Как работает LightMeet?\n"
+
+msgid "Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le Web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs des services de rencontre et autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il suffit de vous inscrire ou de contacter directement le prestataire."
+msgstr "Lightmeet — это поисковая система для сайтов знакомств и терапевтов. Мы исследуем интернет, чтобы найти лучшие сайты знакомств, чтобы вы могли сравнить тарифы на услуги знакомств и другие критерии в одном месте. Как только вы найдете свой сайт знакомств или терапевта, вам просто нужно зарегистрироваться или связаться напрямую с поставщиком услуг.\n"
+
+msgid "Peut-on rechercher aussi des thérapeutes sur LightMeet ?"
+msgstr "Можем ли мы также искать терапевтов на LightMeet?\n"
+
+msgid "Pour trouver des sites de rencontres efficaces, c'est facile : chaque mois, plus de 3 millions de célibataires avisés viennent sur notre site pour trouver le site de rencontre plus efficace. Voici quelques conseils simples pour tirer le meilleur parti de votre recherche de site de rencontre."
+msgstr "Найти эффективные сайты знакомств легко: каждый месяц более 3 миллионов опытных одиноких людей посещают наш сайт, чтобы найти самый эффективный сайт знакомств. Вот несколько простых советов, чтобы извлечь максимальную пользу из вашего поиска сайта знакомств.\n"
+
+msgid "Gagnez du temps et de l'argent"
+msgstr "Сэкономьте время и деньги\n"
+
+msgid "Concurrence et innovation"
+msgstr "Конкуренция и инновации\n"
+
+msgid "Sites de rencontres"
+msgstr "Сайты знакомств\n"
+
+msgid "Thérapeutes"
+msgstr "Терапевты\n"
+
+msgid "Devenir une marque reconnue"
+msgstr "Стать признанным брендом\n"
+
+msgid "Marques & Réseaux sociaux"
+msgstr "Бренды и социальные сети\n"
+
+msgid "Cherchez où vous le sentez "
+msgstr "Ищите там, где чувствуете\n"
+
+msgid "- Vous avez envie de découvrir une personnalité au delà de vos frontières ? Cherchez bientôt dans « le monde entier » pour trouver le site de rencontre le moins cher et envisager un futur en un lieu que vous aimez vraiment."
+msgstr "- Вы хотите открыть для себя личность за пределами своих границ? Скоро ищите в «всемирной сети», чтобы найти самый дешевый сайт знакомств и представить будущее в месте, которое вам действительно нравится.\n"
+
+msgid "Misez sur la gratuité"
+msgstr "Ставьте на бесплатные услуги\n"
+
+msgid "- Sélectionné par Lightmeet, nos partenaires proposent parfois des fonctionnalités entièrement gratuites. En un clic, vous les identifiez. Vous vous donnez une chance d'enfin vivre la plus belle histoire de votre vie."
+msgstr "- Отобранные Lightmeet, наши партнеры иногда предлагают полностью бесплатные функции. Один клик — и вы их определяете. Вы даете себе шанс наконец-то прожить самую красивую историю своей жизни.\n"
+
+msgid "Que se passe-t-il une fois que je me suis inscrit ?"
+msgstr "Что происходит после регистрации?\n"
+
+msgid "Votre e-mail de confirmation d'inscription et toutes les autres informations dont vous aurez besoin proviendront du site de rencontre sur lequel vous êtes inscrits. Si vous avez des questions concernant le suivi de votre inscription, ou si vous souhaitez modifier ou annuler votre inscription, adressez-vous directement à eux."
+msgstr "Ваше подтверждение регистрации и вся другая необходимая информация поступят с сайта знакомств, на который вы зарегистрировались. Если у вас есть вопросы относительно отслеживания вашей регистрации, или если вы хотите изменить или отменить свою регистрацию, обратитесь к ним напрямую.\n"
+
+msgid "Dans quel pays puis-je actuellement trouver un site de rencontre ?"
+msgstr "В какой стране я сейчас могу найти сайт знакомств?\n"
+
+msgid "Actuellement, la France est le premier pays où vous trouverez des site de rencontres sérieux."
+msgstr "В настоящее время Франция — это ведущая страна, где вы найдете серьезные сайты знакомств.\n"
+
+msgid "Puis je m'inscrire sur un site web émettant moins de CO2 ?"
+msgstr "Могу ли я зарегистрироваться на сайте, который выделяет меньше CO2?\n"
+
+msgid "En cours de développement. Depuis que nous avons commencé à afficher le critère d'émission de CO2 des sites web (lorsque cette information est disponible), nous avons noté un net intérêt de la communauté soutenant avec passion le travail de nos développeurs."
+msgstr "В разработке. С тех пор, как мы начали отображать критерии выбросов CO2 сайтов (когда эта информация доступна), мы отметили явный интерес со стороны сообщества, страстно поддерживающего работу наших разработчиков.\n"
+
+msgid "Le comparateur qui répond à vos besoins réels pour trouver l’application qui vous correspond"
+msgstr "Сравнитель, который соответствует вашим реальным потребностям для нахождения подходящего вам приложения\n"
+
+msgid "- Qu'il s'agisse du site web le plus rapide et élégant ou de la plateforme la plus avantageuse, vous pouvez choisir votre site de rencontre en fonction des notes réelles des célibataires."
+msgstr "- Будь то самый быстрый и элегантный веб-сайт или самая выгодная платформа, вы можете выбирать сайт знакомств в зависимости от реальных оценок одиноких людей.\n"
+
+msgid "Oui ! Vous pouvez utiliser la puissance de notre moteur de recherche de site de rencontre pour trouver ce thérapeute qui répond à vos besoins."
+msgstr "Да! Вы можете использовать мощь нашего поискового движка сайтов знакомств, чтобы найти терапевта, который соответствует вашим потребностям.\n"
+
+msgid "La sélection Lightmeet"
+msgstr "Выбор Lightmeet\n"
+
+msgid "France"
+msgstr "Франция\n"
+
+msgid "Ces sites de rencontres sont actuellement étudiés par"
+msgstr "Эти сайты знакомств в настоящее время изучаются\n"
+
+msgid "BIENTÔT disponible"
+msgstr "СКОРО Доступно\n"
+
+msgid "VOTRE PROFIL"
+msgstr "ВАШ ПРОФИЛЬ\n"
+
+msgid "Tout le monde peut savoir que vous cherchez une relation. La sélection de sites de rencontres que nous vous proposons vous aide à faire votre choix."
+msgstr "Каждый может знать, что вы ищете отношения. Выбор сайтов знакомств, который мы предлагаем, поможет вам сделать выбор.\n"
+
+msgid "Faites le choix d'une relation durable"
+msgstr "Сделайте выбор в пользу длительных отношений\n"
+
+msgid "Testez nos sites de rencontres et apprenez à mieux vous connaître."
+msgstr "Попробуйте наши сайты знакомств и узнайте себя лучше.\n"
+
+msgid "Rien à perdre"
+msgstr "Нечего терять\n"
+
+msgid "Trouvez votre partenaire idéal"
+msgstr "Найдите своего идеального партнера\n"
+
+msgid "LA GARANTIE"
+msgstr "ГАРАНТИЯ\n"
+
+msgid "Si vous n’êtes pas satisfait de votre inscription sur l’un de nos partenaires, nous nous engageons à vous rembourser."
+msgstr "Если вы не довольны вашей регистрацией на одном из наших партнеров, мы обещаем вернуть вам деньги.\n"
+
+msgid "NOTRE ÉQUIPE"
+msgstr "НАША КОМАНДА\n"
+
+msgid "Nous sommes une équipe de passionnés, fiers de la mission que nous avons choisie. Nous croyons que l'amour ne doit pas être un parcours du combattant et que la recherche d'une relation amoureuse doit être à la portée de tous."
+msgstr "Мы команда увлеченных людей, гордимся выбранной нами миссией. Мы верим, что любовь не должна быть испытанием, и что поиск романтических отношений должен быть доступен каждому.\n"
+
+msgid "NOUS CONTACTER"
+msgstr "СВЯЗАТЬСЯ С НАМИ\n"
+
+msgid "N'hésitez pas à nous contacter pour toute question ou commentaire concernant votre expérience avec Lightmeet."
+msgstr "Не стесняйтесь обращаться к нам с любыми вопросами или комментариями по поводу вашего опыта с Lightmeet.\n"
+
+msgid "Qui sommes-nous ?"
+msgstr "Кто мы?\n"
+
+msgid "Nous sommes la solution pour tous ceux qui cherchent un partenaire en ligne."
+msgstr "Мы — решение для всех, кто ищет партнера онлайн.\n"
+
+msgid "NOUS TROUVONS LE PARTENAIRE QUI VOUS CONVIENT"
+msgstr "МЫ НАХОДИМ ПАРТНЕРА, КОТОРЫЙ ВАМ ПОДХОДИТ\n"
+
+msgid "Nous avons sélectionné avec soin des plateformes qui répondent à vos besoins."
+msgstr "Мы тщательно отобрали платформы, которые соответствуют вашим потребностям.\n"
+
+msgid "Nous espérons que vous trouverez votre partenaire idéal grâce à notre service."
+msgstr "Мы надеемся, что вы найдете своего идеального партнера с помощью нашего сервиса.\n"
+
+msgid "LA PUISSANCE DE LA TECHNOLOGIE"
+msgstr "СИЛА ТЕХНОЛОГИЙ\n"
+
+msgid "Nous sommes engagés à améliorer l'expérience utilisateur grâce aux technologies modernes."
+msgstr "Мы стремимся улучшить пользовательский опыт с помощью современных технологий.\n"
+
+msgid "N'attendez plus pour trouver l'amour"
+msgstr "Не ждите больше, чтобы найти любовь\n"
+
+msgid "Inscrivez-vous dès maintenant et commencez à rencontrer des célibataires."
+msgstr "Зарегистрируйтесь сейчас и начните встречаться с одинокими.\n"

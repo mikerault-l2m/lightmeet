@@ -1,0 +1,193 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: da-DK\n"
+
+msgid "Éclairez vos rencontres"
+msgstr "Oplys dine møder\n"
+
+msgid "Trouvez le site de rencontres qui vous correspond."
+msgstr "Find den dating hjemmeside, der passer til dig.\n"
+
+msgid "Comparer"
+msgstr "Sammenlign\n"
+
+msgid "Votre vie privée nous tient à cœur"
+msgstr "Dit privatliv betyder meget for os.\n"
+
+msgid "Valider les cookies"
+msgstr "Bekræft cookies\n"
+
+msgid "Paramètres des cookies"
+msgstr "Cookieindstillinger\n"
+
+msgid "Gérez vos préférences ou retirez votre consentement à tout moment sur la page Paramètres de confidentialité, dont le lien se situe en pied de page."
+msgstr "Administrer dine præferencer eller tilbagekalde dit samtykke når som helst på siden for privatlivsindstillinger, som du finder i bunden af siden.\n"
+
+msgid "Comparaison rapide et gratuite"
+msgstr "Hurtig og gratis sammenligning\n"
+
+msgid "des sites de rencontres"
+msgstr "af dating sider\n"
+
+msgid "Gain de temps précieux"
+msgstr "Værdsæt værdifuld tid\n"
+
+msgid "en comparant en 1 clic"
+msgstr "ved at sammenligne med et klik\n"
+
+msgid "+ 100 sites de rencontres"
+msgstr "Over 100 dating sider\n"
+
+msgid "sélectionnés avec soin"
+msgstr "omhyggeligt udvalgt\n"
+
+msgid "Trouvez l'application de rencontres qui correspond à vos besoins réels."
+msgstr "Find den dating app, der passer til dine reelle behov.\n"
+
+msgid "Gagnez du temps et de l’argent en comparant facilement en 1 clic."
+msgstr "Spar tid og penge ved nemt at sammenligne med et klik.\n"
+
+msgid "Découvrez l’ensemble des sites de rencontres du marché."
+msgstr "Opdag alle dating sider på markedet.\n"
+
+msgid "Comparez les différents abonnements proposés par les sites de rencontres."
+msgstr "Sammenlign de forskellige abonnementer, som dating siderne tilbyder.\n"
+
+msgid "En voir plus"
+msgstr "Se mere\n"
+
+msgid "Comparez le meilleur dans le domaine de la rencontre"
+msgstr "Sammenlign det bedste inden for dating\n"
+
+msgid "Comparez des milliers d’applications de rencontres <br/> et de thérapeutes de votre région"
+msgstr "Sammenlign tusindvis af dating apps <br/> og terapeuter i dit område\n"
+
+msgid "Derniers articles mis en ligne"
+msgstr "Seneste artikler offentliggjort\n"
+
+msgid "Trouver sa rencontre idéale avec Lightmeet"
+msgstr "Find din ideelle date med Lightmeet\n"
+
+msgid "Pour personnaliser votre expérience, nous collectons des informations sur la façon dont vous utilisez LightMeet, ce qui inclut les données personnelles telles que votre adresse IP. Ces informations sont utilisées pour améliorer votre expérience, stocker les informations contenues sur un appareil et y accéder, ainsi que pour la publicité personnalisée, les études sur l'audience et le développement des services. Pour en savoir plus, consultez notre Politique en matière de cookies."
+msgstr "For at tilpasse din oplevelse indsamler vi oplysninger om, hvordan du bruger LightMeet, herunder personlige data som din IP-adresse. Disse oplysninger bruges til at forbedre din oplevelse, gemme informationer på en enhed og få adgang til dem, samt til målrettet annoncering, publikumundersøgelser og udvikling af tjenester. For at lære mere, se venligst vores cookiepolitik.\n"
+
+msgid "LightMeet et ses 100 partenaires peuvent se baser sur l'intérêt légitime à certaines fins, plutôt que sur le consentement. Cliquez sur « Préférences en matière de cookies » pour avoir plus d'informations à ce sujet et savoir comment vous y opposer, ou sélectionnez « Valider les cookies » afin d'autoriser tous les cookies."
+msgstr "LightMeet og dets 100 partnere kan basere sig på legitim interesse til visse formål, snarere end på samtykke. Klik på 'Cookieindstillinger' for at få flere oplysninger om dette og finde ud af, hvordan du kan gøre indsigelse, eller vælg 'Bekræft cookies' for at tillade alle cookies.\n"
+
+msgid "Comment fonctionne LightMeet ?"
+msgstr "Hvordan fungerer LightMeet ?\n"
+
+msgid "Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le Web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs des services de rencontre et autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il suffit de vous inscrire ou de contacter directement le prestataire."
+msgstr "Lightmeet er en søgemaskine for dating sider og terapeuter. Vi gennemgår nettet for at finde de bedste dating sider, så du kan sammenligne priserne for datingtjenester og andre kriterier ét sted. Når du har fundet din dating side eller terapeut, skal du blot tilmelde dig eller kontakte udbyderen direkte.\n"
+
+msgid "Peut-on rechercher aussi des thérapeutes sur LightMeet ?"
+msgstr "Kan man også søge efter terapeuter på LightMeet ?\n"
+
+msgid "Pour trouver des sites de rencontres efficaces, c'est facile : chaque mois, plus de 3 millions de célibataires avisés viennent sur notre site pour trouver le site de rencontre plus efficace. Voici quelques conseils simples pour tirer le meilleur parti de votre recherche de site de rencontre."
+msgstr "For at finde effektive dating sider er det nemt: hver måned besøger mere end 3 millioner kloge singler vores hjemmeside for at finde den mest effektive dating side. Her er nogle enkle råd til at få det bedste ud af din søgning efter en dating side.\n"
+
+msgid "Gagnez du temps et de l'argent"
+msgstr "Spar tid og penge\n"
+
+msgid "Concurrence et innovation"
+msgstr "Konkurrence og innovation\n"
+
+msgid "Sites de rencontres"
+msgstr "Dating sider\n"
+
+msgid "Thérapeutes"
+msgstr "Terapeuter\n"
+
+msgid "Devenir une marque reconnue"
+msgstr "Bliv et anerkendt brand\n"
+
+msgid "Marques & Réseaux sociaux"
+msgstr "Brands og sociale medier\n"
+
+msgid "Cherchez où vous le sentez "
+msgstr "Søg hvor du føler det\n"
+
+msgid "- Vous avez envie de découvrir une personnalité au-delà de vos frontières ? Cherchez bientôt dans « le monde entier » pour trouver le site de rencontre le moins cher et envisager un futur en un lieu que vous aimez vraiment."
+msgstr "- Ønsker du at opdage en personlighed ud over dine grænser? Søg snart i 'hele verden' for at finde den billigste dating side og overveje en fremtid i et sted, du virkelig elsker.\n"
+
+msgid "Misez sur la gratuité"
+msgstr "Sats på gratis\n"
+
+msgid "- Sélectionné par Lightmeet, nos partenaires proposent parfois des fonctionnalités entièrement gratuites. En un clic, vous les identifiez. Vous vous donnez une chance d'enfin vivre la plus belle histoire de votre vie."
+msgstr "- Udvalgt af Lightmeet, tilbyder vores partnere nogle gange helt gratis funktioner. Med et klik kan du identificere dem. Du giver dig selv chancen for endelig at leve den smukkeste historie i dit liv.\n"
+
+msgid "Que se passe-t-il une fois que je me suis inscrit ?"
+msgstr "Hvad sker der, når jeg er tilmeldt ?\n"
+
+msgid "Votre e-mail de confirmation d'inscription et toutes les autres informations dont vous aurez besoin proviendront du site de rencontre sur lequel vous êtes inscrits. Si vous avez des questions concernant le suivi de votre inscription, ou si vous souhaitez modifier ou annuler votre inscription, adressez-vous directement à eux."
+msgstr "Din bekræftelses-e-mail og alle andre oplysninger, du har brug for, vil komme fra den dating hjemmeside, du er tilmeldt. Hvis du har spørgsmål om opfølgning på din tilmelding, eller hvis du ønsker at ændre eller annullere din tilmelding, skal du kontakte dem direkte.\n"
+
+msgid "Dans quel pays puis-je actuellement trouver un site de rencontre ?"
+msgstr "I hvilket land kan jeg i øjeblikket finde en dating hjemmeside ?\n"
+
+msgid "Actuellement, la France est le premier pays où vous trouverez des sites de rencontres sérieux."
+msgstr "I øjeblikket er Frankrig det primære land, hvor du finder seriøse dating sider.\n"
+
+msgid "Puis-je m'inscrire sur un site web émettant moins de CO2 ?"
+msgstr "Kan jeg tilmelde mig en hjemmeside, der udleder mindre CO2 ?\n"
+
+msgid "En cours de développement. Depuis que nous avons commencé à afficher le critère d'émission de CO2 des sites web (lorsque cette information est disponible), nous avons noté un net intérêt de la communauté soutenant avec passion le travail de nos développeurs."
+msgstr "Under udvikling. Siden vi begyndte at vise kriteriet for CO2-udledning fra hjemmesider (når denne information er tilgængelig), har vi bemærket en klar interesse fra fællesskabet, der lidenskabeligt støtter vores udvikleres arbejde.\n"
+
+msgid "Que puis-je faire si je ne trouve pas le site de rencontre qui me convient ?"
+msgstr "Hvad kan jeg gøre, hvis jeg ikke finder den dating hjemmeside, der passer til mig ?\n"
+
+msgid "N'ayez crainte, Lightmeet évolue constamment. Si vous ne trouvez pas de site qui vous convienne, n'hésitez pas à nous le faire savoir. Écrivez-nous à contact@lightmeet.fr, nous serons ravis d'entendre vos suggestions."
+msgstr "Vær ikke bange, Lightmeet udvikler sig konstant. Hvis du ikke finder en hjemmeside, der passer til dig, tøv ikke med at fortælle os det. Skriv til os på contact@lightmeet.fr, vi vil være glade for at høre dine forslag.\n"
+
+msgid "Lightmeet vous aide à prendre la meilleure décision."
+msgstr "Lightmeet hjælper dig med at træffe det bedste valg.\n"
+
+msgid "- Que vous soyez le site le plus rapide et le plus élégant ou la plateforme la plus avantageuse, vous pouvez choisir votre site de rencontre selon le critère qui vous intéresse le plus."
+msgstr "- Uanset om du leder efter den hurtigste og mest elegante hjemmeside eller den mest fordelagtige platform, kan du vælge din dating hjemmeside baseret på det kriterium, der interesserer dig mest.\n"
+
+msgid "- En choisissant un site de rencontre qui correspond à votre personnalité et à vos valeurs, vous serez également en mesure de maximiser vos chances de rencontrer des personnes partageant vos affinités."
+msgstr "- Ved at vælge en dating hjemmeside, der passer til din personlighed og dine værdier, vil du også være i stand til at maksimere dine chancer for at møde mennesker, der deler dine præferencer.\n"
+
+msgid "Les meilleurs sites de rencontres disponibles"
+msgstr "De bedste dating sider tilgængelige\n"
+
+msgid "Les services en ligne de rencontres sont de plus en plus fréquents et variés."
+msgstr "Online dating tjenester bliver mere og mere almindelige og varierede.\n"
+
+msgid "- Que ce soit pour une rencontre amoureuse, amicale ou encore professionnelle, le choix est vaste et les opportunités sont multiples."
+msgstr "- Uanset om det er for romantiske, venlige eller professionelle møder, er valget bredt, og mulighederne mange.\n"
+
+msgid "Une large sélection de sites"
+msgstr "Et bredt udvalg af sider\n"
+
+msgid "Que vous soyez à la recherche d'une relation sérieuse, d'un rendez-vous ou simplement d'une rencontre, il y a un site de rencontre pour chaque besoin."
+msgstr "Uanset om du leder efter et seriøst forhold, en date eller blot et møde, er der en dating hjemmeside til ethvert behov.\n"
+
+msgid "La recherche de partenaires"
+msgstr "Søgning efter partnere\n"
+
+msgid "Les sites de rencontre se sont multipliés sur internet et s'adaptent aux nouvelles tendances et attentes des utilisateurs."
+msgstr "Dating sider er blevet mange på internettet og tilpasser sig de nye tendenser og brugernes forventninger.\n"
+
+msgid "- Grâce à des algorithmes complexes et des questionnaires, vous pouvez trouver un partenaire compatible en un temps record."
+msgstr "- Takket være komplekse algoritmer og spørgeskemaer kan du finde en kompatibel partner på rekordtid.\n"
+
+msgid "La sécurité avant tout"
+msgstr "Sikkerhed først\n"
+
+msgid "- Les sites de rencontres prennent la sécurité des utilisateurs très au sérieux et mettent en place des mesures pour protéger votre vie privée."
+msgstr "- Dating sider tager brugernes sikkerhed meget alvorligt og implementerer foranstaltninger for at beskytte dit privatliv.\n"
+
+msgid "Il est important de se sentir en sécurité en ligne lors de la recherche de l'amour."
+msgstr "Det er vigtigt at føle sig sikker online, når man søger kærligheden.\n"
+
+msgid "Conclusion"
+msgstr "Konklusion\n"
+
+msgid "La recherche d'une rencontre peut sembler déroutante, mais avec Lightmeet, vous avez tous les outils à votre disposition pour trouver la plateforme qui vous convient."
+msgstr "Søgningen efter en date kan virke forvirrende, men med Lightmeet har du alle værktøjerne til rådighed for at finde den platform, der passer til dig.\n"
+
+msgid "Utilisez notre comparateur dès aujourd'hui et commencez votre quête de l'amour."
+msgstr "Brug vores sammenligningsværktøj i dag, og begynd din søgen efter kærlighed.\n"

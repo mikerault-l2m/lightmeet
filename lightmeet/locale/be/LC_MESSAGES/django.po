@@ -1,0 +1,187 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: fr-BE\n"
+
+msgid "Éclairez vos rencontres"
+msgstr "Illuminez vos rencontres\n"
+
+msgid "Trouvez le site de rencontres qui vous correspond."
+msgstr "Trouvez le site de rencontres qui vous convient.\n"
+
+msgid "Comparer"
+msgstr "Comparer\n"
+
+msgid "Votre vie privée nous tient à cœur"
+msgstr "Votre vie privée nous importe.\n"
+
+msgid "Valider les cookies"
+msgstr "Valider les cookies\n"
+
+msgid "Paramètres des cookies"
+msgstr "Paramètres des cookies\n"
+
+msgid "Gérez vos préférences ou retirez votre consentement à tout moment sur la page Paramètres de confidentialité, dont le lien se situe en pied de page."
+msgstr "Gérez vos préférences ou retirez votre consentement à tout moment sur la page des Paramètres de confidentialité, dont le lien se trouve en bas de page.\n"
+
+msgid "Comparaison rapide et gratuite"
+msgstr "Comparaison rapide et gratuite\n"
+
+msgid "des sites de rencontres"
+msgstr "des sites de rencontres\n"
+
+msgid "Gain de temps précieux"
+msgstr "Gain de temps précieux\n"
+
+msgid "en comparant en 1 clic"
+msgstr "en comparant en un clic\n"
+
+msgid "+ 100 sites de rencontres"
+msgstr "Plus de 100 sites de rencontres\n"
+
+msgid "sélectionnés avec soin"
+msgstr "sélectionnés avec soin\n"
+
+msgid "Trouvez l'application de rencontres qui correspond à vos besoins réels."
+msgstr "Trouvez l'application de rencontres qui répond à vos besoins réels.\n"
+
+msgid "Gagnez du temps et de l’argent en comparant facilement en 1 clic."
+msgstr "Économisez du temps et de l’argent en comparant facilement en un clic.\n"
+
+msgid "Découvrez l’ensemble des sites de rencontres du marché."
+msgstr "Découvrez l’ensemble des sites de rencontres disponibles sur le marché.\n"
+
+msgid "Comparez les différents abonnements proposés par les sites de rencontres."
+msgstr "Comparez les différents abonnements offerts par les sites de rencontres.\n"
+
+msgid "En voir plus"
+msgstr "Voir plus\n"
+
+msgid "Comparez le meilleur dans le domaine de la rencontre"
+msgstr "Comparez le meilleur dans le domaine des rencontres.\n"
+
+msgid "Comparez des milliers d’applications de rencontres <br/> et de thérapeutes de votre région"
+msgstr "Comparez des milliers d'applications de rencontres <br/> et des thérapeutes de votre région.\n"
+
+msgid "Derniers articles mis en ligne"
+msgstr "Derniers articles publiés\n"
+
+msgid "Trouver sa rencontre idéale avec Lightmeet"
+msgstr "Trouvez votre rencontre idéale avec Lightmeet.\n"
+
+msgid "Pour personnaliser votre expérience, nous collectons des informations sur la façon dont vous utilisez LightMeet, ce qui inclut les données personnelles telles que votre adresse IP. Ces informations sont utilisées pour améliorer votre expérience, stocker les informations contenues sur un appareil et y accéder, ainsi que pour la publicité personnalisée, les études sur l'audience et le développement des services. Pour en savoir plus, consultez notre Politique en matière de cookies."
+msgstr "Pour personnaliser votre expérience, nous collectons des informations sur l’utilisation que vous faites de LightMeet, y compris des données personnelles telles que votre adresse IP. Ces informations servent à améliorer votre expérience, à stocker des données sur un appareil et à y accéder, ainsi qu'à la publicité personnalisée, aux études d'audience et au développement des services. Pour en savoir plus, consultez notre Politique relative aux cookies.\n"
+
+msgid "LightMeet et ses 100 partenaires peuvent se baser sur l'intérêt légitime à certaines fins, plutôt que sur le consentement. Cliquez sur « Préférences en matière de cookies » pour avoir plus d'informations à ce sujet et savoir comment vous y opposer, ou sélectionnez « Valider les cookies » afin d'autoriser tous les cookies."
+msgstr "LightMeet et ses 100 partenaires peuvent se fonder sur un intérêt légitime pour certaines finalités, plutôt que sur le consentement. Cliquez sur 'Préférences en matière de cookies' pour en savoir plus à ce sujet et découvrir comment vous y opposer, ou sélectionnez 'Valider les cookies' pour autoriser tous les cookies.\n"
+
+msgid "Comment fonctionne LightMeet ?"
+msgstr "Comment fonctionne LightMeet ?\n"
+
+msgid "Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le Web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs des services de rencontre et autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il suffit de vous inscrire ou de contacter directement le prestataire."
+msgstr "Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les prix des services de rencontre et d'autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il vous suffit de vous inscrire ou de contacter directement le prestataire.\n"
+
+msgid "Peut-on rechercher aussi des thérapeutes sur LightMeet ?"
+msgstr "Peut-on également rechercher des thérapeutes sur LightMeet ?\n"
+
+msgid "Pour trouver des sites de rencontres efficaces, c'est facile : chaque mois, plus de 3 millions de célibataires avisés viennent sur notre site pour trouver le site de rencontre plus efficace. Voici quelques conseils simples pour tirer le meilleur parti de votre recherche de site de rencontre."
+msgstr "Pour trouver des sites de rencontres efficaces, c'est simple : chaque mois, plus de 3 millions de célibataires avisés visitent notre site pour trouver le site de rencontre le plus efficace. Voici quelques conseils simples pour optimiser votre recherche de site de rencontre.\n"
+
+msgid "Gagnez du temps et de l'argent"
+msgstr "Économisez du temps et de l'argent\n"
+
+msgid "Concurrence et innovation"
+msgstr "Concurrence et innovation\n"
+
+msgid "Sites de rencontres"
+msgstr "Sites de rencontres\n"
+
+msgid "Thérapeutes"
+msgstr "Thérapeutes\n"
+
+msgid "Devenir une marque reconnue"
+msgstr "Devenir une marque reconnue\n"
+
+msgid "Marques & Réseaux sociaux"
+msgstr "Marques et réseaux sociaux\n"
+
+msgid "Cherchez où vous le sentez "
+msgstr "Cherchez où cela vous semble bien\n"
+
+msgid "- Vous avez envie de découvrir une personnalité au-delà de vos frontières ? Cherchez bientôt dans « le monde entier » pour trouver le site de rencontre le moins cher et envisager un futur en un lieu que vous aimez vraiment."
+msgstr "- Vous souhaitez découvrir une personnalité au-delà de vos frontières ? Cherchez bientôt dans 'le monde entier' pour trouver le site de rencontre le moins cher et envisager un futur dans un endroit que vous aimez vraiment.\n"
+
+msgid "Misez sur la gratuité"
+msgstr "Misez sur la gratuité\n"
+
+msgid "- Sélectionné par Lightmeet, nos partenaires proposent parfois des fonctionnalités entièrement gratuites. En un clic, vous les identifiez. Vous vous donnez une chance d'enfin vivre la plus belle histoire de votre vie."
+msgstr "- Sélectionnés par Lightmeet, nos partenaires proposent parfois des fonctionnalités entièrement gratuites. D'un simple clic, vous pouvez les identifier. Vous vous donnez la chance de vivre enfin la plus belle histoire de votre vie.\n"
+
+msgid "Que se passe-t-il une fois que je me suis inscrit ?"
+msgstr "Que se passe-t-il une fois que je suis inscrit ?\n"
+
+msgid "Votre e-mail de confirmation d'inscription et toutes les autres informations dont vous aurez besoin proviendront du site de rencontre sur lequel vous êtes inscrits. Si vous avez des questions concernant le suivi de votre inscription, ou si vous souhaitez modifier ou annuler votre inscription, adressez-vous directement à eux."
+msgstr "Votre e-mail de confirmation d'inscription et toutes les autres informations dont vous aurez besoin proviendront du site de rencontre sur lequel vous êtes inscrit. Si vous avez des questions concernant le suivi de votre inscription ou si vous souhaitez modifier ou annuler votre inscription, adressez-vous directement à eux.\n"
+
+msgid "Dans quel pays puis-je actuellement trouver un site de rencontre ?"
+msgstr "Dans quel pays puis-je actuellement trouver un site de rencontre ?\n"
+
+msgid "Actuellement, la France est le premier pays où vous trouverez des sites de rencontres sérieux."
+msgstr "Actuellement, la France est le premier pays où vous trouverez des sites de rencontres sérieux.\n"
+
+msgid "Puis-je m'inscrire sur un site web émettant moins de CO2 ?"
+msgstr "Puis-je m'inscrire sur un site web qui émet moins de CO2 ?\n"
+
+msgid "En cours de développement. Depuis que nous avons commencé à afficher le critère d'émission de CO2 des sites web (lorsque cette information est disponible), nous avons noté un net intérêt de la communauté soutenant avec passion le travail de nos développeurs."
+msgstr "En cours de développement. Depuis que nous avons commencé à afficher le critère d'émission de CO2 des sites web (lorsque cette information est disponible), nous avons constaté un vif intérêt de la communauté, soutenant avec passion le travail de nos développeurs.\n"
+
+msgid "Lightmeet vous aide à prendre la meilleure décision."
+msgstr "Lightmeet vous aide à prendre la meilleure décision.\n"
+
+msgid "- Que vous soyez le site le plus rapide et le plus élégant ou la plateforme la plus avantageuse, vous pouvez choisir votre site de rencontre selon le critère qui vous intéresse le plus."
+msgstr "- Que vous recherchiez le site le plus rapide et élégant ou la plateforme la plus avantageuse, vous pouvez choisir votre site de rencontre selon le critère qui vous importe le plus.\n"
+
+msgid "- En choisissant un site de rencontre qui correspond à votre personnalité et à vos valeurs, vous serez également en mesure de maximiser vos chances de rencontrer des personnes partageant vos affinités."
+msgstr "- En choisissant un site de rencontre qui s'aligne sur votre personnalité et vos valeurs, vous maximisez également vos chances de rencontrer des personnes qui partagent vos affinités.\n"
+
+msgid "Les meilleurs sites de rencontres disponibles"
+msgstr "Les meilleurs sites de rencontres disponibles\n"
+
+msgid "Les services en ligne de rencontres sont de plus en plus fréquents et variés."
+msgstr "Les services de rencontres en ligne sont de plus en plus courants et variés.\n"
+
+msgid "- Que ce soit pour une rencontre amoureuse, amicale ou encore professionnelle, le choix est vaste et les opportunités sont multiples."
+msgstr "- Que ce soit pour une rencontre amoureuse, amicale ou même professionnelle, le choix est large et les opportunités nombreuses.\n"
+
+msgid "Une large sélection de sites"
+msgstr "Une large sélection de sites\n"
+
+msgid "Que vous soyez à la recherche d'une relation sérieuse, d'un rendez-vous ou simplement d'une rencontre, il y a un site de rencontre pour chaque besoin."
+msgstr "Que vous soyez à la recherche d'un relation sérieuse, d'un rendez-vous ou simplement d'une rencontre, il existe un site de rencontre pour chaque besoin.\n"
+
+msgid "La recherche de partenaires"
+msgstr "La recherche de partenaires\n"
+
+msgid "Les sites de rencontre se sont multipliés sur internet et s'adaptent aux nouvelles tendances et attentes des utilisateurs."
+msgstr "Les sites de rencontres se sont multipliés sur Internet et s'adaptent aux nouvelles tendances et attentes des utilisateurs.\n"
+
+msgid "- Grâce à des algorithmes complexes et des questionnaires, vous pouvez trouver un partenaire compatible en un temps record."
+msgstr "- Grâce à des algorithmes complexes et des questionnaires, vous pouvez trouver un partenaire compatible en un temps record.\n"
+
+msgid "La sécurité avant tout"
+msgstr "La sécurité avant tout\n"
+
+msgid "- Les sites de rencontres prennent la sécurité des utilisateurs très au sérieux et mettent en place des mesures pour protéger votre vie privée."
+msgstr "- Les sites de rencontres prennent très au sérieux la sécurité des utilisateurs et mettent en place des mesures pour protéger votre vie privée.\n"
+
+msgid "Il est important de se sentir en sécurité en ligne lors de la recherche de l'amour."
+msgstr "Il est important de se sentir en sécurité en ligne lorsque l'on recherche l'amour.\n"
+
+msgid "Conclusion"
+msgstr "Conclusion\n"
+
+msgid "La recherche d'une rencontre peut sembler déroutante, mais avec Lightmeet, vous avez tous les outils à votre disposition pour trouver la plateforme qui vous convient."
+msgstr "La recherche d'une rencontre peut sembler déroutante, mais avec Lightmeet, vous disposez de tous les outils nécessaires pour trouver la plateforme qui vous convient.\n"
+
+msgid "Utilisez notre comparateur dès aujourd'hui et commencez votre quête de l'amour."
+msgstr "Utilisez notre comparateur dès aujourd'hui et commencez votre quête de l'amour.\n"

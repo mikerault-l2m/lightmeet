@@ -128,11 +128,17 @@ USE_TZ = True
 
 LANGUAGES = [
     #('en-us', 'English'),
-    ('fr', 'French'),
-    ('de', 'Deutsch'),
-    ('es','Spanish'),
-    ('nl', 'Nederlands'),
-    ('it', 'Italiano'),
+    ('fr', 'Français'),
+    ('de', 'Allemand'),
+    ('es','Espagnol'),
+    ('nl', 'Néerlandais'),
+    ('it', 'Italien'),
+    ('da', 'Danois'),
+    ('da', 'Danois'),
+    ('be', 'Belge'),
+    ('pt', 'Portugais'),
+    #('en', 'Anglais'),
+    #('ru', 'Russe'),
 ]
 
 # Test de traduction par gettext_noop à tester

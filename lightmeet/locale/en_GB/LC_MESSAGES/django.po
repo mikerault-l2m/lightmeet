@@ -1,0 +1,1274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-25 14:28+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: accounts/models.py:8 accounts/models.py:43
+msgid "Adresse IP"
+msgstr ""
+
+#: accounts/models.py:9 accounts/models.py:44
+msgid "Localisation"
+msgstr ""
+
+#: accounts/models.py:10
+msgid "Horodatage"
+msgstr ""
+
+#: accounts/models.py:13
+msgid "Visiteur de Lightmeet"
+msgstr ""
+
+#: accounts/models.py:14
+msgid "Visiteurs de Lightmeet"
+msgstr ""
+
+#: accounts/models.py:19
+msgid "L'adresse e-mail est obligatoire."
+msgstr ""
+
+#: accounts/models.py:33
+msgid "E-mail"
+msgstr ""
+
+#: accounts/models.py:34
+msgid "Actif"
+msgstr ""
+
+#: accounts/models.py:35
+msgid "Membre du personnel"
+msgstr ""
+
+#: accounts/models.py:36
+msgid "Administrateur"
+msgstr ""
+
+#: accounts/models.py:37
+msgid "Date de naissance"
+msgstr ""
+
+#: accounts/models.py:38 psy/models.py:131
+msgid "Prénom"
+msgstr ""
+
+#: accounts/models.py:39 legal/views.py:74
+msgid "Consentement"
+msgstr ""
+
+#: accounts/models.py:40
+msgid "J'aime hebdomadaires"
+msgstr ""
+
+#: accounts/models.py:41
+msgid "Favoris hebdomadaires"
+msgstr ""
+
+#: accounts/models.py:42
+msgid "Dernière réinitialisation hebdomadaire"
+msgstr ""
+
+#: accounts/models.py:45
+msgid "Engagement"
+msgstr ""
+
+#: accounts/models.py:46
+msgid "Application préférée"
+msgstr ""
+
+#: accounts/models.py:47
+msgid "Clics Comparer"
+msgstr ""
+
+#: accounts/models.py:48
+msgid "Clics Rencontres"
+msgstr ""
+
+#: accounts/models.py:49
+msgid "Clics Thérapeutes"
+msgstr ""
+
+#: accounts/models.py:55
+msgid "Compte utilisateur"
+msgstr ""
+
+#: accounts/models.py:56
+msgid "Comptes utilisateurs"
+msgstr ""
+
+#: accounts/models.py:79 accounts/models.py:82 accounts/models.py:85
+msgid "Informations de localisation non disponibles"
+msgstr ""
+
+#: accounts/models.py:81 accounts/models.py:84
+msgid "Adresse IP non disponible"
+msgstr ""
+
+#: accounts/views.py:26
+msgid "Your account has been deleted successfully."
+msgstr ""
+
+#: accounts/views.py:40
+msgid "Programme Frileux"
+msgstr ""
+
+#: accounts/views.py:50 accounts/views.py:80
+msgid "page_accueil"
+msgstr ""
+
+#: legal/views.py:24
+msgid "Créer un document juridique"
+msgstr ""
+
+#: legal/views.py:25 legal/views.py:34 legal/views.py:42
+msgid "Documents juridiques"
+msgstr ""
+
+#: legal/views.py:33
+msgid "Modifier un document juridique"
+msgstr ""
+
+#: legal/views.py:41
+msgid "Supprimer un document juridique"
+msgstr ""
+
+#: legal/views.py:50
+msgid "Politique de Mentions Légales"
+msgstr ""
+
+#: legal/views.py:56
+msgid "Conditions Générales d'Utilisation"
+msgstr ""
+
+#: legal/views.py:62
+msgid "Politique de Confidentialité"
+msgstr ""
+
+#: legal/views.py:68
+msgid "Politique de Cookies"
+msgstr ""
+
+#: lightmeet/settings.py:115
+msgid "English (US)"
+msgstr ""
+
+#: lightmeet/settings.py:116
+msgid "English (UK)"
+msgstr ""
+
+#: lightmeet/settings.py:117
+msgid "English (Australia)"
+msgstr ""
+
+#: lightmeet/settings.py:118
+msgid "English (Canada)"
+msgstr ""
+
+#: lightmeet/settings.py:119
+msgid "French"
+msgstr ""
+
+#: lightmeet/settings.py:120
+msgid "German"
+msgstr ""
+
+#: lightmeet/settings.py:121
+msgid "Danish"
+msgstr ""
+
+#: lightmeet/settings.py:122
+msgid "Portuguese"
+msgstr ""
+
+#: lightmeet/settings.py:123
+msgid "Dutch"
+msgstr ""
+
+#: lightmeet/settings.py:124
+msgid "Spanish"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:55
+msgid "Éclairez vos rencontres"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:56
+msgid "Trouvez le site de rencontres qui vous correspond."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:61
+msgid "Comparer"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:74
+msgid "Votre vie privée nous tient à cœur"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:76
+msgid ""
+"Pour personnaliser votre expérience, nous collectons des informations sur la "
+"façon dont vous utilisez LightMeet, ce qui inclut les données personnelles "
+"telles que votre adresse IP. Ces informations sont utilisées pour améliorer "
+"votre expérience, stocker les informations contenues sur un appareil et y "
+"accéder, ainsi que pour la publicité personnalisée, les études sur "
+"l'audience et le développement des services. Pour en savoir plus, consultez "
+"notre Politique en matière de cookies."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:78
+msgid ""
+"LightMeet et ses 100 partenaires peuvent se baser sur l\\'intérêt légitime à "
+"certaines fins, plutôt que sur le consentement. Cliquez sur « Préférences en "
+"matière de cookies » pour avoir plus d'informations à ce sujet et savoir "
+"comment vous y opposer, ou sélectionnez « Valider les cookies » afin "
+"d'autoriser tous les cookies."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:85
+msgid "Valider les cookies"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:88
+msgid "Paramètres des cookies"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:91
+msgid ""
+"Gérez vos préférences ou retirez votre consentement à tout moment sur la "
+"page Paramètres de confidentialité, dont le lien se situe en pied de page."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:112
+msgid "Comparaison rapide et gratuite"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:113
+msgid "des sites de rencontres"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:129
+msgid "Gain de temps précieux"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:130
+msgid "en comparant en 1 clic"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:146
+msgid "+ 100 sites de rencontres"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:147
+msgid "sélectionnés avec soin"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:152
+msgid ""
+"Le comparateur qui répond à vos besoins réels pour trouver l’application qui "
+"vous correspond"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:155
+msgid "Trouvez l'application de rencontres qui correspond à vos besoins réels."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:156
+msgid "Gagnez du temps et de l’argent en comparant facilement en 1 clic."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:157
+msgid "Découvrez l’ensemble des sites de rencontres du marché."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:158
+msgid ""
+"Comparez les différents abonnements proposés par les sites de rencontres."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:161
+msgid "En voir plus"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:167
+msgid "Comparez le meilleur du domaine de la rencontre"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:168
+msgid "Comparez des dizaines d’applications de rencontres"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:172
+msgid "Sites de rencontres"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:176
+msgid "Derniers articles mis en ligne"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:197
+msgid "Trouver sa rencontre idéale avec Lightmeet"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:204
+msgid "Comment fonctionne LightMeet ?"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:215
+msgid ""
+"Lightmeet est un moteur de recherche de sites de rencontres. Nous parcourons "
+"le Web pour trouver les meilleurs sites de rencontres, afin que vous "
+"puissiez comparer les tarifs et autres critères au même endroit. Une fois "
+"que vous avez trouvé votre site de rencontre, il suffit de vous inscrire "
+"gratuitement sur le site en question."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:221
+msgid "Peut-on trouver tous les sites de rencontres sur LightMeet ?"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:232
+msgid ""
+"Pour trouver des sites de rencontres efficaces, c'est facile : chaque mois, "
+"plus de 3 millions de célibataires avisés viennent sur notre site pour "
+"trouver le site de rencontre plus efficace. Voici quelques conseils simples "
+"pour tirer le meilleur parti de votre recherche de site de rencontre."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:234
+msgid "Gagnez du temps et de l'argent"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:235
+msgid ""
+"- Qu'il s'agisse du site web le plus rapide et élégant ou de la plateforme "
+"la plus avantageuse, vous pouvez choisir votre site de rencontre en fonction "
+"des notes réelles des célibataires."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:239
+msgid "Cherchez où vous le sentez "
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:240
+msgid ""
+"- Vous avez envie de découvrir une personnalité au delà de vos frontières ? "
+"Cherchez bientôt dans « le monde entier » pour trouver le site de rencontre "
+"le moins cher et envisager un futur en un lieu que vous aimez vraiment."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:244
+msgid "Misez sur la gratuité"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:245
+msgid ""
+"- Sélectionné par Lightmeet, nos partenaires proposent parfois des "
+"fonctionnalités entièrement gratuites. En un clic, vous les identifiez. Vous "
+"vous donnez une chance d'enfin vivre la plus belle histoire de votre vie."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:253
+msgid "Que se passe-t-il une fois que je me suis inscrit ?"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:264
+msgid ""
+"Votre e-mail de confirmation d'inscription et toutes les autres informations "
+"dont vous aurez besoin proviendront du site de rencontre sur lequel vous "
+"êtes inscrits. Si vous avez des questions concernant le suivi de votre "
+"inscription, ou si vous souhaitez modifier ou annuler votre inscription, "
+"adressez-vous directement à eux."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:273
+msgid "Dans quel pays puis-je actuellement trouver un site de rencontre ?"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/Home.html:282
+msgid ""
+"Actuellement, la France est le premier pays où vous trouverez des site de "
+"rencontres sérieux."
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:28
+msgid "Rencontres"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:31
+msgid "Thérapeutes"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:36
+msgid "La sélection Lightmeet"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:54
+#: partner_meet/templates/partner_meet/partnermeet_list.html:83
+msgid "France"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:61
+msgid "ans"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:63
+msgid "Visites / mois"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:65
+msgid "Visiter"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:99
+msgid "Ces sites de rencontres sont actuellement étudiés par"
+msgstr ""
+
+#: partner_meet/templates/partner_meet/partnermeet_list.html:100
+msgid "BIENTÔT disponible"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:52
+msgid "Trouver l'amour grâce à un comparateur de sites de rencontres"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:61
+msgid ""
+"Trouver l'amour grâce à un comparateur de sites de rencontres. Lorsque l’on "
+"se lance dans la recherche de l’amour en ligne, la multitude de sites de "
+"rencontre disponibles peut rapidement devenir déroutante."
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:62
+msgid ""
+"Face à cette offre abondante, l'utilisation d'un comparateur de sites de "
+"rencontres sérieux devient un véritable atout pour faire des rencontres "
+"adaptées à ses attentes."
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:66
+msgid ""
+"En quelques clics, un comparateur vous fait gagner un temps précieux en vous "
+"proposant une vue d'ensemble des meilleurs sites de rencontres tels que"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:74
+msgid ""
+"Plus besoin de naviguer des heures pour faire une rencontre. Vous pouvez "
+"ainsi faire un choix éclairé, en vous concentrant sur les plateformes qui "
+"correspondent vraiment à vos besoins, que ce soit pour des rencontres "
+"sérieuses, amoureuses, seniors, ou même pour rencontrer des célibataires à "
+"la recherche du grand amour."
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:79
+msgid ""
+"1 - Garder l'esprit ouvert face aux différentes plateformes de rencontre"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:84
+msgid "A - S'inscrire sur plusieurs plateformes"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:88
+msgid ""
+"Ne limitez pas vos options. Multipliez vos inscriptions pour explorer divers "
+"environnements, notamment sur des sites de rencontre comme"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:90
+msgid "ou même"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:90
+msgid "Adopte un Mec"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:90
+msgid "afin de maximiser vos chances de faire des rencontres sérieuses."
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:94
+msgid "B - Critères essentiels à considérer"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:98
+msgid ""
+"Lors de votre inscription sur un site de rencontres, il est essentiel de "
+"prêter attention à la qualité des profils, à la modération des contenus et à "
+"la sécurité. Que vous recherchiez des rencontres amoureuses, sérieuses, ou "
+"même des rencontres discrètes, ces aspects sont cruciaux pour garantir une "
+"expérience de dating agréable."
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:102
+msgid "C - Qualité des profils et des fonctionnalités"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:106
+msgid "Les plateformes comme"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:108
+#: posts/templates/posts/First_Article.html:130
+msgid "Parship"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:108
+msgid "et"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:110
+msgid ""
+"se distinguent par des profils vérifiés et des outils avancés, tels que le "
+"test de personnalité, qui facilitent des connexions durables et "
+"authentiques. Ces sites permettent également de rencontrer des célibataires "
+"compatibles en fonction des affinités."
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:114
+msgid ""
+"2 - Critères à considérer lors de la comparaison de plateformes de rencontre"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:118
+msgid ""
+"Lorsque vous utilisez un comparateur de sites de rencontres, plusieurs "
+"critères doivent être pris en compte pour choisir un site de rencontre qui "
+"correspond à vos attentes."
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:123
+msgid "Popularité et Fiabilité : Les meilleurs sites de rencontre tels que"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:127
+msgid ""
+"bénéficient d’une grande communauté et d’une solide réputation. Leur cadre "
+"sécurisé favorise les rencontres sérieuses et de qualité."
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:128
+msgid "Rencontre par affinités : Des sites comme"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:131
+msgid ""
+"mettent l’accent sur la compatibilité en se basant sur des critères de "
+"personnalité, vous permettant de rencontrer l'âme sœur ou de faire de belles "
+"rencontres."
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:132
+msgid ""
+"Inscription gratuite et offres payantes : Avant de souscrire à un abonnement "
+"sur un site de rencontres sérieux, testez les fonctionnalités gratuites pour "
+"vous assurer que la plateforme correspond bien à vos attentes en matière de "
+"relations sérieuses."
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:133
+msgid ""
+"Avis des utilisateurs : Prenez en compte les témoignages et expériences "
+"d'autres membres, qu'il s'agisse de rencontres seniors ou de rencontres par "
+"affinités, pour mieux comprendre le fonctionnement et la fiabilité du site."
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:137
+msgid ""
+"3 - Témoignages : Trouver l'amour avec un comparateur de sites de rencontres"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:143
+msgid "Comparateur de sites de rencontre"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:144
+msgid "Métriques"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:149
+msgid "Nombre de sites comparés"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:153
+msgid "Nombre d'utilisateurs actifs"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:157
+msgid "Taux de réussite"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:161
+msgid "Nombre de couples formés"
+msgstr ""
+
+#: posts/templates/posts/First_Article.html:168
+msgid ""
+"Ces chiffres témoignent de l'efficacité des comparateurs de sites de "
+"rencontres. Utiliser un outil de comparaison vous permettra non seulement de "
+"gagner du temps, mais également de maximiser vos chances de trouver l'amour. "
+"Ne laissez pas le hasard décider de votre bonheur, faites le choix d'une "
+"recherche éclairée pour des rencontres sérieuses."
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:50
+msgid ""
+"Rencontres en ligne : Les avantages méconnus d'un comparateur de sites de "
+"rencontres"
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:57
+msgid ""
+"Les rencontres en ligne ont connu une popularité croissante ces dernières "
+"années, permettant aux célibataires de trouver l'amour ou des relations "
+"stables via des plateformes spécialisées. Cependant, face à la multitude de "
+"sites de rencontres disponibles, il peut être difficile de dénicher celui "
+"qui répond le mieux à ses attentes. C'est là que le rôle d'un comparateur de "
+"sites de rencontres sérieux prend tout son sens, offrant une multitude "
+"d'avantages souvent méconnus."
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:61
+msgid ""
+"En utilisant un comparateur, vous pouvez identifier les sites les plus "
+"efficaces, économiser du temps et de l'argent, profiter de conseils "
+"personnalisés, éviter les arnaques et découvrir de nouvelles fonctionnalités."
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:66
+msgid "Identifier le site de rencontre le plus efficace"
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:69
+msgid ""
+"Comparer les fonctionnalités, les tarifs, les avis des utilisateurs et les "
+"taux de réussite aide à choisir le site qui correspond le mieux à vos "
+"attentes."
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:74
+msgid "Économiser du temps et de l'argent"
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:77
+msgid ""
+"Un comparateur vous permet d'éviter de vous inscrire sur plusieurs sites et "
+"d'éviter les frais inutiles, en choisissant directement un site adapté à vos "
+"besoins."
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:82
+msgid "Profiter de conseils et recommandations personnalisés"
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:85
+msgid ""
+"Obtenez des recommandations basées sur vos critères personnels comme l'âge "
+"et les centres d'intérêt pour trouver les sites les plus adaptés."
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:90
+msgid "Éviter les arnaques et les faux profils"
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:93
+msgid ""
+"Choisissez des plateformes réputées et sécurisées pour éviter les faux "
+"profils et les escroqueries."
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:98
+msgid "Découvrir de nouvelles fonctionnalités"
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:101
+msgid ""
+"Explorez des outils innovants comme les tests de personnalité et les "
+"événements pour enrichir votre expérience de rencontre en ligne."
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:106
+msgid "Bénéficier d'un suivi et d'un support client personnalisé"
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:109
+msgid ""
+"Profitez d'une assistance dédiée et de guides pour optimiser votre "
+"utilisation des plateformes de rencontres."
+msgstr ""
+
+#: posts/templates/posts/Second_Article.html:113
+msgid ""
+"En conclusion, un comparateur de sites de rencontres sérieux peut grandement "
+"améliorer votre expérience en ligne, vous aidant à trouver la relation que "
+"vous recherchez en évitant les erreurs courantes."
+msgstr ""
+
+#: psy/models.py:8
+msgid "01 - Ain"
+msgstr ""
+
+#: psy/models.py:9
+msgid "02 - Aisne"
+msgstr ""
+
+#: psy/models.py:10
+msgid "03 - Allier"
+msgstr ""
+
+#: psy/models.py:11
+msgid "04 - Alpes-de-Haute-Provence"
+msgstr ""
+
+#: psy/models.py:12
+msgid "05 - Hautes-Alpes"
+msgstr ""
+
+#: psy/models.py:13
+msgid "06 - Alpes-Maritimes"
+msgstr ""
+
+#: psy/models.py:14
+msgid "07 - Ardèche"
+msgstr ""
+
+#: psy/models.py:15
+msgid "08 - Ardennes"
+msgstr ""
+
+#: psy/models.py:16
+msgid "09 - Ariège"
+msgstr ""
+
+#: psy/models.py:17
+msgid "10 - Aube"
+msgstr ""
+
+#: psy/models.py:18
+msgid "11 - Aude"
+msgstr ""
+
+#: psy/models.py:19
+msgid "12 - Aveyron"
+msgstr ""
+
+#: psy/models.py:20
+msgid "13 - Bouches-du-Rhône"
+msgstr ""
+
+#: psy/models.py:21
+msgid "14 - Calvados"
+msgstr ""
+
+#: psy/models.py:22
+msgid "15 - Cantal"
+msgstr ""
+
+#: psy/models.py:23
+msgid "16 - Charente"
+msgstr ""
+
+#: psy/models.py:24
+msgid "17 - Charente-Maritime"
+msgstr ""
+
+#: psy/models.py:25
+msgid "18 - Cher"
+msgstr ""
+
+#: psy/models.py:26
+msgid "19 - Corrèze"
+msgstr ""
+
+#: psy/models.py:27
+msgid "21 - Côte-d'Or"
+msgstr ""
+
+#: psy/models.py:28
+msgid "22 - Côtes-d'Armor"
+msgstr ""
+
+#: psy/models.py:29
+msgid "23 - Creuse"
+msgstr ""
+
+#: psy/models.py:30
+msgid "24 - Dordogne"
+msgstr ""
+
+#: psy/models.py:31
+msgid "25 - Doubs"
+msgstr ""
+
+#: psy/models.py:32
+msgid "26 - Drôme"
+msgstr ""
+
+#: psy/models.py:33
+msgid "27 - Eure"
+msgstr ""
+
+#: psy/models.py:34
+msgid "28 - Eure-et-Loir"
+msgstr ""
+
+#: psy/models.py:35
+msgid "29 - Finistère"
+msgstr ""
+
+#: psy/models.py:36
+msgid "2A - Corse-du-Sud"
+msgstr ""
+
+#: psy/models.py:37
+msgid "2B - Haute-Corse"
+msgstr ""
+
+#: psy/models.py:38
+msgid "30 - Gard"
+msgstr ""
+
+#: psy/models.py:39
+msgid "31 - Haute-Garonne"
+msgstr ""
+
+#: psy/models.py:40
+msgid "32 - Gers"
+msgstr ""
+
+#: psy/models.py:41
+msgid "33 - Gironde"
+msgstr ""
+
+#: psy/models.py:42
+msgid "34 - Hérault"
+msgstr ""
+
+#: psy/models.py:43
+msgid "35 - Ille-et-Vilaine"
+msgstr ""
+
+#: psy/models.py:44
+msgid "36 - Indre"
+msgstr ""
+
+#: psy/models.py:45
+msgid "37 - Indre-et-Loire"
+msgstr ""
+
+#: psy/models.py:46
+msgid "38 - Isère"
+msgstr ""
+
+#: psy/models.py:47
+msgid "39 - Jura"
+msgstr ""
+
+#: psy/models.py:48
+msgid "40 - Landes"
+msgstr ""
+
+#: psy/models.py:49
+msgid "41 - Loir-et-Cher"
+msgstr ""
+
+#: psy/models.py:50
+msgid "42 - Loire"
+msgstr ""
+
+#: psy/models.py:51
+msgid "43 - Haute-Loire"
+msgstr ""
+
+#: psy/models.py:52
+msgid "44 - Loire-Atlantique"
+msgstr ""
+
+#: psy/models.py:53
+msgid "45 - Loiret"
+msgstr ""
+
+#: psy/models.py:54
+msgid "46 - Lot"
+msgstr ""
+
+#: psy/models.py:55
+msgid "47 - Lot-et-Garonne"
+msgstr ""
+
+#: psy/models.py:56
+msgid "48 - Lozère"
+msgstr ""
+
+#: psy/models.py:57
+msgid "49 - Maine-et-Loire"
+msgstr ""
+
+#: psy/models.py:58
+msgid "50 - Manche"
+msgstr ""
+
+#: psy/models.py:59
+msgid "51 - Marne"
+msgstr ""
+
+#: psy/models.py:60
+msgid "52 - Haute-Marne"
+msgstr ""
+
+#: psy/models.py:61
+msgid "53 - Mayenne"
+msgstr ""
+
+#: psy/models.py:62
+msgid "54 - Meurthe-et-Moselle"
+msgstr ""
+
+#: psy/models.py:63
+msgid "55 - Meuse"
+msgstr ""
+
+#: psy/models.py:64
+msgid "56 - Morbihan"
+msgstr ""
+
+#: psy/models.py:65
+msgid "57 - Moselle"
+msgstr ""
+
+#: psy/models.py:66
+msgid "58 - Nièvre"
+msgstr ""
+
+#: psy/models.py:67
+msgid "59 - Nord"
+msgstr ""
+
+#: psy/models.py:68
+msgid "60 - Oise"
+msgstr ""
+
+#: psy/models.py:69
+msgid "61 - Orne"
+msgstr ""
+
+#: psy/models.py:70
+msgid "62 - Pas-de-Calais"
+msgstr ""
+
+#: psy/models.py:71
+msgid "63 - Puy-de-Dôme"
+msgstr ""
+
+#: psy/models.py:72
+msgid "64 - Pyrénées-Atlantiques"
+msgstr ""
+
+#: psy/models.py:73
+msgid "65 - Hautes-Pyrénées"
+msgstr ""
+
+#: psy/models.py:74
+msgid "66 - Pyrénées-Orientales"
+msgstr ""
+
+#: psy/models.py:75
+msgid "67 - Bas-Rhin"
+msgstr ""
+
+#: psy/models.py:76
+msgid "68 - Haut-Rhin"
+msgstr ""
+
+#: psy/models.py:77
+msgid "69 - Rhône"
+msgstr ""
+
+#: psy/models.py:78
+msgid "70 - Haute-Saône"
+msgstr ""
+
+#: psy/models.py:79
+msgid "71 - Saône-et-Loire"
+msgstr ""
+
+#: psy/models.py:80
+msgid "72 - Sarthe"
+msgstr ""
+
+#: psy/models.py:81
+msgid "73 - Savoie"
+msgstr ""
+
+#: psy/models.py:82
+msgid "74 - Haute-Savoie"
+msgstr ""
+
+#: psy/models.py:83
+msgid "75 - Paris"
+msgstr ""
+
+#: psy/models.py:84
+msgid "76 - Seine-Maritime"
+msgstr ""
+
+#: psy/models.py:85
+msgid "77 - Seine-et-Marne"
+msgstr ""
+
+#: psy/models.py:86
+msgid "78 - Yvelines"
+msgstr ""
+
+#: psy/models.py:87
+msgid "79 - Deux-Sèvres"
+msgstr ""
+
+#: psy/models.py:88
+msgid "80 - Somme"
+msgstr ""
+
+#: psy/models.py:89
+msgid "81 - Tarn"
+msgstr ""
+
+#: psy/models.py:90
+msgid "82 - Tarn-et-Garonne"
+msgstr ""
+
+#: psy/models.py:91
+msgid "83 - Var"
+msgstr ""
+
+#: psy/models.py:92
+msgid "84 - Vaucluse"
+msgstr ""
+
+#: psy/models.py:93
+msgid "85 - Vendée"
+msgstr ""
+
+#: psy/models.py:94
+msgid "86 - Vienne"
+msgstr ""
+
+#: psy/models.py:95
+msgid "87 - Haute-Vienne"
+msgstr ""
+
+#: psy/models.py:96
+msgid "88 - Vosges"
+msgstr ""
+
+#: psy/models.py:97
+msgid "89 - Yonne"
+msgstr ""
+
+#: psy/models.py:98
+msgid "90 - Territoire de Belfort"
+msgstr ""
+
+#: psy/models.py:99
+msgid "91 - Essonne"
+msgstr ""
+
+#: psy/models.py:100
+msgid "92 - Hauts-de-Seine"
+msgstr ""
+
+#: psy/models.py:101
+msgid "93 - Seine-Saint-Denis"
+msgstr ""
+
+#: psy/models.py:102
+msgid "94 - Val-de-Marne"
+msgstr ""
+
+#: psy/models.py:103
+msgid "95 - Val-d'Oise"
+msgstr ""
+
+#: psy/models.py:104
+msgid "971 - Guadeloupe"
+msgstr ""
+
+#: psy/models.py:105
+msgid "972 - Martinique"
+msgstr ""
+
+#: psy/models.py:106
+msgid "973 - Guyane"
+msgstr ""
+
+#: psy/models.py:107
+msgid "974 - La Réunion"
+msgstr ""
+
+#: psy/models.py:108
+msgid "976 - Mayotte"
+msgstr ""
+
+#: psy/models.py:110
+msgid "Département"
+msgstr ""
+
+#: psy/models.py:114 psy/views.py:137 psy/views.py:282
+msgid "Diplômé d'état"
+msgstr ""
+
+#: psy/models.py:115 psy/views.py:138 psy/views.py:283
+msgid "Indépendant"
+msgstr ""
+
+#: psy/models.py:117
+msgid "Diplôme"
+msgstr ""
+
+#: psy/models.py:119
+msgid "Document du diplôme"
+msgstr ""
+
+#: psy/models.py:123 psy/views.py:141 psy/views.py:286
+msgid "Psychologie clinique"
+msgstr ""
+
+#: psy/models.py:124 psy/views.py:142 psy/views.py:287
+msgid "Psychologie du travail"
+msgstr ""
+
+#: psy/models.py:125 psy/views.py:143 psy/views.py:288
+msgid "Psychologie sociale"
+msgstr ""
+
+#: psy/models.py:127
+msgid "Spécialité"
+msgstr ""
+
+#: psy/models.py:129
+msgid "Photo"
+msgstr ""
+
+#: psy/models.py:130
+msgid "Nom"
+msgstr ""
+
+#: psy/models.py:132
+msgid "Adresse"
+msgstr ""
+
+#: psy/models.py:133
+msgid "Code postal"
+msgstr ""
+
+#: psy/models.py:134
+msgid "Ville"
+msgstr ""
+
+#: psy/models.py:138
+msgid "Homme"
+msgstr ""
+
+#: psy/models.py:139
+msgid "Femme"
+msgstr ""
+
+#: psy/models.py:141
+msgid "Genre"
+msgstr ""
+
+#: psy/models.py:143
+msgid "Site web"
+msgstr ""
+
+#: psy/models.py:144
+msgid "Téléphone"
+msgstr ""
+
+#: psy/models.py:145
+msgid "Instagram"
+msgstr ""
+
+#: psy/models.py:146
+msgid "Facebook"
+msgstr ""
+
+#: psy/models.py:147
+msgid "LinkedIn"
+msgstr ""
+
+#: psy/models.py:148
+msgid "Profil vérifié"
+msgstr ""
+
+#: psy/models.py:154
+msgid "Thérapeute professionnel"
+msgstr ""
+
+#: psy/models.py:155
+msgid "Thérapeutes professionnels"
+msgstr ""
+
+#: psy/templates/psy/base_Psy.html:48
+msgid "Changer de langue"
+msgstr ""
+
+#: psy/views.py:26 psy/views.py:171
+msgid "psymeet"
+msgstr ""
+
+#: psy/views.py:329
+msgid "psys"
+msgstr ""
+
+#: psy/views.py:345
+msgid "psy"
+msgstr ""
+
+#: support/models.py:6
+msgid "Adresse e-mail de l'expéditeur"
+msgstr ""
+
+#: support/models.py:9
+msgid "Je souhaite en savoir plus"
+msgstr ""
+
+#: support/models.py:10
+msgid "Je cherche à réaliser un partenariat"
+msgstr ""
+
+#: support/models.py:11
+msgid "Soucis technique sur la plateforme"
+msgstr ""
+
+#: support/models.py:13
+msgid "Sujet"
+msgstr ""
+
+#: support/models.py:14
+msgid "Message"
+msgstr ""
+
+#: support/models.py:15
+msgid "Date de création"
+msgstr ""
+
+#: support/models.py:21
+msgid "Contact avec le client"
+msgstr ""
+
+#: support/models.py:22
+msgid "Contacts avec les clients"
+msgstr ""

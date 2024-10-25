@@ -1,0 +1,298 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+
+msgid "Éclairez vos rencontres"
+msgstr "Brighten up your meetings\n"
+
+msgid "Trouvez le site de rencontres qui vous correspond."
+msgstr "Find the dating site that suits you.\n"
+
+msgid "Comparer"
+msgstr "Compare\n"
+
+msgid "Votre vie privée nous tient à cœur"
+msgstr "Your privacy matters to us\n"
+
+msgid "Valider les cookies"
+msgstr "Accept cookies\n"
+
+msgid "Paramètres des cookies"
+msgstr "Cookie settings\n"
+
+msgid "Gérez vos préférences ou retirez votre consentement à tout moment sur la page Paramètres de confidentialité, dont le lien se situe en pied de page."
+msgstr "Manage your preferences or withdraw your consent at any time on the Privacy Settings page, which is linked at the bottom of the page.\n"
+
+msgid "Comparaison rapide et gratuite"
+msgstr "Quick and free comparison\n"
+
+msgid "des sites de rencontres"
+msgstr "of dating sites\n"
+
+msgid "Gain de temps précieux"
+msgstr "Save valuable time\n"
+
+msgid "en comparant en 1 clic"
+msgstr "by comparing with just one click\n"
+
+msgid "+ 100 sites de rencontres"
+msgstr "+ 100 dating sites\n"
+
+msgid "sélectionnés avec soin"
+msgstr "carefully selected\n"
+
+msgid "Trouvez l'application de rencontres qui correspond à vos besoins réels."
+msgstr "Find the dating app that meets your real needs.\n"
+
+msgid "Gagnez du temps et de l’argent en comparant facilement en 1 clic."
+msgstr "Save time and money by easily comparing with one click.\n"
+
+msgid "Découvrez l’ensemble des sites de rencontres du marché."
+msgstr "Discover all the dating sites on the market.\n"
+
+msgid "Comparez les différents abonnements proposés par les sites de rencontres."
+msgstr "Compare the different subscriptions offered by dating sites.\n"
+
+msgid "En voir plus"
+msgstr "See more\n"
+
+msgid "Comparez le meilleur dans le domaine de la rencontre"
+msgstr "Compare the best in the dating field\n"
+
+msgid "Comparez des milliers d’applications de rencontres <br/> et de thérapeutes de votre région"
+msgstr "Compare thousands of dating apps <br/> and therapists in your area\n"
+
+msgid "Derniers articles mis en ligne"
+msgstr "Latest articles published\n"
+
+msgid "Trouver sa rencontre idéale avec Lightmeet"
+msgstr "Find your ideal match with Lightmeet\n"
+
+msgid "Pour personnaliser votre expérience, nous collectons des informations sur la façon dont vous utilisez LightMeet, ce qui inclut les données personnelles telles que votre adresse IP. Ces informations sont utilisées pour améliorer votre expérience, stocker les informations contenues sur un appareil et y accéder, ainsi que pour la publicité personnalisée, les études sur l'audience et le développement des services. Pour en savoir plus, consultez notre Politique en matière de cookies."
+msgstr "To personalize your experience, we collect information about how you use LightMeet, including personal data such as your IP address. This information is used to improve your experience, store information on a device and access it, as well as for personalized advertising, audience research, and service development. For more information, see our Cookie Policy.\n"
+
+msgid "LightMeet et ses 100 partenaires peuvent se baser sur l'intérêt légitime à certaines fins, plutôt que sur le consentement. Cliquez sur « Préférences en matière de cookies » pour avoir plus d'informations à ce sujet et savoir comment vous y opposer, ou sélectionnez « Valider les cookies » afin d'autoriser tous les cookies."
+msgstr "LightMeet and its 100 partners may rely on legitimate interest for certain purposes, rather than consent. Click on 'Cookie Preferences' for more information about this and to find out how to object, or select 'Accept Cookies' to allow all cookies.\n"
+
+msgid "Comment fonctionne LightMeet ?"
+msgstr "How does LightMeet work?\n"
+
+msgid "Lightmeet est un moteur de recherche de sites de rencontres et de thérapeutes. Nous parcourons le Web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs des services de rencontre et autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre ou votre thérapeute, il suffit de vous inscrire ou de contacter directement le prestataire."
+msgstr "Lightmeet is a search engine for dating sites and therapists. We scour the web to find the best dating sites so that you can compare service rates and other criteria in one place. Once you've found your dating site or therapist, simply register or contact the provider directly.\n"
+
+msgid "Peut-on rechercher aussi des thérapeutes sur LightMeet ?"
+msgstr "Can you also search for therapists on LightMeet?\n"
+
+msgid "Pour trouver des sites de rencontres efficaces, c'est facile : chaque mois, plus de 3 millions de célibataires avisés viennent sur notre site pour trouver le site de rencontre plus efficace. Voici quelques conseils simples pour tirer le meilleur parti de votre recherche de site de rencontre."
+msgstr "Finding effective dating sites is easy: every month, more than 3 million savvy singles visit our site to find the most effective dating site. Here are some simple tips to make the most of your dating site search.\n"
+
+msgid "Gagnez du temps et de l'argent"
+msgstr "Save time and money\n"
+
+msgid "Concurrence et innovation"
+msgstr "Competition and innovation\n"
+
+msgid "Sites de rencontres"
+msgstr "Dating sites\n"
+
+msgid "Thérapeutes"
+msgstr "Therapists\n"
+
+msgid "Devenir une marque reconnue"
+msgstr "Become a recognized brand\n"
+
+msgid "Marques & Réseaux sociaux"
+msgstr "Brands & Social Media\n"
+
+msgid "Cherchez où vous le sentez "
+msgstr "Search where you feel like\n"
+
+msgid "- Vous avez envie de découvrir une personnalité au delà de vos frontières ? Cherchez bientôt dans « le monde entier » pour trouver le site de rencontre le moins cher et envisager un futur en un lieu que vous aimez vraiment."
+msgstr "- Do you want to discover a personality beyond your borders? Search soon in 'the whole world' to find the cheapest dating site and plan a future in a place you truly love.\n"
+
+msgid "Misez sur la gratuité"
+msgstr "Bet on free features\n"
+
+msgid "- Sélectionné par Lightmeet, nos partenaires proposent parfois des fonctionnalités entièrement gratuites. En un clic, vous les identifiez. Vous vous donnez une chance d'enfin vivre la plus belle histoire de votre vie."
+msgstr "- Selected by Lightmeet, our partners sometimes offer entirely free features. With a single click, you can identify them. You give yourself the chance to finally live the greatest love story of your life.\n"
+
+msgid "Que se passe-t-il une fois que je me suis inscrit ?"
+msgstr "What happens after I register?\n"
+
+msgid "Votre e-mail de confirmation d'inscription et toutes les autres informations dont vous aurez besoin proviendront du site de rencontre sur lequel vous êtes inscrits. Si vous avez des questions concernant le suivi de votre inscription, ou si vous souhaitez modifier ou annuler votre inscription, adressez-vous directement à eux."
+msgstr "Your registration confirmation email and all other information you will need will come from the dating site on which you are registered. If you have questions about tracking your registration or want to modify or cancel it, contact them directly.\n"
+
+msgid "Dans quel pays puis-je actuellement trouver un site de rencontre ?"
+msgstr "In which country can I currently find a dating site?\n"
+
+msgid "Actuellement, la France est le premier pays où vous trouverez des site de rencontres sérieux."
+msgstr "Currently, France is the first country where you will find serious dating sites.\n"
+
+msgid "Puis je m'inscrire sur un site web émettant moins de CO2 ?"
+msgstr "Can I register on a website that emits less CO2?\n"
+
+msgid "En cours de développement. Depuis que nous avons commencé à afficher le critère d'émission de CO2 des sites web (lorsque cette information est disponible), nous avons noté un net intérêt de la communauté soutenant avec passion le travail de nos développeurs."
+msgstr "In development. Since we started displaying the CO2 emission criterion for websites (when this information is available), we have noted a significant interest from the community, passionately supporting the work of our developers.\n"
+
+msgid "Le comparateur qui répond à vos besoins réels pour trouver l’application qui vous correspond"
+msgstr "The comparison tool that meets your real needs to find the app that suits you\n"
+
+msgid "- Qu'il s'agisse du site web le plus rapide et élégant ou de la plateforme la plus avantageuse, vous pouvez choisir votre site de rencontre en fonction des notes réelles des célibataires."
+msgstr "- Whether it’s the fastest and most elegant website or the most advantageous platform, you can choose your dating site based on real ratings from singles.\n"
+
+msgid "Oui ! Vous pouvez utiliser la puissance de notre moteur de recherche de site de rencontre pour trouver ce thérapeute qui répond à vos besoins."
+msgstr "Yes! You can use the power of our dating site search engine to find the therapist that meets your needs.\n"
+
+msgid "La sélection Lightmeet"
+msgstr "The Lightmeet selection\n"
+
+msgid "France"
+msgstr "France\n"
+
+msgid "Ces sites de rencontres sont actuellement étudiés par"
+msgstr "These dating sites are currently being studied by\n"
+
+msgid "BIENTÔT disponible"
+msgstr "COMING SOON\n"
+
+msgid "Rencontrez des célibataires qui partagent vos valeurs et vos aspirations."
+msgstr "Meet singles who share your values and aspirations.\n"
+
+msgid "Trouvez votre partenaire idéal parmi les célibataires exigeants et cultivés."
+msgstr "Find your ideal partner among discerning and educated singles.\n"
+
+msgid "Retrouvez l'amour à tout âge avec une plateforme dédiée aux seniors actifs."
+msgstr "Rediscover love at any age with a platform dedicated to active seniors.\n"
+
+msgid "Trouvez des relations seniors de qualité"
+msgstr "Find quality senior relationships\n"
+
+msgid "Rencontrez des célibataires de plus de 50 ans prêts à vivre de nouvelles aventures."
+msgstr "Meet singles over 50 who are ready to embark on new adventures.\n"
+
+msgid "Match, le site de rencontres en ligne numéro un mondial."
+msgstr "Match, the world's number one online dating site.\n"
+
+msgid "ans"
+msgstr "years\n"
+
+msgid "Visites / mois"
+msgstr "Visits / month\n"
+
+msgid "Visiter"
+msgstr "Visit\n"
+
+msgid "Comparez le meilleur du domaine de la rencontre"
+msgstr "Compare the best in dating\n"
+
+msgid "Comparez des dizaines d’applications de rencontres"
+msgstr "Compare dozens of dating apps\n"
+
+msgid "Trouver l'amour en ligne"
+msgstr "Find love online\n"
+
+msgid "L'art des rencontres en ligne"
+msgstr "The art of online dating\n"
+
+msgid "Lightmeet est un moteur de recherche de sites de rencontres. Nous parcourons le Web pour trouver les meilleurs sites de rencontres, afin que vous puissiez comparer les tarifs et autres critères au même endroit. Une fois que vous avez trouvé votre site de rencontre, il suffit de vous inscrire gratuitement sur le site en question."
+msgstr "Lightmeet is a search engine for dating sites. We scour the web to find the best dating sites so you can compare rates and other criteria in one place. Once you’ve found your dating site, just sign up for free.\n"
+
+msgid "Peut-on trouver tous les sites de rencontres sur LightMeet ?"
+msgstr "Can you find all dating sites on LightMeet?\n"
+
+msgid "Trouver l'amour grâce à un comparateur de sites de rencontres"
+msgstr "Find love with a dating site comparison tool\n"
+
+msgid "Trouver l'amour grâce à un comparateur de sites de rencontres. Lorsque l’on se lance dans la recherche de l’amour en ligne, la multitude de sites de rencontre disponibles peut rapidement devenir déroutante."
+msgstr "Find love thanks to a dating site comparison tool. When embarking on the search for love online, the multitude of available dating sites can quickly become overwhelming.\n"
+
+msgid "Face à cette offre abondante, l'utilisation d'un comparateur de sites de rencontres sérieux devient un véritable atout pour faire des rencontres adaptées à ses attentes."
+msgstr "Faced with this abundant offer, using a serious dating site comparison tool becomes a real asset for making connections that match your expectations.\n"
+
+msgid "En quelques clics, un comparateur vous fait gagner un temps précieux en vous proposant une vue d'ensemble des meilleurs sites de rencontres tels que"
+msgstr "In just a few clicks, a comparison tool saves you valuable time by providing an overview of the best dating sites such as\n"
+
+msgid "Plus besoin de naviguer des heures pour faire une rencontre. Vous pouvez ainsi faire un choix éclairé, en vous concentrant sur les plateformes qui correspondent vraiment à vos besoins, que ce soit pour des rencontres sérieuses, amoureuses, seniors, ou même pour rencontrer des célibataires à la recherche du grand amour."
+msgstr "No more need to browse for hours to make a connection. You can make an informed choice by focusing on platforms that truly match your needs, whether for serious, romantic, senior-related encounters, or even for meeting singles searching for true love.\n"
+
+msgid "1 - Garder l'esprit ouvert face aux différentes plateformes de rencontre"
+msgstr "1 - Keep an open mind towards different dating platforms\n"
+
+msgid "A - S'inscrire sur plusieurs plateformes"
+msgstr "A - Sign up on multiple platforms\n"
+
+msgid "Ne limitez pas vos options. Multipliez vos inscriptions pour explorer divers environnements, notamment sur des sites de rencontre comme"
+msgstr "Don't limit your options. Multiply your sign-ups to explore various environments, especially on dating sites like\n"
+
+msgid "afin de maximiser vos chances de faire des rencontres sérieuses."
+msgstr "to maximize your chances of making serious connections.\n"
+
+msgid "B - Critères essentiels à considérer"
+msgstr "B - Essential criteria to consider\n"
+
+msgid "Lors de votre inscription sur un site de rencontres, il est essentiel de prêter attention à la qualité des profils, à la modération des contenus et à la sécurité. Que vous recherchiez des rencontres amoureuses, sérieuses, ou même des rencontres discrètes, ces aspects sont cruciaux pour garantir une expérience de dating agréable."
+msgstr "When registering on a dating site, it's essential to pay attention to the quality of profiles, content moderation, and security. Whether you are looking for romantic, serious, or even discreet encounters, these aspects are crucial for ensuring a pleasant dating experience.\n"
+
+msgid "C - Qualité des profils et des fonctionnalités"
+msgstr "C - Quality of profiles and features\n"
+
+msgid "Les plateformes comme"
+msgstr "Platforms like\n"
+
+msgid "se distinguent par des profils vérifiés et des outils avancés, tels que le test de personnalité, qui facilitent des connexions durables et authentiques. Ces sites permettent également de rencontrer des célibataires compatibles en fonction des affinités."
+msgstr "stand out with verified profiles and advanced tools, such as personality tests, that facilitate lasting and authentic connections. These sites also allow you to meet compatible singles based on affinities.\n"
+
+msgid "2 - Critères à considérer lors de la comparaison de plateformes de rencontre"
+msgstr "2 - Criteria to consider when comparing dating platforms\n"
+
+msgid "Lorsque vous utilisez un comparateur de sites de rencontres, plusieurs critères doivent être pris en compte pour choisir un site de rencontre qui correspond à vos attentes."
+msgstr "When using a dating site comparison tool, several criteria should be considered to choose a dating site that meets your expectations.\n"
+
+msgid "Popularité et Fiabilité : Les meilleurs sites de rencontre tels que"
+msgstr "Popularity and Reliability: The best dating sites such as\n"
+
+msgid "bénéficient d’une grande communauté et d’une solide réputation. Leur cadre sécurisé favorise les rencontres sérieuses et de qualité."
+msgstr "benefit from a large community and a solid reputation. Their secure environment promotes serious and quality encounters.\n"
+
+msgid "Rencontre par affinités : Des sites comme"
+msgstr "Affinity-based encounters: Sites like\n"
+
+msgid "mettent l’accent sur la compatibilité en se basant sur des critères de personnalité, vous permettant de rencontrer l'âme sœur ou de faire de belles rencontres."
+msgstr "emphasize compatibility based on personality traits, allowing you to meet your soulmate or have beautiful encounters.\n"
+
+msgid "Inscription gratuite et offres payantes : Avant de souscrire à un abonnement sur un site de rencontres sérieux, testez les fonctionnalités gratuites pour vous assurer que la plateforme correspond bien à vos attentes en matière de relations sérieuses."
+msgstr "Free registration and paid offers: Before subscribing to a membership on a serious dating site, test the free features to ensure that the platform meets your expectations for serious relationships.\n"
+
+msgid "Avis des utilisateurs : Prenez en compte les témoignages et expériences d'autres membres, qu'il s'agisse de rencontres seniors ou de rencontres par affinités, pour mieux comprendre le fonctionnement et la fiabilité du site."
+msgstr "User reviews: Consider the testimonials and experiences of other members, whether for senior dating or affinity-based dating, to better understand the functioning and reliability of the site.\n"
+
+msgid "3 - Témoignages : Trouver l'amour avec un comparateur de sites de rencontres"
+msgstr "3 - Testimonials: Finding love with a dating site comparison tool\n"
+
+msgid "Comparateur de sites de rencontre"
+msgstr "Dating site comparison tool\n"
+
+msgid "Métriques"
+msgstr "Metrics\n"
+
+msgid "Nombre de sites comparés"
+msgstr "Number of sites compared\n"
+
+msgid "Nombre d'utilisateurs actifs"
+msgstr "Number of active users\n"
+
+msgid "Taux de réussite"
+msgstr "Success rate\n"
+
+msgid "ou même"
+msgstr "or even\n"
+
+msgid "et"
+msgstr "and\n"
+
+msgid "Nombre de couples formés"
+msgstr "Number of couples formed\n"
+
+msgid "Ces chiffres témoignent de l'efficacité des comparateurs de sites de rencontres. Utiliser un outil de comparaison vous permettra non seulement de gagner du temps, mais également de maximiser vos chances de trouver l'amour. Ne laissez pas le hasard décider de votre bonheur, faites le choix d'une recherche éclairée pour des rencontres sérieuses."
+msgstr "These figures attest to the effectiveness of dating site comparison tools. Using a comparison tool not only saves you time but also maximizes your chances of finding love. Don’t let chance decide your happiness; make the choice of an informed search for serious encounters.\n"

@@ -10,12 +10,9 @@
 {% block javascript %}
 <link rel="stylesheet" href="{% static 'partner_meet/js/language_international.js' %}">
 {% endblock %}
-
-
 {% block section %}
-
 <form id="language-form" action="{% url 'set_language' %}" method="post">
-    <img style="width:30px; height: 30px;padding:0 20px 0px 0px; vertical-align: middle;" src="../../static/partner_meet/Logos/earth.png">
+<img style="width:30px; height: 30px;padding:0 20px 0px 0px; vertical-align: middle;" src="../../static/partner_meet/Logos/earth.png">
     <input name="next" type="hidden" value="{{ request.path }}">
     {% csrf_token %}
     <div id="language-selector" style="border: 1px solid grey; border-radius: 20px; padding: 5px; display: inline-block;background:#FBF1D6;">
@@ -35,7 +32,6 @@
         </button>
     </div>
 </form>
-
 <script>
     function submitLanguageForm() {
         // Soumet le formulaire
@@ -49,9 +45,6 @@
         document.getElementById('language-button').style.display = 'block';
     };
 </script>
-
-
-
 <h1 class="Title">{% trans 'Éclairez vos rencontres' %}</h1>
 <h2 class="SubTitle">{% trans 'Trouvez le site de rencontres qui vous correspond.' %}</h2>
 

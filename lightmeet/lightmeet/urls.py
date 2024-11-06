@@ -47,12 +47,12 @@ urlpatterns += i18n_patterns(
     path('recherche/site_de_rencontres/', PartnerMeetBestSite.as_view(), name="recherche_meilleur_site"),  # nouveau
 
     # Psy
-    path('therapeutes/', PsyMeetHome.as_view(), name="recherche_therapeutes"),
-    path('psy/create', PsyCreate.as_view(), name="psy_create"),
-    path('psy/<str:slug>', PsyDetail.as_view(), name="psy_detail"),
-    path('psy/edit/<str:slug>', PsyUpdate.as_view(), name="psy_edit"),
-    path('psy/delete/<str:slug>', PsyDelete.as_view(), name="psy_delete"),
-    path('recherche/sites_des_thérapeutes/', PsyMeetBestSite.as_view(), name="recherche_meilleur_therapeutes"),  # nouveau
+    #path('therapeutes/', PsyMeetHome.as_view(), name="recherche_therapeutes"),
+    #path('psy/create', PsyCreate.as_view(), name="psy_create"),
+    #path('psy/<str:slug>', PsyDetail.as_view(), name="psy_detail"),
+    #path('psy/edit/<str:slug>', PsyUpdate.as_view(), name="psy_edit"),
+    #path('psy/delete/<str:slug>', PsyDelete.as_view(), name="psy_delete"),
+    #path('recherche/sites_des_thérapeutes/', PsyMeetBestSite.as_view(), name="recherche_meilleur_therapeutes"),  # nouveau
 
     # Blog
     path('blog/first_article',BlogPost1.as_view(), name="1_Blog_Article"),

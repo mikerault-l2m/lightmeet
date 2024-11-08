@@ -6,7 +6,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Comparez les sites de rencontres avec Lightmeet. Sélectionnez le meilleur service en fonction de vos besoins.">
-<meta name="keywords" content="rencontres, sites de rencontres, thérapies, comparateur, services en ligne">
 <meta name="robots" content="index, follow">
 <title>Lightmeet - Comparateur de Rencontres</title>
 <link rel="canonical" href="{{ request.build_absolute_uri }}">
@@ -27,13 +26,10 @@
         <button class="buttonOtherSearh" onclick="window.location.href=`{% url 'recherche_home' %}`">
             {% trans "Rencontres" %}
         </button>
-        <!--<button class="buttonOtherSearh selectButton" onclick="window.location.href=`{% url 'recherche_therapeutes' %}`">
-            {% trans "Thérapeutes" %}
-        </button>-->
     </div>
 
     <div class="containerResultats">
-        <h2 class="Resultats" style="font-size:40px;font-weight:100;font-family:'Roboto';">{% trans "La sélection Lightmeet" %}</h2>
+        <h1 class="Resultats" style="font-size:40px;font-weight:100;font-family:'Roboto';">{% trans "La sélection Lightmeet" %}</h2>
         {% for partner in partnermeet|dictsort:"ranking" %}
             {% if partner.affiliation %}
             <div class="cardApp VersionPC">

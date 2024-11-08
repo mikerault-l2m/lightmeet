@@ -9,43 +9,6 @@
 <body>
 
 {% block section %}
-<form id="language-form" action="{% url 'set_language' %}" style="margin:5%;" method="post">
-    <img style="width:30px; height: 30px;padding:0 20px 0px 0px; vertical-align: middle;" src="../../static/partner_meet/Logos/earth.png">
-    <input name="next" type="hidden" value="{{ request.path }}">
-    {% csrf_token %}
-    <div id="language-selector" style="border: 1px solid grey; border-radius: 20px; padding: 5px; display: inline-block;background:#FBF1D6;">
-        <select name="language" onchange="submitLanguageForm();" style="border: none; outline: none; background: transparent; appearance: none; padding: 10px; text-align: center;">
-            {% get_current_language as LANGUAGE_CODE %}
-            {% get_available_languages as LANGUAGES %}
-            {% for lang in LANGUAGES %}
-                <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
-                 {{ lang.1 }}
-                </option>
-            {% endfor %}
-        </select>
-    </div>
-    <div id="language-button" style="display: none;">
-        <button type="button" onclick="alert('Langue changée !');" style="border: 2px solid grey; border-radius: 25px; padding: 10px; background: lightgrey; cursor: pointer; text-align: center;">
-            Langue changée
-        </button>
-    </div>
-</form>
-
-<script>
-    function submitLanguageForm() {
-        // Soumet le formulaire
-        document.getElementById('language-form').submit();
-    }
-
-    // Écoute les changements de langue
-    document.getElementById('language-form').onsubmit = function() {
-        // Cache le sélecteur et montre le bouton
-        document.getElementById('language-selector').style.display = 'none';
-        document.getElementById('language-button').style.display = 'block';
-    };
-</script>
-
-
 
     <!-- H1 Title with border, bold text, and centered -->
     <h1 class="BLogTitlePos">

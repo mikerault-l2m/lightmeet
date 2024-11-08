@@ -10,6 +10,9 @@
 {% block javascript %}
 <link rel="stylesheet" href="{% static 'partner_meet/js/language_international.js' %}">
 {% endblock %}
+
+
+
 {% block section %}
 <form id="language-form" action="{% url 'set_language' %}" method="post">
 <img style="width:30px; height: 30px;padding:0 20px 0px 0px; vertical-align: middle;" src="../../static/partner_meet/Logos/earth.png">
@@ -54,9 +57,6 @@
            {% trans 'Comparer' %}
        </button>
    </div>
-</a>
-
-
 </a>
 
 {% if not form.consentement %}
@@ -170,18 +170,16 @@
 <div class="boxesContainer">
     {% for post in posts|slice:":3" %}
     <a style="text-decoration:none" href="{{ post.url }}">
-    <div class="boxSite">
-        <div class="image-container">
-            <img style="border-radius:30px; width:250px; height: 250px; object-fit: cover;" src="{{ post.image.url }}" class="imageSite" alt="{{ post.title }}">
+        <div class="boxSite">
+            <div class="image-container">
+                <img style="border-radius:30px; width:250px; height: 250px; object-fit: cover;" src="{{ post.image.url }}" class="imageSite" alt="{{ post.title }}">
+            </div>
+            <p class="TextImgSitePresentation" style="color: black;">{{ post.title }}</p>
+            <p class="TextImgSitePresentationHtag" style="color: black;">
+                <em>{{ post.hashtag }}</em>
+            </p>
         </div>
-        <p class="TextImgSitePresentation" style="color: black;">{{ post.title }}</p>
-        <p class="TextImgSitePresentationHtag" style="color: black;">
-            <em>{{ post.hashtag }}</em>
-        </p>
-    </div>
-</a>
-
-</a>
+    </a>
 
     {% endfor %}
 </div>

@@ -59,7 +59,7 @@ urlpatterns += i18n_patterns(
     path('blog/second_article',BlogPost2.as_view(), name="2_Blog_Article"),
     path('blog/menu',BlogPostHome.as_view(), name="blog_home"),
     path('blog/create', BlogPostCreate.as_view(), name="blog_create"),
-    path('blog/<str:slug>', BlogPostDetail.as_view(), name="blog_detail"),
+    #path('blog/<str:slug>', BlogPostDetail.as_view(), name="blog_detail"),
     path('blog/edit/<str:slug>', BlogPostUpdate.as_view(), name="blog_edit"),
     path('blog/delete/<str:slug>', BlogPostDelete.as_view(), name="blog_delete"),
 

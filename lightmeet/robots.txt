@@ -1,0 +1,12 @@
+# robots.txt pour Lightmeet.fr
+# Ce fichier sert à contrôler l'accès des moteurs de recherche à certaines pages du site.
+
+# Autoriser tous les robots à explorer tout le site
+User-agent: *
+Disallow:
+
+# Bloquer l'accès aux pages d'administration (exemple)
+Disallow: /lightmeet-admin/
+
+# Autoriser les robots à explorer les sitemaps (si existants)
+Sitemap: https://www.lightmeet.fr/sitemap.xml

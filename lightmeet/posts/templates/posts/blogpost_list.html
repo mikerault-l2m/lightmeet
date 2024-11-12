@@ -8,12 +8,11 @@
 {% block content %}
     <div class="blog-posts">
         {% for post in posts %}
-            <h2>{{ post.title }}</h2>
+            <h1>{{ post.title }}</h1>
             <p>{{ post.content|truncatewords:30 }}</p>
-            <a href="{% url 'blog_detail' slug=post.slug %}">Lire la suite ></a>
+            <a href="{{ post.url }}">Lire la suite ></a>
         {% empty %}
             <p>Aucun article de blog trouvé.</p>
         {% endfor %}
     </div>
 {% endblock %}
-

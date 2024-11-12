@@ -1,6 +1,5 @@
 {% load static %}
 {% load i18n %}
-{% load hreflang_tags %}
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,7 +13,9 @@
     {% block css %}
     <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
     {% endblock %}
-    {% hreflang_links request %}
+
+<link rel="canonical" href="{% url 'Home' %}">
+
 <!-- Auteur -->
 <meta name="author" content="Lightmeet">
 <!-- Robots -->

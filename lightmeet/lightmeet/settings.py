@@ -112,9 +112,6 @@ DATABASES = {
 # Configurations de langue pour les variantes d'anglais international et autres langues
 LANGUAGE_CODE = 'fr-fr'
 LANGUAGES = [
-#('en-gb', _('English (UK)')),
-#   ('en-au', _('English (Australia)')),
-#   ('en-ca', _('English (Canada)')),
     ('en-us', _('English (US)')),
     ('fr', _('French')),
     ('de', _('German')),

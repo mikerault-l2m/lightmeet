@@ -82,7 +82,8 @@ TEMPLATES = [
                  os.path.join(BASE_DIR, 'partner_meet/templates'),
                  os.path.join(BASE_DIR, 'psy/templates'),
                  os.path.join(BASE_DIR, 'accounts/templates'),
-                 os.path.join(BASE_DIR, 'support/templates')],
+                 os.path.join(BASE_DIR, 'support/templates'),
+                 os.path.join(BASE_DIR, 'lightmeet/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

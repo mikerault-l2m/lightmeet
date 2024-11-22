@@ -1,0 +1,19 @@
+
+# robots.txt pour https://www.lightmeet.fr/fr
+
+# Acces des moteurs de recherche Ã  certaines pages du site.
+
+User-agent: *
+Disallow: /accounts/
+Disallow: /support/
+Disallow: /legal/
+Disallow: /lightmeet-admin/
+
+# Autorise
+Allow: /posts/
+Allow: /partner_meet/
+Allow: /mediafiles/
+Allow: /locale/
+
+# En cours
+Sitemap: https://www.lightmeet.fr/sitemap.xml"

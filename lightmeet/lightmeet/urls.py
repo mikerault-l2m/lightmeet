@@ -20,6 +20,9 @@ urlpatterns += i18n_patterns(
     # Administrateur :
     path('lightmeet-admin/', admin.site.urls),
 
+    # robots.txt path below
+    path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+
     # Page principale francais - anglais - espagnol / CTA Comparer
     path('', Home.as_view(), name="Home"),
 

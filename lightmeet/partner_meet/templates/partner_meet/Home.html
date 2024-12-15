@@ -175,10 +175,14 @@
             <div class="image-container">
                 <img style="border-radius:30px; width:250px; height: 250px; object-fit: cover;" src="{{ post.image.url }}" class="imageSite" alt="{{ post.title }}">
             </div>
-            <p class="TextImgSitePresentation" style="color: black;">{{ post.title }}</p>
+            <p class="TextImgSitePresentation" style="color: black;">
+        {{ post.title }}
+            </p>
+
             <p class="TextImgSitePresentationHtag" style="color: black;">
                 <em>{{ post.hashtag }}</em>
             </p>
+
         </div>
     </a>
 

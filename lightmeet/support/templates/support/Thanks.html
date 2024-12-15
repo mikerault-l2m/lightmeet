@@ -1,6 +1,6 @@
 {% extends 'support/base_Support.html' %}
 {% load static %}
-
+{% load i18n %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,22 +12,22 @@
     {% block css %}
         <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
         <link rel="stylesheet" href="{% static 'support/css/contact.css' %}">
+        <!--il y avait un bug quand il y a 2 block de css qui se suivent comme le cas d'avant-->
+        <link rel="stylesheet" href="{% static 'support/css/style_3.css' %}">
+        <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
     {% endblock %}
 </head>
 
-{% block css %}
-    <link rel="stylesheet" href="{% static 'support/css/style_3.css' %}">
-    <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
-{% endblock %}
+
 
 {% block section %}
 <section>
     <img class="Purple" src="{% static 'support/Logos/Purple.png' %}" style="position:absolute;z-index:10;width:100%;height:83%;">
-    <div class="Title"> Votre message a bien été envoyé. </div>
+    <div class="Title">{% trans 'Votre message a bien été envoyé.' %} </div>
     <img class="Letter" src="{% static 'support/Logos/Letter.png' %}" opacity="0.7">
-    <div class="Remerciements" style="font-size: 14px;"> L’équipe LightMeet vous répondra dans les plus brefs délais.</div>
-    <div class="Suivi_1">Restez connecté, des nouvelles du lancement vous seront prochainement envoyées par e-mail !</div>
-    <div class="Suivi_2">En attendant, suivez-nous sur les réseaux sociaux :</div>
+    <div class="Remerciements" style="font-size: 14px;">{% trans "L’équipe LightMeet vous répondra dans les plus brefs délais." %}</div>
+    <div class="Suivi_1">{% trans "Restez connecté, des nouvelles du lancement vous seront prochainement envoyées par e-mail !" %}</div>
+    <div class="Suivi_2">{% trans 'En attendant, suivez-nous sur les réseaux sociaux :' %}</div>
     <div class="Network" style="display:flex;flex-direction:row;justify-content:space-evenly;text-align:center;align-items:center;z-index:200;">
         <a href="https://www.instagram.com/lightmeet.fr/">
             <div>

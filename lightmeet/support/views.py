@@ -3,7 +3,6 @@ from django.utils.translation import gettext_lazy as _  # Importez gettext_lazy 
 from support.models import SupportTicket
 from support.forms import SupportTicketForm
 from django.shortcuts import render
-import time
 
 class ContactSubscribe(TemplateView):
     model = SupportTicket
@@ -17,9 +16,6 @@ class ContactSubscribe_3(TemplateView):
     model = SupportTicket
     template_name = ("support/Thanks.html")  # Utilisez gettext_lazy ici pour les chemins de template
 
-# Temps pour la transmission du message de l'utilisateur :
-start = time.time()
-
 def SupportContact(request):
     if request.method == "POST":
         form = SupportTicketForm(request.POST)
@@ -29,7 +25,3 @@ def SupportContact(request):
     else:
         form = SupportTicketForm()
     return render(request, ("support/Support.html"), context={"form": form})  # Utilisez gettext_lazy ici pour le chemin du template
-
-end = time.time()
-elapsed = end - start
-print(f'Temps d\'exécution du transfert des mails : {elapsed:.2f}ms')  # Notez le .2f pour la précision

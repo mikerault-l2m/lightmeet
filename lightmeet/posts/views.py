@@ -4,7 +4,7 @@ from posts.models import BlogPost
 from django.shortcuts import render, get_object_or_404
 from django.utils.translation import gettext_lazy as _
 
-#Menu déroulant
+# Menu déroulant
 
 class BlogPostHome(ListView):
     model = BlogPost

@@ -3,8 +3,6 @@ import environ
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 
-# -*- coding: utf-8 -*-
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env()

@@ -5,30 +5,53 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UV-Compatible" content="ie=edge">
-    <meta name="description"
-        content="LightMeet, le premier comparateur d'application de rencontres. Être éclairé pour trouver l'amour.  ">
-    <title>LightMeet </title>
+    <meta name="description" content="LightMeet, le site de comparaison de sites de rencontres en tout sécurité.  ">
+    <title>LightMeet - Legal </title>
     {% block css %}
     <link rel="stylesheet" href="{% static 'legal/css/style_base.css' %}">
     {% endblock %}
 
+<link rel="icon" type="image/png" href="{% static 'L2M.png' %}">
 <link rel="canonical" href="https://www.lightmeet.fr/fr/">
+<!-- Auteur -->
+<meta name="author" content="Lightmeet">
+<!-- Robots -->
+<meta name="robots" content="index, follow">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SP9DEQYW1Z"></script>
+
+<!-- Meta Pixel Code -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1242603953496621');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1242603953496621&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
-  gtag('config', 'G-SP9DEQYW1Z');
 
+<!-- Hotjar Tracking Code for https://www.lightmeet.fr -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:4960613,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
 </script>
 
-<!-- Event snippet for Clic France conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-16540386379/WupWCNb48PcZEMuIic89'});
-</script>
+
+
 <!-- Visitor Tracking -->
 <script async defer src='https://app.visitortracking.com/assets/js/tracer.js'></script>
 <script>
@@ -40,12 +63,10 @@ function init_tracer() {
  }
  </script>
  <!-- End VT -->
-
 </head>
 
 <body class="container">
-    {% block content %}{% endblock %}
-    <header>
+     <header>
         <a href="{% url 'Home' %}" class="ListeHeader">
             <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
         </a>
@@ -67,6 +88,7 @@ function init_tracer() {
         </ul>
     </nav>
     </header>
+    {% block content %}{% endblock %}
     {% block aside %}
     {% endblock %}
     {% block section %}
@@ -76,7 +98,7 @@ function init_tracer() {
     <div class="footerPc">
         <ul class="ListFooter">
             <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'Home' %}">® 2024 Lightmeet</a>
+                <a class="linkFooter" href="{% url 'Home' %}">® 2025 Lightmeet</a>
             </li>
             <li class="linkFooter">
                 <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">Mentions légales</a>
@@ -95,7 +117,7 @@ function init_tracer() {
     <div class="FooterMobile">
         <ul class="ListFooter">
             <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'Home' %}">® 2024 Lightmeet</a>
+                <a class="linkFooter" href="{% url 'Home' %}">® 2025 Lightmeet</a>
             </li>
             <li class="linkFooter">
                 <a class="linkFooter" href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a>

@@ -4,124 +4,110 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UV-Compatible" content="ie=edge">
-    <meta name="description" content="LightMeet, le premier comparateur de sites de rencontres. Être éclairé pour trouver l'amour.  ">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="LightMeet, le premier comparateur de sites de rencontres. Être éclairé pour trouver l'amour.">
 
-    <!-- Titre de la page -->
     <title>Lightmeet - Votre moteur de recherche pour les rencontres</title>
 
-<link rel="canonical" href="https://www.lightmeet.fr/fr/">
-
-<!-- Auteur -->
-<meta name="author" content="Lightmeet">
-<!-- Robots -->
-<meta name="robots" content="index, follow">
-
     {% block css %}
-    <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+    <link rel="stylesheet" href="{% static 'posts/css/style_base.css' %}">
     {% endblock %}
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SP9DEQYW1Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="icon" type="image/png" href="{% static 'L2M.png' %}">
+    <link rel="canonical" href="https://www.lightmeet.fr/fr/">
+    <meta name="author" content="Lightmeet">
+    <meta name="robots" content="index, follow">
 
-  gtag('config', 'G-SP9DEQYW1Z');
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1242603953496621');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1242603953496621&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel Code -->
 
-</script>
+    <!-- Hotjar Tracking Code -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:4960613,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 
-<!-- Event snippet for Clic sortant (1) conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-16540386379/WupWCNb48PcZEMuIic89'});
-</script>
-
-<!-- Visitor Tracking -->
-<script async defer src='https://app.visitortracking.com/assets/js/tracer.js'></script>
-<script>
-function init_tracer() {
-   var tracer = new Tracer({
-   websiteId : "bf6d09fc-7223-4dba-a994-36a534160065",
-   async : true,
-   debug : false });
- }
- </script>
- <!-- End VT -->
-
+    <!-- Visitor Tracking -->
+    <script async defer src='https://app.visitortracking.com/assets/js/tracer.js'></script>
+    <script>
+        function init_tracer() {
+            var tracer = new Tracer({
+                websiteId: "bf6d09fc-7223-4dba-a994-36a534160065",
+                async: true,
+                debug: false
+            });
+        }
+    </script>
 </head>
 
 <body class="container">
     <header>
         <a href="{% url 'Home' %}" class="ListeHeader">
-            <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
+            <img class="LightMeetLogo" src="{% static 'partner_meet/Logos/LightMeet.svg' %}" alt="Logo LightMeet">
         </a>
         <nav class="navPos">
             <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
             <a href="{% url 'Support' %}" class="ListeHeader">Contact</a>
         </nav>
-    <nav class="navHeader">
-        <div class="menuHamburger">
-            <div class="line Line1"></div>
-            <div class="line Line2"></div>
-            <div class="line Line3"></div>
-        </div>
-        <ul class="navMenu">
-            <li><a href="{% url 'recherche_home' %}" class="ListeHeader">Site de rencontres</a></li>
-            <li><a href="{% url '1_Blog_Article' %}" class="ListeHeader">Blog</a></li>
-            <li><a href="{% url 'Home' %}" class="ListeHeader">FAQ</a></li>
-            <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
-        </ul>
-    </nav>
+        <nav class="navHeader">
+            <div class="menuHamburger">
+                <div class="line Line1"></div>
+                <div class="line Line2"></div>
+                <div class="line Line3"></div>
+            </div>
+            <ul class="navMenu">
+                <li><a href="{% url 'recherche_home' %}" class="ListeHeader">Site de rencontres</a></li>
+                <li><a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a></li>
+                <li><a href="{% url 'Home' %}" class="ListeHeader">FAQ</a></li>
+                <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
+            </ul>
+        </nav>
     </header>
-    {% block content %}{% endblock %}
-    {% block aside %}
-    {% endblock %}
-    {% block section %}
-    {% endblock %}
-{% block footer %}
-<footer>
-    <div class="footerPc">
-        <ul class="ListFooter">
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'Home' %}">® 2024 Lightmeet</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">Mentions légales</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_PDC' %}">Politique de confidentialité</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_PC' %}">Politique de Cookies</a>
-            </li>
-        </ul>
-    </div>
-    <div class="FooterMobile">
-        <ul class="ListFooter">
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'Home' %}">® 2024 Lightmeet</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">Mentions légales</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_PC' %}">Politique de Cookies</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_PDC' %}">Politique de confidentialité</a>
-            </li>
-        </ul>
-    </div>
-</footer>
-{% endblock %}
 
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div class="footerPc">
+            <ul class="ListFooter">
+                <li class="linkFooter"><a href="{% url 'Home' %}">® 2025 Lightmeet</a></li>
+                <li class="linkFooter"><a href="{% url 'legal_mentions_legales' %}">Mentions légales</a></li>
+                <li class="linkFooter"><a href="{% url 'legal_PDC' %}">Politique de confidentialité</a></li>
+                <li class="linkFooter"><a href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a></li>
+                <li class="linkFooter"><a href="{% url 'legal_PC' %}">Politique de Cookies</a></li>
+            </ul>
+        </div>
+        <div class="FooterMobile">
+            <ul class="ListFooter">
+                <li class="linkFooter"><a href="{% url 'Home' %}">® 2025 Lightmeet</a></li>
+                <li class="linkFooter"><a href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a></li>
+                <li class="linkFooter"><a href="{% url 'legal_mentions_legales' %}">Mentions légales</a></li>
+                <li class="linkFooter"><a href="{% url 'legal_PC' %}">Politique de Cookies</a></li>
+                <li class="linkFooter"><a href="{% url 'legal_PDC' %}">Politique de confidentialité</a></li>
+            </ul>
+        </div>
+    </footer>
 
     <script>
         const menuHamburger = document.querySelector('.menuHamburger');
@@ -129,14 +115,8 @@ function init_tracer() {
         menuHamburger.addEventListener('click', function () {
             menuHamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
-            if (navMenu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         });
-
     </script>
 </body>
-
 </html>

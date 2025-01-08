@@ -30,53 +30,55 @@ end = time.time()
 elapsed = end - start
 print(f"Temps d'affichage de LightMeet : {elapsed:.2f}ms")
 
-# Etape 2 : Création du statut de visiteur avec récupération de l'adresse IP et de la localisation :
+
+
+
+######## Etape 2 : Création du statut de visiteur avec récupération de l'adresse IP et de la localisation :
 start = time.time()
 
 def enregistrer_visiteur(request):
-    # Détecter la langue de l'utilisateur
-    user_language = get_language_from_request(request)
-    # Activer la langue pour cette requête
-    activate(user_language)
-
     form = LightenerCreationForm(request.POST)
     if request.method == "POST":
         ip_address = get_client_ip(request)
         location = get_location(ip_address)
         Visitor.objects.create(ip_address=ip_address, location=location)
-
-    # Récupérer les articles de blog et traduire les titres dynamiquement
-    posts = BlogPost.objects.all()
-    for post in posts:
-        post.title = _(post.title)  # Traduire dynamiquement le titre en fonction de la langue active
-
+        posts = BlogPost.objects.all()
+        return render(request, "partner_meet/Home.html", {"form": form, "posts": posts})
     return render(request, "partner_meet/Home.html", {"form": form, "posts": posts})
+
 
 # A: Récupération de l'adresse IP :
 def get_client_ip(request):
+    # Si l'en-tête HTTP_X_FORWARDED_FOR est présent, récupère la première adresse IP de la liste
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
         ip = x_forwarded_for.split(',')[0]
     else:
+        # Sinon, récupère l'adresse IP directe du client depuis REMOTE_ADDR
         ip = request.META.get('REMOTE_ADDR')
     return ip
+
 
 # B: Récupération de la localisation
 def get_location(ip):
     try:
+        # Envoie une requête à l'API ip-api.com pour obtenir la localisation basée sur l'adresse IP fournie
         response = requests.get(f'http://ip-api.com/json/{ip}')
         data = response.json()
         if data['status'] == 'success':
+            # Si la requête est réussie, extrait la ville et le pays de la réponse JSON
             location = f"{data['city']}, {data['country']}"
         else:
+            # Si la requête échoue, déclare la localisation comme "Unknown"
             location = "Unknown"
     except Exception as e:
+        # En cas d'exception, déclare la localisation comme "Unknown"
         location = "Unknown"
     return location
 
 end = time.time()
 elapsed = end - start
-print(f"Temps de récupération adresse IP et location sur LightMeet : {elapsed:.2f}ms")
+print(f'Temps de récupération adresse IP et location sur LightMeet : {elapsed:.2f}ms')
 
 start = time.time()
 

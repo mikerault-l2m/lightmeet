@@ -1,4 +1,3 @@
-
 .Inscription {
     padding: 15px;
     z-index: 400;
@@ -7,10 +6,7 @@
     text-decoration: none;
 }
 
-.logolightmeet {
-    color: black;
-    text-decoration: none;
-}
+
 
 .Support {
     margin: 0px 0px 0px 60%;
@@ -58,21 +54,26 @@
     justify-content: space-around;
 }
 
+
 header {
-    margin:0%;
+    margin-top: 1.5em;
     display: flex;
     text-decoration: none;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    color:black;
+    color: black;
     height: 90px;
     background: #FBFBFB;
     font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 100;
-    transition: all 2s ease;
-    width: 100%;
+    width: 95%;
     font-size: 14px;
     z-index: 200;
+}
+
+.navPos {
+    display: flex;
+    gap: 2em;
 }
 
 .logoListen {
@@ -86,7 +87,7 @@ header {
     text-decoration: none;
     gap: 1em;
     list-style: none;
-    color:black;
+    color: black;
     align-items: center;
 }
 
@@ -101,6 +102,9 @@ body {
 }
 
 /* Styles spécifiques pour la balise footer */
+.FooterMobile {
+    display: none;
+}
 
 footer {
     display: flex;
@@ -109,10 +113,9 @@ footer {
     width: 100%;
     height: 100%;
     padding: 20px 0px 20px 0px;
-    z-index: 999;
+    z-index: 800;
     font-size: 14px;
     background-color: #FBF1D6;
-    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 100;
     transition: all 2s ease;
 }
@@ -127,6 +130,7 @@ footer {
 .linkFooter {
     text-decoration: none;
     color: black;
+    font-family:'-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .Social {
@@ -148,7 +152,19 @@ footer {
     height: auto;
 }
 
+.LightMeetLogo {
+    width: 200px;
+}
+
+.navHeader {
+    display: none;
+}
+
 @media(max-width: 992px) {
+    .navHeader {
+        display: block;
+    }
+
     .Social {
         margin: 0em 0em 0em -5%;
         display: flex;
@@ -178,15 +194,208 @@ footer {
     .Prenom {
         font-size: 1.2em;
     }
+
+    .navPos {
+        display: none;
+    }
+
+    .menuHamburger {
+        position: absolute;
+        right: 15px;
+        display: inline-block;
+        cursor: pointer;
+        z-index: 999;
+
+    }
+
+    .line {
+        width: 15px;
+        height: 1px;
+        background: #000000;
+        position: relative;
+    }
+
+    .line:nth-child(1) {
+        top: -5px
+    }
+
+    .line:nth-child(3) {
+        top: 5px
+    }
+
+    .navMenu {
+        position: absolute;
+        top: 2;
+        right: 0;
+        background-color: #fbfbfb;
+        border-bottom: 1px solid #ccc;
+        padding: 20px;
+        display: none;
+        list-style-type: none;
+        align-items: center;
+        animation-name: Slidbg;
+        animation-duration: 1.4s;
+        align-items: center;
+
+    }
+
+
+
+    @keyframes effectFS {
+        0% {
+            transform: scale(0.3);
+        }
+
+        60% {
+
+            transform: scale(1.1);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes slidein {
+        from {
+            margin-left: 50%;
+        }
+
+        to {
+            margin-left: 0%;
+        }
+    }
+
+    @keyframes Slidbg {
+        from {
+            margin-left: 1000%;
+            width: 20%;
+        }
+
+        to {
+            margin-left: 0%;
+            width: 100%;
+
+        }
+    }
+
+    .navMenu li {
+        margin-bottom: 10px;
+        font-size: 16px;
+        transform: scale(0);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: effectFS 1.4s forwards 0.4s;
+    }
+
+    .navMenu a {
+        color: #333;
+        text-decoration: none;
+    }
+
+    .navMenu {
+        height: 1px;
+
+    }
+
+    .menuHamburger.active+.navMenu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin-top: 3em;
+
+        gap: 2em;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0em;
+        z-index: 400;
+        font-size: 1.1em;
+
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    .menuHamburger.active .line:nth-child(1) {
+        top: 2px;
+        transform: rotate(45deg);
+        transition:
+            top 0.2s ease,
+            transform 0.2s ease 0.2s;
+    }
+
+    .menuHamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menuHamburger.active .line:nth-child(3) {
+        top: 0px;
+        transform: rotate(-45deg);
+        transition:
+            top 0.2s ease,
+            transform 0.2s ease 0.2s;
+    }
 }
 
 @media(max-width: 768px) {
+    .container {
+        margin-top: 0em;
+    }
+
+    .footerPc {
+        display: none;
+    }
+
+
+    header {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0em;
+    }
+
+    .titleLightMeet {
+        width: 250px;
+    }
+
     .ListFooter {
         flex-direction: row;
         flex-wrap: wrap;
-        align-content: normal;
-        justify-content: center;
         list-style: none;
         padding: 0;
-        margin: 0;}
+        margin: 0;
+        margin-top: 0em;
+        margin-bottom: 1em;
+        gap: 3px;
+        justify-content: center;
+        align-items: center;
     }
+
+    .ListFooter li {
+        font-size: 12px;
+        text-align: left;
+        padding: 0.5em 0em 0.5em 0em;
+    }
+
+    .signature {
+        margin: 0.3em;
+        margin-top: 1em;
+        text-align: center;
+        font-weight: normal;
+        font-size: 13px;
+    }
+
+    .FooterMobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .LightMeetLogo {
+        width: 150px;
+    }
+}

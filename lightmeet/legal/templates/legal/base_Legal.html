@@ -8,11 +8,11 @@
     <meta name="description" content="LightMeet, le site de comparaison de sites de rencontres en tout sécurité.  ">
     <title>LightMeet - Legal </title>
     {% block css %}
-    <link rel="stylesheet" href="{% static 'legal/css/style_base.css' %}">
+    <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
     {% endblock %}
 
 <link rel="icon" type="image/png" href="{% static 'L2M.png' %}">
-<link rel="canonical" href="https://www.lightmeet.fr/fr/">
+<link rel="canonical" href="https://www.lightmeet.fr/">
 <!-- Auteur -->
 <meta name="author" content="Lightmeet">
 <!-- Robots -->
@@ -68,7 +68,7 @@ function init_tracer() {
 <body class="container">
      <header>
         <a href="{% url 'Home' %}" class="ListeHeader">
-            <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
+            <img class="LightMeetLogo" src="{% static 'partner_meet/Logos/LightMeet.svg' %}" alt="Logo LightMeet">
         </a>
         <nav class="navPos">
             <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
@@ -111,25 +111,6 @@ function init_tracer() {
             </li>
             <li class="linkFooter">
                 <a class="linkFooter" href="{% url 'legal_PC' %}">Politique de Cookies</a>
-            </li>
-        </ul>
-    </div>
-    <div class="FooterMobile">
-        <ul class="ListFooter">
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'Home' %}">® 2025 Lightmeet</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_CGU' %}">Conditions générales d'utilisation</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_mentions_legales' %}">Mentions légales</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_PC' %}">Politique de Cookies</a>
-            </li>
-            <li class="linkFooter">
-                <a class="linkFooter" href="{% url 'legal_PDC' %}">Politique de confidentialité</a>
             </li>
         </ul>
     </div>

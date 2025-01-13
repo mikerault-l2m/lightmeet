@@ -1,147 +1,72 @@
-/* Chargement de la police Roboto */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
-/* Typographie principale */
-body {
-    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-    /* Appliquer une police plus épaisse à tous les titres */
-    h1, h2, h3 {
-        font-family: 'Roboto';
-        font-weight: 800; /* Rendre la police plus épaisse */
-    }
-
-    /* Ajouter un cadre autour du premier titre H1 et centrer */
-    .BLogTitlePos {
-        border: 2px solid black;
-        padding: 20px;
-        text-align: center;
-        width: fit-content;
-        margin: 0 auto; /* Centrer l'élément */
-    }
-
-    /* Supprimer le soulignement et changer la couleur par défaut des liens */
-    a {
-        text-decoration: none;
-        color: inherit;
-        font-weight: bold;
-    }
-
-/* Apply a thicker font to all headings */
-    h1, h2, h3 {
-        font-family: 'Roboto';
-        font-weight: 800; /* Make the font thicker */
-    }
-
-    /* Add a border around the first H1 title and center it */
-    .BLogTitlePos {
-        border: 2px solid black;
-        padding: 20px;
-        text-align: center;
-        width: fit-content;
-        margin: 0 auto; /* Center the element */
-    }
-
-    /* Remove underline and change default link color */
-    a {
-        text-decoration: none;
-        color: inherit;
-        font-weight: bold;
-    }
-/* Titres */
-h1, h2, h3 {
-    font-weight: 800; /* Rendre la police plus épaisse */
+.blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
 }
 
-/* Style du titre du blog */
-.BLogTitlePos {
-    border: 2px solid black;
-    padding: 20px;
+.blog-post {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.post-image {
+    flex: 1;
+    max-width: 350px;
+    height: 350px;
+    background: lightgray 50% / cover no-repeat;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.post-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 1.15; /* Interligne de 1,15 */
+    text-align: justify; /* Justification du texte */
+}
+
+.TitlePost {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.ExtractPost {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.15; /* Interligne de 1,15 */
+}
+
+.More {
+    font-size: 1rem;
+    color: #333; /* Couleur de texte standard */
+    text-decoration: underline; /* Souligné */
+}
+
+.More:hover {
+    text-decoration: underline;
+}
+
+.None {
     text-align: center;
-    width: fit-content;
-    margin: 0 auto; /* Centrer l'élément */
+    color: #999;
 }
 
-/* Appliquer une police plus épaisse à tous les titres */
-    h1, h2, h3 {
-        font-family: 'Roboto';
-        font-weight: 800; /* Rendre la police plus épaisse */
-    }
-
-    /* Ajouter un cadre autour du premier titre H1 et centrer */
-    .BLogTitlePos {
-        border: 2px solid black;
-        padding: 20px;
-        text-align: center;
-        width: fit-content;
-        margin: 0 auto; /* Centrer l'élément */
-    }
-
-    /* Supprimer le soulignement et changer la couleur par défaut des liens */
-    a {
-        text-decoration: none;
-        color: inherit;
-        font-weight: bold;
-    }
-
-/* Liens */
-a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: bold;
-}
-
-/* Paragraphes et listes du blog */
-.blog-paragraph, .blog-list {
-    margin-left: 10%;
-    margin-right: 10%;
-    line-height: 2;
-    text-align: justify;
-}
-
-/* Tableaux du blog */
-.blog-table {
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 80%;
-    text-align: left;
-}
-
-/* Paragraphes spécifiques */
-p {
-    margin-left: 30%;
-    margin-right: 30%;
-    line-height: 1.5;
-    text-align: justify;
-}
-
-/* Conteneurs */
-.containerInfoBlog, .cardBlogPost {
-    margin: 1em 0;
-}
-
-.imgCardPost {
-    width: 80px;
-    height: 80px;
-}
-
-/* Titres des cartes de blog */
-.titleCardPost {
-    text-align: center;
-    padding-top: 2%;
-    font-weight: bold;
-}
-
-/* Images pour réseaux sociaux */
-.ImgForSocialMedia {
-    width: 10%;
-    height: 10%;
-}
-
-/* Logo du blog */
-.BlogLogo {
-    position: absolute;
-    top: 1%;
-    left: 2%;
-    z-index: 3;
+/* Inverser les colonnes pour les articles pairs */
+.blog-post.reverse {
+    flex-direction: row-reverse;
 }

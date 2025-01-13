@@ -1,18 +1,28 @@
 {% extends 'posts/base_Posts.html' %}
-{% load static %}
+{% load static i18n %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
+
 {% block content %}
-    <div class="blog-posts">
-        {% for post in posts %}
-            <h1>{{ post.title }}</h1>
-            <p>{{ post.content|truncatewords:30 }}</p>
-            <a href="{{ post.url }}">Lire la suite ></a>
-        {% empty %}
-            <p>Aucun article de blog trouvé.</p>
-        {% endfor %}
+<div class="blog-posts">
+    {% for post in posts %}
+    <div class="blog-post {% if forloop.counter|divisibleby:2 %}reverse{% endif %}">
+        <!-- Première colonne : Image -->
+        <div class="post-image">
+            <img src="{% static 'posts/Logos/' %}{{ forloop.counter }}.png" alt="{% trans 'Image de l’article' %}">
+        </div>
+        <!-- Deuxième colonne : Contenu -->
+        <div class="post-content">
+            <h1 class="TitlePost">{{ post.title }}</h1>
+            <p class="ExtractPost">{{ post.content|truncatewords:50 }}</p>
+            <a class="More" href="{{ post.url }}">{% trans 'Lire la suite' %} ></a>
+        </div>
     </div>
+    {% empty %}
+    <p class="None">{% trans 'Aucun article de blog trouvé.' %}</p>
+    {% endfor %}
+</div>
 {% endblock %}

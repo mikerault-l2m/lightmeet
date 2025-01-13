@@ -18,8 +18,14 @@
         <div class="post-content">
             <!-- Date de l'article -->
             <p class="PostDate">
-                {{ posts.created_at|date:"d F Y" }}
+                {% if post.created_on %}
+                    {{ post.created_on|date:"d F Y" }}
+                {% else %}
+                    Date non disponible
+                {% endif %}
             </p>
+
+
             <h1 class="TitlePost">{{ post.title }}</h1>
             <p class="ExtractPost">{{ post.content|truncatewords:50 }}</p>
             <a class="More" href="{{ post.url }}">{% trans 'Lire la suite' %} ></a>

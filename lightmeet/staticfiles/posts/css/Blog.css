@@ -1,72 +1,90 @@
+/* Blog.css */
+
+/* Style général pour les articles de blog */
 .blog-posts {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin: 20px;
 }
 
+/* Chaque article */
 .blog-post {
     display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
     background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Colonnes de l'article */
 .post-image {
     flex: 1;
-    max-width: 350px;
-    height: 350px;
-    background: lightgray 50% / cover no-repeat;
-    border-radius: 10px;
-    overflow: hidden;
+    margin-right: 20px;
 }
 
 .post-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+    max-width: 100%;
+    border-radius: 8px;
 }
 
+/* Contenu de l'article */
 .post-content {
     flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    line-height: 1.15; /* Interligne de 1,15 */
-    text-align: justify; /* Justification du texte */
 }
 
+/* Style de la date au-dessus du titre */
+.PostDate {
+    color: #0D0C22;
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+}
+
+/* Titre de l'article */
 .TitlePost {
-    font-size: 1.5rem;
-    color: #333;
+    color: #0D0C22;
+    font-family: Roboto;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-variant: all-small-caps;
+    letter-spacing: 4px;
 }
 
+/* Extrait du contenu */
 .ExtractPost {
-    font-size: 1rem;
+    font-size: 16px;
     color: #666;
-    line-height: 1.15; /* Interligne de 1,15 */
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
+/* Lien "Lire la suite" */
 .More {
-    font-size: 1rem;
-    color: #333; /* Couleur de texte standard */
-    text-decoration: underline; /* Souligné */
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
 }
 
 .More:hover {
     text-decoration: underline;
 }
 
-.None {
-    text-align: center;
-    color: #999;
+/* Style pour les articles alternés */
+.reverse {
+    flex-direction: row-reverse;
 }
 
-/* Inverser les colonnes pour les articles pairs */
-.blog-post.reverse {
-    flex-direction: row-reverse;
+/* Si aucun article n'est trouvé */
+.None {
+    font-size: 18px;
+    color: #999;
+    text-align: center;
 }

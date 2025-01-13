@@ -29,13 +29,13 @@ footer .ListFooter {
 
 footer .linkFooter a {
     text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
+    color:black;
+    font-weight:100;
     transition: color 0.3s ease;
 }
 
 footer .linkFooter a:hover {
-    color: #0056b3;
+    color:black;
 }
 
 /* Footer pour les grands écrans (PC) */

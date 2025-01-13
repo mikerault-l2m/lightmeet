@@ -28,7 +28,9 @@
 
 .post-image img {
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: 20px;
+    width:325px;
+    height:325px;
 }
 
 /* Contenu de l'article */
@@ -54,7 +56,7 @@
     font-family: Roboto;
     font-size: 35px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 300;
     line-height: normal;
     font-variant: all-small-caps;
     letter-spacing: 4px;

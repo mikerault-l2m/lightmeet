@@ -7,6 +7,42 @@
     gap: 20px;
 }
 
+/* Conteneur pour centrer le bouton */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centrage vertical */
+}
+
+/* Style du bouton */
+.button-black-white {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 80px;
+    border-bottom: 3px solid #0D0C22;
+    background: #0D0C22;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+}
+
+/* Effet de survol */
+.button-black-white:hover {
+    background: #FFF;
+    color: #0D0C22;
+    border-color: #FFF;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre accentuée */
+    transform: translateY(-2px); /* Légère élévation */
+}
+
+
 /* Chaque article */
 .blog-post {
     display: flex;
@@ -29,8 +65,8 @@
 .post-image img {
     max-width: 100%;
     border-radius: 20px;
-    width:325px;
-    height:325px;
+    width: 325px;
+    height: 325px;
 }
 
 /* Contenu de l'article */
@@ -41,7 +77,7 @@
 /* Style de la date au-dessus du titre */
 .PostDate {
     color: #0D0C22;
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-style: italic;
     font-weight: 100;
@@ -53,13 +89,13 @@
 /* Titre de l'article */
 .TitlePost {
     color: #0D0C22;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 35px;
-    font-style: normal;
     font-weight: 300;
     line-height: normal;
     font-variant: all-small-caps;
     letter-spacing: 4px;
+    margin-bottom: 15px;
 }
 
 /* Extrait du contenu */
@@ -92,3 +128,141 @@
     color: #999;
     text-align: center;
 }
+
+/* Style pour l'image de blog */
+.blog-image {
+    width: 90%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+}
+
+/* Style pour le texte du blog */
+.blog-text {
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 2;
+    text-align: justify;
+}
+
+/* Style du bouton "Découvrir tous les articles" */
+.discover-more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button-black-white {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 80px;
+    border-bottom: 3px solid #0D0C22;
+    background: #0D0C22;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
+}
+
+.button-black-white:hover {
+    background: #FFF;
+    color: #0D0C22;
+    border-color: #FFF;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre renforcée */
+    transform: translateY(-2px); /* Effet d'élévation */
+}
+
+
+/* Premier article */
+.BLogTitlePos{color: #0D0C22;
+font-family: Roboto;
+font-size: 50px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+font-variant: all-small-caps;
+letter-spacing: 10px;}
+
+.PostImage{width: 1263px;
+height: 500px;
+flex-shrink: 0;
+border-radius: 20px;
+background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
+
+.Blog-intro{color: #0D0C22;
+text-align: justify;
+font-family: Roboto;
+font-size: 30px;
+font-style: normal;
+font-weight: 300;
+line-height: 50px; /* 166.667% */
+letter-spacing: 1.2px;}
+
+.Important{color: #0D0C22;
+text-align: justify;
+font-family: Roboto;
+font-size: 30px;
+font-style: normal;
+font-weight: 300;
+line-height: 50px; /* 166.667% */
+letter-spacing: 1.2px;}
+
+.BlogSubtitle{color: #0D0C22;
+text-align: center;
+font-family: Roboto;
+font-size: 50px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+font-variant: all-small-caps;
+letter-spacing: 10px;}
+
+.BlogSubsubtitle{color: #0D0C22;
+text-align: justify;
+font-family: Roboto;
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: 50px; /* 166.667% */
+letter-spacing: 1.2px;}
+
+.BulletPoint{color: #0D0C22;
+text-align: justify;
+font-family: Roboto;
+font-size: 30px;
+font-style: normal;
+font-weight: 300;
+line-height: 50px; /* 166.667% */
+letter-spacing: 1.2px;}
+
+.TableAnalysis{border-radius: 20px;
+background: #FBF1D6;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);}
+
+.blog-content{color: #0D0C22;
+text-align: justify;
+font-family: Roboto;
+font-size: 30px;
+font-style: normal;
+font-weight: 300;
+line-height: 50px; /* 166.667% */
+letter-spacing: 1.2px;}
+
+
+
+
+
+
+
+
+/* Second article */
+
+
+

@@ -24,13 +24,18 @@
                     Date non disponible
                 {% endif %}
             </p>
-
-
             <h1 class="TitlePost">{{ post.title }}</h1>
-            <p class="ExtractPost">{{ post.content|truncatewords:50 }}</p>
+            <p class="ExtractPost">{{ post.content|truncatewords:75 }}</p>
             <a class="More" href="{{ post.url }}">{% trans 'Lire la suite' %} ></a>
         </div>
     </div>
+    {% if forloop.counter == 2 %}
+    <!-- Bouton après le deuxième article -->
+    <div class="discover-more">
+        <a class="button-black-white" href="/fr/blog/menu">{% trans 'Découvrir tous les articles' %}</a>
+    </div>
+
+    {% endif %}
     {% empty %}
     <p class="None">{% trans 'Aucun article de blog trouvé.' %}</p>
     {% endfor %}

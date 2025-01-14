@@ -20,14 +20,14 @@
     display: inline-block;
     padding: 15px 30px;
     border-radius: 80px;
-    border-bottom: 3px solid #0D0C22;
+    border-bottom: 2px solid #0D0C22;
     background: #0D0C22;
     color: #FFF;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 40px;
-    font-weight: 700;
-    letter-spacing: 1.6px;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 1.1px;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
@@ -51,8 +51,8 @@
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 30%;
+    margin-right:30%;
 }
 
 /* Colonnes de l'article */
@@ -94,6 +94,13 @@
     font-variant: all-small-caps;
     letter-spacing: 4px;
     margin-bottom: 15px;
+}
+/* Extrait du contenu */
+.BLogTitlePost{
+    font-size: 30px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 2.5;
 }
 
 /* Extrait du contenu */
@@ -150,16 +157,6 @@
     text-align: center;
     margin-top: 30px;
 }
-
-/* Premier article */
-.BLogTitlePos {
-    color: #0D0C22;
-    font-family: Roboto;
-    font-size: 50px;
-    font-weight: 600;
-    letter-spacing: 10px;
-}
-
 /* Image du premier article */
 .PostImage {
     width: 1263px;

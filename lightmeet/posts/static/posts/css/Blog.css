@@ -42,7 +42,6 @@
     transform: translateY(-2px); /* Légère élévation */
 }
 
-
 /* Chaque article */
 .blog-post {
     display: flex;
@@ -81,7 +80,6 @@
     font-size: 16px;
     font-style: italic;
     font-weight: 100;
-    line-height: normal;
     letter-spacing: 0.8px;
     margin-bottom: 10px;
 }
@@ -153,116 +151,97 @@
     margin-top: 30px;
 }
 
-.button-black-white {
-    display: inline-block;
-    padding: 15px 30px;
-    border-radius: 80px;
-    border-bottom: 3px solid #0D0C22;
-    background: #0D0C22;
-    color: #FFF;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 1.1px;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile */
-}
-
-.button-black-white:hover {
-    background: #FFF;
-    color: #0D0C22;
-    border-color: #FFF;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre renforcée */
-    transform: translateY(-2px); /* Effet d'élévation */
-}
-
-
 /* Premier article */
-.BLogTitlePos{color: #0D0C22;
-font-family: Roboto;
-font-size: 50px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-font-variant: all-small-caps;
-letter-spacing: 10px;}
-
-.PostImage{width: 1263px;
-height: 500px;
-flex-shrink: 0;
-border-radius: 20px;
-background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+.BLogTitlePos {
+    color: #0D0C22;
+    font-family: Roboto;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 10px;
 }
 
-.Blog-intro{color: #0D0C22;
-text-align: justify;
-font-family: Roboto;
-font-size: 30px;
-font-style: normal;
-font-weight: 300;
-line-height: 50px; /* 166.667% */
-letter-spacing: 1.2px;}
+/* Image du premier article */
+.PostImage {
+    width: 1263px;
+    height: 500px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+}
 
-.Important{color: #0D0C22;
-text-align: justify;
-font-family: Roboto;
-font-size: 30px;
-font-style: normal;
-font-weight: 300;
-line-height: 50px; /* 166.667% */
-letter-spacing: 1.2px;}
+/* Introduction du blog */
+.blog-intro {
+    color: #0D0C22;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 50px;
+    letter-spacing: 1.2px;
+}
 
-.BlogSubtitle{color: #0D0C22;
-text-align: center;
-font-family: Roboto;
-font-size: 50px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-font-variant: all-small-caps;
-letter-spacing: 10px;}
+/* Texte important */
+.Important {
+    color: #0D0C22;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 50px;
+    letter-spacing: 1.2px;
+}
 
-.BlogSubsubtitle{color: #0D0C22;
-text-align: justify;
-font-family: Roboto;
-font-size: 30px;
-font-style: normal;
-font-weight: 600;
-line-height: 50px; /* 166.667% */
-letter-spacing: 1.2px;}
+/* Sous-titre du blog */
+.BlogSubtitle {
+    color: #0D0C22;
+    font-family: Roboto;
+    font-size: 50px;
+    font-weight: 400;
+    letter-spacing: 10px;
+}
 
-.BulletPoint{color: #0D0C22;
-text-align: justify;
-font-family: Roboto;
-font-size: 30px;
-font-style: normal;
-font-weight: 300;
-line-height: 50px; /* 166.667% */
-letter-spacing: 1.2px;}
+/* Sous-sous-titre du blog */
+.BlogSubsubtitle {
+    color: #0D0C22;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: 1.2px;
+}
 
-.TableAnalysis{border-radius: 20px;
-background: #FBF1D6;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);}
+/* Points à puces */
+.BulletPoint {
+    color: #0D0C22;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 50px;
+    letter-spacing: 1.2px;
+}
 
-.blog-content{color: #0D0C22;
-text-align: justify;
-font-family: Roboto;
-font-size: 30px;
-font-style: normal;
-font-weight: 300;
-line-height: 50px; /* 166.667% */
-letter-spacing: 1.2px;}
+/* Analyse en tableau */
+.TableAnalysis {
+    border-radius: 20px;
+    background: #FBF1D6;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
 
+/* Contenu du blog */
+.blog-content {
+    color: #0D0C22;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 50px;
+    letter-spacing: 1.2px;
+}
 
-
-
-
-
-
-
-/* Second article */
-
-
+/* Conclusion du blog */
+.blog-conclusion {
+    color: #0D0C22;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 50px;
+    letter-spacing: 1.2px;
+}
 

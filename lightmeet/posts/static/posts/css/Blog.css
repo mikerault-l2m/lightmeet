@@ -18,14 +18,14 @@
 /* Style du bouton */
 .button-black-white {
     display: inline-block;
-    padding: 15px 30px;
+    padding: 20px 20px 30px 30px;
     border-radius: 80px;
     border-bottom: 2px solid #0D0C22;
     background: #0D0C22;
     color: #FFF;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 300;
     letter-spacing: 1.1px;
     text-decoration: none;
@@ -52,7 +52,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-left: 12%;
-    margin-right:12%;
+    margin-right: 12%;
 }
 
 /* Colonnes de l'article */
@@ -95,8 +95,9 @@
     letter-spacing: 4px;
     margin-bottom: 15px;
 }
+
 /* Extrait du contenu */
-.BLogTitlePost{
+.BLogTitlePost {
     font-size: 30px;
     color: #666;
     margin-bottom: 20px;
@@ -105,10 +106,13 @@
 
 /* Extrait du contenu */
 .ExtractPost {
-    font-size: 16px;
+    font-size: 18px; /* Augmentation de la taille de police de 16px à 18px */
     color: #666;
     margin-bottom: 20px;
     line-height: 1.6;
+    margin-left: 15%; /* Mise à jour des marges à 15% */
+    margin-right: 15%;
+    text-align: justify; /* Justifie le texte */
 }
 
 /* Lien "Lire la suite" */
@@ -157,6 +161,7 @@
     text-align: center;
     margin-top: 30px;
 }
+
 /* Image du premier article */
 .PostImage {
     width: 1263px;
@@ -241,4 +246,3 @@
     line-height: 50px;
     letter-spacing: 1.2px;
 }
-

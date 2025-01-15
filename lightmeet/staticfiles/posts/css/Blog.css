@@ -18,14 +18,14 @@
 /* Style du bouton */
 .button-black-white {
     display: inline-block;
-    padding: 15px 30px;
+    padding: 20px 20px 30px 30px;
     border-radius: 80px;
     border-bottom: 2px solid #0D0C22;
     background: #0D0C22;
     color: #FFF;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 300;
     letter-spacing: 1.1px;
     text-decoration: none;
@@ -109,6 +109,9 @@
     color: #666;
     margin-bottom: 20px;
     line-height: 1.6;
+    margin-left: 20%;
+    margin-right: 20%;
+
 }
 
 /* Lien "Lire la suite" */

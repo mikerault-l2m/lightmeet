@@ -25,6 +25,9 @@ class BlogPost2(TemplateView):
     def get_queryset(self):
         return BlogPost.objects.all().select_related('author')
 
+#1er article
+class BlogPost3(TemplateView):
+    template_name = "posts/Third_Article.html"
 
 class BlogPostDetail(DetailView):
     model = BlogPost

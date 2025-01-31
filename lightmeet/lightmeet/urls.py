@@ -13,6 +13,8 @@ from django.conf.urls.i18n import i18n_patterns  # Pour gérer les patterns i18n
 # URL pour le changement de langue
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),  # Pour gérer le changement de langue
+    path('<str:lang>/partners/', PartnerMeetListView.as_view(), name="partner_list"),
+
 ]
 
 # URLs avec la gestion des langues
@@ -60,6 +62,7 @@ urlpatterns += i18n_patterns(
     # Blog
     path('blog/first_article',BlogPost1.as_view(), name="1_Blog_Article"),
     path('blog/second_article',BlogPost2.as_view(), name="2_Blog_Article"),
+    path('blog/Third_Article',BlogPost3.as_view(), name="3_Blog_Article"),
     path('blog/menu',BlogPostHome.as_view(), name="blog_home"),
     path('blog/create', BlogPostCreate.as_view(), name="blog_create"),
     path('blog/<str:slug>', BlogPostDetail.as_view(), name="blog_detail"),

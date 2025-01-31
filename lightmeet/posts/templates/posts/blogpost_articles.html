@@ -10,7 +10,7 @@
 <div class="containerBlog">
     <div class="BLogTitlePos">
         <div class="LigneSeparationTitle"> </div>
-        <h1 class="Title">Blog</h1>
+        <h1 class="TitlePost">Blog</h1>
         <div class="LigneSeparationTitle"></div>
     </div>
 
@@ -28,7 +28,7 @@
                     <div class="PosElementCardText">
                         <div class="cardText {% if forloop.counter0|divisibleby:2 %}normal-text{% else %}reverse-text{% endif %}">
                             <p class="Date">{{ post.created_on|date:'j F Y' }}</p>
-                            <h2 class="TitleArticle">{{ post.title }}</h2>
+                            <h2 class="TitlePost">{{ post.title }}</h2>
                             <p class="TextArticle">{{ post.content|safe|truncatewords:75 }}</p>
                         </div>
                         <form class="posRM" action="{% url 'blog_detail' slug=post.slug %}">
@@ -39,7 +39,7 @@
             </div>
         {% endfor %}
     {% else %}
-        <p>Aucun article trouvé !!!!.</p>
+        <p>Aucun article n'a été trouvé</p>
     {% endif %}
 </div>
 {% endblock %}

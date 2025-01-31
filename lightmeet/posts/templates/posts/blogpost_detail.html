@@ -2,27 +2,20 @@
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'posts/css/BlogArticle.css' %}">
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
 
 {% block title %}
-<title>{{ post.title }}</title>
+<title "TitlePost">{{ post.title }}</title>
 {% endblock %}
 
 {% block section %}
 <div class="containerArticle">
     <article class="PosElementArticle">
-        <h1 class="TitleArticle">{{ post.title }}</h1>
+        <h1 class="TitlePost">{{ post.title }}</h1>
         <p class="Date"> Publié le {{ post.created_on|date:'j F Y' }} - LightMeet</p>
-        <div  class="cardImageArticle">
-            <img class="ImageArticle" src="../../static/posts/Logos/imageTestBlog.png" alt="test image temporaire ">
-        </div>
-        <div class="TextArticle">
-
-        </div>
-
     </article>
 </div>
 {% block javascript %}

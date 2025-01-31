@@ -1,0 +1,81 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+<body>
+
+{% block section %}
+    <!-- Titre H1 avec cadre, texte en gras et centré -->
+    <h1 class="TitlePost">
+        {% trans "Les erreurs les plus courantes sur les sites de rencontres et comment les éviter" %}
+    </h1>
+        <img class="blog-image" src="{% static 'posts/Logos/2.png' %}">
+
+    <!-- Introduction -->
+    <p class="ExtractPost">
+        {% trans "Les sites de rencontres offrent une opportunité unique de rencontrer de nouvelles personnes et de nouer des relations durables. Cependant, de nombreux utilisateurs commettent des erreurs qui réduisent leurs chances de succès. Identifier ces erreurs et apprendre à les éviter peut faire toute la différence dans votre expérience en ligne." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Dans cet article, nous passons en revue les erreurs les plus fréquentes commises sur les plateformes de rencontres et vous donnons des conseils pratiques pour optimiser vos chances de trouver la bonne personne." %}
+    </p>
+
+    <!-- Mauvaise sélection du site -->
+    <h2 class="TitlePost">
+        {% trans "1 - Choisir le mauvais site de rencontres" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Tous les sites de rencontres ne se valent pas. Certains sont spécialisés dans les relations sérieuses, d'autres dans les rencontres occasionnelles. Avant de vous inscrire, prenez le temps de comparer les plateformes et choisissez celle qui correspond à vos attentes." %}
+    </p>
+
+    <!-- Un profil mal renseigné -->
+    <h2 class="TitlePost">
+        {% trans "2 - Ne pas soigner son profil" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Un profil incomplet ou mal rédigé peut réduire vos chances d'attirer des correspondances intéressantes. Ajoutez des photos de qualité, rédigez une description honnête et mettez en avant vos centres d’intérêt." %}
+    </p>
+
+    <!-- Manque d'engagement dans les conversations -->
+    <h2 class="TitlePost">
+        {% trans "3 - Envoyer des messages génériques et impersonnels" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les messages copiés-collés ou trop vagues sont rarement efficaces. Prenez le temps de personnaliser vos premiers échanges en mentionnant un détail du profil de votre interlocuteur pour susciter l’intérêt." %}
+    </p>
+
+    <!-- Précipitation dans la rencontre réelle -->
+    <h2 class="TitlePost">
+        {% trans "4 - Se précipiter pour une rencontre en personne" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Il est important d'établir une connexion avant de proposer une rencontre. Apprenez à connaître l’autre personne à travers des échanges approfondis avant de franchir cette étape." %}
+    </p>
+
+    <!-- Ignorer la sécurité en ligne -->
+    <h2 class="TitlePost">
+        {% trans "5 - Négliger la sécurité et les signaux d’alerte" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Faites attention aux profils suspects, aux demandes d'argent ou aux personnes qui refusent de passer un appel vidéo avant une rencontre. Toujours privilégier des rencontres dans des lieux publics pour une première rencontre." %}
+    </p>
+
+    <!-- Ne pas persévérer -->
+    <h2 class="TitlePost">
+        {% trans "6 - Abandonner trop vite" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les rencontres en ligne nécessitent de la patience. Si vous ne trouvez pas immédiatement la bonne personne, ne vous découragez pas. Ajustez votre approche, essayez différents sites et gardez une attitude positive." %}
+    </p>
+
+    <p class="ExtractPost">
+    {% trans  "En évitant ces erreurs courantes, vous maximisez vos chances de succès sur les sites de rencontres. Prenez le temps de bien choisir votre plateforme, d'optimiser votre profil et d'engager des conversations authentiques. Votre future relation pourrait être à un clic de distance !" %}
+    </p>
+
+{% endblock %}
+</body>
+</html>

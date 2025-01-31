@@ -81,6 +81,40 @@ elapsed = end - start
 print(f'Temps de récupération adresse IP et location sur LightMeet : {elapsed:.2f}ms')
 
 start = time.time()
+class PartnerMeetListView(ListView):
+    model = PartnerMeet
+    context_object_name = "partners"
+    template_name = "partner_meet/partnermeet_list.html"
+
+    def get_queryset(self):
+        """
+        Retourne les partenaires filtrés par pays en fonction de la langue dans l'URL.
+        """
+        queryset = super().get_queryset()
+        lang_code = self.request.path.split('/')[1]  # Extrait la langue de l'URL
+
+        # Mapping des langues vers les codes pays stockés en base
+        language_country_map = {
+            'fr': 'FRA',
+            'en-us': 'USA',
+            'bel': 'BEL',
+            'en-gb': 'UK',
+            'en-au': 'AUS',
+        }
+
+        country_code = language_country_map.get(lang_code)
+
+        if country_code:
+            queryset = queryset.filter(countries=country_code)
+
+        return queryset
+end = time.time()
+elapsed = end - start
+print(f"Temps d'extraction de la langue: {elapsed:.2f}ms")
+
+
+
+start = time.time()
 
 class PartnerMeetHome(ListView):
     model = PartnerMeet
@@ -91,14 +125,22 @@ class PartnerMeetHome(ListView):
         context = super().get_context_data(**kwargs)
         context['CATEGORIE_CHOICES'] = (
             ("Généraliste", "Site généraliste"),
-            ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
-            ("Religieux", "Site religieux"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
         )
+
+        context['COUNTRY'] = (
+            ('France','FRA'),
+            ('Australia','AUS'),
+            ('United States','USA'),
+            ('United Kingdom','UK'),
+            ('Belgium','BEL'),
+            ('Canada','CAN'),
+        )
+
         context['RELATION_CHOICES'] = (
             ('Durables', 'Durables'),
-            ('Homosexuelles', 'Homosexuelles'),
+            ('LGBTQ+', 'LGBTQ+'),
         )
         context['AGE_CHOICES'] = (
             ('18-30', '18-30'),
@@ -129,20 +171,6 @@ class PartnerMeetHome(ListView):
         if sort_by == 'trustpilot':
             queryset = queryset.order_by('-trustpilot')
 
-        # Filtrer par affiliation
-        affiliation = self.request.GET.get('affiliation')
-        if affiliation == 'true':
-            queryset = queryset.filter(affiliation=True)
-        elif affiliation == 'false':
-            queryset = queryset.filter(affiliation=False)
-
-        # Filtre selon la émission de CO2
-        co2 = self.request.GET.get('co2')
-        if co2 == 'true':
-            queryset = queryset.filter(co2=True)
-        elif co2 == 'false':
-            queryset = queryset.filter(co2=False)
-
         # Filtrer par description (recherche partielle)
         description = self.request.GET.get('description')
         if description:
@@ -159,14 +187,22 @@ class PartnerMeetBestSite(ListView):
         context = super().get_context_data(**kwargs)
         context['CATEGORIE_CHOICES'] = (
             ("Généraliste", "Site généraliste"),
-            ("Libertin", "Site libertin"),
             ("Senior", "Site senior"),
-            ("Religieux", "Site religieux"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
         )
+
+        context['COUNTRY'] = (
+            ('France','FRA'),
+            ('Australia','AUS'),
+            ('United States','USA'),
+            ('United Kingdom','UK'),
+            ('Belgium','BEL'),
+            ('Canada','CAN'),
+        )
+
         context['RELATION_CHOICES'] = (
             ('Durables', 'Durables'),
-            ('Homosexuelles', 'Homosexuelles'),
+            ('LGBTQ+', 'LGBTQ+'),
         )
         context['AGE_CHOICES'] = (
             ('18-30', '18-30'),
@@ -177,6 +213,7 @@ class PartnerMeetBestSite(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
+
 
         # Filtrer par âge
         age = self.request.GET.get('age')
@@ -206,13 +243,6 @@ class PartnerMeetBestSite(ListView):
             queryset = queryset.filter(free=True)
         elif free == 'false':
             queryset = queryset.filter(free=False)
-
-        # Filtre selon la émission de CO2
-        co2 = self.request.GET.get('co2')
-        if co2 == 'true':
-            queryset = queryset.filter(co2=True)
-        elif co2 == 'false':
-            queryset = queryset.filter(co2=False)
 
         # Filtrer par description (recherche partielle)
         description = self.request.GET.get('description')

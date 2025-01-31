@@ -8,7 +8,7 @@
 <meta name="description" content="Comparez les sites de rencontres avec Lightmeet. Sélectionnez le meilleur service en fonction de vos besoins.">
 <meta name="robots" content="index, follow">
 <title>Lightmeet - Comparateur de Rencontres</title>
-<link rel="canonical" href="https://www.lightmeet.fr/fr/">
+<link rel="canonical" href="https://www.lightmeet.fr">
 {{ block.super }}
 {% endblock %}
 
@@ -20,47 +20,59 @@
 
 {% block section %}
 <div style="padding: 20px;">
-
-
     <div class="ButtonPos">
-        <button class="buttonOtherSearh" onclick="window.location.href=`{% url 'recherche_home' %}`">
+        <button class="buttonOtherSearh" onclick="window.location.href='{% url 'recherche_home' %}'">
             {% trans "Rencontres" %}
         </button>
     </div>
 
     <div class="containerResultats">
-        <h1 class="Resultats" style="font-size:40px;font-weight:100;font-family:'Roboto';">{% trans "La sélection Lightmeet" %}</h2>
+
+
+        <h1 class="Resultats" >
+            {% trans "La sélection Lightmeet" %}
+        </h1>
+
         {% for partner in partnermeet|dictsort:"ranking" %}
             {% if partner.affiliation %}
-            <div class="cardApp VersionPC">
-                <div class="alignItems">
-                    <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
-                    <div class="containerTitleCard">
-                        <div class="PosStar">
-                            <h3 class="TitleCard">{{ partner.nom }}</h3>
-                            <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
-                        </div>
-                        <p class="textCard">{{ partner.description }}</p>
-                        <div class="PosFlag">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 35 22">
-                                <rect width="11.6667" height="22" fill="#0055A4"/>
-                                <rect x="11.6667" width="10.6667" height="22" fill="#FFFFFF"/>
-                                <rect x="23.3333" width="10.6667" height="22" fill="#EF4135"/>
-                            </svg>
-                            <p class="pays">{% trans "France" %}</p>
+                <div class="cardApp">
+                    <div class="alignItems">
+                        <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
+                        <div class="containerTitleCard">
+                            <div class="PosStar">
+                                <h3 class="TitleCard">{{ partner.nom }}</h3>
+                                <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
+                            </div>
+                            <p class="textCard">{{ partner.description }}</p>
+
+
                         </div>
                     </div>
+                    <div class="Line"></div>
+                    <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
+                    <div class="Line"></div>
+                    <p class="descriptionCard bold">{{ partner.age }} {% trans "ans" %}</p>
+                    <div class="Line"></div>
+                    <p class="descriptionCard">+ {{ partner.Visites }} {% trans "Visites / mois" %}</p>
+                    <div class="Line"></div>
+                    <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">
+                        {% trans "Visiter" %}
+                    </button>
                 </div>
-                <div class="Line"></div>
-                <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
-                <div class="Line"></div>
-                <p class="descriptionCard bold">{{ partner.age }} {% trans "ans" %}</p>
-                <div class="Line"></div>
-                <p class="descriptionCard">+ {{ partner.Visites_France }} {% trans "Visites / mois" %} </p>
-                <div class="Line"></div>
-                <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">{% trans "Visiter" %}</button>
+            {% endif %}
+        {% empty %}
+            <div class="empty-message" id="resultats">
+                <p>{% trans "Ces sites de rencontres sont actuellement étudiés par" %} <i>Lightmeet</i></p>
+                <p style="text-align:center;">
+                    <strong style="font-size:30px;">{% trans "BIENTÔT disponible" %}</strong>
+                </p>
             </div>
+        {% endfor %}
+    </div>
 
+    <!-- Section Mobile -->
+    {% for partner in partnermeet|dictsort:"ranking" %}
+        {% if partner.affiliation %}
             <div class="cardApp VersionMobile">
                 <div class="alignItems">
                     <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
@@ -83,19 +95,20 @@
                 <div class="alignItemsButton">
                     <div class="containerDescription">
                         <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
-                        <p class="descriptionCard bold">{{ partner.age }} ans</p>
-                        <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
+                        <p class="descriptionCard bold">{{ partner.age }} {% trans "ans" %}</p>
+                        <p class="descriptionCard">+ {{ partner.Visites_France }} {% trans "Visites / mois" %}</p>
                     </div>
                     <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">></button>
                 </div>
             </div>
-            {% endif %}
-        {% empty %}
+        {% endif %}
+    {% empty %}
         <div class="empty-message" id="resultats">
             <p>{% trans "Ces sites de rencontres sont actuellement étudiés par" %} <i>Lightmeet</i></p>
-            <p style="text-align:center;"><strong style="font-size:30px;">{% trans "BIENTÔT disponible" %}</strong></p>
+            <p style="text-align:center;">
+                <strong style="font-size:30px;">{% trans "BIENTÔT disponible" %}</strong>
+            </p>
         </div>
-        {% endfor %}
-    </div>
+    {% endfor %}
 </div>
 {% endblock %}

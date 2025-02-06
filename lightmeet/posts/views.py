@@ -14,20 +14,71 @@ class BlogPostHome(ListView):
     def get_queryset(self):
         return BlogPost.objects.all()  # Récupérer tous les articles de blog
 
-#1er article
+from django.views.generic import TemplateView
+
+# 1er article
 class BlogPost1(TemplateView):
     template_name = "posts/First_Article.html"
 
-#2nd article
+# 2ème article
 class BlogPost2(TemplateView):
     template_name = "posts/Second_Article.html"
 
     def get_queryset(self):
         return BlogPost.objects.all().select_related('author')
 
-#1er article
+# 3ème article
 class BlogPost3(TemplateView):
     template_name = "posts/Third_Article.html"
+
+# 4ème article
+class BlogPost4(TemplateView):
+    template_name = "posts/Fourth_Article.html"
+
+# 5ème article
+class BlogPost5(TemplateView):
+    template_name = "posts/Fifth_Article.html"
+
+# 6ème article
+class BlogPost6(TemplateView):
+    template_name = "posts/Sixth_Article.html"
+
+# 7ème article
+class BlogPost7(TemplateView):
+    template_name = "posts/Seventh_Article.html"
+
+# 8ème article
+class BlogPost8(TemplateView):
+    template_name = "posts/Eighth_Article.html"
+
+# 9ème article
+class BlogPost9(TemplateView):
+    template_name = "posts/Ninth_Article.html"
+
+# 10ème article
+class BlogPost10(TemplateView):
+    template_name = "posts/Tenth_Article.html"
+
+# 11ème article
+class BlogPost11(TemplateView):
+    template_name = "posts/Eleventh_Article.html"
+
+# 12ème article
+class BlogPost12(TemplateView):
+    template_name = "posts/Twelfth_Article.html"
+
+# 13ème article
+class BlogPost13(TemplateView):
+    template_name = "posts/Thirteenth_Article.html"
+
+# 14ème article
+class BlogPost14(TemplateView):
+    template_name = "posts/Fourteenth_Article.html"
+
+
+
+
+
 
 class BlogPostDetail(DetailView):
     model = BlogPost

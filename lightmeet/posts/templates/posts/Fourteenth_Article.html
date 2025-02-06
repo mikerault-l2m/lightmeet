@@ -1,0 +1,69 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+<body>
+
+{% block section %}
+    <!-- Titre H1 avec cadre, texte en gras et centré -->
+    <h1 class="TitlePost">
+        {% trans "Les erreurs qui vous empêchent d’avoir un premier rendez-vous" %}
+    </h1>
+    <img class="blog-image" src="{% static 'posts/Logos/14.png' %}">
+
+    <!-- Introduction -->
+    <p class="ExtractPost">
+        {% trans "Obtenir un premier rendez-vous est souvent la première étape dans une nouvelle relation. Cependant, certaines erreurs courantes peuvent compromettre vos chances. Cet article vous aidera à éviter ces pièges et à maximiser vos chances d’obtenir ce premier rendez-vous." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Découvrez les erreurs les plus fréquentes et comment les éviter pour réussir votre première rencontre." %}
+    </p>
+
+    <!-- Erreurs à éviter -->
+    <h2 class="TitlePost">
+        {% trans "1 - Être trop pressé(e) ou insistant(e)" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Une approche trop pressante peut effrayer l'autre personne. Prenez votre temps pour apprendre à connaître l'autre avant de proposer un rendez-vous. Soyez patient(e) et respectez le rythme de la relation." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "2 - Ne pas être authentique" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Essayer d’être quelqu’un d’autre ou de mentir sur certains aspects de votre vie peut vous empêcher de créer une connexion réelle. L'authenticité est essentielle pour établir une relation solide." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "3 - Ne pas prendre en compte les intérêts de l’autre" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Un rendez-vous qui ne tient pas compte des préférences et des intérêts de l’autre peut rapidement devenir inconfortable. Soyez attentif(ve) aux goûts de votre partenaire potentiel pour choisir une activité qui vous convienne à tous les deux." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "4 - Manquer de confiance en soi" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Un manque de confiance en soi peut se ressentir lors d’un premier rendez-vous. Soyez ouvert(e) et détendu(e), et évitez de vous concentrer sur vos propres insécurités. Une attitude positive et une bonne posture peuvent faire toute la différence." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "5 - Ne pas respecter les limites de l’autre" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les limites personnelles doivent toujours être respectées. Ne forcez jamais une situation si l'autre personne ne se sent pas à l'aise. Il est important d’être attentif(ve) et de respecter l’espace de l’autre." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "En évitant ces erreurs, vous augmenterez vos chances de passer à l'étape suivante et de vivre un premier rendez-vous réussi." %}
+    </p>
+
+{% endblock %}
+</body>
+</html>

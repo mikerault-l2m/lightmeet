@@ -1,0 +1,69 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+<body>
+
+{% block section %}
+    <!-- Titre H1 avec cadre, texte en gras et centré -->
+    <h1 class="TitlePost">
+        {% trans "L’overdating : pourquoi trop swiper peut nuire à votre succès amoureux" %}
+    </h1>
+    <img class="blog-image" src="{% static 'posts/Logos/7.png' %}">
+
+    <!-- Introduction -->
+    <p class="ExtractPost">
+        {% trans "Dans un monde où les applications de rencontre nous encouragent à swiper sans cesse, il peut être facile de se laisser emporter. Cependant, l’overdating, ou l’acte de swiper trop souvent, peut finalement nuire à vos chances de trouver l’amour." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Cet article explore les raisons pour lesquelles trop swiper peut avoir des effets négatifs et vous donne des conseils pour trouver un meilleur équilibre." %}
+    </p>
+
+    <!-- Les effets de l'overdating -->
+    <h2 class="TitlePost">
+        {% trans "1 - L’effet du choix excessif" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "L’abondance de choix peut entraîner une paralysie décisionnelle. Quand on a trop d’options, il devient plus difficile de se concentrer sur une seule personne et de vraiment établir une connexion." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "2 - Le manque d’engagement" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Trop swiper peut mener à une approche superficielle des rencontres. Vous risquez de ne pas vous engager pleinement avec les personnes que vous rencontrez, car vous êtes constamment à la recherche de la prochaine meilleure option." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "3 - L’usure émotionnelle" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Le fait de passer son temps à swiper peut être épuisant émotionnellement. Il devient difficile de maintenir une attitude positive envers les rencontres lorsque vous êtes constamment en mode sélection." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "4 - Perdre de vue ce que l’on recherche" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Trop swiper peut vous faire oublier vos véritables objectifs. Plutôt que de chercher une personne qui partage vos valeurs, vous pouvez commencer à vous concentrer uniquement sur des critères superficiels." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "5 - Comment éviter l’overdating" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Pour éviter l’overdating, il est essentiel de limiter vos sessions de swipe et de prendre le temps de vraiment explorer les profils. Essayez de vous concentrer sur la qualité plutôt que la quantité des matchs." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "En réduisant l’overdating, vous pourrez vous concentrer sur des relations plus authentiques et augmenter vos chances de succès amoureux." %}
+    </p>
+
+{% endblock %}
+</body>
+</html>

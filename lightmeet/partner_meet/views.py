@@ -80,6 +80,24 @@ end = time.time()
 elapsed = end - start
 print(f'Temps de récupération adresse IP et location sur LightMeet : {elapsed:.2f}ms')
 
+## Déterminations des drapeaux
+from django.shortcuts import render
+from django.http import HttpRequest
+
+def determine_flag(request: HttpRequest):
+    # Récupérer l'URL actuelle
+    current_url = request.path
+
+    # Vérifier l'URL pour déterminer le drapeau
+    if current_url == "/fr":
+        flag = "France"
+    elif current_url == "/fr-be":
+        flag = "Belgium"
+    else:
+        flag = "default"  # Ou un autre drapeau par défaut, si nécessaire
+
+    return render(request, 'partnermeet/partnermeet_list.html', {'flag': flag})
+
 start = time.time()
 class PartnerMeetListView(ListView):
     model = PartnerMeet
@@ -88,30 +106,26 @@ class PartnerMeetListView(ListView):
 
     def get_queryset(self):
         """
-        Retourne les partenaires filtrés par pays en fonction de la langue dans l'URL.
+        Retourne les partenaires filtrés en fonction de la langue extraite de l'URL.
         """
         queryset = super().get_queryset()
-        lang_code = self.request.path.split('/')[1]  # Extrait la langue de l'URL
 
-        # Mapping des langues vers les codes pays stockés en base
+        # Extraction optimisée de la langue dans l'URL
+        lang_code = self.kwargs.get('lang') or self.request.path.split('/')[1]
+
+        # Gestion uniquement de 'fr' et 'en-us'
         language_country_map = {
-            'fr': 'FRA',
-            'en-us': 'USA',
-            'bel': 'BEL',
-            'en-gb': 'UK',
-            'en-au': 'AUS',
+            'fr': "France",
+            'en-us': "United States"
         }
 
-        country_code = language_country_map.get(lang_code)
+        country = language_country_map.get(lang_code)
 
-        if country_code:
-            queryset = queryset.filter(countries=country_code)
+        if country:
+            queryset = queryset.filter(countries=country)
 
-        return queryset
-end = time.time()
-elapsed = end - start
-print(f"Temps d'extraction de la langue: {elapsed:.2f}ms")
-
+        return queryset.order_by("-ranking")
+      # Tri par ranking pour optimiser l'affichage
 
 
 start = time.time()
@@ -120,6 +134,16 @@ class PartnerMeetHome(ListView):
     model = PartnerMeet
     context_object_name = "partnermeet"
     template_name = "partner_meet/partnermeet_list.html"
+
+    def PartnerMeetHome(request):
+        selected_country = "France"  # Exemple : cette valeur pourrait provenir de l'URL ou d'une autre logique
+        countries = ["France", "German", "United States"]
+
+        return render(request, 'partner_meet/your_template.html', {
+            'selected_country': selected_country,
+            'countries': countries
+        })
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -182,7 +206,12 @@ class PartnerMeetHome(ListView):
 
         return queryset
 
+from django.views.generic import ListView
+from .models import PartnerMeet  # Assurez-vous que vous importez le bon modèle.
+
 class PartnerMeetBestSite(ListView):
+    model = PartnerMeet  # Définissez ici le modèle associé à la vue
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['CATEGORIE_CHOICES'] = (
@@ -190,7 +219,6 @@ class PartnerMeetBestSite(ListView):
             ("Senior", "Site senior"),
             ("Haut-de-gamme", "Site haut-de-gamme"),
         )
-
         context['COUNTRY'] = (
             ('France','FRA'),
             ('Australia','AUS'),
@@ -199,7 +227,6 @@ class PartnerMeetBestSite(ListView):
             ('Belgium','BEL'),
             ('Canada','CAN'),
         )
-
         context['RELATION_CHOICES'] = (
             ('Durables', 'Durables'),
             ('LGBTQ+', 'LGBTQ+'),

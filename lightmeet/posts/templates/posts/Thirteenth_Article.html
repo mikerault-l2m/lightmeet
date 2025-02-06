@@ -1,0 +1,69 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+<body>
+
+{% block section %}
+    <!-- Titre H1 avec cadre, texte en gras et centré -->
+    <h1 class="TitlePost">
+        {% trans "Les signes qui montrent que vous êtes prêt(e) à vous engager" %}
+    </h1>
+    <img class="blog-image" src="{% static 'posts/Logos/13.png' %}">
+
+    <!-- Introduction -->
+    <p class="ExtractPost">
+        {% trans "L’engagement dans une relation amoureuse est une étape importante et souvent intimidante. Il n’est pas toujours facile de savoir quand vous êtes prêt(e) à franchir cette étape. Cet article explore les signes qui indiquent que vous êtes prêt(e) à vous engager sérieusement." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Voici quelques indicateurs pour vous aider à savoir si vous êtes prêt(e) à faire un pas en avant dans une relation." %}
+    </p>
+
+    <!-- Signes indiquant que vous êtes prêt(e) à vous engager -->
+    <h2 class="TitlePost">
+        {% trans "1 - Vous vous sentez en confiance avec l’autre" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "L'un des signes les plus évidents est le sentiment de confiance avec votre partenaire. Vous vous sentez à l'aise pour être vous-même, sans cacher vos défauts ni prétendre être quelqu’un d’autre." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "2 - Vous avez des objectifs communs" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "L’engagement dans une relation implique souvent de partager des valeurs et des objectifs communs. Si vous êtes en phase sur les aspects importants de la vie, comme la famille, la carrière ou les projets de vie, c’est un bon signe." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "3 - Vous êtes prêt à faire des compromis" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "L’engagement nécessite de la flexibilité. Si vous êtes prêt(e) à faire des compromis pour l’autre tout en restant fidèle à vos valeurs essentielles, c’est un signe que vous êtes prêt(e) à aller plus loin." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "4 - Vous imaginez un avenir à deux" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Lorsque vous commencez à envisager un avenir à deux, à long terme, cela signifie souvent que vous êtes prêt(e) à vous engager. Vous pensez à des projets communs et à des objectifs à long terme avec cette personne." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "5 - Vous êtes prêt(e) à surmonter les obstacles ensemble" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les relations rencontrent souvent des défis. Si vous êtes prêt(e) à affronter les difficultés aux côtés de votre partenaire et à résoudre les problèmes ensemble, c’est un signe clair que vous êtes prêt(e) à vous engager." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Si vous vous retrouvez dans ces signes, il est possible que vous soyez prêt(e) à faire évoluer votre relation vers un engagement plus sérieux." %}
+    </p>
+
+{% endblock %}
+</body>
+</html>

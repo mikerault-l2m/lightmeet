@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Comparez les sites de rencontres avec Lightmeet. Sélectionnez le meilleur service en fonction de vos besoins.">
 <meta name="robots" content="index, follow">
-<title>Lightmeet - Comparateur de Rencontres</title>
 <link rel="canonical" href="https://www.lightmeet.fr">
 {{ block.super }}
 {% endblock %}
@@ -25,90 +24,51 @@
             {% trans "Rencontres" %}
         </button>
     </div>
-
     <div class="containerResultats">
+        <h1 class="Resultats">
+    {% with selected_country="France" %}
+        <img src="{% static 'partner_meet/Logos/' %}{{ selected_country }}.png" width="22px" alt="{{ selected_country }}">
+        {% trans "La sélection Lightmeet" %}
+        <img src="{% static 'partner_meet/Logos/' %}{{ selected_country }}.png" width="22px" alt="{{ selected_country }}">
+    {% endwith %}
+</h1>
 
 
-        <h1 class="Resultats" >
-            {% trans "La sélection Lightmeet" %}
-        </h1>
-
-        {% for partner in partnermeet|dictsort:"ranking" %}
-            {% if partner.affiliation %}
-                <div class="cardApp">
-                    <div class="alignItems">
-                        <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
-                        <div class="containerTitleCard">
-                            <div class="PosStar">
-                                <h3 class="TitleCard">{{ partner.nom }}</h3>
-                                <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
+    {% if partnermeet %}
+            {% for partner in partnermeet|dictsort:"ranking" %}
+                {% if partner.affiliation and "France" in partner.countries %}
+                    <div class="cardApp">
+                        <div class="alignItems">
+                            <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
+                            <div class="containerTitleCard">
+                                <div class="PosStar">
+                                    <h3 class="TitleCard">{{ partner.nom }}</h3>
+                                    <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
+                                </div>
+                                <p class="textCard">{{ partner.description }}</p>
                             </div>
-                            <p class="textCard">{{ partner.description }}</p>
-
-
                         </div>
+                        <div class="Line"></div>
+                        <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
+                        <div class="Line"></div>
+                        <p class="descriptionCard bold">{{ partner.age }} {% trans "ans" %}</p>
+                        <div class="Line"></div>
+                        <p class="descriptionCard">+ {{ partner.Visites }} {% trans "Visites / mois" %}</p>
+                        <div class="Line"></div>
+                        <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">
+                            {% trans "Visiter" %}
+                        </button>
                     </div>
-                    <div class="Line"></div>
-                    <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
-                    <div class="Line"></div>
-                    <p class="descriptionCard bold">{{ partner.age }} {% trans "ans" %}</p>
-                    <div class="Line"></div>
-                    <p class="descriptionCard">+ {{ partner.Visites }} {% trans "Visites / mois" %}</p>
-                    <div class="Line"></div>
-                    <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">
-                        {% trans "Visiter" %}
-                    </button>
-                </div>
-            {% endif %}
-        {% empty %}
+                {% endif %}
+            {% endfor %}
+        {% else %}
             <div class="empty-message" id="resultats">
                 <p>{% trans "Ces sites de rencontres sont actuellement étudiés par" %} <i>Lightmeet</i></p>
                 <p style="text-align:center;">
                     <strong style="font-size:30px;">{% trans "BIENTÔT disponible" %}</strong>
                 </p>
             </div>
-        {% endfor %}
-    </div>
-
-    <!-- Section Mobile -->
-    {% for partner in partnermeet|dictsort:"ranking" %}
-        {% if partner.affiliation %}
-            <div class="cardApp VersionMobile">
-                <div class="alignItems">
-                    <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
-                    <div class="containerTitleCard">
-                        <div class="PosStar">
-                            <h3 class="TitleCard">{{ partner.nom }}</h3>
-                            <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
-                        </div>
-                        <p class="textCard">{{ partner.description }}</p>
-                        <div class="PosFlag">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10">
-                                <rect width="4.6667" height="10" fill="#0055A4"/>
-                                <rect x="4.6667" width="4.6667" height="10" fill="#FFFFFF"/>
-                                <rect x="9.3334" width="4.6667" height="10" fill="#EF4135"/>
-                            </svg>
-                            <p class="pays">{% trans "France" %}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="alignItemsButton">
-                    <div class="containerDescription">
-                        <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
-                        <p class="descriptionCard bold">{{ partner.age }} {% trans "ans" %}</p>
-                        <p class="descriptionCard">+ {{ partner.Visites_France }} {% trans "Visites / mois" %}</p>
-                    </div>
-                    <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">></button>
-                </div>
-            </div>
         {% endif %}
-    {% empty %}
-        <div class="empty-message" id="resultats">
-            <p>{% trans "Ces sites de rencontres sont actuellement étudiés par" %} <i>Lightmeet</i></p>
-            <p style="text-align:center;">
-                <strong style="font-size:30px;">{% trans "BIENTÔT disponible" %}</strong>
-            </p>
-        </div>
-    {% endfor %}
+    </div>
 </div>
 {% endblock %}

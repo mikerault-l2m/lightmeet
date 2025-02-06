@@ -1,0 +1,69 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+<body>
+
+{% block section %}
+    <!-- Titre H1 avec cadre, texte en gras et centré -->
+    <h1 class="TitlePost">
+        {% trans "Comment éviter les scams et arnaques sur les applications de dating" %}
+    </h1>
+    <img class="blog-image" src="{% static 'posts/Logos/9.png' %}">
+
+    <!-- Introduction -->
+    <p class="ExtractPost">
+        {% trans "Les arnaques en ligne sont de plus en plus courantes sur les sites de rencontre. Les escrocs utilisent différentes techniques pour exploiter les utilisateurs, qu'il s'agisse de demandes d'argent ou de tentatives de manipulation émotionnelle. Cet article vous donne des conseils pratiques pour repérer et éviter ces arnaques." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Voici comment vous protéger et naviguer sur les applications de rencontre en toute sécurité." %}
+    </p>
+
+    <!-- Conseils pour éviter les scams -->
+    <h2 class="TitlePost">
+        {% trans "1 - Ne jamais envoyer d'argent à quelqu’un que vous venez de rencontrer" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les escrocs essaient souvent de manipuler émotionnellement les utilisateurs pour les convaincre d’envoyer de l’argent. Si quelqu’un vous demande de l’argent, surtout si vous ne l’avez jamais rencontré en personne, il s’agit probablement d’une arnaque." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "2 - Méfiez-vous des profils trop parfaits" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Si le profil d’une personne semble trop parfait ou si les photos semblent prises à partir de banques d’images, soyez prudent. Les escrocs utilisent souvent des images volées pour créer des profils fictifs." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "3 - Ne partagez pas d’informations sensibles trop rapidement" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Évitez de partager des informations personnelles comme votre adresse, votre numéro de téléphone ou vos détails bancaires trop tôt dans une conversation." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "4 - Faites attention aux demandes de vidéos ou d’images explicites" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les arnaqueurs peuvent tenter de vous inciter à envoyer des photos ou vidéos explicites pour ensuite vous faire chanter. Ne vous laissez pas manipuler et évitez ce genre de demandes." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "5 - Utilisez des plateformes sécurisées et vérifiées" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Assurez-vous que la plateforme sur laquelle vous êtes inscrit est sécurisée et offre une protection contre les arnaques. Vérifiez si elle propose des outils de signalement pour les comportements suspects." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "En suivant ces conseils, vous pouvez éviter les scams et profiter des applications de rencontre de manière plus sécurisée." %}
+    </p>
+
+{% endblock %}
+</body>
+</html>

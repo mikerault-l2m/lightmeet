@@ -111,14 +111,18 @@ DATABASES = {
 # Configurations de langue pour les variantes d'anglais international et autres langues
 LANGUAGE_CODE = 'fr-fr'
 LANGUAGES = [
-    ('en-us', _('English (US)')),
     ('fr', _('French')),
+    ('en-us', _('English (United States)')),
+    #('en-gb', _('English (United Kingdom)')),
+    #('en-au', _('English (Australia)')),
+    ('fr-be', _('French (Belgium)')),
     ('de', _('German')),
     ('da', _('Danish')),
     ('pt', _('Portuguese')),
     ('nl', _('Dutch')),
     ('es', _('Spanish')),
 ]
+
 
 # Fuseaux horaires, choisissez un fuseau adapté :
 TIME_ZONE = 'America/New_York'  # Option pour le public américain

@@ -1,0 +1,90 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+<body>
+
+{% block section %}
+    <!-- Titre H1 avec cadre, texte en gras et centré -->
+    <h1 class="TitlePost">
+        {% trans "Les faux profils : comment les repérer et ne pas tomber dans le piège" %}
+    </h1>
+    <img class="blog-image" src="{% static 'posts/Logos/2.png' %}">
+
+    <!-- Introduction -->
+    <p class="ExtractPost">
+        {% trans "Les faux profils sont un problème courant sur les sites de rencontres. Ils peuvent être utilisés pour arnaquer, manipuler ou simplement tromper les utilisateurs. Apprendre à les identifier est essentiel pour éviter les mauvaises expériences." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Voici les principaux signes d’un faux profil et les meilleures pratiques pour vous protéger en ligne." %}
+    </p>
+
+    <!-- Trop beau pour être vrai -->
+    <h2 class="TitlePost">
+        {% trans "1 - Un profil trop parfait" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Si un profil semble trop beau pour être vrai – des photos professionnelles, une biographie sans défauts, des centres d’intérêt trop génériques – méfiez-vous. Les escrocs créent souvent des profils irréalistes pour attirer leurs victimes." %}
+    </p>
+
+    <!-- Peu d'informations sur le profil -->
+    <h2 class="TitlePost">
+        {% trans "2 - Un profil peu détaillé" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Un profil avec très peu d'informations, peu de photos ou une description vague est souvent suspect. Les faux comptes évitent souvent de donner trop de détails pour ne pas être démasqués." %}
+    </p>
+
+    <!-- Un comportement étrange en discussion -->
+    <h2 class="TitlePost">
+        {% trans "3 - Un comportement étrange dans les messages" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Si votre interlocuteur évite les questions personnelles, donne des réponses génériques ou semble utiliser un traducteur automatique, cela peut être un signe de faux profil." %}
+    </p>
+
+    <!-- Une précipitation suspecte -->
+    <h2 class="TitlePost">
+        {% trans "4 - Une déclaration d’amour rapide" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les arnaqueurs cherchent souvent à créer une connexion émotionnelle rapide pour manipuler leur victime. Si quelqu’un vous déclare son amour après quelques échanges seulement, restez sur vos gardes." %}
+    </p>
+
+    <!-- Une demande d'argent -->
+    <h2 class="TitlePost">
+        {% trans "5 - Une demande d'argent ou d'informations sensibles" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Un faux profil finira souvent par vous demander de l’argent ou des informations personnelles. Ne partagez jamais vos coordonnées bancaires, et méfiez-vous des demandes financières, même déguisées en urgence personnelle." %}
+    </p>
+
+    <!-- Comment se protéger -->
+    <h2 class="TitlePost">
+        {% trans "6 - Comment se protéger ?" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "- Faites une recherche d’image inversée sur Google pour vérifier si les photos sont volées." %}
+    </p>
+    <p class="ExtractPost">
+        {% trans "- Évitez de partager des informations personnelles trop rapidement." %}
+    </p>
+    <p class="ExtractPost">
+        {% trans "- Préférez les échanges par appel vidéo avant une rencontre réelle." %}
+    </p>
+    <p class="ExtractPost">
+        {% trans "- Signalez les profils suspects aux modérateurs du site." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "En restant vigilant et en appliquant ces conseils, vous réduirez considérablement le risque de tomber dans le piège des faux profils. Profitez des rencontres en ligne en toute sécurité !" %}
+    </p>
+
+{% endblock %}
+</body>
+</html>

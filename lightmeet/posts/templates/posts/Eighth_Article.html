@@ -1,0 +1,43 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+<body>
+
+{% block section %}
+    <!-- Titre H1 avec cadre, texte en gras et centré -->
+    <h1 class="TitlePost">
+        {% trans "Les phrases à bannir de votre profil de rencontre" %}
+    </h1>
+    <img class="blog-image" src="{% static 'posts/Logos/8.png' %}">
+
+    <!-- Introduction -->
+    <p class="ExtractPost">
+        {% trans "Lorsque vous créez votre profil sur un site de rencontre, les mots que vous choisissez peuvent faire toute la différence. Certaines phrases peuvent donner une mauvaise impression ou nuire à vos chances de rencontre. Dans cet article, nous vous proposons des phrases à éviter pour maximiser vos chances de succès." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Découvrez les expressions courantes à bannir et pourquoi elles peuvent avoir un effet négatif sur vos interactions." %}
+    </p>
+
+    <!-- Les phrases à éviter -->
+    <h2 class="TitlePost">
+        {% trans "1 - « Je suis ici pour m’amuser, pas pour une relation sérieuse »" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Bien que cela puisse être vrai pour certaines personnes, cette phrase peut effrayer ceux qui cherchent quelque chose de plus sérieux. Si vous êtes ouvert à différentes options, restez vague et laissez la conversation déterminer la direction." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "2 - « Je déteste les mensonges »" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Bien que l’honnêteté soit primordiale, cette phrase peut sembler trop dure ou accusatoire. Cela peut faire penser que vous êtes en mode jugement dès le départ." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "3 - « Je suis un(e) travailleur(se) acharné

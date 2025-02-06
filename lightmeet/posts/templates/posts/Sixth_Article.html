@@ -1,0 +1,69 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+<body>
+
+{% block section %}
+    <!-- Titre H1 avec cadre, texte en gras et centré -->
+    <h1 class="TitlePost">
+        {% trans "Les malentendus fréquents sur les sites de rencontres et comment les éviter" %}
+    </h1>
+    <img class="blog-image" src="{% static 'posts/Logos/6.png' %}">
+
+    <!-- Introduction -->
+    <p class="ExtractPost">
+        {% trans "Les sites de rencontres sont une excellente manière de rencontrer de nouvelles personnes, mais certains malentendus peuvent survenir, que ce soit en ligne ou lors de conversations. Il est important de comprendre ces pièges pour éviter les mauvaises surprises et optimiser votre expérience." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Dans cet article, nous allons aborder les malentendus les plus courants sur les sites de rencontres et vous donner des astuces pour les éviter." %}
+    </p>
+
+    <!-- Conseils pour éviter les malentendus -->
+    <h2 class="TitlePost">
+        {% trans "1 - Clarifier ses intentions dès le début" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Lorsque vous commencez une conversation, soyez clair sur vos intentions. Si vous cherchez une relation sérieuse ou quelque chose de plus décontracté, il est essentiel de le mentionner dès le début pour éviter toute confusion." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "2 - Être transparent sur ses attentes" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les attentes sont souvent mal comprises. Parlez ouvertement de ce que vous attendez d'une rencontre et écoutez les attentes de l'autre pour vous assurer que vous êtes sur la même longueur d'onde." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "3 - Ne pas juger un profil uniquement sur les photos" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les photos peuvent parfois être trompeuses. Ne vous laissez pas influencer par une image unique. Prenez le temps de connaître la personne à travers ses messages et sa personnalité." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "4 - Respecter l'espace de l'autre" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Il est important de respecter les limites de l'autre. Si quelqu’un n’est pas prêt à répondre à vos messages immédiatement, ne le prenez pas personnellement et ne soyez pas insistant." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "5 - Communiquer clairement et éviter les malentendus" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les messages en ligne peuvent être mal interprétés. Utilisez un ton respectueux et soyez clair dans vos propos pour éviter les malentendus." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "En prenant en compte ces conseils, vous réduirez les risques de malentendus et profiterez pleinement de votre expérience sur les sites de rencontres." %}
+    </p>
+
+{% endblock %}
+</body>
+</html>

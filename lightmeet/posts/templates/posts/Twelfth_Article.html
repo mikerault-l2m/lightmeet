@@ -1,0 +1,69 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+<body>
+
+{% block section %}
+    <!-- Titre H1 avec cadre, texte en gras et centré -->
+    <h1 class="TitlePost">
+        {% trans "Comment gérer les attentes dans une relation naissante" %}
+    </h1>
+    <img class="blog-image" src="{% static 'posts/Logos/12.png' %}">
+
+    <!-- Introduction -->
+    <p class="ExtractPost">
+        {% trans "Lorsqu’une relation commence à se développer, il est important de bien gérer les attentes de chacun. Les malentendus et les attentes irréalistes peuvent entraîner des déceptions. Cet article vous guide pour éviter ces pièges et pour construire une relation saine et épanouissante." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Découvrez comment communiquer efficacement pour définir les attentes dès le début et éviter les conflits futurs." %}
+    </p>
+
+    <!-- Conseils pour gérer les attentes -->
+    <h2 class="TitlePost">
+        {% trans "1 - Soyez clair sur vos intentions" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Dès le début de la relation, il est essentiel de clarifier vos attentes. Êtes-vous à la recherche de quelque chose de sérieux ou d'une relation plus décontractée ? Soyez honnête pour éviter toute confusion." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "2 - Discutez de vos besoins émotionnels" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Chacun a des besoins émotionnels différents. Prenez le temps de discuter de ce que vous attendez de l'autre sur le plan affectif et soyez ouvert aux compromis." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "3 - Restez ouvert et flexible" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les attentes peuvent évoluer à mesure que la relation se développe. Soyez prêt à adapter vos attentes au fur et à mesure que vous apprenez à mieux vous connaître." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "4 - Apprenez à gérer les désaccords" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Les désaccords sont inévitables dans toute relation. Apprenez à les gérer de manière constructive en discutant calmement et en cherchant des solutions ensemble." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "5 - Ne forcez pas les choses" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Il est important de laisser la relation évoluer naturellement. Ne forcez pas l'autre à répondre à vos attentes à tout prix. Prenez le temps d’apprendre à vous connaître avant de faire des attentes trop élevées." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "En suivant ces conseils, vous pourrez gérer les attentes dans une relation naissante et construire une base solide pour une relation durable." %}
+    </p>
+
+{% endblock %}
+</body>
+</html>

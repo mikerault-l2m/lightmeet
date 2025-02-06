@@ -1,0 +1,69 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+<body>
+
+{% block section %}
+    <!-- Titre H1 avec cadre, texte en gras et centré -->
+    <h1 class="TitlePost">
+        {% trans "Sécurité en ligne : protéger son profil et ses données personnelles" %}
+    </h1>
+        <img class="blog-image" src="{% static 'posts/Logos/5.png' %}">
+
+    <!-- Introduction -->
+    <p class="ExtractPost">
+        {% trans "Les sites de rencontres peuvent être un excellent moyen de rencontrer des personnes, mais ils comportent aussi des risques en matière de sécurité des données et de protection de la vie privée. Protéger votre identité et vos informations personnelles est essentiel pour éviter les mauvaises expériences." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Dans cet article, nous vous donnons des conseils pratiques pour assurer votre sécurité en ligne lorsque vous utilisez une plateforme de rencontres." %}
+    </p>
+
+    <!-- Conseils de sécurité -->
+    <h2 class="TitlePost">
+        {% trans "1 - Ne jamais divulguer d'informations sensibles" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Évitez de partager des informations personnelles comme votre adresse, numéro de téléphone ou détails bancaires avec des inconnus. Les escrocs cherchent souvent à exploiter ces données." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "2 - Utiliser une adresse e-mail dédiée" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Créer une adresse e-mail spécifique pour vos interactions sur les sites de rencontres vous permet de protéger votre compte principal et de limiter les risques d’usurpation d’identité." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "3 - Vérifier les paramètres de confidentialité" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Chaque site dispose de paramètres de confidentialité. Prenez le temps de les configurer pour limiter l’accès à vos informations et contrôler qui peut voir votre profil." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "4 - Se méfier des liens et fichiers suspects" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Ne cliquez jamais sur des liens douteux ou ne téléchargez pas de fichiers envoyés par des personnes inconnues. Cela pourrait être une tentative de phishing ou contenir des logiciels malveillants." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "5 - Effectuer des recherches sur ses interlocuteurs" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Si quelqu’un vous semble suspect, effectuez une recherche sur internet en utilisant son nom ou ses photos pour vérifier son authenticité. Méfiez-vous des profils trop parfaits." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "En suivant ces conseils, vous pouvez utiliser les sites de rencontres en toute sécurité et minimiser les risques liés à la confidentialité de vos données personnelles." %}
+    </p>
+
+{% endblock %}
+</body>
+</html>

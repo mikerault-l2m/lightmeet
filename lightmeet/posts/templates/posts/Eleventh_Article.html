@@ -1,0 +1,69 @@
+{% extends 'partner_meet/base_Partner_meet.html' %}
+{% load static %}
+{% load i18n %}  <!-- Load the internationalization library -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
+{% endblock %}
+<body>
+
+{% block section %}
+    <!-- Titre H1 avec cadre, texte en gras et centré -->
+    <h1 class="TitlePost">
+        {% trans "Les meilleures stratégies pour réussir un premier rendez-vous" %}
+    </h1>
+    <img class="blog-image" src="{% static 'posts/Logos/11.png' %}">
+
+    <!-- Introduction -->
+    <p class="ExtractPost">
+        {% trans "Passer du profil à un premier rendez-vous est une étape cruciale dans le processus de rencontre en ligne. Pour réussir cette première rencontre, il est important d'adopter certaines stratégies qui vous aideront à créer une bonne première impression et à poser les bases d’une relation potentielle." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "Cet article vous propose des astuces et des conseils pour que votre premier rendez-vous se passe sous les meilleurs auspices." %}
+    </p>
+
+    <!-- Conseils pour réussir un premier rendez-vous -->
+    <h2 class="TitlePost">
+        {% trans "1 - Choisir un lieu confortable et tranquille" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Le choix du lieu pour votre premier rendez-vous est crucial. Un endroit calme où vous pouvez discuter confortablement est essentiel. Évitez les lieux trop bruyants ou bondés qui risquent de rendre la conversation difficile." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "2 - Être ponctuel et préparé" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "La ponctualité est un signe de respect. Arrivez à l'heure et soyez préparé à la rencontre, tant sur le plan mental que sur le plan pratique (savoir où aller, comment y arriver, etc.)." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "3 - Soyez attentif et à l’écoute" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Lors d’un premier rendez-vous, il est important d’être à l’écoute de l’autre. Posez des questions, montrez de l’intérêt pour ce que l’autre a à dire et ne vous concentrez pas uniquement sur vous-même." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "4 - Restez détendu et authentique" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Le stress est normal, mais essayez de rester détendu. Soyez vous-même, ne cherchez pas à impressionner à tout prix. La sincérité et l’authenticité sont toujours appréciées." %}
+    </p>
+
+    <h2 class="TitlePost">
+        {% trans "5 - Savoir quand prendre congé" %}
+    </h2>
+    <p class="ExtractPost">
+        {% trans "Un premier rendez-vous ne doit pas nécessairement durer des heures. Si vous sentez que la rencontre touche à sa fin, n’ayez pas peur de l’abréger en douceur. Laissez l'autre personne sur une note positive." %}
+    </p>
+
+    <p class="ExtractPost">
+        {% trans "En appliquant ces conseils, vous augmentez vos chances de réussir votre premier rendez-vous et de poser les bases d’une relation future." %}
+    </p>
+
+{% endblock %}
+</body>
+</html>

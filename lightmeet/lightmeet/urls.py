@@ -13,14 +13,15 @@ from django.conf.urls.i18n import i18n_patterns  # Pour gérer les patterns i18n
 # URL pour le changement de langue
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),  # Pour gérer le changement de langue
-    path('<str:lang>/partners/', PartnerMeetListView.as_view(), name="partner_list"),
-
 ]
 
 # URLs avec la gestion des langues
 urlpatterns += i18n_patterns(
     # Administrateur :
     path('lightmeet-admin/', admin.site.urls),
+
+    path('<str:lang>/rencontres/', PartnerMeetListView.as_view(), name='partner_list'),
+
 
     # robots.txt path below
     path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
@@ -60,15 +61,25 @@ urlpatterns += i18n_patterns(
     #path('recherche/sites_des_thérapeutes/', PsyMeetBestSite.as_view(), name="recherche_meilleur_therapeutes"),  # nouveau
 
     # Blog
-    path('blog/first_article',BlogPost1.as_view(), name="1_Blog_Article"),
-    path('blog/second_article',BlogPost2.as_view(), name="2_Blog_Article"),
-    path('blog/Third_Article',BlogPost3.as_view(), name="3_Blog_Article"),
-    path('blog/menu',BlogPostHome.as_view(), name="blog_home"),
+    path('blog/First_Article', BlogPost1.as_view(), name="1_Blog_Article"),
+    path('blog/Second_Article', BlogPost2.as_view(), name="2_Blog_Article"),
+    path('blog/Third_Article', BlogPost3.as_view(), name="3_Blog_Article"),
+    path('blog/Fourth_Article', BlogPost4.as_view(), name="4_Blog_Article"),
+    path('blog/Fifth_Article', BlogPost5.as_view(), name="5_Blog_Article"),
+    path('blog/Sixth_Article', BlogPost6.as_view(), name="6_Blog_Article"),
+    path('blog/Seventh_Article', BlogPost7.as_view(), name="7_Blog_Article"),
+    path('blog/Eighth_Article', BlogPost8.as_view(), name="8_Blog_Article"),
+    path('blog/Ninth_Article', BlogPost9.as_view(), name="9_Blog_Article"),
+    path('blog/Tenth_Article', BlogPost10.as_view(), name="10_Blog_Article"),
+    path('blog/Eleventh_Article', BlogPost11.as_view(), name="11_Blog_Article"),
+    path('blog/Twelfth_Article', BlogPost12.as_view(), name="12_Blog_Article"),
+    path('blog/Thirteenth_Article', BlogPost13.as_view(), name="13_Blog_Article"),
+    path('blog/Fourteenth_Article', BlogPost14.as_view(), name="14_Blog_Article"),
+    path('blog/menu', BlogPostHome.as_view(), name="blog_home"),
     path('blog/create', BlogPostCreate.as_view(), name="blog_create"),
     path('blog/<str:slug>', BlogPostDetail.as_view(), name="blog_detail"),
     path('blog/edit/<str:slug>', BlogPostUpdate.as_view(), name="blog_edit"),
     path('blog/delete/<str:slug>', BlogPostDelete.as_view(), name="blog_delete"),
-
     # Tout ce qui est statique, comme les images et fichiers médias
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -13,7 +13,10 @@
     <h1 class="TitlePost">
         {% trans "Les avantages méconnus d'un comparateur de sites de rencontres" %}
     </h1>
-        <img class="blog-image" src="{% static 'posts/Logos/2.png' %}">
+        <!-- Première colonne : Image -->
+        <div class="post-image">
+            <img src="{% static 'posts/Logos/' %}{{ forloop.counter }}.png" alt="{% trans 'Image de l’article' %}">
+        </div>
 
     <!-- Introduction -->
     <p class="ExtractPost">

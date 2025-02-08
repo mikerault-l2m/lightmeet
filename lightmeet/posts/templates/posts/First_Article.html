@@ -15,7 +15,10 @@
         {% trans "Trouver l'amour grâce à un comparateur de sites de rencontres" %}
     </h1>
 
-    <img class="PostImage" src="{% static 'posts/Logos/1.png' %}">
+    <!-- Première colonne : Image -->
+        <div class="post-image">
+            <img src="{% static 'posts/Logos/' %}{{ forloop.counter }}.png" alt="{% trans 'Image de l’article' %}">
+        </div>
 
     <!-- Paragraph with margins and line height -->
     <p class="ExtractPost">

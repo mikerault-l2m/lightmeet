@@ -6,7 +6,6 @@ from django.utils.translation import gettext_lazy as _
 class PartnerMeet(models.Model):
     nom = models.CharField(max_length=100)
     LOGO = models.ImageField(upload_to='MeetSites/', null=True, blank=True)
-    models.CharField(max_length=25, null=True, blank=True)
     url = models.URLField(blank=True) # URL de redirection du site web associé à la variable 'affiliation'
     Visites = models.CharField(max_length=100) # - 3 Membres - # Cette variable comptabilise tous les 3 mois le nombre de visiteurs du site web.
 

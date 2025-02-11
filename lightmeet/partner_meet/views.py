@@ -18,6 +18,8 @@ from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse
 import requests  # Ensure you import requests since you are using it in get_location
 from django.utils.translation import activate, get_language_from_request, gettext as _ #pour la langue
+from django.views.generic import ListView
+from .models import PartnerMeet  # Assurez-vous que vous importez le bon modèle.
 
 # Etape 1 : Lancement de la page principale Lightmeet :
 start = time.time()
@@ -97,7 +99,7 @@ def determine_flag(request: HttpRequest):
         flag = "default"  # Ou un autre drapeau par défaut, si nécessaire
 
     return render(request, 'partnermeet/partnermeet_list.html', {'flag': flag})
-
+## Version tout public
 start = time.time()
 class PartnerMeetListView(ListView):
     model = PartnerMeet
@@ -126,10 +128,12 @@ class PartnerMeetListView(ListView):
 
         return queryset.order_by("-ranking")
       # Tri par ranking pour optimiser l'affichage
+end = time.time()
+elapsed = end - start
+print(f"Temps de recherche des sites de rencontre : {elapsed:.2f}ms")
 
 
 start = time.time()
-
 class PartnerMeetHome(ListView):
     model = PartnerMeet
     context_object_name = "partnermeet"
@@ -205,10 +209,6 @@ class PartnerMeetHome(ListView):
             partner.description = _(partner.description)
 
         return queryset
-
-from django.views.generic import ListView
-from .models import PartnerMeet  # Assurez-vous que vous importez le bon modèle.
-
 class PartnerMeetBestSite(ListView):
     model = PartnerMeet  # Définissez ici le modèle associé à la vue
 
@@ -287,11 +287,201 @@ class PartnerMeetBestSite(ListView):
             queryset = queryset.order_by('ranking')
 
         return queryset
-
 end = time.time()
 elapsed = end - start
 print(f"Temps de recherche des sites de rencontre : {elapsed:.2f}ms")
 
+# Version adulte
+
+start = time.time()
+class PartnerMeetListView(ListView):
+    model = PartnerMeet
+    context_object_name = "partners"
+    template_name = "partner_meet/partnermeet_list_adulte.html"
+
+    def get_queryset(self):
+        """
+        Retourne les partenaires filtrés en fonction de la langue extraite de l'URL.
+        """
+        queryset = super().get_queryset()
+
+        # Extraction optimisée de la langue dans l'URL
+        lang_code = self.kwargs.get('lang') or self.request.path.split('/')[1]
+
+        # Gestion uniquement de 'fr' et 'en-us'
+        language_country_map = {
+            'fr': "France",
+            'en-us': "United States"
+        }
+
+        country = language_country_map.get(lang_code)
+
+        if country:
+            queryset = queryset.filter(countries=country)
+
+        return queryset.order_by("-ranking")
+      # Tri par ranking pour optimiser l'affichage
+end = time.time()
+elapsed = end - start
+print(f"Temps de recherche des sites de rencontre : {elapsed:.2f}ms")
+
+
+start = time.time()
+class PartnerMeetHome_Adulte(ListView):
+    model = PartnerMeet
+    context_object_name = "partnermeet"
+    template_name = "partner_meet/partnermeet_list_adulte.html"
+
+    def PartnerMeetHome(request):
+        selected_country = "France"  # Exemple : cette valeur pourrait provenir de l'URL ou d'une autre logique
+        countries = ["France", "German", "United States"]
+
+        return render(request, 'partner_meet/your_template.html', {
+            'selected_country': selected_country,
+            'countries': countries
+        })
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['CATEGORIE_CHOICES'] = (
+            ("Généraliste", "Site généraliste"),
+            ("Senior", "Site senior"),
+            ("Haut-de-gamme", "Site haut-de-gamme"),
+        )
+
+        context['COUNTRY'] = (
+            ('France','FRA'),
+            ('Australia','AUS'),
+            ('United States','USA'),
+            ('United Kingdom','UK'),
+            ('Belgium','BEL'),
+            ('Canada','CAN'),
+        )
+
+        context['RELATION_CHOICES'] = (
+            ('Durables', 'Durables'),
+            ('LGBTQ+', 'LGBTQ+'),
+        )
+        context['AGE_CHOICES'] = (
+            ('18-30', '18-30'),
+            ('31-45', '31-45'),
+            ('+ 46', '+ 46'),
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        # Filtrer par âge
+        age = self.request.GET.get('age')
+        if age:
+            queryset = queryset.filter(age=age)
+
+        # Filtrer par prix moyen
+        prix_avg = self.request.GET.get('prix_avg')
+        if prix_avg:
+            queryset = queryset.filter(prix_avg=prix_avg)
+
+        # Trier par affiliation_adulte (si disponible)
+        sort_by = self.request.GET.get('sort_by')
+        if sort_by == 'affiliation_adulte':
+            queryset = queryset.order_by('affiliation_adulte')
+
+        # Trier par trustpilot (si disponible)
+        if sort_by == 'trustpilot':
+            queryset = queryset.order_by('-trustpilot')
+
+        # Filtrer par description (recherche partielle)
+        description = self.request.GET.get('description')
+        if description:
+            queryset = queryset.filter(description__icontains=description)
+
+        # Traduire dynamiquement la description pour chaque partenaire
+        for partner in queryset:
+            partner.description = _(partner.description)
+
+        return queryset
+class PartnerMeetBestSite_Adulte(ListView):
+    model = PartnerMeet  # Définissez ici le modèle associé à la vue
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['CATEGORIE_CHOICES'] = (
+            ("Généraliste", "Site généraliste"),
+            ("Senior", "Site senior"),
+            ("Haut-de-gamme", "Site haut-de-gamme"),
+        )
+        context['COUNTRY'] = (
+            ('France','FRA'),
+            ('Australia','AUS'),
+            ('United States','USA'),
+            ('United Kingdom','UK'),
+            ('Belgium','BEL'),
+            ('Canada','CAN'),
+        )
+        context['RELATION_CHOICES'] = (
+            ('Durables', 'Durables'),
+            ('LGBTQ+', 'LGBTQ+'),
+        )
+        context['AGE_CHOICES'] = (
+            ('18-30', '18-30'),
+            ('31-45', '31-45'),
+            ('+ 46', '+ 46'),
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+
+        # Filtrer par âge
+        age = self.request.GET.get('age')
+        if age:
+            queryset = queryset.filter(age=age)
+
+        # Filtrer par prix moyen
+        prix_avg = self.request.GET.get('prix_avg')
+        if prix_avg:
+            queryset = queryset.filter(prix_avg=prix_avg)
+
+        # Trier par trustpilot (si disponible)
+        sort_by = self.request.GET.get('sort_by')
+        if sort_by == 'trustpilot':
+            queryset = queryset.order_by('-trustpilot')
+
+        # Filtrer par affiliation
+        affiliation_adulte = self.request.GET.get('affiliation_adulte')
+        if affiliation_adulte == 'true':
+            queryset = queryset.filter(affiliation_adulte=True)
+        elif affiliation_adulte == 'false':
+            queryset = queryset.filter(affiliation_adulte=False)
+
+        # Filtre selon la gratuité
+        free = self.request.GET.get('free')
+        if free == 'true':
+            queryset = queryset.filter(free=True)
+        elif free == 'false':
+            queryset = queryset.filter(free=False)
+
+        # Filtrer par description (recherche partielle)
+        description = self.request.GET.get('description')
+        if description:
+            queryset = queryset.filter(description__icontains=description)
+
+        # Filtrer par catégorie
+        categorie = self.request.GET.get('categorie')
+        if categorie:
+            queryset = queryset.filter(categorie=categorie)
+
+        # Trier par ranking (si disponible)
+        sort_by = self.request.GET.get('sort_by')
+        if sort_by == 'ranking':
+            queryset = queryset.order_by('ranking')
+
+        return queryset
+end = time.time()
+elapsed = end - start
+print(f"Temps de recherche des sites de rencontre : {elapsed:.2f}ms")
 
 class PartnerMeetDetail(DetailView):
     model = PartnerMeet
@@ -314,6 +504,7 @@ class PartnerMeetUpdate(UpdateView):
 class PartnerMeetDelete(DeleteView):
     model = PartnerMeet
     success_url = reverse_lazy("partner_meet_list")
+
 #Ici peut-être faut il changer certaines variables pour adapter au models PartnerMeetHome
 def trouver_meilleur_site(site_comparateur, sites):
     meilleur_site = None

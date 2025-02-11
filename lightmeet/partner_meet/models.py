@@ -42,6 +42,7 @@ class PartnerMeet(models.Model):
     prix_avg = models.DecimalField(max_digits=10, decimal_places=2, default=0) # 2 Points forts : Prix
     trustpilot = models.FloatField(null=True, blank=True) # 4 - Note Utilisateur
     affiliation = models.BooleanField(default=False) # 5 - Sélection cocher # Ce partenaire est affilié à la société Listen2Meet par un contrat d'affiliation.
+    affiliation_adulte = models.BooleanField(default=False)
     free = models.BooleanField(default=False)
     co2 = models.BooleanField(default=False)
     description = models.TextField(null=True, blank=True) # Courte description du site de rencontres - 2 - Points forts en quelques mots

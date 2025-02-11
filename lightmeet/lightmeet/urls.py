@@ -52,6 +52,9 @@ urlpatterns += i18n_patterns(
     path('recherche/delete/<int:pk>/', PartnerMeetDelete.as_view(), name="recherche_delete"),
     path('recherche/site_de_rencontres/', PartnerMeetBestSite.as_view(), name="recherche_meilleur_site"),  # nouveau
 
+    path('rencontres_adultes/', PartnerMeetHome_Adulte.as_view(), name="recherche_home_adulte"),
+    path('recherche/site_de_rencontres_adulte/', PartnerMeetBestSite_Adulte.as_view(), name="recherche_meilleur_site_adulte"),
+
     # Psy
     #path('therapeutes/', PsyMeetHome.as_view(), name="recherche_therapeutes"),
     #path('psy/create', PsyCreate.as_view(), name="psy_create"),

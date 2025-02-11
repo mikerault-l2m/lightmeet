@@ -1,5 +1,6 @@
 {% extends 'posts/base_Posts.html' %}
 {% load static i18n %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
 {{ block.super }}
@@ -9,7 +10,7 @@
 {% block content %}
 <div class="blog-posts">
     {% for post in posts %}
-    <div class="blog-post {% if forloop.counter|divisibleby:2 %}reverse{% endif %}">
+    <div class="blog-post {% if forloop.counter|divisibleby:2 %}reverse{% endif %} {% if forloop.counter > 3 %}hidden{% endif %}" {% if forloop.counter > 3 %}data-hidden="true"{% endif %}>
         <!-- Première colonne : Image -->
         <div class="post-image">
             <img src="{% static 'posts/Logos/' %}{{ forloop.counter }}.png" alt="{% trans 'Image de l’article' %}">
@@ -29,15 +30,26 @@
             <a class="More" href="{{ post.url }}">{% trans 'Lire la suite' %} ></a>
         </div>
     </div>
-    {% if forloop.counter == 3 %}
-    <!-- Bouton après le deuxième article -->
-    <div class="discover-more">
-        <a class="button-black-white" href="/fr/blog/menu">{% trans 'Découvrir tous les articles' %}</a>
-    </div>
-
-    {% endif %}
-    {% empty %}
-    <p class="None">{% trans 'Aucun article de blog trouvé.' %}</p>
     {% endfor %}
+
+    {% if posts|length > 3 %}
+    <!-- Bouton pour afficher les autres articles -->
+    <div class="discover-more">
+        <button id="showMoreBtn" class="button-black-white">{% trans 'Découvrir tous les articles' %}</button>
+    </div>
+    {% endif %}
 </div>
+
+<!-- JavaScript pour afficher les articles cachés -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("showMoreBtn")?.addEventListener("click", function() {
+        document.querySelectorAll(".blog-post[data-hidden='true']").forEach(el => {
+            el.style.display = "flex"; // Ou "block" selon ton design
+            el.removeAttribute("data-hidden");
+        });
+        this.style.display = "none"; // Cacher le bouton après le clic
+    });
+});
+</script>
 {% endblock %}

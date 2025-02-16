@@ -9,7 +9,7 @@
     <meta http-equiv="X-UV-Compatible" content="ie=edge">
     <meta name="c87c1cf5d2c0c27" content="edc768491e7735d6ac7497328b7fa306" />
     <meta name="description" content="LightMeet, le premier comparateur de sites de rencontres. Être éclairé pour trouver l'amour.  ">
-    <title>LightMeet - Sites de rencontres</title>
+    <title>LightMeet - Comparer pour trouver l'amour</title>
     {% block css %}
     <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
     {% endblock %}
@@ -55,7 +55,7 @@ function init_tracer() {
             <img class="LightMeetLogo"  src="../../static/partner_meet/Logos/LightMeet.svg" alt="Logo LightMeet">
         </a>
         <nav class="navPos">
-            <button style="color:black; background-color:#FFEDBB; padding: 9px 55px;border: 0.1px solid grey;border-radius:50px; cursor: pointer; font-size: 12px;"
+            <button style="color:black; background-color:#FBF1D6; padding: 9px 55px;border: 0.1px solid grey;border-radius:50px; cursor: pointer; font-size: 12px;"
                 onclick="window.location.href='{% url 'recherche_home_adulte' %}'">
                 {% trans 'Adultes' %}
             </button>
@@ -70,8 +70,13 @@ function init_tracer() {
             <div class="line Line3"></div>
         </div>
         <ul class="navMenu">
+
             <li><a href="{% url 'recherche_home' %}" class="ListeHeader">Site de rencontres</a></li>
             <li><a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a></li>
+            <li><button style="color:black; background-color:#FBF1D6; padding: 7px 40px;border: 0.1px solid grey;border-radius:50px; cursor: pointer; font-size: 12px;"
+                onclick="window.location.href='{% url 'recherche_home_adulte' %}'">
+                {% trans 'Adultes' %}
+            </button></li>
             <li><a href="{% url 'Home' %}" class="ListeHeader">FAQ</a></li>
             <li><a href="{% url 'Support' %}" class="ListeHeader">Support</a></li>
         </ul>

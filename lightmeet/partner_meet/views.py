@@ -93,7 +93,7 @@ def determine_flag(request: HttpRequest):
     # Vérifier l'URL pour déterminer le drapeau
     if current_url == "/fr":
         flag = "France"
-    elif current_url == "/fr-be":
+    elif current_url == "/en-us":
         flag = "Belgium"
     else:
         flag = "default"  # Ou un autre drapeau par défaut, si nécessaire
@@ -118,7 +118,8 @@ class PartnerMeetListView(ListView):
         # Gestion uniquement de 'fr' et 'en-us'
         language_country_map = {
             'fr': "France",
-            'en-us': "United States"
+            'en-us': "United States",
+            'fr-be': "Belgium",
         }
 
         country = language_country_map.get(lang_code)
@@ -140,10 +141,10 @@ class PartnerMeetHome(ListView):
     template_name = "partner_meet/partnermeet_list.html"
 
     def PartnerMeetHome(request):
-        selected_country = "France"  # Exemple : cette valeur pourrait provenir de l'URL ou d'une autre logique
+        selected_country = ["France", "German", "United States"]  # Exemple : cette valeur pourrait provenir de l'URL ou d'une autre logique
         countries = ["France", "German", "United States"]
 
-        return render(request, 'partner_meet/your_template.html', {
+        return render(request, 'partner_meet/partnermeet_list.html', {
             'selected_country': selected_country,
             'countries': countries
         })
@@ -168,7 +169,8 @@ class PartnerMeetHome(ListView):
 
         context['RELATION_CHOICES'] = (
             ('Durables', 'Durables'),
-            ('LGBTQ+', 'LGBTQ+'),
+            ('Amicales', 'Amicales'),
+            ('LGBTQ+','LGBTQ+'),
         )
         context['AGE_CHOICES'] = (
             ('18-30', '18-30'),
@@ -336,7 +338,7 @@ class PartnerMeetHome_Adulte(ListView):
         selected_country = "France"  # Exemple : cette valeur pourrait provenir de l'URL ou d'une autre logique
         countries = ["France", "German", "United States"]
 
-        return render(request, 'partner_meet/your_template.html', {
+        return render(request, 'partner_meet/partnermeet_list.html', {
             'selected_country': selected_country,
             'countries': countries
         })
@@ -344,12 +346,13 @@ class PartnerMeetHome_Adulte(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['CATEGORIE_CHOICES'] = (
-            ("Généraliste", "Site généraliste"),
-            ("Senior", "Site senior"),
-            ("Haut-de-gamme", "Site haut-de-gamme"),
+        context['CATEGORIE_CHOICE'] = (
+            ("Jeune", "Site pour jeunes"),
+            ("Géolocalisation", "Géolocalisation"),
+            ("Interculturelles", "Site interculturelles"),
+            ("Femme ronde","Femme ronde"),
+            ("Discrétion","Discrétion"),
         )
-
         context['COUNTRY'] = (
             ('France','FRA'),
             ('Australia','AUS'),
@@ -359,9 +362,11 @@ class PartnerMeetHome_Adulte(ListView):
             ('Canada','CAN'),
         )
 
-        context['RELATION_CHOICES'] = (
-            ('Durables', 'Durables'),
-            ('LGBTQ+', 'LGBTQ+'),
+        context['RELATION_CHOICE'] = (
+            ('Adultère', 'Adultère'),
+            ('Lesbienne', 'Lesbienne'),
+            ('Gay','Gay'),
+            ('Interculturelles'),
         )
         context['AGE_CHOICES'] = (
             ('18-30', '18-30'),
@@ -432,6 +437,80 @@ class PartnerMeetBestSite_Adulte(ListView):
         return context
 
     def get_queryset(self):
+        """
+        Retourne les partenaires filtrés en fonction de la langue extraite de l'URL.
+        """
+        queryset = super().get_queryset()
+
+        # Extraction optimisée de la langue dans l'URL
+        lang_code = self.kwargs.get('lang') or self.request.path.split('/')[1]
+
+        # Gestion uniquement de 'fr' et 'en-us'
+        language_country_map = {
+            'fr': "France",
+            'en-us': "United States"
+        }
+
+        country = language_country_map.get(lang_code)
+
+        if country:
+            queryset = queryset.filter(countries=country)
+
+        return queryset.order_by("-ranking")
+      # Tri par ranking pour optimiser l'affichage
+end = time.time()
+elapsed = end - start
+print(f"Temps de recherche des sites de rencontre : {elapsed:.2f}ms")
+
+
+start = time.time()
+class PartnerMeetHome_Adulte(ListView):
+    model = PartnerMeet
+    context_object_name = "partnermeet"
+    template_name = "partner_meet/partnermeet_list_adulte.html"
+
+    def PartnerMeetHome(request):
+        selected_country = "France"  # Exemple : cette valeur pourrait provenir de l'URL ou d'une autre logique
+        countries = ["France", "German", "United States"]
+
+        return render(request, 'partner_meet/partnermeet_list.html', {
+            'selected_country': selected_country,
+            'countries': countries
+        })
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['CATEGORIE_CHOICE'] = (
+            ("Jeune", "Site pour jeunes"),
+            ("Géolocalisation", "Géolocalisation"),
+            ("Interculturelles", "Site interculturelles"),
+            ("Femme ronde","Femme ronde"),
+            ("Discrétion","Discrétion"),
+        )
+        context['COUNTRY'] = (
+            ('France','FRA'),
+            ('Australia','AUS'),
+            ('United States','USA'),
+            ('United Kingdom','UK'),
+            ('Belgium','BEL'),
+            ('Canada','CAN'),
+        )
+
+        context['RELATION_CHOICE'] = (
+            ('Adultère', 'Adultère'),
+            ('Lesbienne', 'Lesbienne'),
+            ('Gay','Gay'),
+            ('Interculturelles'),
+        )
+        context['AGE_CHOICES'] = (
+            ('18-30', '18-30'),
+            ('31-45', '31-45'),
+            ('+ 46', '+ 46'),
+        )
+        return context
+
+    def get_queryset(self):
         queryset = super().get_queryset()
 
         # Filtrer par âge
@@ -444,39 +523,23 @@ class PartnerMeetBestSite_Adulte(ListView):
         if prix_avg:
             queryset = queryset.filter(prix_avg=prix_avg)
 
-        # Trier par trustpilot (si disponible)
+        # Trier par affiliation_adulte (si disponible)
         sort_by = self.request.GET.get('sort_by')
+        if sort_by == 'affiliation_adulte':
+            queryset = queryset.order_by('affiliation_adulte')
+
+        # Trier par trustpilot (si disponible)
         if sort_by == 'trustpilot':
             queryset = queryset.order_by('-trustpilot')
-
-        # Filtrer par affiliation
-        affiliation_adulte = self.request.GET.get('affiliation_adulte')
-        if affiliation_adulte == 'true':
-            queryset = queryset.filter(affiliation_adulte=True)
-        elif affiliation_adulte == 'false':
-            queryset = queryset.filter(affiliation_adulte=False)
-
-        # Filtre selon la gratuité
-        free = self.request.GET.get('free')
-        if free == 'true':
-            queryset = queryset.filter(free=True)
-        elif free == 'false':
-            queryset = queryset.filter(free=False)
 
         # Filtrer par description (recherche partielle)
         description = self.request.GET.get('description')
         if description:
             queryset = queryset.filter(description__icontains=description)
 
-        # Filtrer par catégorie
-        categorie = self.request.GET.get('categorie')
-        if categorie:
-            queryset = queryset.filter(categorie=categorie)
-
-        # Trier par ranking (si disponible)
-        sort_by = self.request.GET.get('sort_by')
-        if sort_by == 'ranking':
-            queryset = queryset.order_by('ranking')
+        # Traduire dynamiquement la description pour chaque partenaire
+        for partner in queryset:
+            partner.description = _(partner.description)
 
         return queryset
 end = time.time()
@@ -506,28 +569,28 @@ class PartnerMeetDelete(DeleteView):
     success_url = reverse_lazy("partner_meet_list")
 
 #Ici peut-être faut il changer certaines variables pour adapter au models PartnerMeetHome
-def trouver_meilleur_site(site_comparateur, sites):
-    meilleur_site = None
-    meilleur_score = -1
-    # Parcourez les sites pour trouver le meilleur site
-    for site in sites:
-        if site != site_comparateur:  # Ne pas comparer un site avec lui-même
-            score = calculer_score(site_comparateur, site)
-            if score > meilleur_score:
-                meilleur_site = site
-                meilleur_score = score
-    return meilleur_site
-def calculer_score(site1, site2):
-    # Poids des différents critères de comparaison
-    poids_popularite = 0.5
-    poids_prix = 0.3
-    poids_fonctionnalites = 0.2
-    # Calcul du score en fonction des attributs des sites et de leur importance respective
-    score = 0
-    # Comparaison de la popularité
-    score += poids_popularite * abs(site1.popularite - site2.popularite)
-    # Comparaison du prix
-    score += poids_prix * abs(site1.prix - site2.prix)
-    # Comparaison des fonctionnalités (par exemple, longueur de la liste)
-    score += poids_fonctionnalites * abs(len(site1.fonctionnalites) - len(site2.fonctionnalites))
-    return score
+#def trouver_meilleur_site(site_comparateur, sites):
+#    meilleur_site = None
+#    meilleur_score = -1
+#    # Parcourez les sites pour trouver le meilleur site
+#    for site in sites:
+#        if site != site_comparateur:  # Ne pas comparer un site avec lui-même
+#            score = calculer_score(site_comparateur, site)
+#            if score > meilleur_score:
+#                meilleur_site = site
+#                meilleur_score = score
+#    return meilleur_site
+#def calculer_score(site1, site2):
+#    # Poids des différents critères de comparaison
+#    poids_popularite = 0.5
+#    poids_prix = 0.3
+#    poids_fonctionnalites = 0.2
+#    # Calcul du score en fonction des attributs des sites et de leur importance respective
+#    score = 0
+#    # Comparaison de la popularité
+#    score += poids_popularite * abs(site1.popularite - site2.popularite)
+#    # Comparaison du prix
+#    score += poids_prix * abs(site1.prix - site2.prix)
+#    # Comparaison des fonctionnalités (par exemple, longueur de la liste)
+#    score += poids_fonctionnalites * abs(len(site1.fonctionnalites) - len(site2.fonctionnalites))
+#    return score

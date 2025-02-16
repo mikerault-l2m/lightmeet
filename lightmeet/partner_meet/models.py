@@ -15,13 +15,34 @@ class PartnerMeet(models.Model):
             ("Haut-de-gamme", "Site haut-de-gamme"),
     )
     categorie = models.CharField(choices=CATEGORIE_CHOICES, max_length=25, default='Généraliste')
-
     RELATION_CHOICES = (
         #('Toutes','Toutes'),
             ('Durables', 'Durables'),
-            ('LGBTQ+', 'LGBTQ+'),
+            ('Amicales', 'Amicales'),
+            ('LGBTQ+','LGBTQ+'),
     )
     relation = models.CharField(choices=RELATION_CHOICES, max_length=25, default='Toutes')
+
+
+    # Version adulte
+    CATEGORIE_CHOICE = (
+            ("Jeune", "Site pour jeunes"),
+            ("Géolocalisation", "Géolocalisation"),
+            ("Interculturelles", "Interculturelles"),
+            ("Femme ronde","Femme ronde"),
+            ("Discrétion","Discrétion"),
+
+    )
+    categories = models.CharField(choices=CATEGORIE_CHOICE, max_length=25, default='Géolocalisation')
+
+    RELATION_CHOICE = (
+        #('Toutes','Toutes'),
+            ('Adultère', 'Adultère'),
+            ('Lesbienne', 'Lesbienne'),
+            ('Gay','Gay'),
+            ('Interculturelles','Interculturelles'),
+    )
+    relations = models.CharField(choices=RELATION_CHOICE, max_length=25, default='Toutes')
 
     AGE_CHOICES = (
             ('18-30', '18-30 '),

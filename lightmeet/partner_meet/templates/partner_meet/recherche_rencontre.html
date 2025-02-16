@@ -42,7 +42,10 @@
 {% block section %}
 <div class="ButtonPos">
     <button class="buttonOtherSearh" onclick="window.location.href=`{% url 'recherche_home' %}`">Rencontres</button>
-    <button class="buttonOtherSearh selectButton" onclick="window.location.href=`{% url 'recherche_therapeutes' %}`">Thérapeutes</button>
+</div>
+
+<div class="ButtonPos">
+    <button class="buttonOtherSearh" onclick="window.location.href='{% url 'recherche_home' %}'">Rencontres</button>
 </div>
 
 <div class="sites-de-rencontres">

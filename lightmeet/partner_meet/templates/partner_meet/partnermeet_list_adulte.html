@@ -41,15 +41,14 @@
         </button>
     </div>
     <div class="containerResultats">
-        <p class="Resultats">
+        <h1 class="Resultats">
             {% with selected_country="France" %}
                 <img src="{% static 'partner_meet/Logos/' %}{{ selected_country }}.png" width="22px" alt="{{ selected_country }}">
                 {% trans "Résultats" %}
                 <img src="{% static 'partner_meet/Logos/' %}{{ selected_country }}.png" width="22px" alt="{{ selected_country }}">
             {% endwith %}
-        </p>
-        <div class="containerResultats">
-            <div class="PosFitlerResultats" style="gap: 120px;">
+        </h1>
+        <div class="PosFitlerResultats" style="gap: 120px;">
                 <form method="get">
                     <input type="hidden" name="sort_by" value="ranking">
                     <button type="submit" class="ButtonFitlerResultats">Les mieux classés</button>
@@ -63,30 +62,37 @@
                     <button type="submit" class="ButtonFitlerResultats">Les mieux notés</button>
                 </form>
             </div>
-            {% for partner in partnermeet|dictsort:"ranking" %}
-                {% if partner.affiliation_adulte and "France" in partner.countries %}
-                    <div class="cardApp VersionPC">
-                        <div class="alignItems">
-                            <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}" loading="lazy">
-                            <div class="containerTitleCard">
+        {% for partner in partnermeet|dictsort:"ranking" %}
+            {% if partner.affiliation_adulte and "France" in partner.countries %}
+                 <div class="cardApp">
+                    <div class="alignItems">
+                        <img class="SizeImgCard" src="{{ partner.LOGO.url }}" alt="Logo de {{ partner.nom }}, site de rencontre" loading="lazy">
+                        <div class="containerTitleCard">
+                            <div class="PosStar">
                                 <h3 class="TitleCard">{{ partner.nom }}</h3>
                                 <p class="rating-container" data-rating="{{ partner.trustpilot }}"></p>
-                                <p class="textCard">{{ partner.description }}</p>
                             </div>
+                            <p class="textCard">{{ partner.description }}</p>
                         </div>
-                        <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
-                        <p class="descriptionCard bold">{{ partner.age }} ans</p>
-                        <p class="descriptionCard">+ {{ partner.Visites_France }} Visites / mois</p>
-                        <button class="buttonVisit" onclick="window.location.href='{{ partner.url }}'">Visiter</button>
                     </div>
-                {% endif %}
-            {% empty %}
-                <div class="empty-message" id="resultats">
-                    <p>Ces sites de rencontres sont actuellement étudiés par <i>Lightmeet</i></p>
-                    <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
+                    <div class="Line"></div>
+                    <p class="descriptionCard bold">{{ partner.prix_avg }}€</p>
+                    <div class="Line"></div>
+                    <p class="descriptionCard bold">{{ partner.age }} {% trans "ans" %}</p>
+                    <div class="Line"></div>
+                    <p class="descriptionCard">+ {{ partner.Visites }} {% trans "Visites / mois" %}</p>
+                    <div class="Line"></div>
+                    <button class="buttonVisit" id="button_{{ partner.id }}" onclick="window.location.href='{{ partner.url }}'" rel="noopener noreferrer">
+                        {% trans "Visiter" %}
+                    </button>
                 </div>
-            {% endfor %}
-        </div>
+            {% endif %}
+        {% empty %}
+            <div class="empty-message" id="resultats">
+                <p>Ces sites de rencontres sont actuellement étudiés par <i>Lightmeet</i></p>
+                <p style="text-align:center;"><strong style="font-size:30px;">BIENTÔT disponible</strong></p>
+            </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

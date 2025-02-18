@@ -113,8 +113,8 @@ LANGUAGE_CODE = 'fr-fr'
 LANGUAGES = [
     ('fr', _('French')),
     ('en-us', _('English (United States)')),
-    #('en-gb', _('English (United Kingdom)')),
-    #('en-au', _('English (Australia)')),
+    ('en-gb', _('English (United Kingdom)')),
+    ('en-au', _('English (Australia)')),
     ('fr-be', _('French (Belgium)')),
     ('de', _('German')),
     ('da', _('Danish')),

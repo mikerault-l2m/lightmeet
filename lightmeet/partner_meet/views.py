@@ -20,7 +20,9 @@ import requests  # Ensure you import requests since you are using it in get_loca
 from django.utils.translation import activate, get_language_from_request, gettext as _ #pour la langue
 from django.views.generic import ListView
 from .models import PartnerMeet  # Assurez-vous que vous importez le bon modèle.
-
+from django.shortcuts import render
+from django.http import HttpRequest
+from django.utils.translation import get_language
 # Etape 1 : Lancement de la page principale Lightmeet :
 start = time.time()
 
@@ -82,29 +84,71 @@ end = time.time()
 elapsed = end - start
 print(f'Temps de récupération adresse IP et location sur LightMeet : {elapsed:.2f}ms')
 
-## Déterminations des drapeaux
-from django.shortcuts import render
-from django.http import HttpRequest
 
-def determine_flag(request: HttpRequest):
-    # Récupérer l'URL actuelle
-    current_url = request.path
+#C - Affichage du drapeau par pays
 
-    # Vérifier l'URL pour déterminer le drapeau
-    if current_url == "/fr":
-        flag = "France"
-    elif current_url == "/en-us":
-        flag = "Belgium"
-    else:
-        flag = "default"  # Ou un autre drapeau par défaut, si nécessaire
+def determine_flag(request):
+    flags = {
+        "fr": "France",
+        "fr-be": "Belgium",
+        "en-us": "United States",
+        "en-gb": "United Kingdom",
+        "en-au": "Australia",
+        "de": "Germany",
+        "da": "Denmark",
+        "pt": "Portugal",
+        "nl": "Netherlands",
+        "es": "Spain",
+    }
+    return flags.get(get_language(), "default")
 
-    return render(request, 'partnermeet/partnermeet_list.html', {'flag': flag})
+def partnermeet_list(request):
+    flag = determine_flag(request)
+    # Tu pourrais également récupérer d'autres données ici si nécessaire
+    return render(request, 'partnermeet_list.html', {'flag': flag})
+
+
 ## Version tout public
+import time
+from django.conf import settings
+from django.shortcuts import render
+from django.utils.translation import get_language
+from django.views.generic import ListView
+from .models import PartnerMeet
+
 start = time.time()
+
 class PartnerMeetListView(ListView):
     model = PartnerMeet
     context_object_name = "partners"
     template_name = "partner_meet/partnermeet_list.html"
+
+    def determine_flag(self, request):
+        """
+        Fonction pour déterminer le pays en fonction de la langue.
+        """
+        flags = {
+            "fr": "France",
+            "fr-be": "Belgium",
+            "en-us": "United States",
+            "en-gb": "United Kingdom",
+            "en-au": "Australia",
+            "de": "Germany",
+            "da": "Denmark",
+            "pt": "Portugal",
+            "nl": "Netherlands",
+            "es": "Spain",
+        }
+        return flags.get(get_language(), "default")
+
+    def get_context_data(self, **kwargs):
+        """
+        Ajouter des données supplémentaires au contexte du template, comme le flag et MEDIA_URL.
+        """
+        context = super().get_context_data(**kwargs)
+        context['flag'] = self.determine_flag(self.request)
+        context['MEDIA_URL'] = settings.MEDIA_URL  # Ajout de MEDIA_URL au contexte
+        return context
 
     def get_queryset(self):
         """
@@ -127,8 +171,8 @@ class PartnerMeetListView(ListView):
         if country:
             queryset = queryset.filter(countries=country)
 
-        return queryset.order_by("-ranking")
-      # Tri par ranking pour optimiser l'affichage
+        return queryset.order_by("-ranking")  # Tri par ranking pour optimiser l'affichage
+
 end = time.time()
 elapsed = end - start
 print(f"Temps de recherche des sites de rencontre : {elapsed:.2f}ms")

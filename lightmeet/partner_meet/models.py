@@ -8,7 +8,7 @@ class PartnerMeet(models.Model):
     LOGO = models.ImageField(upload_to='MeetSites/', null=True, blank=True)
     url = models.URLField(blank=True) # URL de redirection du site web associé à la variable 'affiliation'
     Visites = models.CharField(max_length=100) # - 3 Membres - # Cette variable comptabilise tous les 3 mois le nombre de visiteurs du site web.
-
+    FLAG = models.ImageField(upload_to='Countries/', null=True, blank=True)
     CATEGORIE_CHOICES = (
             ("Généraliste", "Site généraliste"),
             ("Senior", "Site senior"),
@@ -71,7 +71,7 @@ class PartnerMeet(models.Model):
     date_creation = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.ranking} - {self.nom} || {self.countries} "
+        return f"{self.ranking} - {self.nom} || {self.countries} || {self.affiliation_adulte}"
     class Meta:
         verbose_name = "Notre site de rencontre partenaire"
         verbose_name_plural = "Nos sites de rencontres partenaires"

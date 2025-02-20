@@ -13,7 +13,7 @@
     <div class="blog-post {% if forloop.counter|divisibleby:2 %}reverse{% endif %} {% if forloop.counter > 3 %}hidden{% endif %}" {% if forloop.counter > 3 %}data-hidden="true"{% endif %}>
         <!-- Première colonne : Image -->
         <div class="post-image">
-            <img src="{% static 'posts/Logos/' %}{{ forloop.counter }}.png" alt="{% trans 'Image de l’article' %}">
+            <img src="{% static 'posts/Logos/' %}{{ forloop.counter }}.jpg" alt="{% trans 'Image de l’article' %}">
         </div>
         <!-- Deuxième colonne : Contenu -->
         <div class="post-content">

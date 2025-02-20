@@ -41,13 +41,6 @@
         </button>
     </div>
     <div class="containerResultats">
-        <h1 class="Resultats">
-            {% with selected_country="France" %}
-                <img src="{% static 'partner_meet/Logos/' %}{{ selected_country }}.png" width="22px" alt="{{ selected_country }}">
-                {% trans "Résultats" %}
-                <img src="{% static 'partner_meet/Logos/' %}{{ selected_country }}.png" width="22px" alt="{{ selected_country }}">
-            {% endwith %}
-        </h1>
         <div class="PosFitlerResultats" style="gap: 120px;">
                 <form method="get">
                     <input type="hidden" name="sort_by" value="ranking">

@@ -1,86 +1,53 @@
 {% extends 'partner_meet/base_Partner_meet.html' %}
 {% load static %}
-{% load i18n %}  <!-- Load the internationalization library -->
+{% load i18n %}
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
+
 <body>
-
 {% block section %}
-    <!-- Titre H1 avec cadre, texte en gras et centré -->
     <h1 class="TitlePost">
-        {% trans "Les avantages méconnus d'un comparateur de sites de rencontres" %}
+        {% trans "Trouver l'amour grâce à un comparateur de sites de rencontres" %}
     </h1>
-        <!-- Première colonne : Image -->
-        <div class="post-image">
-            <img src="{% static 'posts/Logos/' %}{{ forloop.counter }}.png" alt="{% trans 'Image de l’article' %}">
-        </div>
 
-    <!-- Introduction -->
+    <div>
+        <img class="PostImage" src="{% static 'posts/Logos/fondPost.png' %}" alt="{% trans 'Trouver l\'amour grâce à un comparateur' %}">
+    </div>
+
     <p class="ExtractPost">
-        {% trans "Les rencontres en ligne ont connu une popularité croissante ces dernières années, permettant aux célibataires de trouver l'amour ou des relations stables via des plateformes spécialisées. Cependant, face à la multitude de sites de rencontres disponibles, il peut être difficile de dénicher celui qui répond le mieux à ses attentes. C'est là que le rôle d'un comparateur de sites de rencontres sérieux prend tout son sens, offrant une multitude d'avantages souvent méconnus." %}
+        {% trans "Trouver l'amour grâce à un comparateur de sites de rencontres. Lorsque l’on se lance dans la recherche de l’amour en ligne, la multitude de sites de rencontre disponibles peut rapidement devenir déroutante." %}
+        <strong>{% trans "Face à cette offre abondante, l'utilisation d'un comparateur de sites de rencontres sérieux devient un véritable atout pour faire des rencontres adaptées à ses attentes." %}</strong>
     </p>
 
     <p class="ExtractPost">
-        {% trans "En utilisant un comparateur, vous pouvez identifier les sites les plus efficaces, économiser du temps et de l'argent, profiter de conseils personnalisés, éviter les arnaques et découvrir de nouvelles fonctionnalités." %}
+        {% trans "En quelques clics, un comparateur vous fait gagner un temps précieux en vous proposant une vue d'ensemble des meilleurs sites de rencontres tels que" %}
+        <a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=2167&promoid=193178" target="_blank" style="text-decoration:none;"><strong>Meetic</strong></a>,
+        <a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=5383&promoid=257685" target="_blank" style="text-decoration:none;"><strong>Disons Demain</strong></a>,
+        <a href="https://www.snv3gy4trk.com/722WKQ/FGXLG/" target="_blank" style="text-decoration:none;"><strong>Elite Rencontre</strong></a>,
+        <a href="https://spiice.rencontre-fan.com/c/c3f8507e3c11a948?tpls=Qcr" target="_blank" style="text-decoration:none;">
+        <strong>ou encore Spiice</strong></a>
+        {% trans "Plus besoin de naviguer des heures pour faire une rencontre. Vous pouvez ainsi faire un choix éclairé, en vous concentrant sur les plateformes qui correspondent vraiment à vos besoins, que ce soit pour des rencontres sérieuses, amoureuses, seniors, ou même pour rencontrer des célibataires à la recherche du grand amour." %}
     </p>
 
-    <!-- Identifiez le site le plus efficace -->
+    <div class="Line"></div>
     <h2 class="TitlePost">
-        {% trans "1 - Identifier le site de rencontre le plus efficace" %}
-    </h2>
-    <p class="ExtractPost">
-        {% trans "Comparer les fonctionnalités, les tarifs, les avis des utilisateurs et les taux de réussite aide à choisir le site qui correspond le mieux à vos attentes." %}
-    </p>
-
-    <!-- Économisez du temps et de l'argent -->
-    <h2 class="TitlePost">
-        {% trans "2 - Économiser du temps et de l'argent" %}
-    </h2>
-    <p class="ExtractPost">
-        {% trans "Un comparateur vous permet d'éviter de vous inscrire sur plusieurs sites et d'éviter les frais inutiles, en choisissant directement un site adapté à vos besoins." %}
-    </p>
-
-    <!-- Profitez de conseils personnalisés -->
-    <h2 class="TitlePost">
-        {% trans "3 - Profiter de conseils et recommandations personnalisées" %}
+        {% trans "1 - Garder l'esprit ouvert face aux différentes plateformes de rencontre" %}
     </h2>
 
+    <div class="Line"></div>
+    {% for criterion in criteria %}
+        <h3 class="BlogSubsubtitle">
+            {% trans criterion.title %}
+        </h3>
         <p class="ExtractPost">
-            {% trans "Obtenez des recommandations basées sur vos critères personnels comme l'âge et les centres d'intérêt pour trouver les sites les plus adaptés." %}
+            {% trans criterion.description %}
         </p>
+    {% endfor %}
 
-    <!-- Évitez les arnaques -->
-    <h2 class="TitlePost">
-        {% trans "4 - Éviter les arnaques et les faux profils" %}
-    </h2>
-        <p class="ExtractPost">
-            {% trans "Choisissez des plateformes réputées et sécurisées pour éviter les faux profils et les escroqueries." %}
-        </p>
-
-    <!-- Découvrez de nouvelles fonctionnalités -->
-    <h2 class="TitlePost">
-        {% trans "5 - Découvrir de nouvelles fonctionnalités" %}
-    </h2>
-        <p class="ExtractPost">
-            {% trans "Explorez des outils innovants comme les tests de personnalité et les événements pour enrichir votre expérience de rencontre en ligne." %}
-        </p>
-
-    <!-- Bénéficiez d'un suivi personnalisé -->
-    <h2 class="TitlePost">
-        {% trans "6 - Bénéficier d'un suivi et d'un support client personnalisé" %}
-    </h2>
-        <p class="ExtractPost">
-            {% trans "Profitez d'une assistance dédiée et de guides pour optimiser votre utilisation des plateformes de rencontres." %}
-        </p>
-
-    <p class="ExtractPost">
-    {% trans  "En conclusion, un comparateur de sites de rencontres sérieux peut grandement améliorer votre expérience en ligne. Il vous aide à trouver la relation que vous recherchez tout en évitant les erreurs courantes. Prenez le contrôle de vos rencontres en ligne dès aujourd'hui !"%}
-</p>
-
-
+    <div class="Line"></div>
 {% endblock %}
 </body>
-</html>

@@ -6,7 +6,11 @@
     flex-direction: column;
     gap: 20px;
 }
-
+.Line {
+    height: 70px;
+    width: 1px;
+    background-color: #00000033;
+}
 /* Conteneur pour centrer le bouton */
 .button-container {
     display: flex;
@@ -58,16 +62,8 @@
 /* Colonnes de l'article */
 .post-image {
     flex: 1;
-    margin-right: 20px;
+    margin-right: 10px;
 }
-
-.post-image img {
-    max-width: 100%;
-    border-radius: 20px;
-    width: 325px;
-    height: 325px;
-}
-
 /* Contenu de l'article */
 .post-content {
     flex: 2;
@@ -142,7 +138,7 @@
 /* Style pour l'image de blog */
 .blog-image {
     width: 90%;
-    height: 500px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,7 +165,6 @@
     height: 500px;
     flex-shrink: 0;
     border-radius: 20px;
-    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 }
 
 /* Introduction du blog */

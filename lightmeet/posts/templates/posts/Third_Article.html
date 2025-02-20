@@ -1,84 +1,73 @@
 {% extends 'partner_meet/base_Partner_meet.html' %}
 {% load static %}
 {% load i18n %}  <!-- Load the internationalization library -->
+
 {% block css %}
 <link rel="stylesheet" href="{% static 'posts/css/Blog.css' %}">
 {{ block.super }}
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 {% endblock %}
+
 <body>
-
 {% block section %}
-    <!-- Titre H1 avec cadre, texte en gras et centré -->
     <h1 class="TitlePost">
-        {% trans "Les erreurs les plus courantes sur les sites de rencontres et comment les éviter" %}
+        {% trans "Comparatif des meilleures applications de rencontre : laquelle choisir ?" %}
     </h1>
-        <!-- Première colonne : Image -->
-        <div class="post-image">
-            <img src="{% static 'posts/Logos/' %}{{ forloop.counter }}.png" alt="{% trans 'Image de l’article' %}">
-        </div>
 
-    <!-- Introduction -->
-    <p class="ExtractPost">
-        {% trans "Les sites de rencontres offrent une opportunité unique de rencontrer de nouvelles personnes et de nouer des relations durables. Cependant, de nombreux utilisateurs commettent des erreurs qui réduisent leurs chances de succès. Identifier ces erreurs et apprendre à les éviter peut faire toute la différence dans votre expérience en ligne." %}
-    </p>
+    <div>
+        <img class="PostImage" src="{% static 'posts/Logos/fondPost.png' %}" alt="Comparatif des applications de rencontre">
+    </div>
 
     <p class="ExtractPost">
-        {% trans "Dans cet article, nous passons en revue les erreurs les plus fréquentes commises sur les plateformes de rencontres et vous donnons des conseils pratiques pour optimiser vos chances de trouver la bonne personne." %}
+        {% trans "Les applications de rencontre se multiplient, rendant le choix difficile. Pour vous aider à faire le bon choix, voici un comparatif des meilleures applications disponibles, en fonction de leur popularité, de leurs fonctionnalités et de leur public cible." %}
     </p>
 
-    <!-- Mauvaise sélection du site -->
+    <div class="Line"></div>
     <h2 class="TitlePost">
-        {% trans "1 - Choisir le mauvais site de rencontres" %}
+        {% trans "Meetic" %}
     </h2>
+    <div class="Line"></div>
     <p class="ExtractPost">
-        {% trans "Tous les sites de rencontres ne se valent pas. Certains sont spécialisés dans les relations sérieuses, d'autres dans les rencontres occasionnelles. Avant de vous inscrire, prenez le temps de comparer les plateformes et choisissez celle qui correspond à vos attentes." %}
+        {% trans "<a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=2167&promoid=193178" style="text-decoration:none;">Meetic</a> est idéal pour les personnes à la recherche d’une relation sérieuse. Il propose des événements pour célibataires et un algorithme de mise en relation efficace." %}
     </p>
 
-    <!-- Un profil mal renseigné -->
+    <div class="Line"></div>
     <h2 class="TitlePost">
-        {% trans "2 - Ne pas soigner son profil" %}
+        {% trans "<a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=5383&promoid=257685" style="text-decoration:none;"><strong>Disons Demain</strong></a>" %}
     </h2>
+    <div class="Line"></div>
     <p class="ExtractPost">
-        {% trans "Un profil incomplet ou mal rédigé peut réduire vos chances d'attirer des correspondances intéressantes. Ajoutez des photos de qualité, rédigez une description honnête et mettez en avant vos centres d’intérêt." %}
+        {% trans "Spécialement conçu pour les plus de 50 ans,<a href="https://tracking.publicidees.com/clic.php?partid=63758&progid=5383&promoid=257685" style="text-decoration:none;"><strong>Disons Demain</strong></a> offre une plateforme intuitive et des rencontres adaptées à un public mature." %}
     </p>
 
-    <!-- Manque d'engagement dans les conversations -->
+    <div class="Line"></div>
     <h2 class="TitlePost">
-        {% trans "3 - Envoyer des messages génériques et impersonnels" %}
+        {% trans "Elite Rencontre" %}
     </h2>
+    <div class="Line"></div>
     <p class="ExtractPost">
-        {% trans "Les messages copiés-collés ou trop vagues sont rarement efficaces. Prenez le temps de personnaliser vos premiers échanges en mentionnant un détail du profil de votre interlocuteur pour susciter l’intérêt." %}
+        {% trans "<a href="https://www.snv3gy4trk.com/722WKQ/FGXLG/" style="text-decoration:none;"><strong>Elite Rencontre</strong></a> cible les célibataires exigeants et diplômés cherchant des partenaires ayant un niveau d’éducation similaire." %}
     </p>
 
-    <!-- Précipitation dans la rencontre réelle -->
+    <div class="Line"></div>
     <h2 class="TitlePost">
-        {% trans "4 - Se précipiter pour une rencontre en personne" %}
+        {% trans "Spiice" %}
     </h2>
+    <div class="Line"></div>
     <p class="ExtractPost">
-        {% trans "Il est important d'établir une connexion avant de proposer une rencontre. Apprenez à connaître l’autre personne à travers des échanges approfondis avant de franchir cette étape." %}
+        {% trans "<a href="https://spiice.rencontre-fan.com/c/c3f8507e3c11a948?tpls=Qcr" style="text-decoration:none;">Spiice</a> se démarque par son approche ludique et interactive, idéale pour ceux qui cherchent une expérience de rencontre plus moderne et dynamique." %}
     </p>
 
-    <!-- Ignorer la sécurité en ligne -->
+    <div class="Line"></div>
     <h2 class="TitlePost">
-        {% trans "5 - Négliger la sécurité et les signaux d’alerte" %}
+        {% trans "Quelle application choisir selon vos attentes ?" %}
     </h2>
-    <p class="ExtractPost">
-        {% trans "Faites attention aux profils suspects, aux demandes d'argent ou aux personnes qui refusent de passer un appel vidéo avant une rencontre. Toujours privilégier des rencontres dans des lieux publics pour une première rencontre." %}
-    </p>
-
-    <!-- Ne pas persévérer -->
-    <h2 class="TitlePost">
-        {% trans "6 - Abandonner trop vite" %}
-    </h2>
-    <p class="ExtractPost">
-        {% trans "Les rencontres en ligne nécessitent de la patience. Si vous ne trouvez pas immédiatement la bonne personne, ne vous découragez pas. Ajustez votre approche, essayez différents sites et gardez une attitude positive." %}
-    </p>
+    <div class="Line"></div>
 
     <p class="ExtractPost">
-    {% trans  "En évitant ces erreurs courantes, vous maximisez vos chances de succès sur les sites de rencontres. Prenez le temps de bien choisir votre plateforme, d'optimiser votre profil et d'engager des conversations authentiques. Votre future relation pourrait être à un clic de distance !" %}
+        {% trans "Le choix d’une application de rencontre dépend de vos attentes : si vous recherchez une relation sérieuse, Meetic et Disons Demain sont de bonnes options. Pour un public plus élitiste, Elite Rencontre est à privilégier. Enfin, si vous souhaitez une expérience plus moderne et interactive, Spiice saura vous séduire." %}
     </p>
 
+    <div class="Line"></div>
 {% endblock %}
 </body>
-</html>

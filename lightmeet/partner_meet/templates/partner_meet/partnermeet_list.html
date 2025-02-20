@@ -14,20 +14,7 @@
 {% endblock %}
 
 {% block css %}
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll('.rating-container').forEach(container => {
-            const rating = parseFloat(container.getAttribute('data-rating'));
-            let stars = '';
-            for (let i = 0; i < 5; i++) {
-                stars += `<svg class='sizeStar' width="20" height="20" viewBox="0 0 40 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 0L24.7 13.5L39 13.8L27.6 22.5L31.8 36.2L20 28L8.2 36.2L12.4 22.5L1 13.8L15.3 13.5L20 0Z" fill="#F6E045"/>
-                          </svg>`;
-            }
-            container.innerHTML = stars;
-        });
-    });
-</script>
+
 <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
 <link rel="stylesheet" href="{% static 'partner_meet/css/SearchPage.css' %}">
 {{ block.super }}
@@ -41,13 +28,6 @@
         </button>
     </div>
     <div class="containerResultats">
-        <h1 class="Resultats">
-            {% with selected_country="France" %}
-                <img src="{% static 'partner_meet/Logos/' %}{{ selected_country }}.png" width="22px" alt="{{ selected_country }}">
-                {% trans "Résultats" %}
-                <img src="{% static 'partner_meet/Logos/' %}{{ selected_country }}.png" width="22px" alt="{{ selected_country }}">
-            {% endwith %}
-        </h1>
                 <div class="PosFitlerResultats" style="gap: 120px;">
                 <form method="get">
                     <input type="hidden" name="sort_by" value="ranking">

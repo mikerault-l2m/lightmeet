@@ -1,5 +1,7 @@
 /* Blog.css */
-
+.post-image{
+    width: 320px; height: 320px; margin-right: 30px; margin-left:30px;object-fit: cover;border-radius:40px;
+}
 /* Style général pour les articles de blog */
 .blog-posts {
     display: flex;
@@ -215,7 +217,11 @@
     line-height: 50px;
     letter-spacing: 1.2px;
 }
-
+/* Colonnes de l'article */
+.post-image {
+    flex: 1;
+    margin-right: 10px;
+}
 /* Analyse en tableau */
 .TableAnalysis {
     border-radius: 20px;

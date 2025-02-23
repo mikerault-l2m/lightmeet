@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,28 +14,20 @@
     <link rel="stylesheet" href="{% static 'posts/css/style_base.css' %}">
     {% endblock %}
 
-    <link rel="icon" type="image/png" href="{% static 'L2M.png' %}">
+<link rel="icon" type="image/png" href="{% static 'partner_meet/Logos/L2M.png' %}">
     <link rel="canonical" href="https://www.lightmeet.fr/">
     <meta name="author" content="Lightmeet">
     <meta name="robots" content="index, follow">
 
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1242603953496621');
-    fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1242603953496621&ev=PageView&noscript=1" />
-    </noscript>
-    <!-- End Meta Pixel Code -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16540386379">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16540386379');
+</script>
 
     <!-- Hotjar Tracking Code -->
     <script>
@@ -67,6 +60,10 @@
             <img class="LightMeetLogo" src="{% static 'partner_meet/Logos/LightMeet.svg' %}" alt="Logo LightMeet">
         </a>
         <nav class="navPos">
+            <button style="color:black; background-color:#FBF1D6; padding: 9px 55px;border: 0.1px solid grey;border-radius:50px; cursor: pointer; font-size: 12px;"
+                onclick="window.location.href='{% url 'recherche_home_adulte' %}'">
+                {% trans '+ 18 ans' %}
+            </button>
             <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>
             <a href="{% url 'Support' %}" class="ListeHeader">Contact</a>
         </nav>

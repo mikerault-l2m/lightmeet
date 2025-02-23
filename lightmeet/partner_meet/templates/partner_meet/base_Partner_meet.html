@@ -13,7 +13,7 @@
     {% block css %}
     <link rel="stylesheet" href="{% static 'partner_meet/css/style_base.css' %}">
     {% endblock %}
-<link rel="icon" type="image/png" href="{% static 'partner_meet/L2M.png' %}">
+<link rel="icon" type="image/png" href="{% static 'partner_meet/Logos/L2M.png' %}">
 <link rel="canonical" href="https://www.lightmeet.fr/">
 <!-- Auteur -->
 <meta name="author" content="Lightmeet">
@@ -65,7 +65,7 @@ function init_tracer() {
         <nav class="navPos">
             <button style="color:black; background-color:#FBF1D6; padding: 9px 55px;border: 0.1px solid grey;border-radius:50px; cursor: pointer; font-size: 12px;"
                 onclick="window.location.href='{% url 'recherche_home_adulte' %}'">
-                {% trans 'Adultes' %}
+                {% trans '+ 18 ans' %}
             </button>
 
             <a href="{% url 'blog_home' %}" class="ListeHeader">Blog</a>

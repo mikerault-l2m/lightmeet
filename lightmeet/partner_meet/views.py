@@ -32,7 +32,7 @@ class Home(TemplateView):
 
 end = time.time()
 elapsed = end - start
-print(f"Temps d'affichage de LightMeet : {elapsed:.2f}ms")
+print(f"Temps d'affichage de la page d'entrée de LightMeet : {elapsed:.2f}ms")
 
 
 
@@ -175,7 +175,7 @@ class PartnerMeetListView(ListView):
 
 end = time.time()
 elapsed = end - start
-print(f"Temps de recherche des sites de rencontre : {elapsed:.2f}ms")
+print(f"Temps de lancement de la page de rencontres : {elapsed:.2f}ms")
 
 
 start = time.time()
@@ -339,7 +339,6 @@ print(f"Temps de recherche des sites de rencontre : {elapsed:.2f}ms")
 
 # Version adulte
 
-start = time.time()
 class PartnerMeetListView(ListView):
     model = PartnerMeet
     context_object_name = "partners"
@@ -367,9 +366,6 @@ class PartnerMeetListView(ListView):
 
         return queryset.order_by("-ranking")
       # Tri par ranking pour optimiser l'affichage
-end = time.time()
-elapsed = end - start
-print(f"Temps de recherche des sites de rencontre : {elapsed:.2f}ms")
 
 
 start = time.time()
@@ -588,7 +584,7 @@ class PartnerMeetHome_Adulte(ListView):
         return queryset
 end = time.time()
 elapsed = end - start
-print(f"Temps de recherche des sites de rencontre : {elapsed:.2f}ms")
+print(f"Temps de recherche des sites de rencontre adultes: {elapsed:.2f}ms")
 
 class PartnerMeetDetail(DetailView):
     model = PartnerMeet

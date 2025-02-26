@@ -335,7 +335,7 @@ class PartnerMeetBestSite(ListView):
         return queryset
 end = time.time()
 elapsed = end - start
-print(f"Temps de recherche des sites de rencontre : {elapsed:.2f}ms")
+print(f"Temps de recherche : {elapsed:.2f}ms")
 
 # Version adulte
 

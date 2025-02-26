@@ -263,31 +263,19 @@ h1.Resultats {
     font-weight: 100;}
 
 .containerResultats {
-    width: 95%;
+    width: 97%; /* Réduit pour optimiser l'affichage */
     position: relative;
+    background: url('../Logos/Background.webp');
+    background-size: cover;
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     min-height: 50vh;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-    background-color: #f8f8f8; /* Fallback si l'image ne charge pas */
-}
-
-.containerResultats::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../Logos/Background.webp') center/cover no-repeat;
-    background-attachment: fixed;
-    opacity: 0.9; /* Légère transparence pour améliorer la lisibilité */
-    border-radius: inherit;
-    z-index: -1;
+    padding: 10px; /* Ajout d'un peu de padding pour aérer le contenu */
+    border-radius: 8px; /* Ajout de coins arrondis pour un design plus moderne */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour un meilleur contraste visuel */
+    overflow: hidden; /* Assure que le contenu ne dépasse pas */
 }
 
 a {
@@ -390,24 +378,12 @@ a {
 
 @media(max-width: 1660px) {
     .sites-de-rencontres {
-    position: relative;
-    width: 100%;
-    min-height: 80vh; /* min-height pour meilleure adaptabilité */
-    background-color: #f4f4f4; /* Fallback si l'image ne charge pas */
-}
-
-.sites-de-rencontres::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../Logos/Background.webp') center/cover no-repeat;
-    background-attachment: fixed; /* Effet fluide sur desktop */
-    opacity: 0.9; /* Légère transparence pour lisibilité */
-    z-index: -1;
-}
+        background: url(../Logos/Background.webp);
+        background-size: cover;
+        width: 100%;
+        height: 70vh;
+        background-position: center 50%;
+    }
 
     form {
         background-color: #FBF1D6;
@@ -441,7 +417,7 @@ a {
         background: url(../Logos/Background.webp);
         background-size: cover;
         width: 100%;
-        height: 80vh;
+        height: 70vh;
         background-position: center 50%;
     }
 }
